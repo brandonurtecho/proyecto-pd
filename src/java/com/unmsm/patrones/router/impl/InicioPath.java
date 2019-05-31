@@ -5,6 +5,7 @@
  */
 package com.unmsm.patrones.router.impl;
 
+import com.unmsm.patrones.config.Cache;
 import com.unmsm.patrones.service.ICountryService;
 import com.unmsm.patrones.service.impl.CountryService;
 import com.unmsm.patrones.router.Path;
@@ -22,12 +23,9 @@ import javax.servlet.http.HttpServletResponse;
  * @author bluq1
  */
 public class InicioPath extends Path {
-    
-    private ICountryService countryService;    
 
     public InicioPath(String path) {
         super(path);
-        countryService = CountryService.getInstance();
     }
     
     @Override
@@ -38,7 +36,7 @@ public class InicioPath extends Path {
     @Override
     public void operation(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException, SQLException {
-        request.getSession().setAttribute("listaPaises", countryService.findAllCountries()); 
+        request.getSession().setAttribute("listaPaises", Cache.getInstance().getListCountry()); 
         RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.INICIO);
         dispatcher.forward(request, response);
     }
