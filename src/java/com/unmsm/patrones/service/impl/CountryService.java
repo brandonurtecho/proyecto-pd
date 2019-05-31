@@ -17,10 +17,18 @@ import java.util.List;
  */
 public class CountryService implements ICountryService {
     
+    private static ICountryService countryService;
     private ICountryReadeable countryReadeable;
 
-    public CountryService() {
+    private CountryService() {
         countryReadeable = new CountryDao();
+    }
+    
+    public static ICountryService getInstance(){
+        if(countryService == null){
+            countryService = new CountryService();
+        }
+        return countryService;
     }
     
     @Override

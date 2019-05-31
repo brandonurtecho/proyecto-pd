@@ -17,10 +17,18 @@ import com.unmsm.patrones.service.IPersonService;
  */
 public class CustomerService implements IPersonService{
     
+    private static IPersonService customerService;
     private PersonDao personDao;
 
-    public CustomerService() {
+    private CustomerService() {
         personDao = new CustomerDao();
+    }
+    
+    public static IPersonService getInstance(){
+        if(customerService == null){
+            customerService = new CustomerService();
+        }
+        return customerService;
     }
     
     @Override

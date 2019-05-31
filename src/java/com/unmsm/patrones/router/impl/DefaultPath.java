@@ -23,10 +23,11 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class DefaultPath extends Path  {
     
-    private ICountryService countryService = new CountryService();    
+    private ICountryService countryService;    
 
     public DefaultPath(String path) {
         super(path);
+        countryService = CountryService.getInstance();
     }
     
     @Override

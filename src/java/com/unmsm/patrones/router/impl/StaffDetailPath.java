@@ -5,9 +5,7 @@
  */
 package com.unmsm.patrones.router.impl;
 
-import com.unmsm.patrones.model.Customer;
 import com.unmsm.patrones.model.Person;
-import com.unmsm.patrones.service.impl.CustomerService;
 import com.unmsm.patrones.router.Path;
 import com.unmsm.patrones.util.Jsp;
 import com.unmsm.patrones.util.PathName;
@@ -27,10 +25,11 @@ import com.unmsm.patrones.service.impl.StaffService;
  */
 public class StaffDetailPath extends Path {
 
-    private IPersonService staffService = new StaffService();
+    private IPersonService staffService;
 
     public StaffDetailPath(String path) {
         super(path);
+        staffService = StaffService.getInstance();
     }
     
     @Override

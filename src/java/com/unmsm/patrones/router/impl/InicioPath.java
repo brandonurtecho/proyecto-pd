@@ -23,10 +23,11 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class InicioPath extends Path {
     
-    private ICountryService countryService = new CountryService();    
+    private ICountryService countryService;    
 
     public InicioPath(String path) {
         super(path);
+        countryService = CountryService.getInstance();
     }
     
     @Override

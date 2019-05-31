@@ -37,9 +37,9 @@
                                 <td><c:out value="${country.lastUpdate}"></c:out></td>
                                 <td>   
                                     &nbsp;
-                                <a href="detailCustomer?countryName=<c:out value='${country.country}' />">Ver Clientes</a>
+                                <a href="detail-customer?countryName=<c:out value='${country.country}' />">Ver Clientes</a>
                                     |
-                                <a href="detailStaff?countryName=<c:out value='${country.country}' />">Ver Staff</a>
+                                <a href="detail-staff?countryName=<c:out value='${country.country}' />">Ver Staff</a>
                                     &nbsp;
                                 </td>                                
                             </tr>

@@ -5,7 +5,6 @@
  */
 package com.unmsm.patrones.service;
 
-import com.unmsm.patrones.model.Customer;
 import com.unmsm.patrones.model.Person;
 import java.util.List;
 
