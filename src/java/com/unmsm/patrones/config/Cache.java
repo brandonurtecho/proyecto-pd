@@ -7,7 +7,10 @@ package com.unmsm.patrones.config;
 
 import com.unmsm.patrones.model.Country;
 import com.unmsm.patrones.service.impl.CountryService;
+import com.unmsm.patrones.util.CacheName;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -15,11 +18,12 @@ import java.util.List;
  */
 public class Cache {
     
-    private static Cache cache;    
-    private List<Country> listCountry;
+    private static Cache cache;
+    private Map<String, List> cacheMap;
         
     private Cache() {
-        listCountry = CountryService.getInstance().findAllCountries();
+        cacheMap = new HashMap<>();
+        cacheMap.put(CacheName.COUNTRY, CountryService.getInstance().findAllCountries());
     }
     
     public static Cache getInstance(){
@@ -28,10 +32,9 @@ public class Cache {
         }
         return cache;
     }
-    
-    
-    public List<Country> getListCountry() {        
-        return listCountry;
+        
+    public List getCache(String type) {        
+        return cacheMap.get(type);
     }
 
 }

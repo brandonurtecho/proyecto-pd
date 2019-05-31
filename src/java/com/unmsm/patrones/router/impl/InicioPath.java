@@ -9,6 +9,7 @@ import com.unmsm.patrones.config.Cache;
 import com.unmsm.patrones.service.ICountryService;
 import com.unmsm.patrones.service.impl.CountryService;
 import com.unmsm.patrones.router.Path;
+import com.unmsm.patrones.util.CacheName;
 import com.unmsm.patrones.util.Jsp;
 import com.unmsm.patrones.util.PathName;
 import java.io.IOException;
@@ -36,7 +37,7 @@ public class InicioPath extends Path {
     @Override
     public void operation(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException, SQLException {
-        request.getSession().setAttribute("listaPaises", Cache.getInstance().getListCountry()); 
+        request.getSession().setAttribute("listaPaises", Cache.getInstance().getCache(CacheName.COUNTRY)); 
         RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.INICIO);
         dispatcher.forward(request, response);
     }
