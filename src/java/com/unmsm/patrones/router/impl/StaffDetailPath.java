@@ -6,6 +6,7 @@
 package com.unmsm.patrones.router.impl;
 
 import com.unmsm.patrones.model.Person;
+import com.unmsm.patrones.model.Staff;
 import com.unmsm.patrones.router.Path;
 import com.unmsm.patrones.util.Jsp;
 import com.unmsm.patrones.util.PathName;
@@ -25,7 +26,7 @@ import com.unmsm.patrones.service.impl.StaffService;
  */
 public class StaffDetailPath extends Path {
 
-    private IPersonService staffService;
+    private IPersonService<Staff> staffService;
 
     public StaffDetailPath(String path) {
         super(path);
@@ -41,7 +42,7 @@ public class StaffDetailPath extends Path {
     public void operation(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException, SQLException {        
         String countryName = request.getParameter("countryName");
-        List<Person> customerList = this.staffService.findCustomersByCountryName(countryName);
+        List<Staff> customerList = staffService.findCustomersByCountryName(countryName);
         request.getSession().setAttribute("listaClientes", customerList);        
         RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.DETAIL);
         dispatcher.forward(request, response);

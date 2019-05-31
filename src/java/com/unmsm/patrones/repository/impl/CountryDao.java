@@ -8,7 +8,6 @@ package com.unmsm.patrones.repository.impl;
 import com.unmsm.patrones.connection.ConnectionSingleton;
 import com.unmsm.patrones.repository.ICountryReadeable;
 import com.unmsm.patrones.model.Country;
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;

@@ -7,7 +7,6 @@ package com.unmsm.patrones.repository.impl;
 
 import com.unmsm.patrones.connection.ConnectionSingleton;
 import com.unmsm.patrones.model.Person;
-import com.unmsm.patrones.model.factory.PersonFactory;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
