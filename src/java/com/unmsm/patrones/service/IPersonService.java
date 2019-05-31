@@ -11,7 +11,8 @@ import java.util.List;
 /**
  *
  * @author LaboratorioFISI
+ * @param <T>
  */
-public interface IPersonService {
-    List<Person> findCustomersByCountryName(String nameParam);
+public interface IPersonService<T extends Person> {
+    List<T> findCustomersByCountryName(String nameParam);
 }

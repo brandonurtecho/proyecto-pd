@@ -5,7 +5,6 @@
  */
 package com.unmsm.patrones.model.rule;
 
-import com.unmsm.patrones.model.Person;
 import com.unmsm.patrones.model.Staff;
 import com.unmsm.patrones.util.TypePerson;
 
@@ -13,7 +12,7 @@ import com.unmsm.patrones.util.TypePerson;
  *
  * @author LaboratorioFISI
  */
-public class StaffRule implements IPersonRule{
+public class StaffRule implements IPersonRule<Staff>{
 
     @Override
     public Boolean isMatch(String type) {
@@ -21,7 +20,7 @@ public class StaffRule implements IPersonRule{
     }
 
     @Override
-    public Person getObject() {
+    public Staff getObject() {
         return new Staff();
     }
     

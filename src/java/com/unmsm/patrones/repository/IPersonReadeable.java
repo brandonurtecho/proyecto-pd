@@ -11,7 +11,8 @@ import java.util.List;
 /**
  *
  * @author bluq1
+ * @param <T>
  */
-public interface IPersonReadeable {
-    List<Person> findByCountryName(String nameParam);
+public interface IPersonReadeable<T extends Person> {
+    List<T> findByCountryName(String nameParam);
 }

@@ -20,22 +20,22 @@ import java.util.logging.Logger;
 /**
  *
  * @author bluq1
+ * @param <T>
  */
-public abstract class PersonDao implements IPersonReadeable {
+public abstract class PersonDao<T extends Person> implements IPersonReadeable {
             
     private String SELECT_BY_COUNTRY_NAME;
-    private String type;    
     
-    public PersonDao(String select, String type) {
+    public PersonDao(String select) {
         SELECT_BY_COUNTRY_NAME = select;
-        this.type = type;
     }
+    
+    public abstract T getPerson();
         
     @Override
-    public List<Person> findByCountryName(String nameParam) {
-        List<Person> listPerson = new ArrayList<>();        
+    public List<T> findByCountryName(String nameParam) {
+        List<T> listPerson = new ArrayList<>();        
         ConnectionSingleton connection = ConnectionSingleton.getInstance();
-        PersonFactory factory = new PersonFactory();
         try (PreparedStatement preparedStatement = 
                 connection.getConn().prepareStatement(SELECT_BY_COUNTRY_NAME);) {
             
@@ -44,7 +44,7 @@ public abstract class PersonDao implements IPersonReadeable {
             ResultSet rs = preparedStatement.executeQuery();
 
             while (rs.next()) {
-                Person person = factory.getPerson(type);      
+                T person = getPerson();
                 person.setId(rs.getInt("ID"));
                 person.setName(rs.getString("name"));
                 person.setAddress(rs.getString("address"));

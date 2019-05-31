@@ -5,6 +5,7 @@
  */
 package com.unmsm.patrones.service.impl;
 
+import com.unmsm.patrones.model.Customer;
 import com.unmsm.patrones.repository.impl.PersonDao;
 import com.unmsm.patrones.model.Person;
 import java.util.List;
@@ -15,7 +16,7 @@ import com.unmsm.patrones.service.IPersonService;
  *
  * @author LaboratorioFISI
  */
-public class CustomerService implements IPersonService{
+public class CustomerService implements IPersonService<Customer>{
     
     private static IPersonService customerService;
     private PersonDao personDao;
@@ -32,7 +33,7 @@ public class CustomerService implements IPersonService{
     }
     
     @Override
-    public List<Person> findCustomersByCountryName(String nameParam) {
+    public List<Customer> findCustomersByCountryName(String nameParam) {
         return personDao.findByCountryName(nameParam);
     }
     

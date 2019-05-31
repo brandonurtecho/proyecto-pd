@@ -5,16 +5,23 @@
  */
 package com.unmsm.patrones.repository.impl;
 
+import com.unmsm.patrones.model.Staff;
+import com.unmsm.patrones.model.factory.PersonFactory;
 import com.unmsm.patrones.util.TypePerson;
 
 /**
  *
  * @author bluq1
  */
-public class StaffDao extends PersonDao {
+public class StaffDao extends PersonDao<Staff> {
     
     public StaffDao() {
-        super("select * from staff_list where staff_list.country =?;", TypePerson.STAFF);
+        super("select * from staff_list where staff_list.country =?;");
     }
     
+    @Override
+    public Staff getPerson() {
+        PersonFactory<Staff> factory = new PersonFactory();
+        return factory.getPerson(TypePerson.STAFF);
+    } 
 }

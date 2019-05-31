@@ -10,8 +10,9 @@ import com.unmsm.patrones.model.Person;
 /**
  *
  * @author LaboratorioFISI
+ * @param <T>
  */
-public interface IPersonRule {
+public interface IPersonRule<T extends Person> {
     Boolean isMatch(String type);
-    Person getObject();
+    T getObject();
 }

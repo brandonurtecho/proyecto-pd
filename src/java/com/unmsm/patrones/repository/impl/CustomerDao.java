@@ -5,16 +5,23 @@
  */
 package com.unmsm.patrones.repository.impl;
 
+import com.unmsm.patrones.model.Customer;
+import com.unmsm.patrones.model.factory.PersonFactory;
 import com.unmsm.patrones.util.TypePerson;
 
 /**
  *
  * @author bluq1
  */
-public class CustomerDao extends PersonDao {
+public class CustomerDao extends PersonDao<Customer> {
 
     public CustomerDao() {
-        super("select * from customer_list where customer_list.country =?;", TypePerson.CUSTOMER);
+        super("select * from customer_list where customer_list.country =?;");
     }
 
+    @Override
+    public Customer getPerson() {
+        PersonFactory<Customer> factory = new PersonFactory();
+        return factory.getPerson(TypePerson.CUSTOMER);
+    }    
 }

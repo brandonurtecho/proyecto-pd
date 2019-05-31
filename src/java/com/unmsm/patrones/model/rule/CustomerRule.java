@@ -6,14 +6,13 @@
 package com.unmsm.patrones.model.rule;
 
 import com.unmsm.patrones.model.Customer;
-import com.unmsm.patrones.model.Person;
 import com.unmsm.patrones.util.TypePerson;
 
 /**
  *
  * @author LaboratorioFISI
  */
-public class CustomerRule implements IPersonRule{
+public class CustomerRule implements IPersonRule<Customer>{
 
     @Override
     public Boolean isMatch(String type) {
@@ -21,7 +20,7 @@ public class CustomerRule implements IPersonRule{
     }
 
     @Override
-    public Person getObject() {
+    public Customer getObject() {
         return new Customer();
     }
     

@@ -15,8 +15,9 @@ import java.util.List;
 /**
  *
  * @author LaboratorioFISI
+ * @param <T>
  */
-public class PersonFactory {
+public class PersonFactory<T extends Person> {
 
     private List<IPersonRule> listPersonRule;
     
@@ -26,8 +27,8 @@ public class PersonFactory {
         listPersonRule.add(new StaffRule());
     }   
     
-    public Person getPerson(String type){
-        for (IPersonRule personRule : listPersonRule) {
+    public T getPerson(String type){
+        for (IPersonRule<T> personRule : listPersonRule) {
             if(personRule.isMatch(type)){
                 return personRule.getObject();
             }
