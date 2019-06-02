@@ -8,7 +8,7 @@ package com.unmsm.patrones.config;
 import com.unmsm.patrones.router.Path;
 import com.unmsm.patrones.router.impl.CustomerDetailPath;
 import com.unmsm.patrones.router.impl.DefaultPath;
-import com.unmsm.patrones.router.impl.InicioPath;
+import com.unmsm.patrones.router.impl.IndexPath;
 import com.unmsm.patrones.router.impl.StaffDetailPath;
 import com.unmsm.patrones.util.PathName;
 import java.util.ArrayList;
@@ -38,7 +38,7 @@ public class PathConfigSingleton {
     
     private void initPaths(){
         listPath.add(new DefaultPath(PathName.DEFAULT));
-        listPath.add(new InicioPath(PathName.INICIO));
+        listPath.add(new IndexPath(PathName.INDEX));
         listPath.add(new CustomerDetailPath(PathName.DETAIL_CUSTOMER));
         listPath.add(new StaffDetailPath(PathName.DETAIL_STAFF));
     }

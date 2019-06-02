@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.unmsm.patrones.model;
+package com.unmsm.patrones.dto;
 
 /**
  *
@@ -52,5 +52,33 @@ public class Country {
         return "Country{" + "idCountry=" + idCountry + ", country=" + country + ", lastUpdate=" + lastUpdate + '}';
     }
     
-    
+    public static class ContryBuilder implements IBuilder<Country>{
+        
+        private Integer idCountry;
+        private String country;
+        private String lastUpdate;
+
+        public ContryBuilder() {
+        }
+
+        public ContryBuilder setIdCountry(Integer idCountry) {
+            this.idCountry = idCountry;
+            return this;
+        }
+
+        public ContryBuilder setCountry(String country) {
+            this.country = country;
+            return this;
+        }
+
+        public ContryBuilder setLastUpdate(String lastUpdate) {
+            this.lastUpdate = lastUpdate;
+            return this;
+        }
+                
+        @Override
+        public Country build() {
+            return new Country(idCountry, country, lastUpdate);
+        }        
+    }
 }

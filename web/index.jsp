@@ -11,6 +11,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>INICIO</title>
         <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+        <!-- Bootstrap core CSS -->
+        <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
     </head>
     <body>
         <center>

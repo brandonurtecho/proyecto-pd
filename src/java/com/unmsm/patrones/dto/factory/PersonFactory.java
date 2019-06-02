@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.unmsm.patrones.model.factory;
+package com.unmsm.patrones.dto.factory;
 
-import com.unmsm.patrones.model.Person;
-import com.unmsm.patrones.model.rule.CustomerRule;
-import com.unmsm.patrones.model.rule.IPersonRule;
-import com.unmsm.patrones.model.rule.StaffRule;
+import com.unmsm.patrones.dto.Person;
+import com.unmsm.patrones.dto.rule.CustomerRule;
+import com.unmsm.patrones.dto.rule.IPersonRule;
+import com.unmsm.patrones.dto.rule.StaffRule;
 import java.util.ArrayList;
 import java.util.List;
 

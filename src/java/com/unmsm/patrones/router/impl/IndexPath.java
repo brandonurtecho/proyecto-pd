@@ -23,22 +23,22 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author bluq1
  */
-public class InicioPath extends Path {
+public class IndexPath extends Path {
 
-    public InicioPath(String path) {
+    public IndexPath(String path) {
         super(path);
     }
     
     @Override
     public Boolean isMatch(String path) {
-        return path.equals(PathName.INICIO);
+        return path.equals(PathName.INDEX);
     }
 
     @Override
     public void operation(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException, SQLException {
         request.getSession().setAttribute("listaPaises", Cache.getInstance().getCache(CacheName.COUNTRY)); 
-        RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.INICIO);
+        RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.INDEX);
         dispatcher.forward(request, response);
     }
     

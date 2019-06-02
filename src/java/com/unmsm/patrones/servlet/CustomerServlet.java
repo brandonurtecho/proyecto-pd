@@ -3,16 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.unmsm.patrones.controller;
+package com.unmsm.patrones.servlet;
 
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet({"/",""})
-public class CustomerController extends GenericController {
+@WebServlet({"/principal/*","/principal"})
+public class CustomerServlet extends GenericServlet {
 
     @Override
     public String getServletInfo() {
-        return "Servlet Customer Controller, ruta base: /";
+        return "Servlet Customer Controller, ruta base: /principal";
     }
     
 }

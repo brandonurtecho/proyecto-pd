@@ -5,7 +5,7 @@
  */
 package com.unmsm.patrones.config;
 
-import com.unmsm.patrones.model.Country;
+import com.unmsm.patrones.dto.Country;
 import com.unmsm.patrones.service.impl.CountryService;
 import com.unmsm.patrones.util.CacheName;
 import java.util.HashMap;

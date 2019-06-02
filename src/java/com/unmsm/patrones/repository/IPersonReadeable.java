@@ -5,7 +5,7 @@
  */
 package com.unmsm.patrones.repository;
 
-import com.unmsm.patrones.model.Person;
+import com.unmsm.patrones.dto.Person;
 import java.util.List;
 
 /**

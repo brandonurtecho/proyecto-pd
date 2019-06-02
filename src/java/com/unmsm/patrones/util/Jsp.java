@@ -10,6 +10,6 @@ package com.unmsm.patrones.util;
  * @author bluq1
  */
 public class Jsp {
-    public final static String INICIO = "inicio.jsp";
-    public final static String DETAIL = "detalle.jsp";
+    public final static String INDEX = "/index.jsp";
+    public final static String DETAIL = "/detail.jsp";
 }

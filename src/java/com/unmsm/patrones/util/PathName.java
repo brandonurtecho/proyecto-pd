@@ -11,7 +11,7 @@ package com.unmsm.patrones.util;
  */
 public class PathName {
     public final static String DEFAULT = "/";
-    public final static String INICIO = "/inicio";
+    public final static String INDEX = "/index";
     public final static String DETAIL_CUSTOMER = "/detail-customer";
     public final static String DETAIL_STAFF = "/detail-staff";
 }

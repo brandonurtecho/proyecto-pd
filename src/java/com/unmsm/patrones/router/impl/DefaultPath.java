@@ -32,14 +32,14 @@ public class DefaultPath extends Path  {
     
     @Override
     public Boolean isMatch(String path) {
-        return path.equals(PathName.DEFAULT);
+        return (path == null || path.equals(PathName.DEFAULT));
     }
 
     @Override
     public void operation(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException, SQLException {
         request.getSession().setAttribute("listaPaises", countryService.findAllCountries()); 
-        RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.INICIO);
+        RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.INDEX);
         dispatcher.forward(request, response);
     }
     

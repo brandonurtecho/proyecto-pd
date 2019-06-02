@@ -7,7 +7,7 @@ package com.unmsm.patrones.repository.impl;
 
 import com.unmsm.patrones.connection.ConnectionSingleton;
 import com.unmsm.patrones.repository.ICountryReadeable;
-import com.unmsm.patrones.model.Country;
+import com.unmsm.patrones.dto.Country;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -39,16 +39,17 @@ public class CountryDao implements ICountryReadeable{
             ResultSet rs = preparedStatement.executeQuery();
 
             while (rs.next()) {
-                Country country = new Country();                                
-                country.setIdCountry(rs.getInt("country_id"));
-                country.setCountry(rs.getString("country"));
-                country.setLastUpdate(rs.getString("last_update"));
+                Country country = new Country.ContryBuilder()
+                        .setIdCountry(rs.getInt("country_id"))
+                        .setCountry(rs.getString("country"))
+                        .setLastUpdate(rs.getString("last_update"))
+                        .build();
                 listaCountry.add(country);
             }
         } catch (SQLException ex) {
             Logger.getLogger(CountryDao.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        
         return listaCountry;
     }
    

@@ -5,8 +5,8 @@
  */
 package com.unmsm.patrones.router.impl;
 
-import com.unmsm.patrones.model.Customer;
-import com.unmsm.patrones.model.Person;
+import com.unmsm.patrones.dto.Customer;
+import com.unmsm.patrones.dto.Person;
 import com.unmsm.patrones.service.impl.CustomerService;
 import com.unmsm.patrones.router.Path;
 import com.unmsm.patrones.util.Jsp;

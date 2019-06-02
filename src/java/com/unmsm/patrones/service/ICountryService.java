@@ -5,7 +5,7 @@
  */
 package com.unmsm.patrones.service;
 
-import com.unmsm.patrones.model.Country;
+import com.unmsm.patrones.dto.Country;
 import java.util.List;
 
 /**

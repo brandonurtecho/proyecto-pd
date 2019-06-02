@@ -7,7 +7,7 @@ package com.unmsm.patrones.service.impl;
 
 import com.unmsm.patrones.repository.ICountryReadeable;
 import com.unmsm.patrones.repository.impl.CountryDao;
-import com.unmsm.patrones.model.Country;
+import com.unmsm.patrones.dto.Country;
 import com.unmsm.patrones.service.ICountryService;
 import java.util.List;
 

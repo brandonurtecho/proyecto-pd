@@ -5,9 +5,9 @@
  */
 package com.unmsm.patrones.service.impl;
 
-import com.unmsm.patrones.model.Customer;
+import com.unmsm.patrones.dto.Customer;
 import com.unmsm.patrones.repository.impl.PersonDao;
-import com.unmsm.patrones.model.Person;
+import com.unmsm.patrones.dto.Person;
 import java.util.List;
 import com.unmsm.patrones.repository.impl.CustomerDao;
 import com.unmsm.patrones.service.IPersonService;

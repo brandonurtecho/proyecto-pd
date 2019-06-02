@@ -5,8 +5,8 @@
  */
 package com.unmsm.patrones.repository.impl;
 
-import com.unmsm.patrones.model.Staff;
-import com.unmsm.patrones.model.factory.PersonFactory;
+import com.unmsm.patrones.dto.Staff;
+import com.unmsm.patrones.dto.factory.PersonFactory;
 import com.unmsm.patrones.util.TypePerson;
 
 /**

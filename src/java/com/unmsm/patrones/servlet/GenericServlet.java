@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.unmsm.patrones.controller;
+package com.unmsm.patrones.servlet;
 
 import com.unmsm.patrones.config.PathConfigSingleton;
 import com.unmsm.patrones.router.Path;
@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public abstract class GenericController extends HttpServlet {
+public abstract class GenericServlet extends HttpServlet {
    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -34,10 +34,10 @@ public abstract class GenericController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-            String path = request.getServletPath();
+            String path = request.getPathInfo();  
             router(request, response, path);            
         } catch (SQLException ex) {
-            Logger.getLogger(GenericController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(GenericServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -68,11 +68,11 @@ public abstract class GenericController extends HttpServlet {
     }
     
     private void defaultReturn(HttpServletRequest request, HttpServletResponse response){
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(PathName.INICIO);
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(PathName.INDEX);
         try {
             dispatcher.forward(request, response);
         } catch (ServletException | IOException ex) {
-            Logger.getLogger(GenericController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(GenericServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     // </editor-fold>
