@@ -16,19 +16,19 @@ import java.util.Map;
  *
  * @author bluq1
  */
-public class Cache {
+public class CacheManagement {
     
-    private static Cache cache;
+    private static CacheManagement cache;
     private Map<String, List> cacheMap;
         
-    private Cache() {
+    private CacheManagement() {
         cacheMap = new HashMap<>();
         cacheMap.put(CacheName.COUNTRY, CountryService.getInstance().findAllCountries());
     }
     
-    public static Cache getInstance(){
+    public static CacheManagement getInstance(){
         if(cache == null){
-            cache = new Cache();
+            cache = new CacheManagement();
         }
         return cache;
     }

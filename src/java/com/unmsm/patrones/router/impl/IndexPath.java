@@ -5,7 +5,8 @@
  */
 package com.unmsm.patrones.router.impl;
 
-import com.unmsm.patrones.config.Cache;
+import com.unmsm.patrones.config.CacheManagement;
+import com.unmsm.patrones.dto.IBuilder;
 import com.unmsm.patrones.service.ICountryService;
 import com.unmsm.patrones.service.impl.CountryService;
 import com.unmsm.patrones.router.Path;
@@ -37,7 +38,7 @@ public class IndexPath extends Path {
     @Override
     public void operation(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException, SQLException {
-        request.getSession().setAttribute("listaPaises", Cache.getInstance().getCache(CacheName.COUNTRY)); 
+        request.getSession().setAttribute("listaPaises", CacheManagement.getInstance().getCache(CacheName.COUNTRY)); 
         RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.INDEX);
         dispatcher.forward(request, response);
     }

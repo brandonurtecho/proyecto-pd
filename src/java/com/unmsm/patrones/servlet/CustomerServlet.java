@@ -7,7 +7,7 @@ package com.unmsm.patrones.servlet;
 
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet({"/principal/*","/principal"})
+@WebServlet({"/principal/*"})
 public class CustomerServlet extends GenericServlet {
 
     @Override
