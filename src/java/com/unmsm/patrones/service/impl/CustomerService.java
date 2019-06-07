@@ -6,26 +6,25 @@
 package com.unmsm.patrones.service.impl;
 
 import com.unmsm.patrones.dto.Customer;
-import com.unmsm.patrones.repository.impl.PersonDao;
-import com.unmsm.patrones.dto.Person;
-import java.util.List;
+import com.unmsm.patrones.repository.ICustomerReadeable;
 import com.unmsm.patrones.repository.impl.CustomerDao;
-import com.unmsm.patrones.service.IPersonService;
+import java.util.List;
+import com.unmsm.patrones.service.ICustomerService;
 
 /**
  *
  * @author LaboratorioFISI
  */
-public class CustomerService implements IPersonService<Customer>{
+public class CustomerService implements ICustomerService {
     
-    private static IPersonService customerService;
-    private PersonDao personDao;
+    private static ICustomerService customerService;
+    private ICustomerReadeable customerDao;
 
     private CustomerService() {
-        personDao = new CustomerDao();
+        customerDao = new CustomerDao();
     }
     
-    public static IPersonService getInstance(){
+    public static ICustomerService getInstance(){
         if(customerService == null){
             customerService = new CustomerService();
         }
@@ -34,7 +33,7 @@ public class CustomerService implements IPersonService<Customer>{
     
     @Override
     public List<Customer> findCustomersByCountryName(String nameParam) {
-        return personDao.findByCountryName(nameParam);
+        return customerDao.findByCountryName(nameParam);
     }
     
 }

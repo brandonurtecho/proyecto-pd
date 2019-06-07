@@ -5,11 +5,11 @@
  */
 package com.unmsm.patrones.router.impl;
 
-import com.unmsm.patrones.config.CacheManagement;
+import com.unmsm.patrones.cache.CacheManagement;
 import com.unmsm.patrones.dto.IBuilder;
 import com.unmsm.patrones.service.ICountryService;
 import com.unmsm.patrones.service.impl.CountryService;
-import com.unmsm.patrones.router.Path;
+import com.unmsm.patrones.router.PathStrategy;
 import com.unmsm.patrones.util.CacheName;
 import com.unmsm.patrones.util.Jsp;
 import com.unmsm.patrones.util.PathName;
@@ -24,7 +24,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author bluq1
  */
-public class IndexPath extends Path {
+public class IndexPath extends PathStrategy {
 
     public IndexPath(String path) {
         super(path);

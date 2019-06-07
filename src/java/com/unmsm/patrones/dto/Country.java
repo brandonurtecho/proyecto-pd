@@ -5,11 +5,13 @@
  */
 package com.unmsm.patrones.dto;
 
+import java.io.Serializable;
+
 /**
  *
  * @author LaboratorioFISI
  */
-public class Country {
+public class Country implements Serializable {
     private Integer idCountry;
     private String country;
     private String lastUpdate;

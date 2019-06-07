@@ -18,10 +18,10 @@ import java.util.List;
 public class CountryService implements ICountryService {
     
     private static ICountryService countryService;
-    private ICountryReadeable countryReadeable;
+    private ICountryReadeable countryDao;
 
     private CountryService() {
-        countryReadeable = new CountryDao();
+        countryDao = new CountryDao();
     }
     
     public static ICountryService getInstance(){
@@ -33,7 +33,7 @@ public class CountryService implements ICountryService {
     
     @Override
     public List<Country> findAllCountries() {
-        return this.countryReadeable.selectAll();
+        return this.countryDao.selectAll();
     }
     
 }

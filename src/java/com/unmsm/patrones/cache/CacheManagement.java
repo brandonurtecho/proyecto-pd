@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.unmsm.patrones.config;
+package com.unmsm.patrones.cache;
 
-import com.unmsm.patrones.dto.Country;
 import com.unmsm.patrones.service.impl.CountryService;
 import com.unmsm.patrones.util.CacheName;
 import java.util.HashMap;

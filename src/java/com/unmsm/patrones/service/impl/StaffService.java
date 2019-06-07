@@ -5,26 +5,26 @@
  */
 package com.unmsm.patrones.service.impl;
 
-import com.unmsm.patrones.repository.impl.PersonDao;
-import com.unmsm.patrones.dto.Person;
+import com.unmsm.patrones.dto.Staff;
+import com.unmsm.patrones.repository.IStaffReadeable;
 import java.util.List;
 import com.unmsm.patrones.repository.impl.StaffDao;
-import com.unmsm.patrones.service.IPersonService;
+import com.unmsm.patrones.service.IStaffService;
 
 /**
  *
  * @author LaboratorioFISI
  */
-public class StaffService implements IPersonService {
+public class StaffService implements IStaffService {
     
-    private static IPersonService staffService;
-    private PersonDao personDao;
+    private static IStaffService staffService;
+    private IStaffReadeable staffDao;
 
     private StaffService() {
-        personDao = new StaffDao();
+        staffDao = new StaffDao();
     }
     
-    public static IPersonService getInstance(){
+    public static IStaffService getInstance(){
         if(staffService == null){
             staffService = new StaffService();
         }
@@ -32,8 +32,8 @@ public class StaffService implements IPersonService {
     }
     
     @Override
-    public List<Person> findCustomersByCountryName(String nameParam) {
-        return personDao.findByCountryName(nameParam);
+    public List<Staff> findCustomersByCountryName(String nameParam) {
+        return staffDao.findByCountryName(nameParam);
     }
     
 }

@@ -5,7 +5,7 @@
  */
 package com.unmsm.patrones.config;
 
-import com.unmsm.patrones.router.Path;
+import com.unmsm.patrones.router.PathStrategy;
 import com.unmsm.patrones.router.impl.CustomerDetailPath;
 import com.unmsm.patrones.router.impl.DefaultPath;
 import com.unmsm.patrones.router.impl.IndexPath;
@@ -21,7 +21,7 @@ import java.util.List;
 public class PathConfigSingleton {
     
     private static PathConfigSingleton instance;    
-    private List<Path> listPath;
+    private List<PathStrategy> listPath;
 
     private PathConfigSingleton() {
         listPath = new ArrayList<>();
@@ -43,7 +43,7 @@ public class PathConfigSingleton {
         listPath.add(new StaffDetailPath(PathName.DETAIL_STAFF));
     }
 
-    public List<Path> getListPath() {
+    public List<PathStrategy> getListPath() {
         return listPath;
     }
     

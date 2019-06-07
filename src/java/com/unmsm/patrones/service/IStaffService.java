@@ -3,16 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.unmsm.patrones.dto.rule;
+package com.unmsm.patrones.service;
 
-import com.unmsm.patrones.dto.Person;
+import com.unmsm.patrones.dto.Staff;
+import java.util.List;
 
 /**
  *
  * @author LaboratorioFISI
- * @param <T>
  */
-public interface IPersonRule<T extends Person> {
-    Boolean isMatch(String type);
-    T getObject();
+public interface IStaffService {
+    List<Staff> findCustomersByCountryName(String nameParam);
 }

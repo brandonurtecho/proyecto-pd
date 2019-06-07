@@ -6,7 +6,7 @@
 package com.unmsm.patrones.servlet;
 
 import com.unmsm.patrones.config.PathConfigSingleton;
-import com.unmsm.patrones.router.Path;
+import com.unmsm.patrones.router.PathStrategy;
 import com.unmsm.patrones.util.PathName;
 
 import java.io.IOException;
@@ -58,7 +58,7 @@ public abstract class GenericServlet extends HttpServlet {
     private void router(HttpServletRequest request, HttpServletResponse response, String path) 
             throws ServletException, IOException, SQLException {
         PathConfigSingleton pcs = PathConfigSingleton.getInstance();
-        for (Path p : pcs.getListPath()) {
+        for (PathStrategy p : pcs.getListPath()) {
             if(p.isMatch(path)){
                 p.operate(request, response);
                 return;

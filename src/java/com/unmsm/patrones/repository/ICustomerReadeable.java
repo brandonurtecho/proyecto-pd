@@ -3,16 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.unmsm.patrones.service;
+package com.unmsm.patrones.repository;
 
-import com.unmsm.patrones.dto.Person;
+import com.unmsm.patrones.dto.Customer;
 import java.util.List;
 
 /**
  *
- * @author LaboratorioFISI
- * @param <T>
+ * @author bluq1
  */
-public interface IPersonService<T extends Person> {
-    List<T> findCustomersByCountryName(String nameParam);
+public interface ICustomerReadeable {
+    List<Customer> findByCountryName(String nameParam);
 }

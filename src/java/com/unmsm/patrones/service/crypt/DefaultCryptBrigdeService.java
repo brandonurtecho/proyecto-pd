@@ -1,16 +1,16 @@
 package com.unmsm.patrones.service.crypt;
 
 import com.unmsm.patrones.service.ICryptService;
-import com.unmsm.patrones.service.IMessageCryptService;
+import com.unmsm.patrones.service.ICryptBridgeService;
 
 /**
  *
  * @author bluq1
  */
-public class DefaultMessageCryptService implements IMessageCryptService{
+public class DefaultCryptBrigdeService implements ICryptBridgeService{
     private ICryptService encryptAlgorith;
     
-    public DefaultMessageCryptService(ICryptService encryptAlgorith){
+    public DefaultCryptBrigdeService(ICryptService encryptAlgorith){
         this.encryptAlgorith = encryptAlgorith;
     }
     

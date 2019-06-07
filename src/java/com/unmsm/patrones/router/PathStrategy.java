@@ -15,11 +15,11 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author bluq1
  */
-public abstract class Path {
+public abstract class PathStrategy {
     
     private String path;
 
-    public Path(String path) {
+    public PathStrategy(String path) {
         this.path = path;
     }
     

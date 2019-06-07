@@ -3,16 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.unmsm.patrones.repository;
-
-import com.unmsm.patrones.dto.Person;
-import java.util.List;
+package com.unmsm.patrones.service.facade;
 
 /**
  *
  * @author bluq1
- * @param <T>
  */
-public interface IPersonReadeable<T extends Person> {
-    List<T> findByCountryName(String nameParam);
+public interface IUserFacadeService {
+    
 }

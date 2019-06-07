@@ -4,6 +4,6 @@ package com.unmsm.patrones.service;
  *
  * @author bluq1
  */
-public interface IMessageCryptService {
+public interface ICryptBridgeService {
     public String encryptMessage(String message)throws Exception;
 }

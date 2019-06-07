@@ -3,13 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.unmsm.patrones.util;
+package com.unmsm.patrones.service.facade;
 
 /**
  *
  * @author bluq1
  */
-public class TypePerson {
-    public final static String CUSTOMER = "CUSTOMER";
-    public final static String STAFF = "STAFF";            
+public interface IAdminFacadeService {
+    
 }
