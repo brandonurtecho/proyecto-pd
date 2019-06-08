@@ -6,17 +6,24 @@
 package com.unmsm.patrones.dto;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  *
  * @author bluq1
  */
-public class Event {
+public class Sportsman {
     private String id;
-    private Date date;
+    private String firstName;
+    private String lastName;
+    private Country country; 
+    private Date birthdate;
+    private String genre;    
+    private Integer age;
+    private List<String> medalList;
     private Sport sport;
 
-    public Event() {
+    public Sportsman() {
     }
-    
+
 }

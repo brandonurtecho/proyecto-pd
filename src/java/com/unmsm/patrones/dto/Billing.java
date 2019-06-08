@@ -5,10 +5,19 @@
  */
 package com.unmsm.patrones.dto;
 
+import java.util.Date;
+
 /**
  *
  * @author bluq1
  */
 public class Billing {
+    private Payment payment;
+    private User user;
+    private Date transactionDate;
+
+    public Billing() {
+    }
+    
     
 }

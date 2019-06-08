@@ -5,10 +5,21 @@
  */
 package com.unmsm.patrones.dto;
 
+import java.util.Date;
+
 /**
  *
  * @author bluq1
  */
-public class Comment {
+public class Commentary {
+    private String id;
+    private String title;
+    private Date date;
+    private String body;
+    private Integer like;
+
+    public Commentary() {
+    }
+    
     
 }

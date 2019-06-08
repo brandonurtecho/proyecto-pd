@@ -19,15 +19,15 @@ import java.util.Locale;
  *
  * @author bluq1
  */
-public class Log {
+public class BillingTransactionLog {
 
-    private static Log instance;
+    private static BillingTransactionLog instance;
 
     private PrintWriter out;
     private DateFormat dt;
-    private static final String FILENAME = "transactions.txt";
+    private static final String FILENAME = "billingTransactions.txt";
 
-    private Log() {
+    private BillingTransactionLog() {
         try {
             out = new PrintWriter(new BufferedOutputStream(new FileOutputStream(FILENAME, true)), true);
             dt = DateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.DEFAULT, new Locale("es", "ES"));
@@ -36,9 +36,9 @@ public class Log {
         }
     }
 
-    public synchronized Log getInstance() {
+    public synchronized BillingTransactionLog getInstance() {
         if (instance == null) {
-            instance = new Log();
+            instance = new BillingTransactionLog();
         }
         return instance;
     }

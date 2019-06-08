@@ -7,7 +7,7 @@ package com.unmsm.patrones.repository.impl;
 
 import com.unmsm.patrones.connection.ConnectionSingleton;
 import com.unmsm.patrones.repository.ICountryReadeable;
-import com.unmsm.patrones.dto.Country;
+import com.unmsm.patrones.dto.CountryP;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -28,8 +28,8 @@ public class CountryDao implements ICountryReadeable{
     }
 
     @Override
-    public List<Country> selectAll() {
-        List<Country> listaCountry = new ArrayList<>();
+    public List<CountryP> selectAll() {
+        List<CountryP> listaCountry = new ArrayList<>();
         ConnectionSingleton connection = ConnectionSingleton.getInstance();
         try (
             PreparedStatement preparedStatement = 
@@ -39,7 +39,7 @@ public class CountryDao implements ICountryReadeable{
             ResultSet rs = preparedStatement.executeQuery();
 
             while (rs.next()) {
-                Country country = new Country.ContryBuilder()
+                CountryP country = new CountryP.ContryBuilder()
                         .setIdCountry(rs.getInt("country_id"))
                         .setCountry(rs.getString("country"))
                         .setLastUpdate(rs.getString("last_update"))

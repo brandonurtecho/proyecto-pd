@@ -5,7 +5,7 @@
  */
 package com.unmsm.patrones.repository;
 
-import com.unmsm.patrones.dto.Country;
+import com.unmsm.patrones.dto.CountryP;
 import java.util.List;
 
 /**
@@ -13,5 +13,5 @@ import java.util.List;
  * @author bluq1
  */
 public interface ICountryReadeable {
-    List<Country> selectAll();
+    List<CountryP> selectAll();
 }

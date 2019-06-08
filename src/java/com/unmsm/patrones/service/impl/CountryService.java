@@ -7,7 +7,7 @@ package com.unmsm.patrones.service.impl;
 
 import com.unmsm.patrones.repository.ICountryReadeable;
 import com.unmsm.patrones.repository.impl.CountryDao;
-import com.unmsm.patrones.dto.Country;
+import com.unmsm.patrones.dto.CountryP;
 import com.unmsm.patrones.service.ICountryService;
 import java.util.List;
 
@@ -25,7 +25,7 @@ public class CountryService implements ICountryService {
     }
         
     @Override
-    public List<Country> findAllCountries() {
+    public List<CountryP> findAllCountries() {
         return this.countryDao.selectAll();
     }
     

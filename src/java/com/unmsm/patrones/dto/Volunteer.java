@@ -10,5 +10,11 @@ package com.unmsm.patrones.dto;
  * @author bluq1
  */
 public class Volunteer {
+    private String id;
+    private String firstName;
+    private String lastName;
+
+    public Volunteer() {
+    }
     
 }

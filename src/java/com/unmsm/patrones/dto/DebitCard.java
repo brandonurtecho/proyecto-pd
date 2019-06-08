@@ -9,6 +9,6 @@ package com.unmsm.patrones.dto;
  *
  * @author bluq1
  */
-public class DebitCard {
-    
+public class DebitCard extends Card{
+    private static final String CARD_TYPE = "DEBIT";
 }

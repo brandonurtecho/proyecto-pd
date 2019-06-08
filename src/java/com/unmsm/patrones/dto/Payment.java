@@ -5,10 +5,28 @@
  */
 package com.unmsm.patrones.dto;
 
+import java.util.List;
+
 /**
  *
  * @author bluq1
  */
 public class Payment {
+    private String id;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String address;
+    private String optionalAddress;
+    private String country;
+    private String state;
+    private String zipCode;
+    private List<Event> eventList;
+    private Card card;
+    private Paypal paypal;
+
+    public Payment() {
+    }
+    
     
 }
