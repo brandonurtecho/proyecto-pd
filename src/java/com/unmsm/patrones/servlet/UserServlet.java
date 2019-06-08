@@ -7,12 +7,12 @@ package com.unmsm.patrones.servlet;
 
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet({"/ejemplo/*"})
-public class CustomerServlet extends GenericServlet {
+@WebServlet({"/principal/*"})
+public class UserServlet extends GenericServlet {
 
     @Override
     public String getServletInfo() {
-        return "Servlet Customer Controller, ruta base: /principal";
+        return "Servlet User Controller, ruta base: /principal";
     }
     
 }

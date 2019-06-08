@@ -18,7 +18,7 @@ import java.util.Map;
 public class CacheManagement {
     
     private static CacheManagement cache;
-    private Map<String, List> cacheMap;
+    private Map<String, List<?>> cacheMap;
         
     private CacheManagement() {
         CountryService countryService = new CountryService();
