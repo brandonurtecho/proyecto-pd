@@ -27,7 +27,7 @@ public class DefaultPath extends PathStrategy  {
 
     public DefaultPath(String path) {
         super(path);
-        countryService = CountryService.getInstance();
+        countryService = new CountryService();
     }
     
     @Override

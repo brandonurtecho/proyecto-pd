@@ -8,7 +8,8 @@ package com.unmsm.patrones.dto;
 /**
  *
  * @author bluq1
+ * @param <T>
  */
 public interface IBuilder<T> {
-    public T build();
+    T build();
 }

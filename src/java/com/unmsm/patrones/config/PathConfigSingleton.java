@@ -37,10 +37,19 @@ public class PathConfigSingleton {
     } 
     
     private void initPaths(){
+        initUserPath();
+        initAdminPath();
+    }
+    
+    private void initUserPath(){
         listPath.add(new DefaultPath(PathName.DEFAULT));
         listPath.add(new IndexPath(PathName.INDEX));
         listPath.add(new CustomerDetailPath(PathName.DETAIL_CUSTOMER));
         listPath.add(new StaffDetailPath(PathName.DETAIL_STAFF));
+    }
+    
+    private void initAdminPath(){
+        
     }
 
     public List<PathStrategy> getListPath() {

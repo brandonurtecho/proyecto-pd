@@ -20,17 +20,10 @@ public class StaffService implements IStaffService {
     private static IStaffService staffService;
     private IStaffReadeable staffDao;
 
-    private StaffService() {
+    public StaffService() {
         staffDao = new StaffDao();
     }
-    
-    public static IStaffService getInstance(){
-        if(staffService == null){
-            staffService = new StaffService();
-        }
-        return staffService;
-    }
-    
+        
     @Override
     public List<Staff> findCustomersByCountryName(String nameParam) {
         return staffDao.findByCountryName(nameParam);

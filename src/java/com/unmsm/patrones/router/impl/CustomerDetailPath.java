@@ -29,7 +29,7 @@ public class CustomerDetailPath extends PathStrategy {
 
     public CustomerDetailPath(String path) {
         super(path);
-        customerService = CustomerService.getInstance();
+        customerService = new CustomerService();
     }
     
     @Override

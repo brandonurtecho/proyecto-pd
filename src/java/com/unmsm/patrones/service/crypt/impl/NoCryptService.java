@@ -1,6 +1,6 @@
-package com.unmsm.patrones.service.crypt;
+package com.unmsm.patrones.service.crypt.impl;
 
-import com.unmsm.patrones.service.ICryptService;
+import com.unmsm.patrones.service.crypt.ICryptService;
 
 /**
  *

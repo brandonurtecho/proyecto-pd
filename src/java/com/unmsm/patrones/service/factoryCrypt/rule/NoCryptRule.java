@@ -3,25 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.unmsm.patrones.service.factoryCrypt;
+package com.unmsm.patrones.service.factoryCrypt.rule;
 
-import com.unmsm.patrones.service.crypt.AESCryptService;
+import com.unmsm.patrones.service.crypt.impl.NoCryptService;
 import com.unmsm.patrones.util.TypeCrypt;
 
 /**
  *
  * @author bluq1
  */
-public class AESCryptRule implements ICryptRule<AESCryptService> {
+public class NoCryptRule implements ICryptRule<NoCryptService> {
 
     @Override
     public Boolean isMatch(String type) {
-        return type.equals(TypeCrypt.AES);
+        return type.equals(TypeCrypt.NONE);
     }
 
     @Override
-    public AESCryptService getObject() {
-        return new AESCryptService();
+    public NoCryptService getObject() {
+        return new NoCryptService();
     }
     
 }

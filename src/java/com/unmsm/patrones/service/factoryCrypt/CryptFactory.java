@@ -5,7 +5,11 @@
  */
 package com.unmsm.patrones.service.factoryCrypt;
 
-import com.unmsm.patrones.service.ICryptService;
+import com.unmsm.patrones.service.factoryCrypt.rule.ICryptRule;
+import com.unmsm.patrones.service.factoryCrypt.rule.DESCryptRule;
+import com.unmsm.patrones.service.factoryCrypt.rule.NoCryptRule;
+import com.unmsm.patrones.service.factoryCrypt.rule.AESCryptRule;
+import com.unmsm.patrones.service.crypt.ICryptService;
 import java.util.ArrayList;
 import java.util.List;
 

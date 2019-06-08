@@ -20,17 +20,10 @@ public class CountryService implements ICountryService {
     private static ICountryService countryService;
     private ICountryReadeable countryDao;
 
-    private CountryService() {
+    public CountryService() {
         countryDao = new CountryDao();
     }
-    
-    public static ICountryService getInstance(){
-        if(countryService == null){
-            countryService = new CountryService();
-        }
-        return countryService;
-    }
-    
+        
     @Override
     public List<Country> findAllCountries() {
         return this.countryDao.selectAll();

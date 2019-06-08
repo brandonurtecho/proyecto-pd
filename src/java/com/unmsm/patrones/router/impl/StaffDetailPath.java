@@ -29,7 +29,7 @@ public class StaffDetailPath extends PathStrategy {
 
     public StaffDetailPath(String path) {
         super(path);
-        staffService = StaffService.getInstance();
+        staffService = new StaffService();
     }
     
     @Override

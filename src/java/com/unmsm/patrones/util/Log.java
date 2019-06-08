@@ -25,7 +25,7 @@ public class Log {
 
     private PrintWriter out;
     private DateFormat dt;
-    private static final String FILENAME = "tracer.txt";
+    private static final String FILENAME = "transactions.txt";
 
     private Log() {
         try {

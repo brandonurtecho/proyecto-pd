@@ -20,17 +20,10 @@ public class CustomerService implements ICustomerService {
     private static ICustomerService customerService;
     private ICustomerReadeable customerDao;
 
-    private CustomerService() {
+    public CustomerService() {
         customerDao = new CustomerDao();
     }
-    
-    public static ICustomerService getInstance(){
-        if(customerService == null){
-            customerService = new CustomerService();
-        }
-        return customerService;
-    }
-    
+        
     @Override
     public List<Customer> findCustomersByCountryName(String nameParam) {
         return customerDao.findByCountryName(nameParam);

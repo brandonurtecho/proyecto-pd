@@ -21,8 +21,9 @@ public class CacheManagement {
     private Map<String, List> cacheMap;
         
     private CacheManagement() {
+        CountryService countryService = new CountryService();
         cacheMap = new HashMap<>();
-        cacheMap.put(CacheName.COUNTRY, CountryService.getInstance().findAllCountries());
+        cacheMap.put(CacheName.COUNTRY, countryService.findAllCountries());
     }
     
     public static CacheManagement getInstance(){

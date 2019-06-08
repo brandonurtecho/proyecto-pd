@@ -3,25 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.unmsm.patrones.service.factoryCrypt;
+package com.unmsm.patrones.service.factoryCrypt.rule;
 
-import com.unmsm.patrones.service.crypt.NoCryptService;
+import com.unmsm.patrones.service.crypt.impl.DESCryptService;
 import com.unmsm.patrones.util.TypeCrypt;
 
 /**
  *
  * @author bluq1
  */
-public class NoCryptRule implements ICryptRule<NoCryptService> {
+public class DESCryptRule implements ICryptRule<DESCryptService> {
 
     @Override
     public Boolean isMatch(String type) {
-        return type.equals(TypeCrypt.NONE);
+        return type.equals(TypeCrypt.DES);
     }
 
     @Override
-    public NoCryptService getObject() {
-        return new NoCryptService();
+    public DESCryptService getObject() {
+        return new DESCryptService();
     }
     
 }
