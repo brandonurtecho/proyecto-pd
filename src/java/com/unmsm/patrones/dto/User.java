@@ -5,58 +5,19 @@
  */
 package com.unmsm.patrones.dto;
 
+import com.unmsm.patrones.util.TypePerson;
 import java.util.Date;
 
 /**
  *
  * @author bluq1
  */
-public class User {
-    private String id;
-    private String name;
-    private String lastName;
+public class User extends Person {
     private String email;
     private String password;
     private Date birthdate;
     private String genre;
-
-    public User() {
-    }
-
-    public User(String id, String name, String lastName, String email, String password, Date birthdate, String genre) {
-        this.id = id;
-        this.name = name;
-        this.lastName = lastName;
-        this.email = email;
-        this.password = password;
-        this.birthdate = birthdate;
-        this.genre = genre;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getId() {
-        return id;
-    }
     
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -91,8 +52,12 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" + "id=" + id + ", name=" + name + ", lastName=" + lastName + ", email=" + email + ", password=" + password + ", birthdate=" + birthdate + ", genre=" + genre + '}';
+        return "User{" + "email=" + email + ", password=" + password + ", birthdate=" + birthdate + ", genre=" + genre + '}';
     }
 
-    
+    @Override
+    public String getType() {
+        return TypePerson.USER;
+    }
+
 }

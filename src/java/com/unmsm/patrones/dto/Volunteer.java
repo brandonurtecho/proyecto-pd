@@ -5,16 +5,17 @@
  */
 package com.unmsm.patrones.dto;
 
+import com.unmsm.patrones.util.TypePerson;
+
 /**
  *
  * @author bluq1
  */
-public class Volunteer {
-    private String id;
-    private String firstName;
-    private String lastName;
-
-    public Volunteer() {
-    }
+public class Volunteer extends Person {
     
+    @Override
+    public String getType() {
+        return TypePerson.VOLUNTEER;
+    }
+
 }
