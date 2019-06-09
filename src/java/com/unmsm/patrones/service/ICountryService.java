@@ -5,7 +5,7 @@
  */
 package com.unmsm.patrones.service;
 
-import com.unmsm.patrones.dto.CountryP;
+import com.unmsm.patrones.dto.Country;
 import java.util.List;
 
 /**
@@ -13,5 +13,5 @@ import java.util.List;
  * @author LaboratorioFISI
  */
 public interface ICountryService {
-    List<CountryP> findAllCountries();
+    List<Country> findAllCountries();
 }

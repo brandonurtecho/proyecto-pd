@@ -13,6 +13,7 @@ import com.unmsm.patrones.dto.Sport;
 import com.unmsm.patrones.repository.ISportRepository;
 import com.unmsm.patrones.util.TypeCollections;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import org.bson.Document;
 
@@ -32,12 +33,10 @@ public class SportDao implements ISportRepository {
         try {
             while (cursor.hasNext()) {
                 Document doc = cursor.next();
-                Sport sport = new Sport();
-                
-                sport.setId(doc.get("_id").toString());
-                sport.setHistory(doc.getString("history"));
-                sport.setOverView(doc.getString("overView"));
-                sport.setTitle(doc.getString("title"));
+                Sport sport = new Sport.SportBuilder().setId(doc.get("_id").toString())
+                                .setHistory(doc.getString("history"))
+                                .setOverView(doc.getString("overView"))
+                                .setTitle(doc.getString("title")).build();
                 
                 list.add(sport);
             }
@@ -45,20 +44,24 @@ public class SportDao implements ISportRepository {
             cursor.close();
         }
         
-        return list;
+        return list.size() > 0 ? list : Arrays.asList(Sport.NULL_SPORT);
     }
 
     @Override
     public Sport getByTitle(String title) {
         Document doc = (Document) collection.find(eq("title", title)).first();
-        Sport sport = new Sport();
+        Sport sport = null;
         
-        sport.setId(doc.get("_id").toString());
-        sport.setHistory(doc.getString("history"));
-        sport.setOverView(doc.getString("overView"));
-        sport.setTitle(doc.getString("title"));
-
-        return sport;
+        try {
+            sport = new Sport.SportBuilder().setId(doc.get("_id").toString())
+                            .setHistory(doc.getString("history"))
+                            .setOverView(doc.getString("overView"))
+                            .setTitle(doc.getString("title")).build();
+        } catch(Exception e) {
+            System.out.println(e);
+        }
+        
+        return sport != null ? sport : Sport.NULL_SPORT;
     }
     
 }

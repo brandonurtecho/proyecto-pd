@@ -23,8 +23,13 @@ public class UserService implements IUserService{
     }
     
     @Override
-    public Boolean login(User user) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Boolean login(String email, String password) {
+        User user = this.userRepository.getByEmail(email);
+        if (!user.getId().equals("0") && user.getPassword().equals(password)) {
+            return Boolean.TRUE;
+        } else {
+            return Boolean.FALSE;
+        }
     }
 
     @Override

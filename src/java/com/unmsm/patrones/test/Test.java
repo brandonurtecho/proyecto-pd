@@ -12,10 +12,18 @@ import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 import static com.mongodb.client.model.Filters.eq;
 import com.unmsm.patrones.connection.Connection;
+import com.unmsm.patrones.dto.Commentary;
 import com.unmsm.patrones.dto.User;
 import com.unmsm.patrones.repository.IUserReadeable;
+import com.unmsm.patrones.repository.IUserRepository;
 import com.unmsm.patrones.repository.impl.UserDao;
+import com.unmsm.patrones.service.ICommentaryService;
+import com.unmsm.patrones.service.IUserService;
+import com.unmsm.patrones.service.impl.CommentaryService;
+import com.unmsm.patrones.service.impl.UserService;
+import com.unmsm.patrones.util.Cast;
 import com.unmsm.patrones.util.TypeCollections;
+import com.unmsm.patrones.util.TypeSport;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
@@ -34,13 +42,25 @@ public class Test {
      */
     public static void main(String[] args) throws ParseException {
         
-        MongoCollection collection = Connection.getConnection().getCollection(TypeCollections.COMMENTS);
+        MongoCollection collection = Connection.getConnection().getCollection(TypeCollections.USERS);
         
-        Document doc = new Document("name", "MongoDB")
-                .append("type", "database")
-                .append("count", 1)
-                .append("versions", Arrays.asList("v3.2", "v3.0", "v2.6"))
-                .append("info", new Document("x", 203).append("y", 102));
+        ICommentaryService service = new CommentaryService();
+        List<Commentary> list = service.showCommentaryBySport(TypeSport.FUTBOL);
+        for (Commentary com : list) {
+            System.out.println(com);
+        }
+        
+        System.out.println("");
+        list = service.showCommentaryBySport(TypeSport.BASKETBALL);
+        for (Commentary com : list) {
+            System.out.println(com);
+        }
+        
+//        Document doc = new Document("name", "MongoDB")
+//                .append("type", "database")
+//                .append("count", 1)
+//                .append("versions", Arrays.asList("v3.2", "v3.0", "v2.6"))
+//                .append("info", new Document("x", 203).append("y", 102));
 //        
 //        Document d = new Document("email", "diego.vera@unmsm.edu.pe")
 //                .append("password", "12345")
@@ -51,8 +71,14 @@ public class Test {
         //collection.insertOne(d);
         //System.out.println(collection.find(eq("email", "diego.vera@unmsm.edu.pe")).first());
         
-        
-        
+//        User user = userRepository.getByEmail("diego.vera@unmsm.edu.pe");
+//        if (user != null) {
+//            System.out.println(user);
+//        } else {
+//            System.out.println("no se encontro");
+//        }
+
+
         
         // INSERT
         //Document d = new Document("email", "diego.vera@unmsm.edu.pe")
@@ -85,8 +111,8 @@ public class Test {
         // FIND ONE
         //Document myDoc = (Document) collection.find(eq("email", "dvera1096@gmail.com")).first();
         
-        Document myDoc = (Document) collection.find(eq("_id", new ObjectId("5cfcaa5be7179a4e4321bd84"))).first();
-        System.out.println(myDoc);
+        //Document myDoc = (Document) collection.find(eq("_id", new ObjectId("5cfcaa5be7179a4e4321bd84"))).first();
+        //System.out.println(myDoc);
     }
     
 }

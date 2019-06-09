@@ -17,6 +17,7 @@ import com.unmsm.patrones.util.TypeCollections;
 import com.unmsm.patrones.util.TypePerson;
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -57,7 +58,7 @@ public class UserDao implements IUserRepository {
             cursor.close();
         }
         
-        return list;
+        return list.size() > 0 ? list :Arrays.asList(User.NULL_USER);
     }
 
     @Override
@@ -65,20 +66,21 @@ public class UserDao implements IUserRepository {
         Document doc = (Document) collection.find(eq("email", email)).first();
         User user = personFactory.getPerson(TypePerson.USER);
         
-        user.setId(doc.get("_id").toString());
-        user.setEmail(doc.getString("email"));
-        user.setPassword(doc.getString("password"));
-        user.setGenre(doc.getString("genre"));
-        user.setName(doc.getString("name"));
-        user.setLastname(doc.getString("lastname"));
-        
-        try {
-            user.setBirthdate(Cast.stringToDate(doc.getString("birthdate")));
-        } catch (ParseException ex) {
-            Logger.getLogger(UserDao.class.getName()).log(Level.SEVERE, null, ex);
+        if (doc != null) {
+            try {
+                user.setId(doc.get("_id").toString());
+                user.setEmail(doc.getString("email"));
+                user.setPassword(doc.getString("password"));
+                user.setGenre(doc.getString("genre"));
+                user.setName(doc.getString("name"));
+                user.setLastname(doc.getString("lastname"));
+                user.setBirthdate(Cast.stringToDate(doc.getString("birthdate")));
+            } catch (ParseException ex) {
+                Logger.getLogger(UserDao.class.getName()).log(Level.SEVERE, null, ex);
+            }    
         }
         
-        return user;
+        return doc != null ? user : User.NULL_USER;
     }
 
     @Override

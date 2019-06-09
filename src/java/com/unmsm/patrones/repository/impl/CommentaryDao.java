@@ -15,6 +15,7 @@ import com.unmsm.patrones.util.Cast;
 import com.unmsm.patrones.util.TypeCollections;
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -37,14 +38,14 @@ public class CommentaryDao implements ICommentaryRepository{
         try {
             while (cursor.hasNext()) {
                 Document doc = cursor.next();
-                Commentary commentary = new Commentary();
-                
-                commentary.setId(doc.get("_id").toString());
-                commentary.setBody(doc.getString("body"));
-                commentary.setDate(Cast.stringToDate(doc.getString("date")));
-                commentary.setLike(doc.getInteger("like"));
-                commentary.setSport(doc.getString("sport"));
-                commentary.setTitle(doc.getString("title"));
+                Commentary commentary = new Commentary.CommentaryBuilder()
+                            .setId(doc.get("_id").toString())
+                            .setBody(doc.getString("body"))
+                            .setDate(Cast.stringToDate(doc.getString("date")))
+                            .setLike(doc.getInteger("like"))
+                            .setSport(doc.getString("sport"))
+                            .setTitle(doc.getString("title"))
+                            .build();
                 
                 list.add(commentary);
             }
@@ -54,7 +55,7 @@ public class CommentaryDao implements ICommentaryRepository{
             cursor.close();
         }
         
-        return list;
+        return list.size() > 0 ? list : Arrays.asList(Commentary.NULL_COMMENTARY);
     }
 
     @Override
@@ -65,14 +66,15 @@ public class CommentaryDao implements ICommentaryRepository{
         try {
             while (cursor.hasNext()) {
                 Document doc = cursor.next();
-                Commentary commentary = new Commentary();
                 
-                commentary.setId(doc.get("_id").toString());
-                commentary.setBody(doc.getString("body"));
-                commentary.setDate(Cast.stringToDate(doc.getString("date")));
-                commentary.setLike(doc.getInteger("like"));
-                commentary.setSport(doc.getString("sport"));
-                commentary.setTitle(doc.getString("title"));
+                Commentary commentary = new Commentary.CommentaryBuilder()
+                            .setId(doc.get("_id").toString())
+                            .setBody(doc.getString("body"))
+                            .setDate(Cast.stringToDate(doc.getString("date")))
+                            .setLike(doc.getInteger("like"))
+                            .setSport(doc.getString("sport"))
+                            .setTitle(doc.getString("title"))
+                            .build();
                 
                 list.add(commentary);
             }
@@ -82,7 +84,7 @@ public class CommentaryDao implements ICommentaryRepository{
             cursor.close();
         }
         
-        return list;
+        return list.size() > 0 ? list : Arrays.asList(Commentary.NULL_COMMENTARY);
     }
 
     @Override

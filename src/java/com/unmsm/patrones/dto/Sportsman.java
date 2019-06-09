@@ -6,6 +6,8 @@
 package com.unmsm.patrones.dto;
 
 import com.unmsm.patrones.util.TypePerson;
+import java.time.Instant;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -21,6 +23,76 @@ public class Sportsman extends Person{
     private List<String> medalList;
     private Sport sport;
 
+    public Sportsman(){}
+    
+    public Sportsman(Country country, Date birthdate, String genre, Integer age, List<String> medalList, Sport sport) {
+        this.country = country;
+        this.birthdate = birthdate;
+        this.genre = genre;
+        this.age = age;
+        this.medalList = medalList;
+        this.sport = sport;
+    }
+
+    public Sportsman(Country country, Date birthdate, String genre, Integer age, List<String> medalList, Sport sport, String id, String name, String lastname) {
+        super(id, name, lastname);
+        this.country = country;
+        this.birthdate = birthdate;
+        this.genre = genre;
+        this.age = age;
+        this.medalList = medalList;
+        this.sport = sport;
+    }
+
+    public static final Sportsman NULL_SPORTSMAN = new Sportsman() {
+        @Override
+        public String getId() {
+            return "0";
+        }
+        
+        @Override
+        public String getName() {
+            return "NULL NAME";
+        }
+        
+        @Override
+        public String getLastname() {
+            return "NULL LASTNAME";
+        }
+        
+        @Override
+        public Country getCountry() {
+            return Country.NULL_COUNTRY;
+        }
+
+        @Override
+        public Date getBirthdate() {
+            return Date.from(Instant.MIN);
+        }
+
+        @Override
+        public String getGenre() {
+            return "SOLO EXISTE 2 GENEROS";
+        }
+
+        @Override
+        public Integer getAge() {
+            return 0;
+        }
+
+        @Override
+        public List<String> getMedalList() {
+            List<String> list = new ArrayList<>();
+            list.add("NULL LIST");
+            return list;
+        }
+
+        @Override
+        public Sport getSport() {
+            return Sport.NULL_SPORT;
+        }    
+    };
+    
     public Country getCountry() {
         return country;
     }
@@ -79,4 +151,69 @@ public class Sportsman extends Person{
         return TypePerson.SPORTSMAN;
     }
 
+    public static class SportsmanBuilder implements IBuilder<Sportsman> {
+        private String id;
+        private String name;
+        private String lastname;
+        private Country country; 
+        private Date birthdate;
+        private String genre;    
+        private Integer age;
+        private List<String> medalList;
+        private Sport sport;
+
+        public SportsmanBuilder() {
+        }
+
+        public SportsmanBuilder setCountry(Country country) {
+            this.country = country;
+            return this;
+        }
+
+        public SportsmanBuilder setBirthdate(Date birthdate) {
+            this.birthdate = birthdate;
+            return this;
+        }
+
+        public SportsmanBuilder setGenre(String genre) {
+            this.genre = genre;
+            return this;
+        }
+
+        public SportsmanBuilder setAge(Integer age) {
+            this.age = age;
+            return this;
+        }
+
+        public SportsmanBuilder setMedalList(List<String> medalList) {
+            this.medalList = medalList;
+            return this;
+        }
+
+        public SportsmanBuilder setSport(Sport sport) {
+            this.sport = sport;
+            return this;
+        }
+
+        public SportsmanBuilder setId(String id) {
+            this.id = id;
+            return this;
+        }
+
+        public SportsmanBuilder setName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public SportsmanBuilder setLastname(String lastname) {
+            this.lastname = lastname;
+            return this;
+        }
+        
+        @Override
+        public Sportsman build() {
+            return new Sportsman(country, birthdate, genre, age, medalList, sport, id, name, lastname);
+        }
+        
+    }
 }
