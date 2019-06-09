@@ -5,22 +5,40 @@
  */
 package com.unmsm.patrones.dto;
 
+import com.unmsm.patrones.util.TypePerson;
+
 /**
  *
  * @author bluq1
  */
-public class Admin {
-    private String id;
+public class Admin extends Person {
     private String email;
     private String password;
 
-    public Admin() {
+    public String getEmail() {
+        return email;
     }
 
-    public Admin(String id, String email, String password) {
-        this.id = id;
+    public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "Admin{" + "email=" + email + ", password=" + password + '}';
+    }
+
+    @Override
+    public String getType() {
+        return TypePerson.ADMIN;
     }
     
 }
