@@ -6,7 +6,7 @@
 package com.unmsm.patrones.router.impl;
 
 import com.unmsm.patrones.service.ICountryService;
-import com.unmsm.patrones.service.impl.CountryService;
+//import com.unmsm.patrones.service.impl.CountryService;
 import com.unmsm.patrones.router.PathStrategy;
 import com.unmsm.patrones.util.Jsp;
 import com.unmsm.patrones.util.PathName;
@@ -27,7 +27,7 @@ public class DefaultPath extends PathStrategy  {
 
     public DefaultPath(String path) {
         super(path);
-        countryService = new CountryService();
+        //countryService = new CountryService();
     }
     
     @Override

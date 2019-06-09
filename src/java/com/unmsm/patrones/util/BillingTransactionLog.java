@@ -36,7 +36,7 @@ public class BillingTransactionLog {
         }
     }
 
-    public synchronized BillingTransactionLog getInstance() {
+    public static synchronized BillingTransactionLog getInstance() {
         if (instance == null) {
             instance = new BillingTransactionLog();
         }
@@ -44,11 +44,11 @@ public class BillingTransactionLog {
     }
 
     public synchronized void addLine(String msg) {
-        out.print(dt.format(new Date()));
-        out.println(": " + msg);
+        //out.print(dt.format(new Date()));
+        out.println(msg);
     }
 
-    public BufferedReader getContent() {
+    private BufferedReader getBuffer() {
         BufferedReader result = null;
         try {
             result = new BufferedReader(new FileReader(FILENAME));

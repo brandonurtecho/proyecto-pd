@@ -3,15 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.unmsm.patrones.repository;
+package com.unmsm.patrones.service;
 
-import com.unmsm.patrones.dto.CountryP;
+import com.unmsm.patrones.dto.Sport;
 import java.util.List;
 
 /**
  *
  * @author bluq1
  */
-public interface ICountryReadeable {
-    List<CountryP> selectAll();
+public interface ISportService {
+    List<Sport> showAllSports();
+    Sport showSportBySport(String sport);
 }

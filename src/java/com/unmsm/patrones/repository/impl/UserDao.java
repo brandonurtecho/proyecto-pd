@@ -11,7 +11,7 @@ import static com.mongodb.client.model.Filters.eq;
 import com.unmsm.patrones.connection.Connection;
 import com.unmsm.patrones.dto.User;
 import com.unmsm.patrones.dto.factory.PersonFactory;
-import com.unmsm.patrones.repository.IUserReadeable;
+import com.unmsm.patrones.repository.IUserRepository;
 import com.unmsm.patrones.util.Cast;
 import com.unmsm.patrones.util.TypeCollections;
 import com.unmsm.patrones.util.TypePerson;
@@ -26,7 +26,7 @@ import org.bson.Document;
  *
  * @author diego
  */
-public class UserDao implements IUserReadeable {
+public class UserDao implements IUserRepository {
 
     MongoCollection collection = Connection.getConnection().getCollection(TypeCollections.USERS);
     PersonFactory<User> personFactory = new PersonFactory<>();

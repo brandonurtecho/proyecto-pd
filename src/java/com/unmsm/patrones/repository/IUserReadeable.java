@@ -12,7 +12,7 @@ import java.util.List;
  *
  * @author diego
  */
-public interface IUserReadeable extends IUserRepository{
+public interface IUserReadeable {
     List<User> getAll();
     User getByEmail(String email);
 }

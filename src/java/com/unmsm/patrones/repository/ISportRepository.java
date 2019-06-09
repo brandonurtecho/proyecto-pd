@@ -9,6 +9,6 @@ package com.unmsm.patrones.repository;
  *
  * @author diego
  */
-public interface ISportRepository {
+public interface ISportRepository extends ISportReadeable{
     
 }

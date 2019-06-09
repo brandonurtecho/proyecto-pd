@@ -10,5 +10,5 @@ package com.unmsm.patrones.dto;
  * @author bluq1
  */
 public class Session {
-    
+
 }

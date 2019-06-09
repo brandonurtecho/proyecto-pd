@@ -10,7 +10,7 @@ import com.mongodb.client.MongoCursor;
 import static com.mongodb.client.model.Filters.eq;
 import com.unmsm.patrones.connection.Connection;
 import com.unmsm.patrones.dto.Commentary;
-import com.unmsm.patrones.repository.ICommentaryReadeable;
+import com.unmsm.patrones.repository.ICommentaryRepository;
 import com.unmsm.patrones.util.Cast;
 import com.unmsm.patrones.util.TypeCollections;
 import java.text.ParseException;
@@ -25,7 +25,7 @@ import org.bson.types.ObjectId;
  *
  * @author diego
  */
-public class CommentaryDao implements ICommentaryReadeable{
+public class CommentaryDao implements ICommentaryRepository{
 
     MongoCollection collection = Connection.getConnection().getCollection(TypeCollections.COMMENTS);
     

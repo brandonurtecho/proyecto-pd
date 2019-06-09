@@ -5,7 +5,7 @@
  */
 package com.unmsm.patrones.cache;
 
-import com.unmsm.patrones.service.impl.CountryService;
+//import com.unmsm.patrones.service.impl.CountryService;
 import com.unmsm.patrones.util.CacheName;
 import java.util.HashMap;
 import java.util.List;
@@ -21,9 +21,9 @@ public class CacheManagement {
     private Map<String, List<?>> cacheMap;
         
     private CacheManagement() {
-        CountryService countryService = new CountryService();
+        //CountryService countryService = new CountryService();
         cacheMap = new HashMap<>();
-        cacheMap.put(CacheName.COUNTRY, countryService.findAllCountries());
+        //cacheMap.put(CacheName.COUNTRY, countryService.findAllCountries());
     }
     
     public static CacheManagement getInstance(){

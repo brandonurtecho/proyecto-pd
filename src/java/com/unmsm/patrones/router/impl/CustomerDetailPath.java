@@ -8,7 +8,7 @@ package com.unmsm.patrones.router.impl;
 import com.unmsm.patrones.dto.Customer;
 import com.unmsm.patrones.router.PathStrategy;
 import com.unmsm.patrones.service.ICustomerService;
-import com.unmsm.patrones.service.impl.CustomerService;
+//import com.unmsm.patrones.service.impl.CustomerService;
 import com.unmsm.patrones.util.Jsp;
 import com.unmsm.patrones.util.PathName;
 import java.io.IOException;
@@ -29,7 +29,7 @@ public class CustomerDetailPath extends PathStrategy {
 
     public CustomerDetailPath(String path) {
         super(path);
-        customerService = new CustomerService();
+        //customerService = new CustomerService();
     }
     
     @Override

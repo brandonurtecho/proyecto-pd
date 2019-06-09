@@ -12,7 +12,7 @@ import java.util.List;
  *
  * @author diego
  */
-public interface ISportReadeable extends ISportRepository{
+public interface ISportReadeable{
     List<Sport> getAll();
     Sport getByTitle(String Title);
 }

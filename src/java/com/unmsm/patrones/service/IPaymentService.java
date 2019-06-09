@@ -3,15 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.unmsm.patrones.repository;
-
-import com.unmsm.patrones.dto.Staff;
-import java.util.List;
+package com.unmsm.patrones.service;
 
 /**
  *
  * @author bluq1
  */
-public interface IStaffReadeable {
-    List<Staff> findByCountryName(String nameParam);
+public interface IPaymentService {
+    
 }

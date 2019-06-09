@@ -12,7 +12,7 @@ import java.util.List;
  *
  * @author diego
  */
-public interface ICommentaryReadeable extends ICommentaryRepository{
+public interface ICommentaryReadeable{
     List<Commentary> getAll();
     List<Commentary> getBySport(String sport);
 }

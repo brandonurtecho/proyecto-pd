@@ -11,7 +11,7 @@ import com.unmsm.patrones.dto.User;
  *
  * @author diego
  */
-public interface IUserRepository {
+public interface IUserRepository extends IUserReadeable {
     void insert(User user);
     long update(User user);
     long delete(String email);

@@ -3,15 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.unmsm.patrones.repository;
+package com.unmsm.patrones.service.impl;
 
-import com.unmsm.patrones.dto.Customer;
-import java.util.List;
+import com.unmsm.patrones.service.IPaymentService;
 
 /**
  *
  * @author bluq1
  */
-public interface ICustomerReadeable {
-    List<Customer> findByCountryName(String nameParam);
+public class PaymentService implements IPaymentService{
+    
 }

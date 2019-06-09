@@ -10,23 +10,17 @@ import com.mongodb.client.MongoCursor;
 import static com.mongodb.client.model.Filters.eq;
 import com.unmsm.patrones.connection.Connection;
 import com.unmsm.patrones.dto.Sport;
-import com.unmsm.patrones.dto.User;
-import com.unmsm.patrones.repository.ISportReadeable;
-import com.unmsm.patrones.util.Cast;
+import com.unmsm.patrones.repository.ISportRepository;
 import com.unmsm.patrones.util.TypeCollections;
-import com.unmsm.patrones.util.TypePerson;
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.bson.Document;
 
 /**
  *
  * @author diego
  */
-public class SportDao implements ISportReadeable {
+public class SportDao implements ISportRepository {
 
     MongoCollection collection = Connection.getConnection().getCollection(TypeCollections.SPORTS);
     

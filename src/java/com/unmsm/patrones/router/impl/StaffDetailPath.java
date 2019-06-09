@@ -17,7 +17,7 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import com.unmsm.patrones.service.impl.StaffService;
+//import com.unmsm.patrones.service.impl.StaffService;
 
 /**
  *
@@ -29,7 +29,7 @@ public class StaffDetailPath extends PathStrategy {
 
     public StaffDetailPath(String path) {
         super(path);
-        staffService = new StaffService();
+        //staffService = new StaffService();
     }
     
     @Override
