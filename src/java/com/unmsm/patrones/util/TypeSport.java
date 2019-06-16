@@ -10,6 +10,8 @@ package com.unmsm.patrones.util;
  * @author diego
  */
 public class TypeSport {
+    public final static String PANAMERICANO_SPORT = "Panamericano sport";
+    public final static String PARAPANAMERICANO_SPORT = "Parapanamericano sport";
     public final static String FUTBOL = "futbol";
     public final static String BASKETBALL = "basketball";
 }

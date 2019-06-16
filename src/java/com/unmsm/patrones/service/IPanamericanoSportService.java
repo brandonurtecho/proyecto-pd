@@ -5,6 +5,7 @@
  */
 package com.unmsm.patrones.service;
 
+import com.unmsm.patrones.dto.PanamericanoSport;
 import com.unmsm.patrones.dto.Sport;
 import java.util.List;
 
@@ -12,7 +13,7 @@ import java.util.List;
  *
  * @author bluq1
  */
-public interface ISportService {
-    List<Sport> showAllSports();
-    Sport showSportBySport(String sport);
+public interface IPanamericanoSportService {
+    List<PanamericanoSport> showAllSports();
+    PanamericanoSport showSportById(String id);
 }

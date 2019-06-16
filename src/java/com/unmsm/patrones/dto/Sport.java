@@ -9,20 +9,22 @@ package com.unmsm.patrones.dto;
  *
  * @author bluq1
  */
-public class Sport {
+public abstract class Sport {
     private String id;
     private String title;
     private String overView;
-    private String history;    
+    private String history;
+    private String image;
 
     public Sport() {
     }
 
-    public Sport(String id, String title, String overView, String history) {
+    public Sport(String id, String title, String overView, String history, String image) {
         this.id = id;
         this.title = title;
         this.overView = overView;
         this.history = history;
+        this.image = image;
     }
     
     public static final Sport NULL_SPORT = new Sport() {
@@ -45,6 +47,16 @@ public class Sport {
         public String getHistory() {
             return "NULL HISTORY";
         }    
+        
+        @Override
+        public String getImage() {
+            return "assets/img/NOT_FOUND.jpg";
+        }
+
+        @Override
+        public String getType() {
+            return "NULL TYPE";
+        }
     };
 
     public String getId() {
@@ -79,39 +91,19 @@ public class Sport {
         this.history = history;
     }
 
-    public static class SportBuilder implements IBuilder<Sport> {
-        private String id;
-        private String title;
-        private String overView;
-        private String history;    
-
-        public SportBuilder() {
-        }
-
-        public SportBuilder setId(String id) {
-            this.id = id;
-            return this;
-        }
-
-        public SportBuilder setTitle(String title) {
-            this.title = title;
-            return this;
-        }
-
-        public SportBuilder setOverView(String overView) {
-            this.overView = overView;
-            return this;
-        }
-
-        public SportBuilder setHistory(String history) {
-            this.history = history;
-            return this;
-        }
-        
-        @Override
-        public Sport build() {
-            return new Sport(id, title, overView, history);
-        }
-        
+    public String getImage() {
+        return image;
     }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public abstract String getType();
+
+    @Override
+    public String toString() {
+        return "Sport{" + "id=" + id + ", title=" + title + ", overView=" + overView + ", history=" + history + ", image=" + image + '}';
+    }
+    
 }

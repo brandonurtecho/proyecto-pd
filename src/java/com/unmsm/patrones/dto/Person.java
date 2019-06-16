@@ -21,28 +21,6 @@ public abstract class Person {
         this.name = name;
         this.lastname = lastname;
     }
-
-    public static final Person NULL_PERSON = new Person() {
-        @Override
-        public String getId() {
-            return "0";
-        }
-
-        @Override
-        public String getName() {
-            return "NULL NAME";
-        }
-
-        @Override
-        public String getLastname() {
-            return "NULL LASTNAME";
-        }    
-
-        @Override
-        public String getType() {
-            return "NULL TYPE";
-        }
-    };
     
     public String getId() {
         return id;

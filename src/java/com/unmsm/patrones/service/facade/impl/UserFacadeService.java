@@ -13,14 +13,14 @@ import com.unmsm.patrones.dto.Sportsman;
 import com.unmsm.patrones.dto.User;
 import com.unmsm.patrones.service.ICommentaryService;
 import com.unmsm.patrones.service.IPaymentService;
-import com.unmsm.patrones.service.ISportService;
 import com.unmsm.patrones.service.IUserService;
 import com.unmsm.patrones.service.facade.IUserFacadeService;
 import com.unmsm.patrones.service.impl.CommentaryService;
 import com.unmsm.patrones.service.impl.PaymentService;
-import com.unmsm.patrones.service.impl.SportService;
+import com.unmsm.patrones.service.impl.PanamericanoSportService;
 import com.unmsm.patrones.service.impl.UserService;
 import java.util.List;
+import com.unmsm.patrones.service.IPanamericanoSportService;
 
 /**
  *
@@ -30,13 +30,13 @@ public class UserFacadeService implements IUserFacadeService {
     
     private ICommentaryService commentaryService;
     private IPaymentService paymentService;
-    private ISportService sportService;
+    private IPanamericanoSportService sportService;
     private IUserService userService;
 
     public UserFacadeService() {
         this.commentaryService = new CommentaryService();
         this.paymentService = new PaymentService() ;
-        this.sportService = new SportService();
+        this.sportService = new PanamericanoSportService();
         this.userService = new UserService();
     }
     

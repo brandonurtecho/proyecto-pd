@@ -8,6 +8,8 @@ package com.unmsm.patrones.dto;
 import com.unmsm.patrones.util.TypePerson;
 import java.time.Instant;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -67,7 +69,7 @@ public class Sportsman extends Person{
 
         @Override
         public Date getBirthdate() {
-            return Date.from(Instant.MIN);
+            return Calendar.getInstance().getTime();
         }
 
         @Override
@@ -82,9 +84,7 @@ public class Sportsman extends Person{
 
         @Override
         public List<String> getMedalList() {
-            List<String> list = new ArrayList<>();
-            list.add("NULL LIST");
-            return list;
+            return Arrays.asList("NULL LIST");
         }
 
         @Override

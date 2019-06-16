@@ -11,6 +11,7 @@ package com.unmsm.patrones.util;
  */
 public class TypeCollections {
     public final static String USERS = "users";
-    public final static String SPORTS = "sports";
+    public final static String PANAMERICANO_SPORTS = "panamericano_sports";
+    public final static String PARAPANAMERICANO_SPORTS = "parapanamericano_sports";
     public final static String COMMENTS = "comments";
 }

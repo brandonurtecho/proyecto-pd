@@ -40,14 +40,14 @@ public class CommentaryService implements ICommentaryService{
     }
 
     @Override
-    public Boolean editCommentary(Commentary commentary) {
+    public Boolean likeCommentary(Commentary commentary) {
         this.commentaryRepository.update(commentary);
         return Boolean.TRUE;
     }
 
     @Override
-    public Boolean deleteCommentary(String id) {
-        this.commentaryRepository.delete(id);
+    public Boolean deleteCommentary(Commentary commentary) {
+        this.commentaryRepository.delete(commentary.getId());
         return Boolean.TRUE;
     }
     
