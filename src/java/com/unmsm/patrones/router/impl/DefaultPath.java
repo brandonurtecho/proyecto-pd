@@ -5,7 +5,7 @@
  */
 package com.unmsm.patrones.router.impl;
 
-import com.unmsm.patrones.service.ICountryService;
+//import com.unmsm.patrones.service.ICountryService;
 //import com.unmsm.patrones.service.impl.CountryService;
 import com.unmsm.patrones.router.PathStrategy;
 import com.unmsm.patrones.util.Jsp;
@@ -23,7 +23,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class DefaultPath extends PathStrategy  {
     
-    private ICountryService countryService;    
+    //private ICountryService countryService;    
 
     public DefaultPath(String path) {
         super(path);
@@ -38,7 +38,7 @@ public class DefaultPath extends PathStrategy  {
     @Override
     public void operation(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException, SQLException {
-        request.getSession().setAttribute("listaPaises", countryService.findAllCountries()); 
+        //request.getSession().setAttribute("listaPaises", countryService.findAllCountries()); 
         RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.INDEX);
         dispatcher.forward(request, response);
     }

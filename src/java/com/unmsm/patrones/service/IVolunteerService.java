@@ -5,12 +5,13 @@
  */
 package com.unmsm.patrones.service;
 
-import com.unmsm.patrones.dto.Payment;
+import com.unmsm.patrones.dto.Volunteer;
+import java.util.List;
 
 /**
  *
  * @author bluq1
  */
-public interface IPaymentService {
-    void sendPaymentEmail(Payment payment);
+public interface IVolunteerService {
+    List<Volunteer> showAllVolunteers();
 }

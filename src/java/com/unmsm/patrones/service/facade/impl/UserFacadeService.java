@@ -62,7 +62,7 @@ public class UserFacadeService implements IUserFacadeService {
     }
 
     @Override
-    public List<Sport> showSportList(String type) {
+    public List<? extends Sport> showSportList(String type) {
         switch (type) {
             case TypeSport.PANAMERICANO_SPORT : 
                 return panamericanosportService.showAllSports();
@@ -105,7 +105,8 @@ public class UserFacadeService implements IUserFacadeService {
 
     @Override
     public Boolean buyTicketForEvent(Payment payment) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        paymentService.sendPaymentEmail(payment);
+        return Boolean.TRUE;
     }
     
 }

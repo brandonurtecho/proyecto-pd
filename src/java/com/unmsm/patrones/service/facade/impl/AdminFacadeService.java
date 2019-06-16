@@ -5,14 +5,58 @@
  */
 package com.unmsm.patrones.service.facade.impl;
 
+import com.unmsm.patrones.dto.Admin;
+import com.unmsm.patrones.dto.Commentary;
+import com.unmsm.patrones.dto.Person;
+import com.unmsm.patrones.dto.Volunteer;
+import com.unmsm.patrones.service.IAdminService;
+import com.unmsm.patrones.service.ICommentaryService;
+import com.unmsm.patrones.service.IVolunteerService;
+import com.unmsm.patrones.service.facade.IAdminFacadeService;
+import com.unmsm.patrones.service.impl.AdminService;
+import com.unmsm.patrones.service.impl.CommentaryService;
+import com.unmsm.patrones.service.impl.VolunteerService;
+import java.util.List;
+
 /**
  *
  * @author bluq1
  */
-public class AdminFacadeService {
-    /**
-     * Todas las clases e interfaces service que se conecten con DAO
-     * son abstraidas por los facades, en los router en lugar de llamar a un service
-     * en especifico solo se llamará al Facade, en este caso solo son 2 facades
-     **/
+public class AdminFacadeService implements IAdminFacadeService{
+    
+    private IAdminService adminService;
+    private ICommentaryService commentaryService;
+    private IVolunteerService volunteerService;
+
+    public AdminFacadeService() {
+        this.adminService = new AdminService();
+        this.commentaryService = new CommentaryService();
+        this.volunteerService = new VolunteerService();
+    }
+    
+    @Override
+    public Boolean login(String email, String password) {
+        return adminService.login(email, password);
+    }
+
+    @Override
+    public Person showProfileAdmin(Admin admin) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Commentary> showCommentarySport(String sport) {
+        return commentaryService.showCommentaryBySport(sport);
+    }
+
+    @Override
+    public List<Volunteer> showVolunteers() {
+        return volunteerService.showAllVolunteers();
+    }
+
+    @Override
+    public Boolean logout() {
+        return Boolean.TRUE;
+    }
+    
 }

@@ -5,14 +5,12 @@
  */
 package com.unmsm.patrones.router.impl;
 
-import com.unmsm.patrones.dto.Staff;
 import com.unmsm.patrones.router.PathStrategy;
-import com.unmsm.patrones.service.IStaffService;
 import com.unmsm.patrones.util.Jsp;
 import com.unmsm.patrones.util.PathName;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.List;
+//import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -25,7 +23,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class StaffDetailPath extends PathStrategy {
 
-    private IStaffService staffService;
+    //private IStaffService staffService;
 
     public StaffDetailPath(String path) {
         super(path);
@@ -41,8 +39,8 @@ public class StaffDetailPath extends PathStrategy {
     public void operation(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException, SQLException {        
         String countryName = request.getParameter("countryName");
-        List<Staff> customerList = staffService.findCustomersByCountryName(countryName);
-        request.getSession().setAttribute("listaClientes", customerList);        
+        //List<Staff> customerList = staffService.findCustomersByCountryName(countryName);
+        //request.getSession().setAttribute("listaClientes", customerList);        
         RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.DETAIL);
         dispatcher.forward(request, response);
     }

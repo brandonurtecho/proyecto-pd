@@ -22,8 +22,7 @@ public interface IUserFacadeService {
     Boolean login(String email, String password);
     Boolean registerNewAccount(User user);
     Boolean editAccaunt(User user);
-    /*****************/
-    List<Sport> showSportList(String type);
+    List<? extends Sport> showSportList(String type);
     Sport showSportById(String id, String type);
     Boolean commentary(Commentary commentary, String action);
     List<Commentary> showCommentaryBySportInSport(String sport);

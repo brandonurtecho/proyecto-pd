@@ -5,9 +5,9 @@
  */
 package com.unmsm.patrones.router.impl;
 
-import com.unmsm.patrones.dto.Customer;
+//import com.unmsm.patrones.dto.Customer;
 import com.unmsm.patrones.router.PathStrategy;
-import com.unmsm.patrones.service.ICustomerService;
+//import com.unmsm.patrones.service.ICustomerService;
 //import com.unmsm.patrones.service.impl.CustomerService;
 import com.unmsm.patrones.util.Jsp;
 import com.unmsm.patrones.util.PathName;
@@ -25,7 +25,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class CustomerDetailPath extends PathStrategy {
 
-    private ICustomerService customerService;
+    //private ICustomerService customerService;
 
     public CustomerDetailPath(String path) {
         super(path);
@@ -41,8 +41,8 @@ public class CustomerDetailPath extends PathStrategy {
     public void operation(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException, SQLException {        
         String countryName = request.getParameter("countryName");
-        List<Customer> customerList = customerService.findCustomersByCountryName(countryName);
-        request.getSession().setAttribute("listaClientes", customerList);        
+        //List<Customer> customerList = customerService.findCustomersByCountryName(countryName);
+        //request.getSession().setAttribute("listaClientes", customerList);        
         RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.DETAIL);
         dispatcher.forward(request, response);
     }

@@ -47,7 +47,7 @@ public class PathConfigSingleton {
         listPath.add(new CustomerDetailPath(PathName.DETAIL_CUSTOMER));
         listPath.add(new StaffDetailPath(PathName.DETAIL_STAFF));
     }
-    
+        
     private void initAdminPath(){
         
     }
