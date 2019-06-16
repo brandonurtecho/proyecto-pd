@@ -41,14 +41,15 @@ public class CommentaryService implements ICommentaryService{
 
     @Override
     public Boolean likeCommentary(Commentary commentary) {
-        this.commentaryRepository.update(commentary);
-        return Boolean.TRUE;
+        commentary.setLike(commentary.getLike()+1);
+        long flag = this.commentaryRepository.update(commentary);
+        return flag != 0;
     }
 
     @Override
     public Boolean deleteCommentary(Commentary commentary) {
-        this.commentaryRepository.delete(commentary.getId());
-        return Boolean.TRUE;
+        long flag = this.commentaryRepository.delete(commentary);
+        return flag != 0;
     }
     
 }

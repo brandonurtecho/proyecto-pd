@@ -111,8 +111,8 @@ public class CommentaryDao implements ICommentaryRepository{
     }
 
     @Override
-    public long delete(String id) {
-        long cont = collection.deleteOne(eq("_id", new ObjectId(id))).getDeletedCount();
+    public long delete(Commentary commentary) {
+        long cont = collection.deleteOne(eq("_id", new ObjectId(commentary.getId()))).getDeletedCount();
         return cont;
     }
     
