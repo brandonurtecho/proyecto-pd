@@ -44,7 +44,7 @@
                 <div class="section-content text-center">
                   <img src="assets/img/logo-panamericanos.png" class="img-responsive">
                   <div class="title title-white">
-                    <a href="https://www.lima2019.pe/deportes-panamericanos" class="title-text">Panamericanos</a>
+                    <a href="/proyecto/principal/disciplinas?num=0" class="title-text">Panamericanos</a>
                   </div>
                   <p>Anima a los 6680 atletas de 41 naciones diferentes y no te pierdas ninguno <br> de los 39 deportes - 61 disciplinas - del 26 de julio al 11 de agosto</p>
                 </div>
@@ -55,7 +55,7 @@
                 <div class="section-content text-center">
                   <img src="assets/img/logo-parapanamericanos.png" class="img-responsive">
                   <div class="title title-white">
-                    <a href="https://www.lima2019.pe/deportes-parapanamericanos" class="title-text">Parapanamericanos</a>
+                    <a href="/proyecto/principal/disciplinas?num=1" class="title-text">Parapanamericanos</a>
                   </div>
                   <p>Alienta a los 1890 Para atletas y asómbrate con los 17 Para deportes <br> 18 disciplinas - del 23 de agosto al 01 de septiembre</p>
                 </div>          
