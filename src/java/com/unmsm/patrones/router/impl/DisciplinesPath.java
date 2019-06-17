@@ -5,8 +5,6 @@
  */
 package com.unmsm.patrones.router.impl;
 
-
-//import com.unmsm.patrones.service.impl.CountryService;
 import com.unmsm.patrones.router.PathStrategy;
 import com.unmsm.patrones.util.Jsp;
 import com.unmsm.patrones.util.PathName;
@@ -19,26 +17,29 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author bluq1
+ * @author LaboratorioFISI
  */
-public class DefaultPath extends PathStrategy  {
+public class DisciplinesPath extends PathStrategy{
     
-    public DefaultPath(String path) {
+    
+    public DisciplinesPath(String path) {
         super(path);
-        //countryService = new CountryService();
     }
     
     @Override
     public Boolean isMatch(String path) {
-        return (path == null || path.equals(PathName.DEFAULT));
+        return path.equals(PathName.DISCIPLINES);
     }
 
     @Override
     public void operation(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException, SQLException {
-       
-        RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.INDEX);
+        
+        
+        
+        
+        
+        RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.DISCIPLINES);
         dispatcher.forward(request, response);
     }
-    
 }

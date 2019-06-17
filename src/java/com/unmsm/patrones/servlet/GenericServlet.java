@@ -68,7 +68,7 @@ public abstract class GenericServlet extends HttpServlet {
     }
     
     private void defaultReturn(HttpServletRequest request, HttpServletResponse response){
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(PathName.INDEX);
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(PathName.DEFAULT);
         try {
             dispatcher.forward(request, response);
         } catch (ServletException | IOException ex) {

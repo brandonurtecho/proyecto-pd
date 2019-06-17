@@ -1,0 +1,203 @@
+
+*, :before, :after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+ul, ol, dl {
+    list-style-position: outside;
+}
+
+ol {
+    list-style-type: decimal;
+}
+
+a {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+img {
+    backface-visibility: hidden;
+    border: 0;
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.box img{
+    width: 100%;
+    height: auto;
+  }
+  
+
+
+
+a, .Title {
+    color: #ffffff;
+}
+
+button, input, textarea, select, label, a {
+    transition: all .2s linear;
+}
+
+a, a:active, :focus {
+    outline: 0;
+}
+
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
+.nivel {
+    height: 20px;
+    width: 20px;
+    padding: 2px;
+    position: absolute;
+    bottom: 6px;
+    left: 44px;
+    background-color: #161618;
+    border-radius: 100px;
+}
+
+.comments {
+    width: 100%;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.comment {
+    display: grid;
+    grid-template-columns: 90px 90%;
+    grid-column-gap: 0px;
+}
+
+.comments .media-left, .comments .media>.pull-left {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    margin: 4px 10px;
+    height: 80px;
+}
+
+.comments .media-body {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    margin: 4px 0px;
+}
+
+.comments .media-body .date {
+    color: #909090;
+    font-size: 12px;
+    display: block;
+    margin-top: 2px;
+}
+
+.media-body .date {
+    color: #b2b2b2;
+    font-size: 11px;
+}
+
+.media-body .text {
+    color: #b2b2b2;
+    display: block;
+}
+
+.comments .media-content {
+    padding: 10px 10px 5px 15px;
+    border: 1px solid #000;
+    border-radius: 8px;
+    background-color: #353333;
+}
+
+.comments .media-heading {
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.media-heading {
+    font: 14px arial;
+    font-weight: bold !important;
+    line-height: 1;
+    color: #fff;
+}
+
+.admin {
+    border: solid 2px #e03e3e;
+}
+.img {
+    display: inline-block;
+    width: 75px;
+    vertical-align: top;
+    border-radius: 50px;
+}
+
+.up {
+    color: #4ba23d;
+    cursor: pointer;
+}
+
+.comments .media-content i {
+    color: #fff;
+}
+
+a[class*="fa-"], span[class*="fa-"], strong[class*="fa-"], i[class*="fa-"] {
+    display: inline-block;
+}
+.fa-fw {
+    width: 1.28571429em;
+    text-align: center;
+}
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+[class*="fa-"]:empty:before {
+    margin-right: 0;
+}
+
+[class*="fa-"]:before {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal!important;
+    font-weight: normal!important;
+    font-size: inherit;
+    line-height: inherit;
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    vertical-align: top;
+    margin-right: 10px;
+}
+.fa-chevron-up:before {
+    content: "\f077";
+}
+
+.down {
+    color: #e03e3e;
+    cursor: pointer;
+}
+
+
+
+@media (min-width: 1200px){
+    .comment {
+        display: grid;
+        grid-template-columns: 90px 90%;
+        grid-column-gap: 0px;
+    }
+}
+
+

@@ -10,6 +10,14 @@ package com.unmsm.patrones.util;
  * @author bluq1
  */
 public class Jsp {
+    
+    public final static String DEFAULT = "/index.jsp";
+
+    
     public final static String INDEX = "/index.jsp";
-    public final static String DETAIL = "/detail.jsp";
+    public final static String INITIAL = "/inicial.jsp";
+    public final static String DISCIPLINES = "/disciplinas.jsp";
+    public final static String EVENTS = "/eventos.jsp";
+    public final static String PAYMENTS = "/pagos.jsp";
+    
 }

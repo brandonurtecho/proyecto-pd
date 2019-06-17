@@ -6,10 +6,15 @@
 package com.unmsm.patrones.config;
 
 import com.unmsm.patrones.router.PathStrategy;
-import com.unmsm.patrones.router.impl.CustomerDetailPath;
 import com.unmsm.patrones.router.impl.DefaultPath;
+
+import com.unmsm.patrones.router.impl.DisciplinesPath;
+import com.unmsm.patrones.router.impl.EventsPath;
+
 import com.unmsm.patrones.router.impl.IndexPath;
-import com.unmsm.patrones.router.impl.StaffDetailPath;
+import com.unmsm.patrones.router.impl.InitialPath;
+import com.unmsm.patrones.router.impl.PaymentsPath;
+
 import com.unmsm.patrones.util.PathName;
 import java.util.ArrayList;
 import java.util.List;
@@ -43,9 +48,17 @@ public class PathConfigSingleton {
     
     private void initUserPath(){
         listPath.add(new DefaultPath(PathName.DEFAULT));
+        
+        /******************/
+        
         listPath.add(new IndexPath(PathName.INDEX));
-        listPath.add(new CustomerDetailPath(PathName.DETAIL_CUSTOMER));
-        listPath.add(new StaffDetailPath(PathName.DETAIL_STAFF));
+        listPath.add(new InitialPath(PathName.INITIAL));
+        listPath.add(new DisciplinesPath(PathName.DISCIPLINES));
+        listPath.add(new EventsPath(PathName.EVENTS));
+        listPath.add(new PaymentsPath(PathName.PAYMENTS));
+        
+        //***********************/
+        
     }
         
     private void initAdminPath(){

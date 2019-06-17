@@ -15,12 +15,12 @@ import java.util.Date;
  */
 public class Cast {
     public static Date stringToDate(String date) throws ParseException {
-        Date date2 = new SimpleDateFormat("dd/MM/yyyy").parse(date); 
+        Date date2 = new SimpleDateFormat("yyyy-MM-dd").parse(date); 
         return date2;
     }
     
     public static String dateToString(Date date) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");  
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");  
         String strDate = dateFormat.format(date);
         return strDate;
     }

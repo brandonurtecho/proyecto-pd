@@ -1,0 +1,226 @@
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Exo2.0";
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333333;
+    background-color: #fff;
+}
+
+div {
+    display: block;
+}
+
+img {
+    vertical-align: middle;
+    border: 0;
+}
+
+a {
+    color: #337ab7;
+    text-decoration: none;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.sections {
+    font-size: 12px;
+    position: relative;
+}
+
+.sections .section-title {
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+}
+
+.section {
+    min-height: 80vh;
+    height: 100%;
+}
+
+.sections.sections-half .section {
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.title.title-white {
+    color: #ffffff;
+}
+
+.title.title-white .title-text, .title.title-white a {
+    color: #ffffff;
+}
+
+.title {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.title .title-text {
+    font-size: 24px;
+    padding: 4px 30px;
+    border: 1px solid;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+}
+
+.sections.sections-half .section {
+    width: 50%;
+    float: left;
+    height: 94vh;
+}
+
+.section.section-blue .section-bg-image {
+    background-image: url(https://d1qv7178yd07uj.cloudfront.net/multimedia/juegos-panamericanos-lima-2019.png);
+    background-position: center bottom;
+}
+
+.section.section-purple .section-bg-image {
+    background-image: url(https://d1qv7178yd07uj.cloudfront.net/multimedia/juegos-parapanamericanos-lima-2019.png);
+    background-position: center bottom;
+    border-style: none;
+}
+
+.section .section-bg-image {
+    background-color: #000;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    -webkit-transition: all 2s linear;
+    transition: all 2s linear;
+}
+
+.section .section-content {
+    padding: 80px 0px 10px;
+    position: absolute;
+    z-index: 3;
+    bottom: 10px;
+    width: 100%;
+}
+
+.section .section-content .title {
+    margin-top: 16px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.section .section-content .title a {
+    cursor: pointer;
+    float: none;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.section .section-content p {
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 0px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.section .section-content img {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 120px;
+}
+.img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+
+@media (min-width: 768px){
+    .sections .section-title {
+        top: 55px;
+    }
+}
+
+@media (min-width: 992px){
+    .container {
+        width: 970px;
+    }
+}
+@media (min-width: 768px){
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width: 768px){
+    .sections.sections-half .section {
+        width: 50%;
+        float: left;
+        height: 94vh;
+    }
+}
+
+@media (min-width: 768px){
+    .section {
+        min-height: 720px;
+        height: 100%;
+        height: 100vh;
+    }
+}
+
+@media (min-width: 768px){
+    .section .section-content {
+        padding: 0px;
+        bottom: 40px;
+        width: 100%;
+    }
+}
+@media (min-width: 768px){
+    .section .section-content img {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 768px){
+    .section .section-content .title {
+        margin-bottom: 40px;
+    }
+}
+
+@media (min-width: 992px){
+    .title .title-text {
+        min-width: 240px;
+        float: left;
+    }
+}
+
+
+
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
+
