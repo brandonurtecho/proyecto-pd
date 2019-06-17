@@ -42,7 +42,7 @@ public class DisciplinesPath extends PathStrategy{
         
         UserFacadeService service = new UserFacadeService();
         
-        
+        /*
         int num = Integer.parseInt(request.getParameter("num"));
         if (num == 0){
         //   List<PanamericanoSport> list = service.showSportList(TypeSport.PANAMERICANO_SPORT);
@@ -51,7 +51,7 @@ public class DisciplinesPath extends PathStrategy{
         //   List<PanamericanoSport> list = service.showSportList(TypeSport.PANAMERICANO_SPORT);
         //   request.setAttribute("list", list);
         
-        }
+        }*/
         RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.DISCIPLINES);
         dispatcher.forward(request, response);
     }
