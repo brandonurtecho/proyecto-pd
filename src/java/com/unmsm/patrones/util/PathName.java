@@ -20,6 +20,9 @@ public class PathName {
     public final static String DISCIPLINES = "/disciplinas";
     public final static String EVENTS = "/eventos";
     public final static String PAYMENTS = "/pagos";
+    public final static String SPORTMAN = "/deportistas";
+    public final static String VOLUNTARY = "/voluntarios";
+    
     
     
 }

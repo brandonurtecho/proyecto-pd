@@ -258,7 +258,93 @@
                 </div>
             </div>
 
-            
+            <div class="">
+
+                <div id="comments " class="comments">
+                    <div id="comment-1">
+                        <div class="comment my-2">
+                            <div class="media-left">
+                                <a href="https://www.zona-leros.net/perfil/Connor9924">
+                                    <img src="https://www.zona-leros.net/storage/image/default.png" alt="" class="img ">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <div class="media-content" style=" ">
+                                    <span class="media-heading">Usuario 1</span>
+                                    <span class="date" style="display: inline;"> • Hace 2 semanas.</span>
+                                    <span class="text">Algun comentario de verga :V<br>
+                                    </span>
+                                    <div class="date">
+                                        <span class="up">
+                                            <span id="upvotes-9393">1</span> <i class="fa fa-fw fa-chevron-up " onclick="  " id="up-9393"></i>
+                                        </span> |
+                                        <span class="down">
+                                            <span id="downvotes-9393"></span> <i class="fa fa-fw fa-chevron-down " onclick=" "
+                                                                                 id="down-9393"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="comment-2">
+                        <div class="comment">
+                            <div class="media-left">
+                                <a href="https://www.zona-leros.net/perfil/Connor9924">
+                                    <img src="https://www.zona-leros.net/storage/image/default.png" alt="" class="img ">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <div class="media-content" style=" ">
+                                    <span class="media-heading">USUARIO-2</span>
+                                    <span class="date" style="display: inline;"> • Hace 2 semanas.</span>
+                                    <span class="text">Algun otro comentario de verga<br>
+                                    </span>
+                                    <div class="date">
+                                        <span class="up">
+                                            <span id="upvotes-9393">1</span> <i class="fa fa-fw fa-chevron-up " onclick="  " id="up-9393"></i>
+                                        </span> |
+                                        <span class="down">
+                                            <span id="downvotes-9393"></span> <i class="fa fa-fw fa-chevron-down " onclick=" "
+                                                                                 id="down-9393"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="comment-3">
+                        <div class="comment">
+                            <div class="media-left">
+                                <a href="https://www.zona-leros.net/perfil/Connor9924">
+                                    <img src="https://www.zona-leros.net/storage/image/default.png" alt="" class="img ">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <div class="media-content" style=" ">
+                                    <span class="media-heading">USUARIO-3</span>
+                                    <span class="date" style="display: inline;"> • Hace 2 semanas.</span>
+                                    <span class="text">Comentario<br>
+                                    </span>
+                                    <div class="date">
+                                        <span class="up">
+                                            <span id="upvotes-9393">1</span> <i class="fa fa-fw fa-chevron-up " onclick="  " id="up-9393"></i>
+                                        </span> |
+                                        <span class="down">
+                                            <span id="downvotes-9393"></span> <i class="fa fa-fw fa-chevron-down " onclick=" "
+                                                                                 id="down-9393"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
         </div>
 
 

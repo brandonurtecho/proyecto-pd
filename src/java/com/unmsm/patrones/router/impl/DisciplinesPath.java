@@ -7,6 +7,8 @@ package com.unmsm.patrones.router.impl;
 
 
 import com.unmsm.patrones.dto.PanamericanoSport;
+import com.unmsm.patrones.dto.ParapanamericanoSport;
+import com.unmsm.patrones.dto.Sport;
 import com.unmsm.patrones.router.PathStrategy;
 import com.unmsm.patrones.service.facade.impl.UserFacadeService;
 import com.unmsm.patrones.util.Jsp;
@@ -45,11 +47,11 @@ public class DisciplinesPath extends PathStrategy{
         /*
         int num = Integer.parseInt(request.getParameter("num"));
         if (num == 0){
-        //   List<PanamericanoSport> list = service.showSportList(TypeSport.PANAMERICANO_SPORT);
-        //   request.setAttribute("list", list);
+           List<PanamericanoSport> list = service.showSportList(TypeSport.PANAMERICANO_SPORT);
+           request.setAttribute("list", list);
         }else {
-        //   List<PanamericanoSport> list = service.showSportList(TypeSport.PANAMERICANO_SPORT);
-        //   request.setAttribute("list", list);
+           List<ParapanamericanoSport> list = service.showSportList(TypeSport.PARAPANAMERICANO_SPORT);
+           request.setAttribute("list", list);
         
         }*/
         RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.DISCIPLINES);

@@ -14,6 +14,8 @@ import com.unmsm.patrones.router.impl.EventsPath;
 import com.unmsm.patrones.router.impl.IndexPath;
 import com.unmsm.patrones.router.impl.InitialPath;
 import com.unmsm.patrones.router.impl.PaymentsPath;
+import com.unmsm.patrones.router.impl.SportmanPath;
+import com.unmsm.patrones.router.impl.VoluntaryPath;
 
 import com.unmsm.patrones.util.PathName;
 import java.util.ArrayList;
@@ -56,7 +58,8 @@ public class PathConfigSingleton {
         listPath.add(new DisciplinesPath(PathName.DISCIPLINES));
         listPath.add(new EventsPath(PathName.EVENTS));
         listPath.add(new PaymentsPath(PathName.PAYMENTS));
-        
+        listPath.add(new SportmanPath(PathName.SPORTMAN));
+        listPath.add(new VoluntaryPath(PathName.VOLUNTARY));
         //***********************/
         
     }
