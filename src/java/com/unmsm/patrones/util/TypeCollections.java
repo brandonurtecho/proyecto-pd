@@ -11,10 +11,12 @@ package com.unmsm.patrones.util;
  */
 public class TypeCollections {
     public final static String USERS = "users";
+    public final static String ADMINS = "administrators";
     public final static String PANAMERICANO_SPORTS = "panamericano_sports";
     public final static String PARAPANAMERICANO_SPORTS = "parapanamericano_sports";
     public final static String COMMENTS = "comments";
     public final static String VOLUNTEERS = "volunteers";
     public final static String SPORTSMANS = "sportsmans";
+    public final static String PLACES = "places";
     
 }

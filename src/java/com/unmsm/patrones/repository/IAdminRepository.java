@@ -3,13 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.unmsm.patrones.dto;
+package com.unmsm.patrones.repository;
 
 /**
  *
  * @author diego
  */
-public class Cluster {
-    private String name;
-    private String description;
+public interface IAdminRepository extends IAdminReadeable {
+    
 }

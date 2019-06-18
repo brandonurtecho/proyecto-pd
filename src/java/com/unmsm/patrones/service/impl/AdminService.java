@@ -6,7 +6,8 @@
 package com.unmsm.patrones.service.impl;
 
 import com.unmsm.patrones.dto.Admin;
-import com.unmsm.patrones.dto.Person;
+import com.unmsm.patrones.repository.IAdminRepository;
+import com.unmsm.patrones.repository.impl.AdminDao;
 import com.unmsm.patrones.service.IAdminService;
 
 /**
@@ -14,15 +15,20 @@ import com.unmsm.patrones.service.IAdminService;
  * @author bluq1
  */
 public class AdminService implements IAdminService {
-
+    private IAdminRepository adminRepository;
+    
+    public AdminService() {
+        this.adminRepository = new AdminDao();
+    }
+    
     @Override
     public Boolean login(String email, String password) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Person showAdminByEmail(Admin admin) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Admin admin = adminRepository.getAdminByEmail(email);
+        if (!admin.getId().equals("0") && admin.getPassword().equals(password)) {
+            return Boolean.TRUE;
+        } else {
+            return Boolean.FALSE;
+        }
     }
 
     @Override

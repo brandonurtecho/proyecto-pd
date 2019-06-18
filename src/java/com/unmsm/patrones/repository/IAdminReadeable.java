@@ -3,12 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.unmsm.patrones.dto;
+package com.unmsm.patrones.repository;
+
+import com.unmsm.patrones.dto.Admin;
+import java.util.List;
 
 /**
  *
  * @author diego
  */
-public class Headquarters {
-    
+public interface IAdminReadeable {
+    List<Admin> getAll();
+    Admin getAdminByEmail(String email);
 }

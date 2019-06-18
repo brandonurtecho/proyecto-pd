@@ -10,7 +10,6 @@ import com.mongodb.client.MongoCursor;
 import static com.mongodb.client.model.Filters.eq;
 import com.unmsm.patrones.connection.Connection;
 import com.unmsm.patrones.dto.PanamericanoSport;
-import com.unmsm.patrones.dto.Sport;
 import com.unmsm.patrones.dto.factory.SportFactory;
 import com.unmsm.patrones.util.TypeCollections;
 import java.util.ArrayList;
