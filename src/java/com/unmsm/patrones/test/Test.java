@@ -19,6 +19,8 @@ import com.unmsm.patrones.repository.IUserRepository;
 import com.unmsm.patrones.repository.impl.UserDao;
 import com.unmsm.patrones.service.ICommentaryService;
 import com.unmsm.patrones.service.IUserService;
+import com.unmsm.patrones.service.facade.IUserFacadeService;
+import com.unmsm.patrones.service.facade.impl.UserFacadeService;
 import com.unmsm.patrones.service.impl.CommentaryService;
 import com.unmsm.patrones.service.impl.UserService;
 import com.unmsm.patrones.util.Cast;
@@ -42,19 +44,25 @@ public class Test {
      */
     public static void main(String[] args) throws ParseException {
         
-        MongoCollection collection = Connection.getConnection().getCollection(TypeCollections.USERS);
+//        MongoCollection collection = Connection.getConnection().getCollection(TypeCollections.USERS);
+//        
+//        ICommentaryService service = new CommentaryService();
+//        List<Commentary> list = service.showCommentaryBySport(TypeSport.FUTBOL);
+//        for (Commentary com : list) {
+//            System.out.println(com);
+//        }
+//        
+//        System.out.println("");
+//        list = service.showCommentaryBySport(TypeSport.BASKETBALL);
+//        for (Commentary com : list) {
+//            System.out.println(com);
+//        }
+
+        User user = new User();
+        user.setEmail("diego.vera@unmsm.edu.pe");
+        IUserFacadeService facade = new UserFacadeService();
+        //facade.registerNewAccount(User.NULL_USER);
         
-        ICommentaryService service = new CommentaryService();
-        List<Commentary> list = service.showCommentaryBySport(TypeSport.FUTBOL);
-        for (Commentary com : list) {
-            System.out.println(com);
-        }
-        
-        System.out.println("");
-        list = service.showCommentaryBySport(TypeSport.BASKETBALL);
-        for (Commentary com : list) {
-            System.out.println(com);
-        }
         
 //        Document doc = new Document("name", "MongoDB")
 //                .append("type", "database")

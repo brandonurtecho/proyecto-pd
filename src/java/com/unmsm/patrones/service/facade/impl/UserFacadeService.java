@@ -7,10 +7,10 @@ package com.unmsm.patrones.service.facade.impl;
 
 import com.unmsm.patrones.dto.Commentary;
 import com.unmsm.patrones.dto.Payment;
-import com.unmsm.patrones.dto.Session;
 import com.unmsm.patrones.dto.Sport;
 import com.unmsm.patrones.dto.Sportsman;
 import com.unmsm.patrones.dto.User;
+import com.unmsm.patrones.dto.Volunteer;
 import com.unmsm.patrones.service.ICommentaryService;
 import com.unmsm.patrones.service.IPaymentService;
 import com.unmsm.patrones.service.IUserService;
@@ -22,7 +22,11 @@ import com.unmsm.patrones.service.impl.UserService;
 import java.util.List;
 import com.unmsm.patrones.service.IPanamericanoSportService;
 import com.unmsm.patrones.service.IParapanamericanoSportService;
+import com.unmsm.patrones.service.ISportsmanService;
+import com.unmsm.patrones.service.IVolunteerService;
 import com.unmsm.patrones.service.impl.ParapanamericanoSportService;
+import com.unmsm.patrones.service.impl.SportsmanService;
+import com.unmsm.patrones.service.impl.VolunteerService;
 import com.unmsm.patrones.util.TypeSport;
 import java.util.Arrays;
 
@@ -37,6 +41,8 @@ public class UserFacadeService implements IUserFacadeService {
     private IPanamericanoSportService panamericanosportService;
     private IParapanamericanoSportService parapanamericanosportService;
     private IUserService userService;
+    private IVolunteerService volunteerService;
+    private ISportsmanService sportsmanService;
 
     public UserFacadeService() {
         this.commentaryService = new CommentaryService();
@@ -44,6 +50,8 @@ public class UserFacadeService implements IUserFacadeService {
         this.panamericanosportService = new PanamericanoSportService();
         this.parapanamericanosportService = new ParapanamericanoSportService();
         this.userService = new UserService();
+        this.volunteerService = new VolunteerService();
+        this.sportsmanService = new SportsmanService();
     }
 
     @Override
@@ -99,14 +107,19 @@ public class UserFacadeService implements IUserFacadeService {
     }
 
     @Override
-    public Sportsman showSportsmanBySportInSport(String sport) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<Sportsman> showSportsmanBySportInSport(String sport) {
+        return sportsmanService.showSportsmansBySport(sport);
     }
 
     @Override
     public Boolean buyTicketForEvent(Payment payment) {
         paymentService.sendPaymentEmail(payment);
         return Boolean.TRUE;
+    }
+
+    @Override
+    public List<Volunteer> showVolunteers() {
+        return volunteerService.showAllVolunteers();
     }
     
 }

@@ -18,16 +18,17 @@ import java.util.List;
  * @author bluq1
  */
 public class Sportsman extends Person{
-    private Country country; 
+    private String country; 
     private Date birthdate;
-    private String genre;    
+    private String genre;
+    private String photo;
     private Integer age;
     private List<String> medalList;
-    private Sport sport;
+    private String sport;
 
     public Sportsman(){}
     
-    public Sportsman(Country country, Date birthdate, String genre, Integer age, List<String> medalList, Sport sport) {
+    public Sportsman(String country, Date birthdate, String genre, Integer age, List<String> medalList, String sport) {
         this.country = country;
         this.birthdate = birthdate;
         this.genre = genre;
@@ -36,7 +37,7 @@ public class Sportsman extends Person{
         this.sport = sport;
     }
 
-    public Sportsman(Country country, Date birthdate, String genre, Integer age, List<String> medalList, Sport sport, String id, String name, String lastname) {
+    public Sportsman(String country, Date birthdate, String genre, Integer age, List<String> medalList, String sport, String id, String name, String lastname) {
         super(id, name, lastname);
         this.country = country;
         this.birthdate = birthdate;
@@ -63,8 +64,8 @@ public class Sportsman extends Person{
         }
         
         @Override
-        public Country getCountry() {
-            return Country.NULL_COUNTRY;
+        public String getCountry() {
+            return "NULL COUNTRY";
         }
 
         @Override
@@ -75,6 +76,11 @@ public class Sportsman extends Person{
         @Override
         public String getGenre() {
             return "SOLO EXISTE 2 GENEROS";
+        }
+        
+        @Override
+        public String getPhoto() {
+            return "assets/img/NOT_FOUND.jpg";
         }
 
         @Override
@@ -88,16 +94,16 @@ public class Sportsman extends Person{
         }
 
         @Override
-        public Sport getSport() {
-            return Sport.NULL_SPORT;
+        public String getSport() {
+            return "NULL SPORT";
         }    
     };
     
-    public Country getCountry() {
+    public String getCountry() {
         return country;
     }
 
-    public void setCountry(Country country) {
+    public void setCountry(String country) {
         this.country = country;
     }
 
@@ -133,17 +139,25 @@ public class Sportsman extends Person{
         this.medalList = medalList;
     }
 
-    public Sport getSport() {
+    public String getSport() {
         return sport;
     }
 
-    public void setSport(Sport sport) {
+    public void setSport(String sport) {
         this.sport = sport;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 
     @Override
     public String toString() {
-        return "Sportsman{" + "country=" + country + ", birthdate=" + birthdate + ", genre=" + genre + ", age=" + age + ", medalList=" + medalList + ", sport=" + sport + '}';
+        return "Sportsman{" + "country=" + country + ", birthdate=" + birthdate + ", genre=" + genre + ", photo=" + photo + ", age=" + age + ", medalList=" + medalList + ", sport=" + sport + '}';
     }
 
     @Override
@@ -155,17 +169,17 @@ public class Sportsman extends Person{
         private String id;
         private String name;
         private String lastname;
-        private Country country; 
+        private String country; 
         private Date birthdate;
         private String genre;    
         private Integer age;
         private List<String> medalList;
-        private Sport sport;
+        private String sport;
 
         public SportsmanBuilder() {
         }
 
-        public SportsmanBuilder setCountry(Country country) {
+        public SportsmanBuilder setCountry(String country) {
             this.country = country;
             return this;
         }
@@ -190,7 +204,7 @@ public class Sportsman extends Person{
             return this;
         }
 
-        public SportsmanBuilder setSport(Sport sport) {
+        public SportsmanBuilder setSport(String sport) {
             this.sport = sport;
             return this;
         }

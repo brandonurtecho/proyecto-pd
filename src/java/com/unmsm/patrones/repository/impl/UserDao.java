@@ -29,7 +29,8 @@ import org.bson.Document;
  */
 public class UserDao implements IUserRepository {
 
-    MongoCollection collection = Connection.getConnection().getCollection(TypeCollections.USERS);
+    MongoCollection collection = 
+            Connection.getConnection().getCollection(TypeCollections.USERS);
     PersonFactory<User> personFactory = new PersonFactory<>();
     
     @Override

@@ -6,6 +6,8 @@
 package com.unmsm.patrones.service.impl;
 
 import com.unmsm.patrones.dto.Volunteer;
+import com.unmsm.patrones.repository.IVolunteerRepository;
+import com.unmsm.patrones.repository.impl.VolunteerDao;
 import com.unmsm.patrones.service.IVolunteerService;
 import java.util.List;
 
@@ -14,10 +16,15 @@ import java.util.List;
  * @author bluq1
  */
 public class VolunteerService implements IVolunteerService{
-
+    private IVolunteerRepository volunteerRepository;
+    
+    public VolunteerService() {
+        this.volunteerRepository = new VolunteerDao();
+    }
+    
     @Override
     public List<Volunteer> showAllVolunteers() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return volunteerRepository.getAll();
     }
     
 }

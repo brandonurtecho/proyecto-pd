@@ -34,6 +34,11 @@ public class UserService implements IUserService{
 
     @Override
     public Boolean registerAccount(User user) {
+        User userAux = this.userRepository.getByEmail(user.getEmail());
+        if (!userAux.getId().equals("0")) {
+            // EMAIL REPETIDO, EMAIL COMO VALOR UNICO
+            return Boolean.FALSE;
+        }
         this.userRepository.insert(user);
         return Boolean.TRUE;
     }

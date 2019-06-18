@@ -11,6 +11,7 @@ import com.unmsm.patrones.dto.Session;
 import com.unmsm.patrones.dto.Sport;
 import com.unmsm.patrones.dto.Sportsman;
 import com.unmsm.patrones.dto.User;
+import com.unmsm.patrones.dto.Volunteer;
 import java.util.List;
 
 /**
@@ -26,6 +27,7 @@ public interface IUserFacadeService {
     Sport showSportById(String id, String type);
     Boolean commentary(Commentary commentary, String action);
     List<Commentary> showCommentaryBySportInSport(String sport);
-    Sportsman showSportsmanBySportInSport(String sport);
+    List<Sportsman> showSportsmanBySportInSport(String sport);
+    List<Volunteer> showVolunteers();
     Boolean buyTicketForEvent(Payment payment);
 }

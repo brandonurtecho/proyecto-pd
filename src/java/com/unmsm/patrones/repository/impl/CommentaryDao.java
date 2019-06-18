@@ -28,7 +28,8 @@ import org.bson.types.ObjectId;
  */
 public class CommentaryDao implements ICommentaryRepository{
 
-    MongoCollection collection = Connection.getConnection().getCollection(TypeCollections.COMMENTS);
+    MongoCollection collection = 
+            Connection.getConnection().getCollection(TypeCollections.COMMENTS);
     
     @Override
     public List<Commentary> getAll() {
