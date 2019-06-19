@@ -5,11 +5,15 @@
  */
 package com.unmsm.patrones.router.impl;
 
+import com.unmsm.patrones.dto.Commentary;
+import com.unmsm.patrones.dto.Sportsman;
 import com.unmsm.patrones.router.PathStrategy;
+import com.unmsm.patrones.service.facade.impl.UserFacadeService;
 import com.unmsm.patrones.util.Jsp;
 import com.unmsm.patrones.util.PathName;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -34,7 +38,16 @@ public class SportmanPath extends PathStrategy{
     public void operation(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException, SQLException {
         
+        UserFacadeService service = new UserFacadeService();
         
+        String sport = request.getParameter("sport");
+        
+        if (sport != null){
+            List <Sportsman> sportlist = service.showSportsmanBySportInSport(sport);
+            List <Commentary> commentarylist = service.showCommentaryBySportInSport(sport);
+            request.setAttribute("spórts", sportlist);
+            request.setAttribute("commentarys", commentarylist);
+        }
         
         
         

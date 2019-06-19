@@ -5,11 +5,16 @@
  */
 package com.unmsm.patrones.router.impl;
 
+import com.unmsm.patrones.dto.Commentary;
+import com.unmsm.patrones.dto.Sportsman;
+import com.unmsm.patrones.dto.Volunteer;
 import com.unmsm.patrones.router.PathStrategy;
+import com.unmsm.patrones.service.facade.impl.UserFacadeService;
 import com.unmsm.patrones.util.Jsp;
 import com.unmsm.patrones.util.PathName;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -34,9 +39,11 @@ public class VoluntaryPath extends PathStrategy {
     public void operation(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException, SQLException {
         
+        UserFacadeService service = new UserFacadeService();
+         
+        List <Volunteer> volunteerlist = service.showVolunteers();
         
-        
-        
+        request.setAttribute("volunteers", volunteerlist);
         
         RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.VOLUNTARY);
         dispatcher.forward(request, response);

@@ -39,6 +39,9 @@ public class InitialPath extends PathStrategy{
 
         String idUser = request.getParameter("iduser");
         String password = request.getParameter("password");
+        
+         //  String nombre = request.getParameter("nombre");
+         //  request.getSession().setAttribute(nombre, nombre);  para mandar a los comentarios
 
         System.out.println(idUser);
         System.out.println(password);
