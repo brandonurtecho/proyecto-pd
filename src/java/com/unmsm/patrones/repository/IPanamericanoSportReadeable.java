@@ -5,10 +5,15 @@
  */
 package com.unmsm.patrones.repository;
 
+import com.unmsm.patrones.dto.PanamericanoSport;
+import com.unmsm.patrones.dto.Sport;
+import java.util.List;
+
 /**
  *
  * @author diego
  */
-public interface ISportRepository extends ISportReadeable{
-    
+public interface IPanamericanoSportReadeable{
+    List<PanamericanoSport> getAll();
+    PanamericanoSport getById(String id);
 }

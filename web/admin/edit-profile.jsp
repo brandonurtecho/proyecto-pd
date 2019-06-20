@@ -3,7 +3,7 @@
     Created on : 09/06/2019, 03:06:50 PM
     Author     : RDR
 --%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -34,34 +34,32 @@
                     <p style="color: #FAFAFA" >Administrador</p>
                 </div>
                 <div class="sidebar-b">
-
-                    <ul class="list-unstyled components">
+                    <ul class="list-unstyled components">                
                         <li class="active">
+                            <c:set var="venues">Villa Deportiva Regional del Callao,Costa Verde - San Miguel,Estadio Nacional,
+                                Villa Deportiva Nacional - Videna,Coliseo Eduardo Dibós,Circuito Ciudad,Escuela de Equitación del Ejército,
+                                Complejo Deportivo Villa María del Triunfo,Base Aérea Las Palmas,Escuela Militar de Chorrillos,Playa Chorrillos,
+                                Morro Solar Chorrillos,Polideportivo Villa el Salvador,Country Club de Villa,Villa Panamericana y Parapanamericana,
+                                Punta Rocas,Puerto Viejo,Laguna Bujama,Río Cañete - Lunahuaná,Yatch Club Peruano Sede Paracas</c:set>
                             <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Comentarios de sedes</a>
                             <ul class="collapse list-unstyled" id="homeSubmenu">
-                                <li>
-                                    <a href="venue-commentaries.jsp">La videna</a>
-                                </li>
-                                <li>
-                                    <a href="venue-commentaries.jsp">El llaoca</a>
-                                </li>
-                                <li>
-                                    <a href="venue-commentaries.jsp">Luriwashington</a>
-                                </li>
+                                <c:forTokens items="${venues}" delims="," var="venue">
+                                    <li><a href="venue-commentaries.jsp">${venue}</a></li>
+                                </c:forTokens>
                             </ul>
                         </li>
                         <li>
+                            <c:set var="sports">Atletismo,Bádminton,Baloncesto,Balonmano,Béisbol,Bowling,Canotaje Slalom,Canotaje Slalom Extremo,
+                                Canotaje Velocidad,Ciclismo BMX,Ciclismo de Montaña,Ciclismo de Pista,Ciclismo de Ruta,Clavados,Deportes Ecuestres,
+                                Esgrima,Esquí Acuático y Wakeboard,Fisicoculturismo,Fútbol,Gimnasia Artística,Gimnasia Rítmica,Gimnasia Trampolín,
+                                Golf,Hockey,Judo,Karate,Levantamiento de Pesas,Lucha, Natación,Natación Aguas Abiertas,Natación Artística,Patinaje Artístico,
+                                Patinaje de Velocidad,Pelota Vasca,Pentatlón Moderno,Ráquetbol,Remo,Rugby 7,Softbol,Squash,Surf,Taekwondo,Tenis,Tenis de Mesa,
+                                Tiro,Tiro con Arco,Triatlón,Vela,Voleibol,Voleibol de Playa,Water Polo</c:set>
                             <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Comentarios deportes</a>
                             <ul class="collapse list-unstyled" id="pageSubmenu">
-                                <li>
-                                    <a href="sport-commentaries.jsp">Futbol</a>
-                                </li>
-                                <li>
-                                    <a href="sport-commentaries.jsp">Voley</a>
-                                </li>
-                                <li>
-                                    <a href="sport-commentaries.jsp">Natacion</a>
-                                </li>
+                                <c:forTokens items="${sports}" delims="," var="sport">
+                                    <li><a href="sport-commentaries.jsp">${sport}</a></li>
+                                </c:forTokens>
                             </ul>
                         </li>
                         <li>

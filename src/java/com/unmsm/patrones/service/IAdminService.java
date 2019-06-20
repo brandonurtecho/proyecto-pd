@@ -5,12 +5,15 @@
  */
 package com.unmsm.patrones.service;
 
-import com.unmsm.patrones.dto.Payment;
+import com.unmsm.patrones.dto.Admin;
+import com.unmsm.patrones.dto.Person;
 
 /**
  *
  * @author bluq1
  */
-public interface IPaymentService {
-    void sendPaymentEmail(Payment payment);
+public interface IAdminService {
+    Boolean login(String email, String password);
+    Person showAdminByEmail(Admin admin);
+    Boolean logout();
 }

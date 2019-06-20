@@ -5,14 +5,10 @@
  */
 package com.unmsm.patrones.repository;
 
-import com.unmsm.patrones.dto.Commentary;
-
 /**
  *
  * @author diego
  */
-public interface ICommentaryRepository extends ICommentaryReadeable {
-    void insert(Commentary commentary);
-    long update(Commentary commentary);
-    long delete(Commentary commentary);
+public interface IPanamericanoSportRepository extends IPanamericanoSportReadeable{
+    
 }

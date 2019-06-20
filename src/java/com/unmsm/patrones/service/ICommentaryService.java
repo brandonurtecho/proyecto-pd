@@ -16,6 +16,6 @@ public interface ICommentaryService {
     List<Commentary> showAllComentaries();
     List<Commentary> showCommentaryBySport(String sport);
     Boolean createCommentary(Commentary commentary);
-    Boolean editCommentary(Commentary commentary);
-    Boolean deleteCommentary(String id);
+    Boolean likeCommentary(Commentary commentary);
+    Boolean deleteCommentary(Commentary commentary);
 }

@@ -19,12 +19,13 @@ import java.util.List;
  */
 public interface IUserFacadeService {    
     //Esto esperará
-    Boolean login(Session session);
+    Boolean login(String email, String password);
     Boolean registerNewAccount(User user);
-    /*****************/
-    List<Sport> showSportList();
-    Sport showSportByName(String name);
-    Commentary showCommentaryBySportInSport(String sport);
+    Boolean editAccaunt(User user);
+    List<? extends Sport> showSportList(String type);
+    Sport showSportById(String id, String type);
+    Boolean commentary(Commentary commentary, String action);
+    List<Commentary> showCommentaryBySportInSport(String sport);
     Sportsman showSportsmanBySportInSport(String sport);
     Boolean buyTicketForEvent(Payment payment);
 }

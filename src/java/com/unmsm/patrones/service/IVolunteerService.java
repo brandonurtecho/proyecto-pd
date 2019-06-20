@@ -5,14 +5,13 @@
  */
 package com.unmsm.patrones.service;
 
-import com.unmsm.patrones.dto.Sport;
+import com.unmsm.patrones.dto.Volunteer;
 import java.util.List;
 
 /**
  *
  * @author bluq1
  */
-public interface ISportService {
-    List<Sport> showAllSports();
-    Sport showSportBySport(String sport);
+public interface IVolunteerService {
+    List<Volunteer> showAllVolunteers();
 }

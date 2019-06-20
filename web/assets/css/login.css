@@ -179,11 +179,10 @@ iframe {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  justify-content: center;  
   padding: 15px;
   background-image: url(../img/fondo-login-admin.jpg);
-  background-size: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -193,9 +192,10 @@ iframe {
   background: #fff;
   border-radius: 10px;
   position: relative;
-  background-color: rgba(236,245,230,.5);
+  background-color: #000;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   margin-top: 5%;
 }
 

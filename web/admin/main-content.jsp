@@ -3,7 +3,7 @@
     Created on : 09/06/2019, 09:47:56 AM
     Author     : RDR
 --%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -30,44 +30,42 @@
                     <div align="center">
                         <img src="../assets/img/logo-admin.png" height="100" width="100"><br>
                     </div><br>
-                    
+
                     <p style="color: #FAFAFA" >Administrador</p>
                 </div>
                 <div class="sidebar-b">
                     <ul class="list-unstyled components">                
                         <li class="active">
+                            <c:set var="venues">Villa Deportiva Regional del Callao,Costa Verde - San Miguel,Estadio Nacional,
+                                Villa Deportiva Nacional - Videna,Coliseo Eduardo Dibós,Circuito Ciudad,Escuela de Equitación del Ejército,
+                                Complejo Deportivo Villa María del Triunfo,Base Aérea Las Palmas,Escuela Militar de Chorrillos,Playa Chorrillos,
+                                Morro Solar Chorrillos,Polideportivo Villa el Salvador,Country Club de Villa,Villa Panamericana y Parapanamericana,
+                                Punta Rocas,Puerto Viejo,Laguna Bujama,Río Cañete - Lunahuaná,Yatch Club Peruano Sede Paracas</c:set>
                             <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Comentarios de sedes</a>
                             <ul class="collapse list-unstyled" id="homeSubmenu">
-                                <li>
-                                    <a href="venue-commentaries.jsp">La videna</a>
-                                </li>
-                                <li>
-                                    <a href="venue-commentaries.jsp">El llaoca</a>
-                                </li>
-                                <li>
-                                    <a href="venue-commentaries.jsp">Luriwashington</a>
-                                </li>
+                                <c:forTokens items="${venues}" delims="," var="venue">
+                                    <li><a href="venue-commentaries.jsp">${venue}</a></li>
+                                </c:forTokens>
                             </ul>
                         </li>
                         <li>
+                            <c:set var="sports">Atletismo,Bádminton,Baloncesto,Balonmano,Béisbol,Bowling,Canotaje Slalom,Canotaje Slalom Extremo,
+                                Canotaje Velocidad,Ciclismo BMX,Ciclismo de Montaña,Ciclismo de Pista,Ciclismo de Ruta,Clavados,Deportes Ecuestres,
+                                Esgrima,Esquí Acuático y Wakeboard,Fisicoculturismo,Fútbol,Gimnasia Artística,Gimnasia Rítmica,Gimnasia Trampolín,
+                                Golf,Hockey,Judo,Karate,Levantamiento de Pesas,Lucha, Natación,Natación Aguas Abiertas,Natación Artística,Patinaje Artístico,
+                                Patinaje de Velocidad,Pelota Vasca,Pentatlón Moderno,Ráquetbol,Remo,Rugby 7,Softbol,Squash,Surf,Taekwondo,Tenis,Tenis de Mesa,
+                                Tiro,Tiro con Arco,Triatlón,Vela,Voleibol,Voleibol de Playa,Water Polo</c:set>
                             <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Comentarios deportes</a>
                             <ul class="collapse list-unstyled" id="pageSubmenu">
-                                <li>
-                                    <a href="sport-commentaries.jsp">Futbol</a>
-                                </li>
-                                <li>
-                                    <a href="sport-commentaries.jsp">Voley</a>
-                                </li>
-                                <li>
-                                    <a href="sport-commentaries.jsp">Natacion</a>
-                                </li>
+                                <c:forTokens items="${sports}" delims="," var="sport">
+                                    <li><a href="sport-commentaries.jsp">${sport}</a></li>
+                                </c:forTokens>
                             </ul>
                         </li>
                         <li>
                             <a href="venue-attendees.jsp">Ver asistentes</a>
                         </li>
                     </ul>
-
                 </div>
             </nav>
 
@@ -91,12 +89,54 @@
                     </div>
                 </nav>
 
-                <h2>Levantate oe</h2>
-                <p>A que hora se levantara franco tmr :v</p>
-                <p>Ah pero a las 5 para joder si se levanta csm :v</p>
+                <section>
+                    <div class="container">
+                        <div class="row">
+                            <!-- Team Member 1 -->
+                            <div class="col-xl-3 col-md-6 mb-4">
+                                <div class="card border-0 shadow">
+                                    <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title mb-0">Team Member</h5>
+                                        <div class="card-text text-black-50">Web Developer</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Team Member 2 -->
+                            <div class="col-xl-3 col-md-6 mb-4">
+                                <div class="card border-0 shadow">
+                                    <img src="https://source.unsplash.com/9UVmlIb0wJU/500x350" class="card-img-top" alt="...">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title mb-0">Team Member</h5>
+                                        <div class="card-text text-black-50">Web Developer</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Team Member 3 -->
+                            <div class="col-xl-3 col-md-6 mb-4">
+                                <div class="card border-0 shadow">
+                                    <img src="https://source.unsplash.com/sNut2MqSmds/500x350" class="card-img-top" alt="...">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title mb-0">Team Member</h5>
+                                        <div class="card-text text-black-50">Web Developer</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Team Member 4 -->
+                            <div class="col-xl-3 col-md-6 mb-4">
+                                <div class="card border-0 shadow">
+                                    <img src="https://source.unsplash.com/ZI6p3i9SbVU/500x350" class="card-img-top" alt="...">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title mb-0">Team Member</h5>
+                                        <div class="card-text text-black-50">Web Developer</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.row -->
 
-                <h2>Lorem Ipsum Dolor</h2>
-                <p>Levantate pe</p>
+                    </div>
+                </section>
 
             </div>
         </div>

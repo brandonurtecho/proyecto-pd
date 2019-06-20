@@ -3,7 +3,7 @@
     Created on : 09/06/2019, 11:00:25 AM
     Author     : RDR
 --%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -35,34 +35,32 @@
                     <p style="color: #FAFAFA" >Administrador</p>
                 </div>
                 <div class="sidebar-b">
-
-                    <ul class="list-unstyled components">
+                    <ul class="list-unstyled components">                
                         <li class="active">
+                            <c:set var="venues">Villa Deportiva Regional del Callao,Costa Verde - San Miguel,Estadio Nacional,
+                                Villa Deportiva Nacional - Videna,Coliseo Eduardo Dibós,Circuito Ciudad,Escuela de Equitación del Ejército,
+                                Complejo Deportivo Villa María del Triunfo,Base Aérea Las Palmas,Escuela Militar de Chorrillos,Playa Chorrillos,
+                                Morro Solar Chorrillos,Polideportivo Villa el Salvador,Country Club de Villa,Villa Panamericana y Parapanamericana,
+                                Punta Rocas,Puerto Viejo,Laguna Bujama,Río Cañete - Lunahuaná,Yatch Club Peruano Sede Paracas</c:set>
                             <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Comentarios de sedes</a>
                             <ul class="collapse list-unstyled" id="homeSubmenu">
-                                <li>
-                                    <a href="venue-commentaries.jsp">La videna</a>
-                                </li>
-                                <li>
-                                    <a href="venue-commentaries.jsp">El llaoca</a>
-                                </li>
-                                <li>
-                                    <a href="venue-commentaries.jsp">Luriwashington</a>
-                                </li>
+                                <c:forTokens items="${venues}" delims="," var="venue">
+                                    <li><a href="venue-commentaries.jsp">${venue}</a></li>
+                                </c:forTokens>
                             </ul>
                         </li>
                         <li>
+                            <c:set var="sports">Atletismo,Bádminton,Baloncesto,Balonmano,Béisbol,Bowling,Canotaje Slalom,Canotaje Slalom Extremo,
+                                Canotaje Velocidad,Ciclismo BMX,Ciclismo de Montaña,Ciclismo de Pista,Ciclismo de Ruta,Clavados,Deportes Ecuestres,
+                                Esgrima,Esquí Acuático y Wakeboard,Fisicoculturismo,Fútbol,Gimnasia Artística,Gimnasia Rítmica,Gimnasia Trampolín,
+                                Golf,Hockey,Judo,Karate,Levantamiento de Pesas,Lucha, Natación,Natación Aguas Abiertas,Natación Artística,Patinaje Artístico,
+                                Patinaje de Velocidad,Pelota Vasca,Pentatlón Moderno,Ráquetbol,Remo,Rugby 7,Softbol,Squash,Surf,Taekwondo,Tenis,Tenis de Mesa,
+                                Tiro,Tiro con Arco,Triatlón,Vela,Voleibol,Voleibol de Playa,Water Polo</c:set>
                             <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Comentarios deportes</a>
                             <ul class="collapse list-unstyled" id="pageSubmenu">
-                                <li>
-                                    <a href="sport-commentaries.jsp">Futbol</a>
-                                </li>
-                                <li>
-                                    <a href="sport-commentaries.jsp">Voley</a>
-                                </li>
-                                <li>
-                                    <a href="sport-commentaries.jsp">Natacion</a>
-                                </li>
+                                <c:forTokens items="${sports}" delims="," var="sport">
+                                    <li><a href="sport-commentaries.jsp">${sport}</a></li>
+                                </c:forTokens>
                             </ul>
                         </li>
                         <li>
@@ -77,8 +75,6 @@
 
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <div class="container-fluid">
-
-
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="nav navbar-nav ml-auto">
                                 <li class="nav-item active">
@@ -93,9 +89,17 @@
                     </div>
                 </nav>
 
-                <h2>Levantate oe</h2>
-                <p>nose para que es</p>
-                <p>nose</p>
+                <section>
+                    <c:forEach var="i" begin="1" end="10">
+                        <div class="card my-4">
+                            <h5 class="card-header">Comentario sede ${i}</h5>
+                            <div class="card-body">
+                                <h5 class="card-title">Nombre del usuario</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            </div>
+                        </div>
+                    </c:forEach>
+                </section>
 
             </div>
         </div>

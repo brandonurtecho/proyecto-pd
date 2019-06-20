@@ -4,6 +4,7 @@
     Author     : RDR
 --%>
 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -14,6 +15,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
         <!-- Our Custom CSS -->
         <link rel="stylesheet" href="../assets/css/main-content.css">
+        <link href="../assets/bootstrap/css/util.css" rel="stylesheet"/>
 
         <!-- Font Awesome JS -->
         <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
@@ -34,36 +36,33 @@
 
                     <p style="color: #FAFAFA" >Administrador</p>
                 </div>
-
                 <div class="sidebar-b">
-                    <ul class="list-unstyled components">
-
+                    <ul class="list-unstyled components">                
                         <li class="active">
+                            <c:set var="venues">Villa Deportiva Regional del Callao,Costa Verde - San Miguel,Estadio Nacional,
+                                Villa Deportiva Nacional - Videna,Coliseo Eduardo Dibós,Circuito Ciudad,Escuela de Equitación del Ejército,
+                                Complejo Deportivo Villa María del Triunfo,Base Aérea Las Palmas,Escuela Militar de Chorrillos,Playa Chorrillos,
+                                Morro Solar Chorrillos,Polideportivo Villa el Salvador,Country Club de Villa,Villa Panamericana y Parapanamericana,
+                                Punta Rocas,Puerto Viejo,Laguna Bujama,Río Cañete - Lunahuaná,Yatch Club Peruano Sede Paracas</c:set>
                             <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Comentarios de sedes</a>
                             <ul class="collapse list-unstyled" id="homeSubmenu">
-                                <li>
-                                    <a href="venue-commentaries.jsp">La videna</a>
-                                </li>
-                                <li>
-                                    <a href="venue-commentaries.jsp">El llaoca</a>
-                                </li>
-                                <li>
-                                    <a href="venue-commentaries.jsp">Luriwashington</a>
-                                </li>
+                                <c:forTokens items="${venues}" delims="," var="venue">
+                                    <li><a href="venue-commentaries.jsp">${venue}</a></li>
+                                </c:forTokens>
                             </ul>
                         </li>
                         <li>
+                            <c:set var="sports">Atletismo,Bádminton,Baloncesto,Balonmano,Béisbol,Bowling,Canotaje Slalom,Canotaje Slalom Extremo,
+                                Canotaje Velocidad,Ciclismo BMX,Ciclismo de Montaña,Ciclismo de Pista,Ciclismo de Ruta,Clavados,Deportes Ecuestres,
+                                Esgrima,Esquí Acuático y Wakeboard,Fisicoculturismo,Fútbol,Gimnasia Artística,Gimnasia Rítmica,Gimnasia Trampolín,
+                                Golf,Hockey,Judo,Karate,Levantamiento de Pesas,Lucha, Natación,Natación Aguas Abiertas,Natación Artística,Patinaje Artístico,
+                                Patinaje de Velocidad,Pelota Vasca,Pentatlón Moderno,Ráquetbol,Remo,Rugby 7,Softbol,Squash,Surf,Taekwondo,Tenis,Tenis de Mesa,
+                                Tiro,Tiro con Arco,Triatlón,Vela,Voleibol,Voleibol de Playa,Water Polo</c:set>
                             <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Comentarios deportes</a>
                             <ul class="collapse list-unstyled" id="pageSubmenu">
-                                <li>
-                                    <a href="sport-commentaries.jsp">Futbol</a>
-                                </li>
-                                <li>
-                                    <a href="sport-commentaries.jsp">Voley</a>
-                                </li>
-                                <li>
-                                    <a href="sport-commentaries.jsp">Natacion</a>
-                                </li>
+                                <c:forTokens items="${sports}" delims="," var="sport">
+                                    <li><a href="sport-commentaries.jsp">${sport}</a></li>
+                                </c:forTokens>
                             </ul>
                         </li>
                         <li>
@@ -98,25 +97,44 @@
                     <h2>ASISTENTES</h2><br>
                 </div>
 
-
-                <a href="login.jsp">
-                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                        <div class="container-fluid">
-
-
-                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                aca va los datos
+                <section>
+                    <c:forEach var="i" begin="1" end="10">
+                        <div class="card my-4">
+                            <div class="card-body">
+                                <div class="form-group flex-sa">
+                                    <div class="w-40">
+                                        <label>Nombre:</label>
+                                        <input type="text" class="form-control" id="nombre" placeholder="Nombre" readonly><br>
+                                    </div>
+                                    <div class="w-40">
+                                        <label>Apellido:</label>
+                                        <input type="text" class="form-control" id="apellido" placeholder="Apellido" readonly><br>
+                                    </div>
+                                </div>
+                                <div id="extra${i}">
+                                    <div class="form-group flex-sa">
+                                        <div class="w-40">
+                                            <label>Edad:</label>
+                                            <input type="text" class="form-control" id="edad" placeholder="Edad" readonly><br> 
+                                        </div>
+                                        <div class="w-40">  
+                                            <label>Sexo:</label>
+                                            <input type="text" class="form-control" id="sexo" placeholder="Sexo" readonly><br>
+                                        </div>                                   
+                                    </div>
+                                    <div class="form-group flex-sa">
+                                        <div class="w-90">
+                                            <label>Correo Electronico:</label>
+                                            <input type="text" class="form-control" id="correo" placeholder="Correo Electronico" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button id="btn${i}" class="btn btn-primary float-right">O</button>
                             </div>
-
-
                         </div>
-                    </nav>
-                </a>
-
-                <h2>Levantate oe</h2>
-                <p>Asdfsdfdzo tmr :v</p>
-                <p>Ah perosadfsadfasfasdfsadf :v</p>
-
+                    </c:forEach>              
+                </section>
+                s
             </div>
         </div>
 
@@ -126,13 +144,21 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
         <!-- Bootstrap JS -->
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
         <script type="text/javascript">
             $(document).ready(function () {
                 $('#sidebarCollapse').on('click', function () {
                     $('#sidebar').toggleClass('active');
                 });
             });
+            <c:forEach var="i" begin="1" end="10">
+            $("#extra${i}").toggle();
+            </c:forEach>
+            <c:forEach var="i" begin="1" end="10">
+            $("#btn${i}").click(function () {
+                $("#extra${i}").toggle("slow");
+            });
+            </c:forEach>
         </script>
 
     </body>

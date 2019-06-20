@@ -5,13 +5,15 @@
  */
 package com.unmsm.patrones.service;
 
-import com.unmsm.patrones.dto.Country;
+import com.unmsm.patrones.dto.PanamericanoSport;
+import com.unmsm.patrones.dto.Sport;
 import java.util.List;
 
 /**
  *
- * @author LaboratorioFISI
+ * @author bluq1
  */
-public interface ICountryService {
-    List<Country> findAllCountries();
+public interface IPanamericanoSportService {
+    List<PanamericanoSport> showAllSports();
+    PanamericanoSport showSportById(String id);
 }

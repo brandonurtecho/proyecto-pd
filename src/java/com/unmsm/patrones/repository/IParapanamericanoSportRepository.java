@@ -5,14 +5,10 @@
  */
 package com.unmsm.patrones.repository;
 
-import com.unmsm.patrones.dto.Sport;
-import java.util.List;
-
 /**
  *
  * @author diego
  */
-public interface ISportReadeable{
-    List<Sport> getAll();
-    Sport getByTitle(String Title);
+public interface IParapanamericanoSportRepository extends IParapanamericanoSportReadeable{
+    
 }
