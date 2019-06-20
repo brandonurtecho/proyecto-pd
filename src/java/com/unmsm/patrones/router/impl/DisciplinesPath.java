@@ -44,16 +44,25 @@ public class DisciplinesPath extends PathStrategy{
         
         UserFacadeService service = new UserFacadeService();
         
-        /*
+        String sport = request.getParameter("sport");
+        
+        if (sport != null){
+            request.getSession().setAttribute("Sport", sport);
+            RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.SPORTMAN);
+            dispatcher.forward(request, response);
+        }
+        
+        
         int num = Integer.parseInt(request.getParameter("num"));
         if (num == 0){
-           List<PanamericanoSport> list = service.showSportList(TypeSport.PANAMERICANO_SPORT);
+           List<PanamericanoSport> list = (List<PanamericanoSport>) service.showSportList(TypeSport.PANAMERICANO_SPORT);
            request.setAttribute("list", list);
         }else {
-           List<ParapanamericanoSport> list = service.showSportList(TypeSport.PARAPANAMERICANO_SPORT);
+           List<ParapanamericanoSport> list = (List<ParapanamericanoSport>) service.showSportList(TypeSport.PARAPANAMERICANO_SPORT);
            request.setAttribute("list", list);
         
-        }*/
+        }
+        
         RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.DISCIPLINES);
         dispatcher.forward(request, response);
     }

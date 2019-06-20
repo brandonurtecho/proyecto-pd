@@ -40,9 +40,7 @@ public class VoluntaryPath extends PathStrategy {
             throws ServletException, IOException, SQLException {
         
         UserFacadeService service = new UserFacadeService();
-         
         List <Volunteer> volunteerlist = service.showVolunteers();
-        
         request.setAttribute("volunteers", volunteerlist);
         
         RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.VOLUNTARY);

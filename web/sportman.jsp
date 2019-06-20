@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-        <link rel="stylesheet" href="assets/css/vistaDiciplinas.css">
+        <link rel="stylesheet" href="assets/css/vistaSportsman.css">
 
         <!-- BOOTSTRAP -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -94,87 +94,53 @@
             <div class="">
 
                 <div id="comments " class="comments">
+                    
+                    
+
                     <div id="comment-1">
                         <div class="comment my-2">
                             <div class="media-left">
-                                <a href="https://www.zona-leros.net/perfil/Connor9924">
-                                    <img src="https://www.zona-leros.net/storage/image/default.png" alt="" class="img ">
-                                </a>
+                                <img src="https://www.zona-leros.net/storage/image/default.png" alt="" class="img ">
                             </div>
                             <div class="media-body">
                                 <div class="media-content" style=" ">
-                                    <span class="media-heading">Usuario 1</span>
-                                    <span class="date" style="display: inline;"> • Hace 2 semanas.</span>
-                                    <span class="text">Algun comentario de verga :V<br>
+                                    <span class="media-heading"> titulo </span>
+                                    <span class="date" style="display: inline;"> • date.</span>
+                                    <span class="text"> Body <br>
                                     </span>
                                     <div class="date">
                                         <span class="up">
-                                            <span id="upvotes-9393">1</span> <i class="fa fa-fw fa-chevron-up " onclick="  " id="up-9393"></i>
-                                        </span> |
-                                        <span class="down">
-                                            <span id="downvotes-9393"></span> <i class="fa fa-fw fa-chevron-down " onclick=" "
-                                                                                 id="down-9393"></i>
-                                        </span>
+                                            <span id="upvotes-9393">likes</span> <i class="fa fa-fw fa-chevron-up " onclick="  " id="up-9393"></i>
+                                        </span> 
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div id="comment-2">
-                        <div class="comment">
+                        
+                        
+                        // comentar
+                        
+                        <div class="comment my-2">
                             <div class="media-left">
-                                <a href="https://www.zona-leros.net/perfil/Connor9924">
-                                    <img src="https://www.zona-leros.net/storage/image/default.png" alt="" class="img ">
-                                </a>
+                                <img src="https://www.zona-leros.net/storage/image/default.png" alt="" class="img ">
                             </div>
                             <div class="media-body">
                                 <div class="media-content" style=" ">
-                                    <span class="media-heading">USUARIO-2</span>
-                                    <span class="date" style="display: inline;"> • Hace 2 semanas.</span>
-                                    <span class="text">Algun otro comentario de verga<br>
+                                    <span class="text">  
+                                        <br><br><br>
                                     </span>
-                                    <div class="date">
-                                        <span class="up">
-                                            <span id="upvotes-9393">1</span> <i class="fa fa-fw fa-chevron-up " onclick="  " id="up-9393"></i>
-                                        </span> |
-                                        <span class="down">
-                                            <span id="downvotes-9393"></span> <i class="fa fa-fw fa-chevron-down " onclick=" "
-                                                                                 id="down-9393"></i>
-                                        </span>
-                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div id="comment-3">
-                        <div class="comment">
-                            <div class="media-left">
-                                <a href="https://www.zona-leros.net/perfil/Connor9924">
-                                    <img src="https://www.zona-leros.net/storage/image/default.png" alt="" class="img ">
-                                </a>
-                            </div>
-                            <div class="media-body">
-                                <div class="media-content" style=" ">
-                                    <span class="media-heading">USUARIO-3</span>
-                                    <span class="date" style="display: inline;"> • Hace 2 semanas.</span>
-                                    <span class="text">Comentario<br>
-                                    </span>
-                                    <div class="date">
-                                        <span class="up">
-                                            <span id="upvotes-9393">1</span> <i class="fa fa-fw fa-chevron-up " onclick="  " id="up-9393"></i>
-                                        </span> |
-                                        <span class="down">
-                                            <span id="downvotes-9393"></span> <i class="fa fa-fw fa-chevron-down " onclick=" "
-                                                                                 id="down-9393"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
+                      
+                        <div class="text-right px-3">
+                            <form action="/proyecto/principal/deportistas?commentary=0" method="post">
+                                <input type="submit" class="btn btn-danger" value="Comentar">
+                            </form>
                         </div>
+                        
+                                                
                     </div>
-
 
                 </div>
             </div>
