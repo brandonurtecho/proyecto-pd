@@ -1,0 +1,184 @@
+/*
+    DEMO STYLE
+*/
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #000000;
+    
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    padding: 15px 10px;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+    background: #335069;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background: #335069; /* color para todo el sidebar*/
+    color: #FAFAFA;
+    transition: all 0.3s;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+    background: #17a2b8;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    color: #FAFAFA;
+    background: #334569; /* para el header del sidebar */
+}
+
+#sidebar .sidebar-b {
+    padding: 20px;
+    color: #FAFAFA;
+    background: #335069; /* para el header del sidebar */
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #335069; /* para borde del boton del sidebar */
+    color: #FAFAFA;
+    background: #335069; /* para las opciones del sidebar */
+}
+
+#sidebar ul p {
+    color: #FAFAFA;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    color: #FAFAFA;
+    background: #335069; /* para las opciones del sidebar */
+    font-size: 1.1em;
+    display: block;
+}
+
+#sidebar ul li a:hover { /*cuando se pasa el mouse*/
+    color: #000000; /* color para cuando se pase el mouse*/
+    background: #335069;
+}
+
+#sidebar ul li.active>a,
+a[aria-expanded="true"] { 
+    color: #FAFAFA;
+    background: #335069; /*esto es para cuando esta activado la opcion del sidebar*/
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    color: #FAFAFA;
+    transform: translateY(-50%);
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #6d7fcc;
+}
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+a.download {
+    background: #fff;
+    color: #7386D5;
+}
+
+a.article,
+a.article:hover {
+    background: #6d7fcc !important;
+    color: #fff !important;
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+    width: 100%;
+    padding: 20px;
+    min-height: 100vh;
+    transition: all 0.3s;
+    background: #FBFBFB;
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+}

@@ -9,12 +9,19 @@ import com.unmsm.patrones.router.PathStrategy;
 import com.unmsm.patrones.router.impl.DefaultPath;
 
 import com.unmsm.patrones.router.impl.DisciplinesPath;
+import com.unmsm.patrones.router.impl.EditProfilePath;
 import com.unmsm.patrones.router.impl.EventsPath;
 
 import com.unmsm.patrones.router.impl.IndexPath;
 import com.unmsm.patrones.router.impl.InitialPath;
+import com.unmsm.patrones.router.impl.LoginAdminPath;
+import com.unmsm.patrones.router.impl.MainContentPath;
 import com.unmsm.patrones.router.impl.PaymentsPath;
+import com.unmsm.patrones.router.impl.SportCommentariesPath;
 import com.unmsm.patrones.router.impl.SportmanPath;
+import com.unmsm.patrones.router.impl.VenueAttendeesPath;
+import com.unmsm.patrones.router.impl.VenueCommentariesPath;
+import com.unmsm.patrones.router.impl.ViewProfilePath;
 import com.unmsm.patrones.router.impl.VoluntaryPath;
 
 import com.unmsm.patrones.util.PathName;
@@ -65,7 +72,13 @@ public class PathConfigSingleton {
     }
         
     private void initAdminPath(){
-        
+        listPath.add(new LoginAdminPath(PathName.LOGIN_ADMIN));
+        listPath.add(new MainContentPath(PathName.MAIN_CONTENT));
+        listPath.add(new ViewProfilePath(PathName.VIEW_PROFILE));
+        listPath.add(new EditProfilePath(PathName.EDIT_PROFILE));
+        listPath.add(new SportCommentariesPath(PathName.SPORT_COMMENTARIES));
+        listPath.add(new VenueCommentariesPath(PathName.VENUE_COMMENTARIES));
+        listPath.add(new VenueAttendeesPath(PathName.VENUE_ATTENDEES));
     }
 
     public List<PathStrategy> getListPath() {
