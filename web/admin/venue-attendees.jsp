@@ -31,7 +31,7 @@
                     <h3>ADMIN</h3>
 
                     <div align="center">
-                        <img src="../assets/img/logo-admin.png" height="100" width="100"><br>
+                        <a class="nav-link" href="view-profile.jsp"><img src="../assets/img/logo-admin.png" height="100" width="100"></a><br>
                     </div><br>
 
                     <p style="color: #FAFAFA" >Administrador</p>
@@ -81,9 +81,6 @@
 
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="nav navbar-nav ml-auto">
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="view-profile.jsp"><strong>Ver Perfil</strong></a>
-                                </li>
                                 <li class="nav-item active">
                                     <a class="nav-link" href="login.jsp"><strong>Cerrar Sesion</strong></a>
                                 </li>
