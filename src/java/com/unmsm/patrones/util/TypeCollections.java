@@ -18,5 +18,6 @@ public class TypeCollections {
     public final static String VOLUNTEERS = "volunteers";
     public final static String SPORTSMANS = "sportsmans";
     public final static String PLACES = "places";
-    
+    public final static String EVENTS = "events";
+    public final static String PURCHASES = "purchases";
 }

@@ -5,6 +5,7 @@
  */
 package com.unmsm.patrones.dto;
 
+import java.time.Instant;
 import java.util.Date;
 
 /**
@@ -12,11 +13,116 @@ import java.util.Date;
  * @author bluq1
  */
 public class Event {
+
     private String id;
     private Date date;
-    private Sport sport;
+    private String sport;
+    private String description;
 
     public Event() {
     }
-    
+
+    public Event(String id, Date date, String sport, String description) {
+        this.id = id;
+        this.date = date;
+        this.sport = sport;
+        this.description = description;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public String getSport() {
+        return sport;
+    }
+
+    public void setSport(String sport) {
+        this.sport = sport;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        return "Event{" + "id=" + id + ", date=" + date + ", sport=" + sport + ", description=" + description + '}';
+    }
+
+    public static final Event NULL_EVENT = new Event() {
+        @Override
+        public String getId() {
+            return "0";
+        }
+
+        @Override
+        public Date getDate() {
+            return Date.from(Instant.MIN);
+        }
+
+        @Override
+        public String getSport() {
+            return "NULL SPORT";
+        }
+
+        @Override
+        public String getDescription() {
+            return "NULL DESCRIPTION";
+        }
+
+    };
+
+    public static class EventBuilder implements IBuilder<Event> {
+
+        private String id;
+        private Date date;
+        private String sport;
+        private String description;
+
+        public EventBuilder() {
+        }
+
+        public EventBuilder setId(String id) {
+            this.id = id;
+            return this;
+        }
+
+        public EventBuilder setDate(Date date) {
+            this.date = date;
+            return this;
+        }
+
+        public EventBuilder setSport(String sport) {
+            this.sport = sport;
+            return this;
+        }
+
+        public EventBuilder setDescription(String description) {
+            this.description = description;
+            return this;
+        }
+
+        @Override
+        public Event build() {
+            return new Event(id, date, sport, description);
+        }
+
+    }
 }

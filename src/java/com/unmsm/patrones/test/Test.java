@@ -13,6 +13,7 @@ import com.mongodb.client.MongoDatabase;
 import static com.mongodb.client.model.Filters.eq;
 import com.unmsm.patrones.connection.Connection;
 import com.unmsm.patrones.dto.Commentary;
+import com.unmsm.patrones.dto.PanamericanoSport;
 import com.unmsm.patrones.dto.ParapanamericanoSport;
 import com.unmsm.patrones.dto.User;
 import com.unmsm.patrones.repository.IUserReadeable;
@@ -59,11 +60,12 @@ public class Test {
 //            System.out.println(com);
 //        }
 
-        MongoCollection collection = 
-            Connection.getConnection().getCollection(TypeCollections.PARAPANAMERICANO_SPORTS);
+        IUserFacadeService facade = new UserFacadeService();
+        List<PanamericanoSport> list = (List<PanamericanoSport>) facade.showSportList(TypeSport.PANAMERICANO_SPORT);
+        for (PanamericanoSport sport : list) {
+            System.out.println(sport.toString());
+        }
         
-        Document c = (Document) collection.find(eq("title","BALONCESTO EN SILLA DE RUEDAS")).first();
-        System.out.println(c.toJson());
         
 //        Document doc = new Document("name", "MongoDB")
 //                .append("type", "database")

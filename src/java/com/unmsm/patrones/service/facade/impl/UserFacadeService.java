@@ -6,12 +6,14 @@
 package com.unmsm.patrones.service.facade.impl;
 
 import com.unmsm.patrones.dto.Commentary;
+import com.unmsm.patrones.dto.Event;
 import com.unmsm.patrones.dto.Payment;
 import com.unmsm.patrones.dto.Sport;
 import com.unmsm.patrones.dto.Sportsman;
 import com.unmsm.patrones.dto.User;
 import com.unmsm.patrones.dto.Volunteer;
 import com.unmsm.patrones.service.ICommentaryService;
+import com.unmsm.patrones.service.IEventService;
 import com.unmsm.patrones.service.IPaymentService;
 import com.unmsm.patrones.service.IUserService;
 import com.unmsm.patrones.service.facade.IUserFacadeService;
@@ -24,6 +26,7 @@ import com.unmsm.patrones.service.IPanamericanoSportService;
 import com.unmsm.patrones.service.IParapanamericanoSportService;
 import com.unmsm.patrones.service.ISportsmanService;
 import com.unmsm.patrones.service.IVolunteerService;
+import com.unmsm.patrones.service.impl.EventService;
 import com.unmsm.patrones.service.impl.ParapanamericanoSportService;
 import com.unmsm.patrones.service.impl.SportsmanService;
 import com.unmsm.patrones.service.impl.VolunteerService;
@@ -43,6 +46,7 @@ public class UserFacadeService implements IUserFacadeService {
     private IUserService userService;
     private IVolunteerService volunteerService;
     private ISportsmanService sportsmanService;
+    private IEventService eventService;
 
     public UserFacadeService() {
         this.commentaryService = new CommentaryService();
@@ -52,6 +56,7 @@ public class UserFacadeService implements IUserFacadeService {
         this.userService = new UserService();
         this.volunteerService = new VolunteerService();
         this.sportsmanService = new SportsmanService();
+        this.eventService = new EventService();
     }
 
     @Override
@@ -120,6 +125,16 @@ public class UserFacadeService implements IUserFacadeService {
     @Override
     public List<Volunteer> showVolunteers() {
         return volunteerService.showAllVolunteers();
+    }
+
+    @Override
+    public List<Event> getEvents() {
+        return eventService.getAll();
+    }
+
+    @Override
+    public List<Event> getEvents(String sport) {
+        return eventService.getEventsBySport(sport);
     }
     
 }
