@@ -21,5 +21,4 @@ public class TypeCollections {
     public final static String PLACES = "places";
     public final static String PAYMENTS = "payments";
     public final static String EVENTS = "events";
-    public final static String PURCHASES = "purchases";
 }

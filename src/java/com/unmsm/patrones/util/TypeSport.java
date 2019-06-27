@@ -12,7 +12,6 @@ package com.unmsm.patrones.util;
 public class TypeSport {
     public final static String PANAMERICANO_SPORT = "Panamericano sport";
     public final static String PARAPANAMERICANO_SPORT = "Parapanamericano sport";
-    public final static String FUTBOL = "futbol";
     public final static String BALONCESTO = "BALONCESTO";
     public final static String ATLETISMO = "ATLETISMO";
     public final static String BADMINTON = "BADMINTON";

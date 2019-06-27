@@ -5,7 +5,7 @@
  */
 package com.unmsm.patrones.dto;
 
-import java.time.Instant;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -17,16 +17,16 @@ public class Event {
     private String id;
     private Date date;
     private String sport;
-    private String description;
+    private String place;
 
     public Event() {
     }
 
-    public Event(String id, Date date, String sport, String description) {
+    public Event(String id, Date date, String sport, String place) {
         this.id = id;
         this.date = date;
         this.sport = sport;
-        this.description = description;
+        this.place = place;
     }
 
     public String getId() {
@@ -53,17 +53,17 @@ public class Event {
         this.sport = sport;
     }
 
-    public String getDescription() {
-        return description;
+    public String getPlace() {
+        return place;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setPlace(String place) {
+        this.place = place;
     }
 
     @Override
     public String toString() {
-        return "Event{" + "id=" + id + ", date=" + date + ", sport=" + sport + ", description=" + description + '}';
+        return "Event{" + "id=" + id + ", date=" + date + ", sport=" + sport + ", description=" + place + '}';
     }
 
     public static final Event NULL_EVENT = new Event() {
@@ -74,7 +74,7 @@ public class Event {
 
         @Override
         public Date getDate() {
-            return Date.from(Instant.MIN);
+            return Calendar.getInstance().getTime();
         }
 
         @Override
@@ -83,8 +83,8 @@ public class Event {
         }
 
         @Override
-        public String getDescription() {
-            return "NULL DESCRIPTION";
+        public String getPlace() {
+            return "NULL PLACE";
         }
 
     };
@@ -94,7 +94,7 @@ public class Event {
         private String id;
         private Date date;
         private String sport;
-        private String description;
+        private String place;
 
         public EventBuilder() {
         }
@@ -114,14 +114,14 @@ public class Event {
             return this;
         }
 
-        public EventBuilder setDescription(String description) {
-            this.description = description;
+        public EventBuilder setPlace(String place) {
+            this.place = place;
             return this;
         }
 
         @Override
         public Event build() {
-            return new Event(id, date, sport, description);
+            return new Event(id, date, sport, place);
         }
 
     }

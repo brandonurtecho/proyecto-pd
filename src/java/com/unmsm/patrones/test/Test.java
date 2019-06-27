@@ -64,7 +64,7 @@ public class Test {
 //        }
 
         IUserFacadeService facade = new UserFacadeService();
-        
+        System.out.println(Commentary.NULL_COMMENTARY.getDate());
         
 //        Document doc = new Document("name", "MongoDB")
 //                .append("type", "database")

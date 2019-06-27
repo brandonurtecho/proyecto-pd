@@ -43,7 +43,7 @@ public class EventDao implements IEventRepository {
                         .setId(doc.get("_id").toString())
                         .setSport(doc.getString("sport"))
                         .setDate(Cast.stringToDate(doc.getString("date")))
-                        .setDescription(doc.getString("description"))
+                        .setPlace(doc.getString("place"))
                         .build();
                 
                 list.add(event);
@@ -69,7 +69,7 @@ public class EventDao implements IEventRepository {
                         .setId(doc.get("_id").toString())
                         .setSport(doc.getString("sport"))
                         .setDate(Cast.stringToDate(doc.getString("date")))
-                        .setDescription(doc.getString("description"))
+                        .setPlace(doc.getString("place"))
                         .build();
                 
                 list.add(event);

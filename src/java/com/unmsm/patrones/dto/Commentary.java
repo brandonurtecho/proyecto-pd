@@ -6,6 +6,7 @@
 package com.unmsm.patrones.dto;
 
 import java.time.Instant;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -45,7 +46,7 @@ public class Commentary {
         
         @Override
         public Date getDate() {
-            return Date.from(Instant.MIN);
+            return Calendar.getInstance().getTime();
         }
 
         @Override
