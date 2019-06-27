@@ -4,6 +4,7 @@
     Author     : LaboratorioFISI
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -67,25 +68,24 @@
                 <div class="container">
 
                     <div class="row">
-                        
-                        <div class="col-md-4">
-                            <div class="card mb-4 shadow-sm">
-                                <img src="assets/img/juegos-panamericanos-lima-2019-este-es-el-cos-889204-453724-jpg_604x0.jpg" alt="" class="img-fluid">
-                                </svg>
-                                <div class="card-body">
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                                        content. This content is a little bit longer.</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-                                            <form action="/..........">
-                                                <button type="subbmit" class="btn btn-sm btn-outline-secondary">Ver mas</button>
-                                            </form>
+
+                        <c:forEach items="${sportmanlist}" var="sportman">
+
+                            <div class="col-md-4">
+                                <div class="card mb-4 shadow-sm">
+                                    <img src="${sportman.photo}" alt="" class="img-fluid">
+                                    
+                                    <div class="card-body">
+                                        <p class="card-text">El deportista <c:out value="${sportman.name}"/> <c:out value="${sportman.lastname}"/> es proveniente de 
+                                        <c:out value="${sportman.country}"/>, actualmente cuenta con <c:out value="${sportman.age}"/> años de edad</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <small class="text-muted">15 min</small>
                                         </div>
-                                        <small class="text-muted">9 mins</small>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </c:forEach>
+
 
                     </div>
                 </div>

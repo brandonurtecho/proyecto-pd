@@ -5,11 +5,14 @@
  */
 package com.unmsm.patrones.router.impl;
 
+import com.unmsm.patrones.dto.Event;
 import com.unmsm.patrones.router.PathStrategy;
+import com.unmsm.patrones.service.facade.impl.UserFacadeService;
 import com.unmsm.patrones.util.Jsp;
 import com.unmsm.patrones.util.PathName;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -30,9 +33,9 @@ public class EventsPath extends PathStrategy {
     public void operation(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException, SQLException {
         
-        
-        
-        
+        UserFacadeService service = new UserFacadeService();
+        List<Event> list = service.getEvents();
+        request.setAttribute("list", list);
         
         RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.EVENTS);
         dispatcher.forward(request, response);

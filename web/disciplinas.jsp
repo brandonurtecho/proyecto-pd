@@ -75,10 +75,13 @@
                                     <img src="${sport.image}" alt="" class="img-fluid">
                                     </svg>
                                     <div class="card-body">
+                                        <h1>${sport.title}</h1>
                                         <p class="card-text">${sport.overView}</p>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div class="btn-group">
-                                                <button type="button" class="btn btn-sm btn-outline-secondary">Ver mas</button>
+                                                <form action="/proyecto/principal/deportistas">
+                                                    <input type="submit" class="btn btn-sm btn-outline-secondary" name="Sport" value="${sport.title}">Ver mas</button>
+                                                </form>
                                             </div>
                                             <small class="text-muted">9 mins</small>
                                         </div>
