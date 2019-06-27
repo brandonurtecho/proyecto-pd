@@ -8,6 +8,7 @@ package com.unmsm.patrones.service.facade;
 import com.unmsm.patrones.dto.Commentary;
 import com.unmsm.patrones.dto.Event;
 import com.unmsm.patrones.dto.Payment;
+import com.unmsm.patrones.dto.Place;
 import com.unmsm.patrones.dto.Sport;
 import com.unmsm.patrones.dto.Sportsman;
 import com.unmsm.patrones.dto.User;
@@ -30,6 +31,8 @@ public interface IUserFacadeService {
     List<Sportsman> showSportsmanBySportInSport(String sport);
     List<Volunteer> showVolunteers();
     Boolean buyTicketForEvent(Payment payment);
+    List<Payment> getPaymentsByEmail(String email);
     List<Event> getEvents();
     List<Event> getEvents(String sport);
+    List<Place> getPlaces();
 }

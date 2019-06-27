@@ -6,7 +6,10 @@
 package com.unmsm.patrones.service.impl;
 
 import com.unmsm.patrones.dto.Payment;
+import com.unmsm.patrones.repository.IPaymentRepository;
+import com.unmsm.patrones.repository.impl.PaymentDao;
 import com.unmsm.patrones.service.IPaymentService;
+import java.util.List;
 import java.util.Properties;
 import javax.mail.Message;
 import javax.mail.MessagingException;
@@ -21,13 +24,16 @@ import javax.mail.internet.MimeMessage;
  * @author bluq1
  */
 public class PaymentService implements IPaymentService {
-    
+    private IPaymentRepository paymentRepository;
     private final static String FROM_EMAIL = "histerer@hotmail.com";
     private final static String FROM_PASS = "p4nameric4nosl*ma";
     private final static String SUBJECT = "Recibo de juegos panamericanos y parapanamericanos";
     
-    @Override
-    public void sendPaymentEmail(Payment payment) {
+    public PaymentService() {
+        this.paymentRepository = new PaymentDao();
+    }
+    
+    private void sendPaymentEmail(Payment payment) {
 
         Properties props = new Properties();
         /**
@@ -77,6 +83,22 @@ public class PaymentService implements IPaymentService {
                 .append(" DE ESTA FORMA")
                 .append(" ESTE ES UN MENSAJE DE EJEMPLO");
         return messageBody.toString();
+    }
+
+    @Override
+    public List<Payment> getAll() {
+        return paymentRepository.getAll();
+    }
+
+    @Override
+    public List<Payment> getPaymentsByEmailUser(String email) {
+        return paymentRepository.getPaymentsByUserEmail(email);
+    }
+
+    @Override
+    public void pay(Payment payment) {
+        sendPaymentEmail(payment);
+        paymentRepository.insert(payment);
     }
 
 }

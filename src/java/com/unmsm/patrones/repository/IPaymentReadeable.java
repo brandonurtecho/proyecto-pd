@@ -3,17 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.unmsm.patrones.service;
+package com.unmsm.patrones.repository;
 
 import com.unmsm.patrones.dto.Payment;
 import java.util.List;
 
 /**
  *
- * @author bluq1
+ * @author diego
  */
-public interface IPaymentService {
-    void pay(Payment payment);
+public interface IPaymentReadeable {
     List<Payment> getAll();
-    List<Payment> getPaymentsByEmailUser(String email);
+    List<Payment> getPaymentsByUserEmail(String email);
 }

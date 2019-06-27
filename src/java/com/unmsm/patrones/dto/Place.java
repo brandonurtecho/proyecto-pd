@@ -16,15 +16,15 @@ public class Place {
     private String id;
     private String name;
     private String description;
-    private List<String> vanues;
+    private List<String> venues;
 
     public Place() {}
     
-    public Place(String id, String name, String description, List<String> vanues) {
+    public Place(String id, String name, String description, List<String> venues) {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.vanues = vanues;
+        this.venues = venues;
     }
 
     public String getId() {
@@ -51,12 +51,12 @@ public class Place {
         this.description = description;
     }
 
-    public List<String> getVanues() {
-        return vanues;
+    public List<String> getVenues() {
+        return venues;
     }
 
-    public void setVanues(List<String> vanues) {
-        this.vanues = vanues;
+    public void setVanues(List<String> venues) {
+        this.venues = venues;
     }
     
     public static final Place NULL_PLACE = new Place() {
@@ -73,21 +73,21 @@ public class Place {
             return "NULL DESCRIPTION";
         }
         @Override
-        public List<String> getVanues() {
+        public List<String> getVenues() {
             return Arrays.asList("NULL VENUES");
         }   
     };
 
     @Override
     public String toString() {
-        return "Place{" + "id=" + id + ", name=" + name + ", description=" + description + ", vanues=" + vanues + '}';
+        return "Place{" + "id=" + id + ", name=" + name + ", description=" + description + ", vanues=" + venues + '}';
     }
     
     public static class PlaceBuilder implements IBuilder<Place> {
         private String id;
         private String name;
         private String description;
-        private List<String> vanues;
+        private List<String> venues;
         
         public PlaceBuilder() {}
 
@@ -106,14 +106,14 @@ public class Place {
             return this;
         }
 
-        public PlaceBuilder setVanues(List<String> vanues) {
-            this.vanues = vanues;
+        public PlaceBuilder setVenues(List<String> venues) {
+            this.venues = venues;
             return this;
         }
         
         @Override
         public Place build() {
-            return new Place(id, name, description, vanues);
+            return new Place(id, name, description, venues);
         }
         
     }

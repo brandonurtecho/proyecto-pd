@@ -8,6 +8,7 @@ package com.unmsm.patrones.service.facade.impl;
 import com.unmsm.patrones.dto.Commentary;
 import com.unmsm.patrones.dto.Event;
 import com.unmsm.patrones.dto.Payment;
+import com.unmsm.patrones.dto.Place;
 import com.unmsm.patrones.dto.Sport;
 import com.unmsm.patrones.dto.Sportsman;
 import com.unmsm.patrones.dto.User;
@@ -24,10 +25,12 @@ import com.unmsm.patrones.service.impl.UserService;
 import java.util.List;
 import com.unmsm.patrones.service.IPanamericanoSportService;
 import com.unmsm.patrones.service.IParapanamericanoSportService;
+import com.unmsm.patrones.service.IPlaceService;
 import com.unmsm.patrones.service.ISportsmanService;
 import com.unmsm.patrones.service.IVolunteerService;
 import com.unmsm.patrones.service.impl.EventService;
 import com.unmsm.patrones.service.impl.ParapanamericanoSportService;
+import com.unmsm.patrones.service.impl.PlaceService;
 import com.unmsm.patrones.service.impl.SportsmanService;
 import com.unmsm.patrones.service.impl.VolunteerService;
 import com.unmsm.patrones.util.TypeSport;
@@ -47,6 +50,7 @@ public class UserFacadeService implements IUserFacadeService {
     private IVolunteerService volunteerService;
     private ISportsmanService sportsmanService;
     private IEventService eventService;
+    private IPlaceService placeService;
 
     public UserFacadeService() {
         this.commentaryService = new CommentaryService();
@@ -57,6 +61,7 @@ public class UserFacadeService implements IUserFacadeService {
         this.volunteerService = new VolunteerService();
         this.sportsmanService = new SportsmanService();
         this.eventService = new EventService();
+        this.placeService = new PlaceService();
     }
 
     @Override
@@ -118,7 +123,7 @@ public class UserFacadeService implements IUserFacadeService {
 
     @Override
     public Boolean buyTicketForEvent(Payment payment) {
-        paymentService.sendPaymentEmail(payment);
+        paymentService.pay(payment);
         return Boolean.TRUE;
     }
 
@@ -135,6 +140,16 @@ public class UserFacadeService implements IUserFacadeService {
     @Override
     public List<Event> getEvents(String sport) {
         return eventService.getEventsBySport(sport);
+    }
+
+    @Override
+    public List<Place> getPlaces() {
+        return placeService.getAll();
+    }
+
+    @Override
+    public List<Payment> getPaymentsByEmail(String email) {
+        return paymentService.getPaymentsByEmailUser(email);
     }
     
 }

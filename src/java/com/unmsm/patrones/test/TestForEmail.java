@@ -15,6 +15,5 @@ import com.unmsm.patrones.service.impl.PaymentService;
 public class TestForEmail {
     public static void main(String[] args) {
         IPaymentService paymentService = new PaymentService();
-        paymentService.sendPaymentEmail(null);
     }
 }

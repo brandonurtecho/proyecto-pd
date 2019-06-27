@@ -5,15 +5,13 @@
  */
 package com.unmsm.patrones.service;
 
-import com.unmsm.patrones.dto.Payment;
+import com.unmsm.patrones.dto.Place;
 import java.util.List;
 
 /**
  *
- * @author bluq1
+ * @author diego
  */
-public interface IPaymentService {
-    void pay(Payment payment);
-    List<Payment> getAll();
-    List<Payment> getPaymentsByEmailUser(String email);
+public interface IPlaceService {
+    List<Place> getAll();
 }

@@ -10,6 +10,7 @@ package com.unmsm.patrones.util;
  * @author diego
  */
 public class TypeCollections {
+
     public final static String USERS = "users";
     public final static String ADMINS = "administrators";
     public final static String PANAMERICANO_SPORTS = "panamericano_sports";
@@ -18,6 +19,7 @@ public class TypeCollections {
     public final static String VOLUNTEERS = "volunteers";
     public final static String SPORTSMANS = "sportsmans";
     public final static String PLACES = "places";
+    public final static String PAYMENTS = "payments";
     public final static String EVENTS = "events";
     public final static String PURCHASES = "purchases";
 }

@@ -7,14 +7,17 @@ package com.unmsm.patrones.service.facade.impl;
 
 import com.unmsm.patrones.dto.Admin;
 import com.unmsm.patrones.dto.Commentary;
+import com.unmsm.patrones.dto.Payment;
 import com.unmsm.patrones.dto.Person;
 import com.unmsm.patrones.dto.Volunteer;
 import com.unmsm.patrones.service.IAdminService;
 import com.unmsm.patrones.service.ICommentaryService;
+import com.unmsm.patrones.service.IPaymentService;
 import com.unmsm.patrones.service.IVolunteerService;
 import com.unmsm.patrones.service.facade.IAdminFacadeService;
 import com.unmsm.patrones.service.impl.AdminService;
 import com.unmsm.patrones.service.impl.CommentaryService;
+import com.unmsm.patrones.service.impl.PaymentService;
 import com.unmsm.patrones.service.impl.VolunteerService;
 import java.util.List;
 
@@ -27,11 +30,13 @@ public class AdminFacadeService implements IAdminFacadeService{
     private IAdminService adminService;
     private ICommentaryService commentaryService;
     private IVolunteerService volunteerService;
+    private IPaymentService paymentService;
 
     public AdminFacadeService() {
         this.adminService = new AdminService();
         this.commentaryService = new CommentaryService();
         this.volunteerService = new VolunteerService();
+        this.paymentService = new PaymentService();
     }
     
     @Override
@@ -57,6 +62,11 @@ public class AdminFacadeService implements IAdminFacadeService{
     @Override
     public Boolean logout() {
         return Boolean.TRUE;
+    }
+
+    @Override
+    public List<Payment> getAllPayments() {
+        return paymentService.getAll();
     }
     
 }

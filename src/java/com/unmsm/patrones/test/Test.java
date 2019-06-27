@@ -12,9 +12,11 @@ import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 import static com.mongodb.client.model.Filters.eq;
 import com.unmsm.patrones.connection.Connection;
+import com.unmsm.patrones.dto.Card;
 import com.unmsm.patrones.dto.Commentary;
 import com.unmsm.patrones.dto.PanamericanoSport;
 import com.unmsm.patrones.dto.ParapanamericanoSport;
+import com.unmsm.patrones.dto.Place;
 import com.unmsm.patrones.dto.User;
 import com.unmsm.patrones.repository.IUserReadeable;
 import com.unmsm.patrones.repository.IUserRepository;
@@ -30,6 +32,7 @@ import com.unmsm.patrones.util.TypeCollections;
 import com.unmsm.patrones.util.TypeSport;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.bson.Document;
@@ -61,10 +64,6 @@ public class Test {
 //        }
 
         IUserFacadeService facade = new UserFacadeService();
-        List<PanamericanoSport> list = (List<PanamericanoSport>) facade.showSportList(TypeSport.PANAMERICANO_SPORT);
-        for (PanamericanoSport sport : list) {
-            System.out.println(sport.toString());
-        }
         
         
 //        Document doc = new Document("name", "MongoDB")

@@ -7,6 +7,7 @@ package com.unmsm.patrones.service.facade;
 
 import com.unmsm.patrones.dto.Admin;
 import com.unmsm.patrones.dto.Commentary;
+import com.unmsm.patrones.dto.Payment;
 import com.unmsm.patrones.dto.Person;
 import com.unmsm.patrones.dto.Volunteer;
 import java.util.List;
@@ -21,5 +22,6 @@ public interface IAdminFacadeService {
     //falta lo de las sedes
     List<Commentary> showCommentarySport(String sport);
     List<Volunteer> showVolunteers();
+    List<Payment> getAllPayments();
     Boolean logout();
 }

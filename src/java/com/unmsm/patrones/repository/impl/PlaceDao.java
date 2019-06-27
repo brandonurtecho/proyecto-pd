@@ -37,7 +37,7 @@ public class PlaceDao implements IPlaceRepository {
                         .setId(doc.get("_id").toString())
                         .setDescription(doc.getString("description"))
                         .setName(doc.getString("name"))
-                        //.setVanues(doc.get("venues"))
+                        .setVenues((List<String>)doc.get("venues"))
                         .build();
                 
                 list.add(place);
