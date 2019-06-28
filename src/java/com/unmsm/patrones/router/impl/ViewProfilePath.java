@@ -33,7 +33,7 @@ public class ViewProfilePath extends PathStrategy{
     @Override
     public void operation(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
         AdminFacadeService service = new AdminFacadeService();
-        RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.VIEW_PROFILE);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/" + Jsp.VIEW_PROFILE);
         dispatcher.forward(request, response);
     }
 }

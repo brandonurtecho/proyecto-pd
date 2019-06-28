@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Comentarios de Deportes</title>
         <!-- Bootstrap CSS CDN -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
         <!-- Our Custom CSS -->
@@ -29,7 +29,7 @@
                     <h3>ADMIN</h3>
 
                     <div align="center">
-                        <a class="nav-link" href="view-profile.jsp"><img src="../assets/img/logo-admin.png" height="100" width="100"></a><br>
+                        <a class="nav-link" href="/proyecto/admin/admin/view-profile"><img src="../assets/img/logo-admin.png" height="100" width="100"></a><br>
                     </div><br>
 
                     <p style="color: #FAFAFA" >Administrador</p>
@@ -50,7 +50,7 @@
                             </ul>
                         </li>
                         <li>
-                            <c:set var="sports">Atletismo,Bádminton,Baloncesto,Balonmano,Béisbol,Bowling,Canotaje Slalom,Canotaje Slalom Extremo,
+                            <c:set var="sports">Atletismo,Badminton,Baloncesto,Balonmano,Béisbol,Bowling,Canotaje Slalom,Canotaje Slalom Extremo,
                                 Canotaje Velocidad,Ciclismo BMX,Ciclismo de Montaña,Ciclismo de Pista,Ciclismo de Ruta,Clavados,Deportes Ecuestres,
                                 Esgrima,Esquí Acuático y Wakeboard,Fisicoculturismo,Fútbol,Gimnasia Artística,Gimnasia Rítmica,Gimnasia Trampolín,
                                 Golf,Hockey,Judo,Karate,Levantamiento de Pesas,Lucha, Natación,Natación Aguas Abiertas,Natación Artística,Patinaje Artístico,
@@ -59,12 +59,12 @@
                             <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Comentarios deportes</a>
                             <ul class="collapse list-unstyled" id="pageSubmenu">
                                 <c:forTokens items="${sports}" delims="," var="sport">
-                                    <li><a href="sport-commentaries.jsp">${sport}</a></li>
+                                    <li><a href="/proyecto/admin/admin/sport-commentaries?sport=${sport}">${sport}</a></li>
                                 </c:forTokens>
                             </ul>
                         </li>
                         <li>
-                            <a href="venue-attendees.jsp">Ver asistentes</a>
+                            <a href="/proyecto/admin/admin/venue-attendees">Ver asistentes</a>
                         </li>
                     </ul>
                 </div>
@@ -80,7 +80,7 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="nav navbar-nav ml-auto">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="login.jsp"><strong>Cerrar Sesion</strong></a>
+                                    <a class="nav-link" href="/proyecto/admin/admin/login-admin"><strong>Cerrar Sesion</strong></a>
                                 </li>
                             </ul>
                         </div>
@@ -89,12 +89,14 @@
                 </nav>
 
                 <section>
-                    <c:forEach var="i" begin="1" end="10">
+                    <c:forEach items="${comments}" var="comentario">
                         <div class="card my-4">
-                            <h5 class="card-header">Comentario deporte ${i}</h5>
+                            <h5 class="card-header">Comentario deporte</h5>
                             <div class="card-body">
-                                <h5 class="card-title">Nombre del usuario</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                <h5 class="card-title">Nombre: ${comentario.nameUser}</h5>
+                                <p class="card-text">Comentario: ${comentario.body}</p>
+                                <p class="card-text">Likes: ${comentario.like}</p>
+                                <p class="card-text">Fecha: ${comentario.date}</p>
                             </div>
                         </div>
                     </c:forEach>

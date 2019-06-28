@@ -33,7 +33,7 @@ public class VenueAttendeesPath extends PathStrategy{
     @Override
     public void operation(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
         AdminFacadeService service = new AdminFacadeService();
-        RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.VENUE_ATTENDEES);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/" + Jsp.VENUE_ATTENDEES);
         dispatcher.forward(request, response);
     }
 }

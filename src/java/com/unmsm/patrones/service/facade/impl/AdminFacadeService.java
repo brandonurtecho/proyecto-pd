@@ -9,9 +9,12 @@ import com.unmsm.patrones.dto.Admin;
 import com.unmsm.patrones.dto.Commentary;
 import com.unmsm.patrones.dto.Payment;
 import com.unmsm.patrones.dto.Person;
+import com.unmsm.patrones.dto.Sport;
 import com.unmsm.patrones.dto.Volunteer;
 import com.unmsm.patrones.service.IAdminService;
 import com.unmsm.patrones.service.ICommentaryService;
+import com.unmsm.patrones.service.IPanamericanoSportService;
+import com.unmsm.patrones.service.IParapanamericanoSportService;
 import com.unmsm.patrones.service.IPaymentService;
 import com.unmsm.patrones.service.IVolunteerService;
 import com.unmsm.patrones.service.facade.IAdminFacadeService;
@@ -19,6 +22,8 @@ import com.unmsm.patrones.service.impl.AdminService;
 import com.unmsm.patrones.service.impl.CommentaryService;
 import com.unmsm.patrones.service.impl.PaymentService;
 import com.unmsm.patrones.service.impl.VolunteerService;
+import com.unmsm.patrones.util.TypeSport;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -31,6 +36,10 @@ public class AdminFacadeService implements IAdminFacadeService{
     private ICommentaryService commentaryService;
     private IVolunteerService volunteerService;
     private IPaymentService paymentService;
+    private IPanamericanoSportService panamericanosportService;
+    private IParapanamericanoSportService parapanamericanosportService;
+    
+    
 
     public AdminFacadeService() {
         this.adminService = new AdminService();
@@ -67,6 +76,17 @@ public class AdminFacadeService implements IAdminFacadeService{
     @Override
     public List<Payment> getAllPayments() {
         return paymentService.getAll();
+    }
+    
+    @Override
+    public List<? extends Sport> showSportList(String type) {
+        switch (type) {
+            case TypeSport.PANAMERICANO_SPORT : 
+                return panamericanosportService.showAllSports();
+            case TypeSport.PARAPANAMERICANO_SPORT:
+                return parapanamericanosportService.showAllSports();
+        }
+        return Arrays.asList(Sport.NULL_SPORT);
     }
     
 }

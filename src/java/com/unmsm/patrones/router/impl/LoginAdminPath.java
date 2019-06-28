@@ -34,8 +34,17 @@ public class LoginAdminPath extends PathStrategy{
     @Override
     public void operation(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
         AdminFacadeService service = new AdminFacadeService();
-        RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.LOGIN_ADMIN);
-        dispatcher.forward(request, response);
+        
+        String user = request.getParameter("username");
+        String pass = request.getParameter("password");
+        if(service.login(user, pass)){
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/" +Jsp.MAIN_CONTENT);
+            dispatcher.forward(request, response);
+        } else {
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/" +Jsp.LOGIN_ADMIN);
+            dispatcher.forward(request, response);
+        }
+           
     }
     
 }

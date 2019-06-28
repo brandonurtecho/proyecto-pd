@@ -18,7 +18,7 @@
         <!-- Font Awesome JS -->
         <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
         <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
-        <title>JSP Page</title>
+        <title>Editar Perfil</title>
     </head>
     <body>
         <div class="wrapper">
@@ -28,7 +28,7 @@
                     <h3>ADMIN</h3>
 
                     <div align="center">
-                        <a class="nav-link" href="view-profile.jsp"><img src="../assets/img/logo-admin.png" height="100" width="100"></a><br>
+                        <a class="nav-link" href="/proyecto/admin/admin/view-profile"><img src="../assets/img/logo-admin.png" height="100" width="100"></a><br>
                     </div><br>
 
                     <p style="color: #FAFAFA" >Administrador</p>
@@ -49,7 +49,7 @@
                             </ul>
                         </li>
                         <li>
-                            <c:set var="sports">Atletismo,Bádminton,Baloncesto,Balonmano,Béisbol,Bowling,Canotaje Slalom,Canotaje Slalom Extremo,
+                            <c:set var="sports">Atletismo,Badminton,Baloncesto,Balonmano,Béisbol,Bowling,Canotaje Slalom,Canotaje Slalom Extremo,
                                 Canotaje Velocidad,Ciclismo BMX,Ciclismo de Montaña,Ciclismo de Pista,Ciclismo de Ruta,Clavados,Deportes Ecuestres,
                                 Esgrima,Esquí Acuático y Wakeboard,Fisicoculturismo,Fútbol,Gimnasia Artística,Gimnasia Rítmica,Gimnasia Trampolín,
                                 Golf,Hockey,Judo,Karate,Levantamiento de Pesas,Lucha, Natación,Natación Aguas Abiertas,Natación Artística,Patinaje Artístico,
@@ -58,12 +58,12 @@
                             <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Comentarios deportes</a>
                             <ul class="collapse list-unstyled" id="pageSubmenu">
                                 <c:forTokens items="${sports}" delims="," var="sport">
-                                    <li><a href="sport-commentaries.jsp">${sport}</a></li>
+                                    <li><a href="/proyecto/admin/admin/sport-commentaries?sport=${sport}">${sport}</a></li>
                                 </c:forTokens>
                             </ul>
                         </li>
                         <li>
-                            <a href="venue-attendees.jsp">Ver asistentes</a>
+                            <a href="/proyecto/admin/admin/venue-attendees">Ver asistentes</a>
                         </li>
                     </ul>
                 </div>
@@ -78,7 +78,7 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="nav navbar-nav ml-auto">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="login.jsp"><strong>Cerrar Sesion</strong></a>
+                                    <a class="nav-link" href="/proyecto/admin/admin/login-admin"><strong>Cerrar Sesion</strong></a>
                                 </li>
                             </ul>
                         </div>
@@ -131,7 +131,7 @@
                             <button type="submit" class="btn btn-primary">Guardar</button>
                         </div>     
                         <div class="m-10">
-                            <button class="btn btn-danger"><a href="view-profile.jsp">Cancelar</a></button>
+                            <button class="btn btn-danger"><a href="/proyecto/admin/admin/view-profile">Cancelar</a></button>
                         </div>
                     </div>
                 </form>

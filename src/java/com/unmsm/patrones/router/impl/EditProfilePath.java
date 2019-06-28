@@ -33,7 +33,7 @@ public class EditProfilePath extends PathStrategy{
     @Override
     public void operation(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
         AdminFacadeService service = new AdminFacadeService();
-        RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.EDIT_PROFILE);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/" + Jsp.EDIT_PROFILE);
         dispatcher.forward(request, response);
     }
 }

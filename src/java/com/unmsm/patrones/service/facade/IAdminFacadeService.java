@@ -9,6 +9,7 @@ import com.unmsm.patrones.dto.Admin;
 import com.unmsm.patrones.dto.Commentary;
 import com.unmsm.patrones.dto.Payment;
 import com.unmsm.patrones.dto.Person;
+import com.unmsm.patrones.dto.Sport;
 import com.unmsm.patrones.dto.Volunteer;
 import java.util.List;
 
@@ -23,5 +24,6 @@ public interface IAdminFacadeService {
     List<Commentary> showCommentarySport(String sport);
     List<Volunteer> showVolunteers();
     List<Payment> getAllPayments();
+    List<? extends Sport> showSportList(String type);
     Boolean logout();
 }

@@ -16,6 +16,7 @@ import com.unmsm.patrones.util.TypeCollections;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -83,6 +84,7 @@ public class CommentaryDao implements ICommentaryRepository {
 
                 list.add(commentary);
             }
+            Collections.sort(list, (o1,o2) -> o2.getLike().compareTo(o1.getLike()));
         } catch (ParseException ex) {
             Logger.getLogger(CommentaryDao.class.getName()).log(Level.SEVERE, null, ex);
         } finally {

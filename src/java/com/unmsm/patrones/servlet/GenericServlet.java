@@ -34,7 +34,7 @@ public abstract class GenericServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-            String path = request.getPathInfo();  
+            String path = request.getPathInfo();
             router(request, response, path);            
         } catch (SQLException ex) {
             Logger.getLogger(GenericServlet.class.getName()).log(Level.SEVERE, null, ex);
