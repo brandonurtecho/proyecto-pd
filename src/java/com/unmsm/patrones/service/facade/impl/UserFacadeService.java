@@ -65,7 +65,7 @@ public class UserFacadeService implements IUserFacadeService {
     }
 
     @Override
-    public Boolean login(String email, String password) {
+    public User login(String email, String password) {
         return userService.login(email, password);
     }
 

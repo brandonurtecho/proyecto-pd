@@ -64,7 +64,16 @@ public class Test {
 //        }
 
         IUserFacadeService facade = new UserFacadeService();
-        System.out.println(Commentary.NULL_COMMENTARY.getDate());
+        System.out.println(facade.login("dvera1096@gmail.com", "diego"));
+        System.out.println("EVENTS: "+facade.getEvents());
+        System.out.println("PAYMENT: "+facade.getPaymentsByEmail("dvera1096@gmail.com"));
+        System.out.println("PLACES"+facade.getPlaces());
+        System.out.println("COMMENTARY BADMINTON: "+facade.showCommentaryBySportInSport(TypeSport.BADMINTON));
+        System.out.println("SPORT LIST: "+facade.showSportList(TypeSport.PANAMERICANO_SPORT));
+        System.out.println("SPORT BY ID: "+facade.showSportById("5d05816ffb6fc00e79aa8fb0", TypeSport.PARAPANAMERICANO_SPORT));
+        System.out.println("SPORTMAN: "+facade.showSportsmanBySportInSport(TypeSport.BADMINTON));
+        System.out.println("VOLUNTEER: "+facade.showVolunteers());
+        
         
 //        Document doc = new Document("name", "MongoDB")
 //                .append("type", "database")

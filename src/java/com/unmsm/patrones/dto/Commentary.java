@@ -5,7 +5,6 @@
  */
 package com.unmsm.patrones.dto;
 
-import java.time.Instant;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -15,7 +14,9 @@ import java.util.Date;
  */
 public class Commentary {
     private String id;
-    private String title;
+    private String emailUser;
+    private String nameUser;
+    private String lastNameUser;
     private Date date;
     private String body;
     private Integer like;
@@ -24,9 +25,11 @@ public class Commentary {
     public Commentary() {
     }
 
-    public Commentary(String id, String title, Date date, String body, Integer like, String sport) {
+    public Commentary(String id, String emailUser, String nameUser, String lastNameUser, Date date, String body, Integer like, String sport) {
         this.id = id;
-        this.title = title;
+        this.emailUser = emailUser;
+        this.nameUser = nameUser;
+        this.lastNameUser = lastNameUser;
         this.date = date;
         this.body = body;
         this.like = like;
@@ -40,8 +43,8 @@ public class Commentary {
         }
 
         @Override
-        public String getTitle() {
-            return "NULL TITLE";
+        public String getEmailUser() {
+            return "NULL EMAIL";
         }
         
         @Override
@@ -74,12 +77,12 @@ public class Commentary {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getEmailUser() {
+        return emailUser;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setEmailUser(String emailUser) {
+        this.emailUser = emailUser;
     }
 
     public Date getDate() {
@@ -114,14 +117,32 @@ public class Commentary {
         this.sport = sport;
     }
 
+    public String getNameUser() {
+        return nameUser;
+    }
+
+    public void setNameUser(String nameUser) {
+        this.nameUser = nameUser;
+    }
+
+    public String getLastNameUser() {
+        return lastNameUser;
+    }
+
+    public void setLastNameUser(String lastNameUser) {
+        this.lastNameUser = lastNameUser;
+    }
+
     @Override
     public String toString() {
-        return "Commentary{" + "id=" + id + ", title=" + title + ", date=" + date + ", body=" + body + ", like=" + like + ", sport=" + sport + '}';
+        return "Commentary{" + "id=" + id + ", emailUser=" + emailUser + ", nameUser=" + nameUser + ", lastNameUser=" + lastNameUser + ", date=" + date + ", body=" + body + ", like=" + like + ", sport=" + sport + '}';
     }
     
     public static class CommentaryBuilder implements IBuilder<Commentary> {
         private String id;
-        private String title;
+        private String emailUser;
+        private String nameUser;
+        private String lastNameUser;
         private Date date;
         private String body;
         private Integer like;
@@ -135,8 +156,8 @@ public class Commentary {
             return this;
         }
 
-        public CommentaryBuilder setTitle(String title) {
-            this.title = title;
+        public CommentaryBuilder setEmailUser(String emailUser) {
+            this.emailUser = emailUser;
             return this;
         }
 
@@ -159,10 +180,20 @@ public class Commentary {
             this.sport = sport;
             return this;
         }
+
+        public CommentaryBuilder setNameUser(String nameUser) {
+            this.nameUser = nameUser;
+            return this;
+        }
+
+        public CommentaryBuilder setLastNameUser(String lastNameUser) {
+            this.lastNameUser = lastNameUser;
+            return this;
+        }
         
         @Override
         public Commentary build() {
-            return new Commentary(id, title, date, body, like, sport);
+            return new Commentary(id, emailUser, nameUser, lastNameUser, date, body, like, sport);
         }
         
     }

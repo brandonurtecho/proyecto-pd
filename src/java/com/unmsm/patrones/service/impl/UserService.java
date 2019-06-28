@@ -23,12 +23,12 @@ public class UserService implements IUserService{
     }
     
     @Override
-    public Boolean login(String email, String password) {
+    public User login(String email, String password) {
         User user = this.userRepository.getByEmail(email);
         if (!user.getId().equals("0") && user.getPassword().equals(password)) {
-            return Boolean.TRUE;
+            return user;
         } else {
-            return Boolean.FALSE;
+            return User.NULL_USER;
         }
     }
 

@@ -12,7 +12,7 @@ import com.unmsm.patrones.dto.User;
  * @author bluq1
  */
 public interface IUserService {
-    Boolean login(String email, String password);
+    User login(String email, String password);
     Boolean registerAccount(User user);
     Boolean editAccount(User user);
     //Boolean validateAccount(String token);

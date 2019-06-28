@@ -29,20 +29,20 @@ import org.bson.Document;
  */
 public class UserDao implements IUserRepository {
 
-    MongoCollection collection = 
-            Connection.getConnection().getCollection(TypeCollections.USERS);
+    MongoCollection collection
+            = Connection.getConnection().getCollection(TypeCollections.USERS);
     PersonFactory<User> personFactory = new PersonFactory<>();
-    
+
     @Override
     public List<User> getAll() {
         MongoCursor<Document> cursor = collection.find().iterator();
         List<User> list = new ArrayList<>();
-        
+
         try {
             while (cursor.hasNext()) {
                 Document doc = cursor.next();
                 User user = personFactory.getPerson(TypePerson.USER);
-                
+
                 user.setId(doc.get("_id").toString());
                 user.setEmail(doc.getString("email"));
                 user.setPassword(doc.getString("password"));
@@ -50,7 +50,7 @@ public class UserDao implements IUserRepository {
                 user.setName(doc.getString("name"));
                 user.setLastname(doc.getString("lastname"));
                 user.setBirthdate(Cast.stringToDate(doc.getString("birthdate")));
-                
+
                 list.add(user);
             }
         } catch (ParseException ex) {
@@ -58,15 +58,15 @@ public class UserDao implements IUserRepository {
         } finally {
             cursor.close();
         }
-        
-        return list.size() > 0 ? list :Arrays.asList(User.NULL_USER);
+
+        return list.size() > 0 ? list : Arrays.asList(User.NULL_USER);
     }
 
     @Override
     public User getByEmail(String email) {
         Document doc = (Document) collection.find(eq("email", email)).first();
         User user = personFactory.getPerson(TypePerson.USER);
-        
+
         if (doc != null) {
             try {
                 user.setId(doc.get("_id").toString());
@@ -78,9 +78,9 @@ public class UserDao implements IUserRepository {
                 user.setBirthdate(Cast.stringToDate(doc.getString("birthdate")));
             } catch (ParseException ex) {
                 Logger.getLogger(UserDao.class.getName()).log(Level.SEVERE, null, ex);
-            }    
+            }
         }
-        
+
         return doc != null ? user : User.NULL_USER;
     }
 
@@ -97,16 +97,16 @@ public class UserDao implements IUserRepository {
 
     @Override
     public long update(User user) {
-        long cont = collection.updateOne(eq("email", user.getEmail()), 
-                            new Document("$set", 
-                                new Document("email", user.getEmail())
+        long cont = collection.updateOne(eq("email", user.getEmail()),
+                new Document("$set",
+                        new Document("email", user.getEmail())
                                 .append("password", user.getPassword())
                                 .append("birthdate", Cast.dateToString(user.getBirthdate()))
                                 .append("genre", user.getGenre())
                                 .append("lastname", user.getLastname())
                                 .append("name", user.getName())))
-                    .getModifiedCount();
-        
+                .getModifiedCount();
+
         return cont;
     }
 
@@ -115,5 +115,5 @@ public class UserDao implements IUserRepository {
         long cont = collection.deleteOne(eq("email", email)).getDeletedCount();
         return cont;
     }
-    
+
 }

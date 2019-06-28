@@ -52,7 +52,7 @@ public class SportsmanDao implements ISportsmanRepository {
                 sportsman.setCountry(doc.getString("country"));
                 sportsman.setPhoto(doc.getString("photo"));
                 sportsman.setSport(doc.getString("sport"));
-                sportsman.setMedalList((List<String>) doc.get("medal_list"));
+                sportsman.setMedalList((List<String>) doc.get("medalList"));
                 
                 list.add(sportsman);
             }

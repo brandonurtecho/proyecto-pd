@@ -5,6 +5,7 @@
  */
 package com.unmsm.patrones.router.impl;
 
+import com.unmsm.patrones.dto.User;
 import com.unmsm.patrones.router.PathStrategy;
 import com.unmsm.patrones.service.facade.impl.UserFacadeService;
 import com.unmsm.patrones.service.impl.UserService;
@@ -47,8 +48,10 @@ public class InitialPath extends PathStrategy{
         System.out.println(password);
 
         UserFacadeService service = new UserFacadeService();
-
-        if (service.login(idUser, password)) {
+        // WARDA ESTE USER QUE TIENE TODOS LOS DATOS QUE NECESITARÁS
+        User user = service.login(idUser, password);
+        
+        if (!user.getId().equals("0")) {
             RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.INITIAL);
             dispatcher.forward(request, response);
         } else {

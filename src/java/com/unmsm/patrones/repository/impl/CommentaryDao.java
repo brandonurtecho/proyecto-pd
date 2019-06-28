@@ -26,28 +26,30 @@ import org.bson.types.ObjectId;
  *
  * @author diego
  */
-public class CommentaryDao implements ICommentaryRepository{
+public class CommentaryDao implements ICommentaryRepository {
 
-    MongoCollection collection = 
-            Connection.getConnection().getCollection(TypeCollections.COMMENTS);
-    
+    MongoCollection collection
+            = Connection.getConnection().getCollection(TypeCollections.COMMENTS);
+
     @Override
     public List<Commentary> getAll() {
         MongoCursor<Document> cursor = collection.find().iterator();
         List<Commentary> list = new ArrayList<>();
-        
+
         try {
             while (cursor.hasNext()) {
                 Document doc = cursor.next();
                 Commentary commentary = new Commentary.CommentaryBuilder()
-                            .setId(doc.get("_id").toString())
-                            .setBody(doc.getString("body"))
-                            .setDate(Cast.stringToDate(doc.getString("date")))
-                            .setLike(doc.getInteger("like"))
-                            .setSport(doc.getString("sport"))
-                            .setTitle(doc.getString("title"))
-                            .build();
-                
+                        .setId(doc.get("_id").toString())
+                        .setBody(doc.getString("body"))
+                        .setDate(Cast.stringToDate(doc.getString("date")))
+                        .setLike(doc.getInteger("like"))
+                        .setSport(doc.getString("sport"))
+                        .setEmailUser(doc.getString("emailUser"))
+                        .setNameUser(doc.getString("nameUser"))
+                        .setLastNameUser(doc.getString("lastNameUser"))
+                        .build();
+
                 list.add(commentary);
             }
         } catch (ParseException ex) {
@@ -55,7 +57,7 @@ public class CommentaryDao implements ICommentaryRepository{
         } finally {
             cursor.close();
         }
-        
+
         return list.size() > 0 ? list : Arrays.asList(Commentary.NULL_COMMENTARY);
     }
 
@@ -63,20 +65,22 @@ public class CommentaryDao implements ICommentaryRepository{
     public List<Commentary> getBySport(String sport) {
         MongoCursor<Document> cursor = collection.find(eq("sport", sport)).iterator();
         List<Commentary> list = new ArrayList<>();
-        
+
         try {
             while (cursor.hasNext()) {
                 Document doc = cursor.next();
-                
+
                 Commentary commentary = new Commentary.CommentaryBuilder()
-                            .setId(doc.get("_id").toString())
-                            .setBody(doc.getString("body"))
-                            .setDate(Cast.stringToDate(doc.getString("date")))
-                            .setLike(doc.getInteger("like"))
-                            .setSport(doc.getString("sport"))
-                            .setTitle(doc.getString("title"))
-                            .build();
-                
+                        .setId(doc.get("_id").toString())
+                        .setBody(doc.getString("body"))
+                        .setDate(Cast.stringToDate(doc.getString("date")))
+                        .setLike(doc.getInteger("like"))
+                        .setSport(doc.getString("sport"))
+                        .setEmailUser(doc.getString("emailUser"))
+                        .setNameUser(doc.getString("nameUser"))
+                        .setLastNameUser(doc.getString("lastNameUser"))
+                        .build();
+
                 list.add(commentary);
             }
         } catch (ParseException ex) {
@@ -84,7 +88,7 @@ public class CommentaryDao implements ICommentaryRepository{
         } finally {
             cursor.close();
         }
-        
+
         return list.size() > 0 ? list : Arrays.asList(Commentary.NULL_COMMENTARY);
     }
 
@@ -94,20 +98,24 @@ public class CommentaryDao implements ICommentaryRepository{
                 .append("date", Cast.dateToString(commentary.getDate()))
                 .append("like", commentary.getLike())
                 .append("sport", commentary.getSport())
-                .append("title", commentary.getTitle());
+                .append("emailUser", commentary.getEmailUser())
+                .append("nameUser", commentary.getNameUser())
+                .append("lastNameUser", commentary.getLastNameUser());
         collection.insertOne(d);
     }
 
     @Override
     public long update(Commentary commentary) {
-        long cont = collection.updateOne(eq("_id", new ObjectId(commentary.getId())), 
-                            new Document("body", commentary.getBody())
-                                .append("date", Cast.dateToString(commentary.getDate()))
-                                .append("like", commentary.getLike())
-                                .append("sport", commentary.getSport())
-                                .append("title", commentary.getTitle()))
-                    .getModifiedCount();
-        
+        long cont = collection.updateOne(eq("_id", new ObjectId(commentary.getId())),
+                new Document("body", commentary.getBody())
+                        .append("date", Cast.dateToString(commentary.getDate()))
+                        .append("like", commentary.getLike())
+                        .append("sport", commentary.getSport())
+                        .append("emailUser", commentary.getEmailUser())
+                        .append("nameUser", commentary.getNameUser())
+                        .append("lastNameUser", commentary.getLastNameUser()))
+                .getModifiedCount();
+
         return cont;
     }
 
@@ -116,5 +124,5 @@ public class CommentaryDao implements ICommentaryRepository{
         long cont = collection.deleteOne(eq("_id", new ObjectId(commentary.getId()))).getDeletedCount();
         return cont;
     }
-    
+
 }

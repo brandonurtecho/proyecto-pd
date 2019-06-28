@@ -21,7 +21,7 @@ import java.util.List;
  */
 public interface IUserFacadeService {    
     //Esto esperará
-    Boolean login(String email, String password);
+    User login(String email, String password);
     Boolean registerNewAccount(User user);
     Boolean editAccaunt(User user);
     List<? extends Sport> showSportList(String type);

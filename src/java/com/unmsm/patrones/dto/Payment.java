@@ -24,13 +24,13 @@ public class Payment {
     private String state;
     private String zipCode;
     private List<Event> eventList;
-    private Card card;
+    private String numberCard;
     private String paypalEmail;
 
     public Payment() {
     }
 
-    public Payment(String id, String firstName, String lastName, String email, String address, String optionalAddress, String country, String state, String zipCode, List<Event> eventList, Card card, String paypalEmail) {
+    public Payment(String id, String firstName, String lastName, String email, String address, String optionalAddress, String country, String state, String zipCode, List<Event> eventList, String numberCard, String paypalEmail) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -41,7 +41,7 @@ public class Payment {
         this.state = state;
         this.zipCode = zipCode;
         this.eventList = eventList;
-        this.card = card;
+        this.numberCard = numberCard;
         this.paypalEmail = paypalEmail;
     }
 
@@ -125,12 +125,12 @@ public class Payment {
         this.eventList = eventList;
     }
 
-    public Card getCard() {
-        return card;
+    public String getNumberCard() {
+        return numberCard;
     }
 
-    public void setCard(Card card) {
-        this.card = card;
+    public void setNumberCard(String numberCard) {
+        this.numberCard = numberCard;
     }
 
     public String getPaypalEmail() {
@@ -143,7 +143,7 @@ public class Payment {
 
     @Override
     public String toString() {
-        return "Payment{" + "id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", address=" + address + ", optionalAddress=" + optionalAddress + ", country=" + country + ", state=" + state + ", zipCode=" + zipCode + ", eventList=" + eventList + ", card=" + card + ", paypal=" + paypalEmail + '}';
+        return "Payment{" + "id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", address=" + address + ", optionalAddress=" + optionalAddress + ", country=" + country + ", state=" + state + ", zipCode=" + zipCode + ", eventList=" + eventList + ", card=" + numberCard + ", paypal=" + paypalEmail + '}';
     }
 
     public static final Payment NULL_PAYMENT = new Payment() {
@@ -198,8 +198,8 @@ public class Payment {
         }
 
         @Override
-        public Card getCard() {
-            return Card.NULL_CARD;
+        public String getNumberCard() {
+            return "NULL CARD";
         }
 
         @Override
@@ -221,7 +221,7 @@ public class Payment {
         private String state;
         private String zipCode;
         private List<Event> eventList;
-        private Card card;
+        private String numberCard;
         private String paypal;
         
         public PaymentBuilder() {
@@ -278,8 +278,8 @@ public class Payment {
             return this;
         }
 
-        public PaymentBuilder setCard(Card card) {
-            this.card = card;
+        public PaymentBuilder setNumberCard(String numberCard) {
+            this.numberCard = numberCard;
             return this;
         }
 
@@ -290,7 +290,7 @@ public class Payment {
 
         @Override
         public Payment build() {
-            return new Payment(id, firstName, lastName, email, address, optionalAddress, country, state, zipCode, eventList, card, paypal);
+            return new Payment(id, firstName, lastName, email, address, optionalAddress, country, state, zipCode, eventList, numberCard, paypal);
         }
 
     }
