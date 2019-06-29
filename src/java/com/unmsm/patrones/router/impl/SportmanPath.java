@@ -12,6 +12,7 @@ import com.unmsm.patrones.service.facade.impl.UserFacadeService;
 import com.unmsm.patrones.util.Cast;
 import com.unmsm.patrones.util.Jsp;
 import com.unmsm.patrones.util.PathName;
+import com.unmsm.patrones.util.iterator.CustomIterator;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
@@ -42,12 +43,12 @@ public class SportmanPath extends PathStrategy{
         UserFacadeService service = new UserFacadeService();
         
         String sport = request.getParameter("Sport");
-        
+        System.out.println(sport);
         if (sport != null){
             List <Sportsman> sportmanlist = service.showSportsmanBySportInSport(sport);
-            List <Commentary> commentarylist = service.showCommentaryBySportInSport(sport);
+            CustomIterator it = service.showCommentaryBySportInSport(sport,"LIKE");
             request.setAttribute("sportmanlist", sportmanlist);
-            request.setAttribute("commentarys", commentarylist);
+            request.setAttribute("it", it);
         }
         
         String commentary = request.getParameter("commentary");

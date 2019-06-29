@@ -13,6 +13,7 @@ public interface CustomIterator<T> {
     
     public abstract T first();
     public abstract T next();
+    public abstract int size();
     public abstract boolean isDone();
     public abstract T currentItem();
 }

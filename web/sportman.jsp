@@ -26,7 +26,7 @@
                 integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
-        
+
         <title>Juegos Panamericanos 2019</title>
     </head>
     <body>
@@ -74,10 +74,10 @@
                             <div class="col-md-4">
                                 <div class="card mb-4 shadow-sm">
                                     <img src="${sportman.photo}" alt="" class="img-fluid">
-                                    
+
                                     <div class="card-body">
                                         <p class="card-text">El deportista <c:out value="${sportman.name}"/> <c:out value="${sportman.lastname}"/> es proveniente de 
-                                        <c:out value="${sportman.country}"/>, actualmente cuenta con <c:out value="${sportman.age}"/> años de edad</p>
+                                            <c:out value="${sportman.country}"/>, actualmente cuenta con <c:out value="${sportman.age}"/> años de edad</p>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <small class="text-muted">15 min</small>
                                         </div>
@@ -94,8 +94,14 @@
             <div class="">
 
                 <div id="comments " class="comments">
+
+                    <c:forEach begin="1" end="${it.size()}">
+                        <c:if test="${!it.isDone()}">
+                            <c:out value="${it.next()}"/>
+                        </c:if>
+                    </c:forEach>
                     
-                    
+
 
                     <div id="comment-1">
                         <div class="comment my-2">
@@ -116,10 +122,10 @@
                                 </div>
                             </div>
                         </div>
-                        
-                        
+
+
                         // comentar
-                        
+
                         <div class="comment my-2">
                             <div class="media-left">
                                 <img src="https://www.zona-leros.net/storage/image/default.png" alt="" class="img ">
@@ -132,14 +138,14 @@
                                 </div>
                             </div>
                         </div>
-                      
+
                         <div class="text-right px-3">
                             <form action="/proyecto/principal/deportistas?commentary=0" method="post">
                                 <input type="submit" class="btn btn-danger" value="Comentar">
                             </form>
                         </div>
-                        
-                                                
+
+
                     </div>
 
                 </div>
