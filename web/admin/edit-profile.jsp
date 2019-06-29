@@ -13,7 +13,9 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
         <!-- Our Custom CSS -->
         <link rel="stylesheet" href="/proyecto/assets/css/main-content.css">
+
         <link href="/proyecto/assets/bootstrap/css/util.css" rel="stylesheet"/>
+
 
         <!-- Font Awesome JS -->
         <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
@@ -21,6 +23,7 @@
         <title>Editar Perfil</title>
     </head>
     <body>
+
         <div class="wrapper">
             <!-- Sidebar  -->
             <nav id="sidebar">
@@ -28,7 +31,10 @@
                     <h3>ADMIN</h3>
 
                     <div align="center">
+
                         <a class="nav-link" href="/proyecto/admin/admin/view-profile"><img src="/proyecto/assets/img/logo-admin.png" height="100" width="100"></a><br>
+
+
                     </div><br>
 
                     <p style="color: #FAFAFA" >Administrador</p>
@@ -41,11 +47,11 @@
                                 Complejo Deportivo Villa María del Triunfo,Base Aérea Las Palmas,Escuela Militar de Chorrillos,Playa Chorrillos,
                                 Morro Solar Chorrillos,Polideportivo Villa el Salvador,Country Club de Villa,Villa Panamericana y Parapanamericana,
                                 Punta Rocas,Puerto Viejo,Laguna Bujama,Río Cañete - Lunahuaná,Yatch Club Peruano Sede Paracas</c:set>
-                            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Comentarios de sedes</a>
-                            <ul class="collapse list-unstyled" id="homeSubmenu">
+                                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Comentarios de sedes</a>
+                                <ul class="collapse list-unstyled" id="homeSubmenu">
                                 <c:forTokens items="${venues}" delims="," var="venue">
                                     <li><a href="venue-commentaries.jsp">${venue}</a></li>
-                                </c:forTokens>
+                                    </c:forTokens>
                             </ul>
                         </li>
                         <li>
@@ -55,11 +61,11 @@
                                 Golf,Hockey,Judo,Karate,Levantamiento de Pesas,Lucha, Natación,Natación Aguas Abiertas,Natación Artística,Patinaje Artístico,
                                 Patinaje de Velocidad,Pelota Vasca,Pentatlón Moderno,Ráquetbol,Remo,Rugby 7,Softbol,Squash,Surf,Taekwondo,Tenis,Tenis de Mesa,
                                 Tiro,Tiro con Arco,Triatlón,Vela,Voleibol,Voleibol de Playa,Water Polo</c:set>
-                            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Comentarios deportes</a>
-                            <ul class="collapse list-unstyled" id="pageSubmenu">
+                                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Comentarios deportes</a>
+                                <ul class="collapse list-unstyled" id="pageSubmenu">
                                 <c:forTokens items="${sports}" delims="," var="sport">
                                     <li><a href="/proyecto/admin/admin/sport-commentaries?sport=${sport}">${sport}</a></li>
-                                </c:forTokens>
+                                    </c:forTokens>
                             </ul>
                         </li>
                         <li>

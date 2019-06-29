@@ -22,6 +22,7 @@
     </head>
     <body>
 
+                
         <div class="wrapper">
             <!-- Sidebar  -->
             <nav id="sidebar">
@@ -29,7 +30,7 @@
                     <h3>ADMIN</h3>
 
                     <div align="center">
-                        <a class="nav-link" href="/proyecto/admin/admin/view-profile"><img src="../assets/img/logo-admin.png" height="100" width="100"></a><br>
+                        <a class="nav-link" href="/proyecto/admin/admin/view-profile"><img src="/proyecto/assets/img/logo-admin.png" height="100px" width="100px"></a><br>
                     </div><br>
 
                     <p style="color: #FAFAFA" >Administrador</p>
