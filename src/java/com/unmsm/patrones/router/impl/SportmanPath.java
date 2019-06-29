@@ -50,10 +50,11 @@ public class SportmanPath extends PathStrategy{
             request.setAttribute("commentarys", commentarylist);
         }
         
-        int commentary = Integer.parseInt(request.getParameter("commentary"));
+        String commentary = request.getParameter("commentary");
         
-        if(commentary == 0){
-            /*
+        if (commentary != null){
+            if(Integer.parseInt(commentary) == 0){
+                /*
             Commentary commentary = new Commentary.CommentaryBuilder()
                     
                             .setBody("")
@@ -64,15 +65,17 @@ public class SportmanPath extends PathStrategy{
                             .build();              
             */
            // service.commentary(commentary, "CREATE");
+            } 
+            
+             if(Integer.parseInt(commentary) == 1){
+            
+           // service.commentary(commentarylike, "LIKE");
+             }
+           
         }
         
         //   aqui se esta pasando como atribute
         // la manera de emviar debe ser diferente
-        
-        if(commentary == 1){
-            
-           // service.commentary(commentarylike, "LIKE");
-        }
         
         RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.SPORTMAN);
         dispatcher.forward(request, response);
