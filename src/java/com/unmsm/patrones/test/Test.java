@@ -30,6 +30,8 @@ import com.unmsm.patrones.service.impl.UserService;
 import com.unmsm.patrones.util.Cast;
 import com.unmsm.patrones.util.TypeCollections;
 import com.unmsm.patrones.util.TypeSport;
+import com.unmsm.patrones.util.iterator.CustomIterator;
+import com.unmsm.patrones.util.iterator.ListCommentary;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -64,17 +66,22 @@ public class Test {
 //        }
 
         IUserFacadeService facade = new UserFacadeService();
-        System.out.println(facade.login("dvera1096@gmail.com", "diego"));
-        System.out.println("EVENTS: "+facade.getEvents());
-        System.out.println("PAYMENT: "+facade.getPaymentsByEmail("dvera1096@gmail.com"));
-        System.out.println("PLACES"+facade.getPlaces());
-        System.out.println("COMMENTARY BADMINTON: "+facade.showCommentaryBySportInSport(TypeSport.BADMINTON));
-        System.out.println("SPORT LIST: "+facade.showSportList(TypeSport.PANAMERICANO_SPORT));
-        System.out.println("SPORT BY ID: "+facade.showSportById("5d05816ffb6fc00e79aa8fb0", TypeSport.PARAPANAMERICANO_SPORT));
-        System.out.println("SPORTMAN: "+facade.showSportsmanBySportInSport(TypeSport.BADMINTON));
-        System.out.println("VOLUNTEER: "+facade.showVolunteers());
-        
-        
+
+        System.out.println("NORMAL");
+        CustomIterator it = facade.showCommentaryBySportInSport(TypeSport.BADMINTON, "");
+        while (!it.isDone()) {
+            System.out.println(it.next());
+        }
+        System.out.println("SORT EN LIKES");
+        CustomIterator it2 = facade.showCommentaryBySportInSport(TypeSport.BADMINTON, "LIKE");
+        while (!it2.isDone()) {
+            System.out.println(it2.next());
+        }
+        System.out.println("SORT EN FECHA");
+        CustomIterator it3 = facade.showCommentaryBySportInSport(TypeSport.BADMINTON, "DATE");
+        while (!it3.isDone()) {
+            System.out.println(it3.next());
+        }
 //        Document doc = new Document("name", "MongoDB")
 //                .append("type", "database")
 //                .append("count", 1)

@@ -23,6 +23,7 @@ import com.unmsm.patrones.service.impl.CommentaryService;
 import com.unmsm.patrones.service.impl.PaymentService;
 import com.unmsm.patrones.service.impl.VolunteerService;
 import com.unmsm.patrones.util.TypeSport;
+import com.unmsm.patrones.util.iterator.CustomIterator;
 import java.util.Arrays;
 import java.util.List;
 
@@ -59,8 +60,8 @@ public class AdminFacadeService implements IAdminFacadeService{
     }
 
     @Override
-    public List<Commentary> showCommentarySport(String sport) {
-        return commentaryService.showCommentaryBySport(sport);
+    public CustomIterator showCommentarySport(String sport, String sort) {
+        return commentaryService.showCommentaryBySport(sport, sort);
     }
 
     @Override

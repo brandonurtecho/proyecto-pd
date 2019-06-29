@@ -84,7 +84,7 @@ public class CommentaryDao implements ICommentaryRepository {
 
                 list.add(commentary);
             }
-            Collections.sort(list, (o1,o2) -> o2.getLike().compareTo(o1.getLike()));
+            
         } catch (ParseException ex) {
             Logger.getLogger(CommentaryDao.class.getName()).log(Level.SEVERE, null, ex);
         } finally {

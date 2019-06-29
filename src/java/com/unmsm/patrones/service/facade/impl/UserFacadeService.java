@@ -34,6 +34,7 @@ import com.unmsm.patrones.service.impl.PlaceService;
 import com.unmsm.patrones.service.impl.SportsmanService;
 import com.unmsm.patrones.service.impl.VolunteerService;
 import com.unmsm.patrones.util.TypeSport;
+import com.unmsm.patrones.util.iterator.CustomIterator;
 import java.util.Arrays;
 
 /**
@@ -112,8 +113,8 @@ public class UserFacadeService implements IUserFacadeService {
     }
 
     @Override
-    public List<Commentary> showCommentaryBySportInSport(String sport) {
-        return commentaryService.showCommentaryBySport(sport);
+    public CustomIterator showCommentaryBySportInSport(String sport, String sort) {
+        return commentaryService.showCommentaryBySport(sport, sort);
     }
 
     @Override

@@ -6,6 +6,7 @@
 package com.unmsm.patrones.service;
 
 import com.unmsm.patrones.dto.Commentary;
+import com.unmsm.patrones.util.iterator.CustomIterator;
 import java.util.List;
 
 /**
@@ -13,8 +14,8 @@ import java.util.List;
  * @author bluq1
  */
 public interface ICommentaryService {
-    List<Commentary> showAllComentaries();
-    List<Commentary> showCommentaryBySport(String sport);
+    CustomIterator showAllComentaries(String sort);
+    CustomIterator showCommentaryBySport(String sport, String sort);
     Boolean createCommentary(Commentary commentary);
     Boolean likeCommentary(Commentary commentary);
     Boolean deleteCommentary(Commentary commentary);

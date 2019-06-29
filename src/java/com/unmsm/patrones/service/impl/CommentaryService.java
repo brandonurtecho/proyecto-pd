@@ -9,6 +9,9 @@ import com.unmsm.patrones.dto.Commentary;
 import com.unmsm.patrones.repository.ICommentaryRepository;
 import com.unmsm.patrones.repository.impl.CommentaryDao;
 import com.unmsm.patrones.service.ICommentaryService;
+import com.unmsm.patrones.util.iterator.CustomIterator;
+import com.unmsm.patrones.util.iterator.ListCommentary;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -21,17 +24,7 @@ public class CommentaryService implements ICommentaryService{
 
     public CommentaryService() {
         this.commentaryRepository = new CommentaryDao();
-    }
-    
-    @Override
-    public List<Commentary> showAllComentaries() {
-        return this.commentaryRepository.getAll();
-    }
-
-    @Override
-    public List<Commentary> showCommentaryBySport(String sport) {
-        return this.commentaryRepository.getBySport(sport);
-    }
+    }    
 
     @Override
     public Boolean createCommentary(Commentary commentary) {
@@ -50,6 +43,18 @@ public class CommentaryService implements ICommentaryService{
     public Boolean deleteCommentary(Commentary commentary) {
         long flag = this.commentaryRepository.delete(commentary);
         return flag != 0;
+    }
+
+    @Override
+    public CustomIterator showAllComentaries(String sort) {
+        ListCommentary list = new ListCommentary(this.commentaryRepository.getAll());
+        return list.iterator(sort);
+    }
+
+    @Override
+    public CustomIterator showCommentaryBySport(String sport, String sort) {
+        ListCommentary list = new ListCommentary(this.commentaryRepository.getBySport(sport));
+        return list.iterator(sort);
     }
     
 }

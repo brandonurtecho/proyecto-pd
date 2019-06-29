@@ -13,6 +13,7 @@ import com.unmsm.patrones.dto.Sport;
 import com.unmsm.patrones.dto.Sportsman;
 import com.unmsm.patrones.dto.User;
 import com.unmsm.patrones.dto.Volunteer;
+import com.unmsm.patrones.util.iterator.CustomIterator;
 import java.util.List;
 
 /**
@@ -27,7 +28,7 @@ public interface IUserFacadeService {
     List<? extends Sport> showSportList(String type);
     Sport showSportById(String id, String type);
     Boolean commentary(Commentary commentary, String action);
-    List<Commentary> showCommentaryBySportInSport(String sport);
+    CustomIterator showCommentaryBySportInSport(String sport, String sort);
     List<Sportsman> showSportsmanBySportInSport(String sport);
     List<Volunteer> showVolunteers();
     Boolean buyTicketForEvent(Payment payment);
