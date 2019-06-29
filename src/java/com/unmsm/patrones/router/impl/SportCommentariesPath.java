@@ -10,6 +10,7 @@ import com.unmsm.patrones.router.PathStrategy;
 import com.unmsm.patrones.service.facade.impl.AdminFacadeService;
 import com.unmsm.patrones.util.Jsp;
 import com.unmsm.patrones.util.PathName;
+import com.unmsm.patrones.util.iterator.CustomIterator;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
@@ -37,7 +38,7 @@ public class SportCommentariesPath extends PathStrategy{
         AdminFacadeService service = new AdminFacadeService();
         
         String sport = request.getParameter("sport");
-        List<Commentary> comments = service.showCommentarySport(sport);
+        CustomIterator comments = service.showCommentarySport(sport, "LIKE");
         request.setAttribute("comments", comments);
         
         RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/" + Jsp.SPORT_COMMENTARIES);
