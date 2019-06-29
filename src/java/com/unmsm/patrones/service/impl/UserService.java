@@ -9,6 +9,7 @@ import com.unmsm.patrones.dto.User;
 import com.unmsm.patrones.repository.IUserRepository;
 import com.unmsm.patrones.repository.impl.UserDao;
 import com.unmsm.patrones.service.IUserService;
+import java.util.List;
 
 /**
  *
@@ -48,5 +49,12 @@ public class UserService implements IUserService{
         this.userRepository.update(user);
         return Boolean.TRUE;
     }
+
+    @Override
+    public List<User> getAllUsers() {
+        return userRepository.getAll();
+    }
+    
+    
     
 }

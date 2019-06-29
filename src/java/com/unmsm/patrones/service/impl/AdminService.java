@@ -30,10 +30,21 @@ public class AdminService implements IAdminService {
             return Boolean.FALSE;
         }
     }
+    
+    @Override
+    public Admin getProfileByEmail(String email) {
+        return adminRepository.getAdminByEmail(email);
+    }
+    
+    @Override
+    public Boolean editAccount(Admin admin) {
+        this.adminRepository.update(admin);
+        return Boolean.TRUE;
+    }
 
     @Override
     public Boolean logout() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+ 
 }

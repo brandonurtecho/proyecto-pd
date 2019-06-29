@@ -6,6 +6,7 @@
 package com.unmsm.patrones.service;
 
 import com.unmsm.patrones.dto.User;
+import java.util.List;
 
 /**
  *
@@ -15,5 +16,6 @@ public interface IUserService {
     User login(String email, String password);
     Boolean registerAccount(User user);
     Boolean editAccount(User user);
+    List<User> getAllUsers();
     //Boolean validateAccount(String token);
 }

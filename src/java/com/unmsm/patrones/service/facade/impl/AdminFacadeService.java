@@ -10,17 +10,20 @@ import com.unmsm.patrones.dto.Commentary;
 import com.unmsm.patrones.dto.Payment;
 import com.unmsm.patrones.dto.Person;
 import com.unmsm.patrones.dto.Sport;
+import com.unmsm.patrones.dto.User;
 import com.unmsm.patrones.dto.Volunteer;
 import com.unmsm.patrones.service.IAdminService;
 import com.unmsm.patrones.service.ICommentaryService;
 import com.unmsm.patrones.service.IPanamericanoSportService;
 import com.unmsm.patrones.service.IParapanamericanoSportService;
 import com.unmsm.patrones.service.IPaymentService;
+import com.unmsm.patrones.service.IUserService;
 import com.unmsm.patrones.service.IVolunteerService;
 import com.unmsm.patrones.service.facade.IAdminFacadeService;
 import com.unmsm.patrones.service.impl.AdminService;
 import com.unmsm.patrones.service.impl.CommentaryService;
 import com.unmsm.patrones.service.impl.PaymentService;
+import com.unmsm.patrones.service.impl.UserService;
 import com.unmsm.patrones.service.impl.VolunteerService;
 import com.unmsm.patrones.util.TypeSport;
 import java.util.Arrays;
@@ -33,6 +36,7 @@ import java.util.List;
 public class AdminFacadeService implements IAdminFacadeService{
     
     private IAdminService adminService;
+    private IUserService userService;
     private ICommentaryService commentaryService;
     private IVolunteerService volunteerService;
     private IPaymentService paymentService;
@@ -43,6 +47,7 @@ public class AdminFacadeService implements IAdminFacadeService{
 
     public AdminFacadeService() {
         this.adminService = new AdminService();
+        this.userService = new UserService();
         this.commentaryService = new CommentaryService();
         this.volunteerService = new VolunteerService();
         this.paymentService = new PaymentService();
@@ -54,13 +59,18 @@ public class AdminFacadeService implements IAdminFacadeService{
     }
 
     @Override
-    public Person showProfileAdmin(Admin admin) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Admin showProfileAdminByEmail(String email) {
+        return adminService.getProfileByEmail(email);
     }
 
     @Override
     public List<Commentary> showCommentarySport(String sport) {
         return commentaryService.showCommentaryBySport(sport);
+    }
+    
+    @Override
+    public List<User> showAttendees() {
+        return userService.getAllUsers();
     }
 
     @Override
@@ -87,6 +97,11 @@ public class AdminFacadeService implements IAdminFacadeService{
                 return parapanamericanosportService.showAllSports();
         }
         return Arrays.asList(Sport.NULL_SPORT);
+    }
+
+    @Override
+    public Boolean editAccount(Admin admin) {
+        return adminService.editAccount(admin);
     }
     
 }

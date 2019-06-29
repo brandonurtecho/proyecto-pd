@@ -10,6 +10,7 @@ import com.mongodb.client.MongoCursor;
 import static com.mongodb.client.model.Filters.eq;
 import com.unmsm.patrones.connection.Connection;
 import com.unmsm.patrones.dto.Admin;
+import com.unmsm.patrones.dto.User;
 import com.unmsm.patrones.dto.factory.PersonFactory;
 import com.unmsm.patrones.repository.IAdminRepository;
 import com.unmsm.patrones.util.TypeCollections;
@@ -66,10 +67,30 @@ public class AdminDao implements IAdminRepository{
             admin.setPassword(doc.getString("password"));
             admin.setName(doc.getString("name"));
             admin.setLastname(doc.getString("lastname"));
-               
+            admin.setDni(doc.getString("dni"));
+            admin.setPhone(doc.getString("phone"));
+            admin.setAge(doc.getString("age"));
+            admin.setGenre(doc.getString("genre"));
         }
         
         return doc != null ? admin : Admin.NULL_ADMIN;
+    }
+    
+    @Override
+    public long update(Admin admin) {
+        long cont = collection.updateOne(eq("email", admin.getEmail()),
+                new Document("$set",
+                        new Document("email", admin.getEmail())
+                                .append("password", admin.getPassword())                               
+                                .append("lastname", admin.getLastname())
+                                .append("name", admin.getName())
+                                .append("dni", admin.getDni())
+                                .append("phone", admin.getPhone())
+                                .append("age", admin.getAge())
+                                .append("genre", admin.getGenre())))
+                .getModifiedCount();
+
+        return cont;
     }
     
 }

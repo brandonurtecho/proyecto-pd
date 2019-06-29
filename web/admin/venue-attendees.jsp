@@ -14,8 +14,8 @@
         <!-- Bootstrap CSS CDN -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
         <!-- Our Custom CSS -->
-        <link rel="stylesheet" href="../assets/css/main-content.css">
-        <link href="../assets/bootstrap/css/util.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="/proyecto/assets/css/main-content.css">
+        <link href="/proyecto/assets/bootstrap/css/util.css" rel="stylesheet"/>
 
         <!-- Font Awesome JS -->
         <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
@@ -31,7 +31,7 @@
                     <h3>ADMIN</h3>
 
                     <div align="center">
-                        <a class="nav-link" href="/proyecto/admin/admin/view-profile"><img src="../assets/img/logo-admin.png" height="100" width="100"></a><br>
+                        <a class="nav-link" href="/proyecto/admin/admin/view-profile"><img src="/proyecto/assets/img/logo-admin.png" height="100" width="100"></a><br>
                     </div><br>
 
                     <p style="color: #FAFAFA" >Administrador</p>
@@ -95,43 +95,44 @@
                 </div>
 
                 <section>
-                    <c:forEach var="i" begin="1" end="10">
+                    <c:set var="i" value="1"/>
+                    <c:forEach items="${attendees}" var="attendee">                       
                         <div class="card my-4">
                             <div class="card-body">
                                 <div class="form-group flex-sa">
                                     <div class="w-40">
                                         <label>Nombre:</label>
-                                        <input type="text" class="form-control" id="nombre" placeholder="Nombre" readonly><br>
+                                        <input type="text" class="form-control" id="nombre" value="${attendee.name}" readonly><br>
                                     </div>
                                     <div class="w-40">
                                         <label>Apellido:</label>
-                                        <input type="text" class="form-control" id="apellido" placeholder="Apellido" readonly><br>
+                                        <input type="text" class="form-control" id="apellido" value="${attendee.lastname}" readonly><br>
                                     </div>
                                 </div>
                                 <div id="extra${i}">
                                     <div class="form-group flex-sa">
                                         <div class="w-40">
                                             <label>Edad:</label>
-                                            <input type="text" class="form-control" id="edad" placeholder="Edad" readonly><br> 
+                                            <input type="text" class="form-control" id="edad" value="${attendee.birthdate}" readonly><br> 
                                         </div>
                                         <div class="w-40">  
                                             <label>Sexo:</label>
-                                            <input type="text" class="form-control" id="sexo" placeholder="Sexo" readonly><br>
+                                            <input type="text" class="form-control" id="sexo" value="${attendee.genre}" readonly><br>
                                         </div>                                   
                                     </div>
                                     <div class="form-group flex-sa">
                                         <div class="w-90">
                                             <label>Correo Electronico:</label>
-                                            <input type="text" class="form-control" id="correo" placeholder="Correo Electronico" readonly>
+                                            <input type="text" class="form-control" id="correo" value="${attendee.email}" readonly>
                                         </div>
                                     </div>
                                 </div>
                                 <button id="btn${i}" class="btn btn-primary float-right">O</button>
                             </div>
                         </div>
-                    </c:forEach>              
+                        <c:set var="i" value="${i+1}"/>
+                    </c:forEach>          
                 </section>
-                s
             </div>
         </div>
 
@@ -148,13 +149,17 @@
                     $('#sidebar').toggleClass('active');
                 });
             });
-            <c:forEach var="i" begin="1" end="10">
+            <c:set var="i" value="1"/> 
+            <c:forEach items="${attendees}" var="attendee">           
             $("#extra${i}").toggle();
+            <c:set var="i" value="${i+1}"/>
             </c:forEach>
-            <c:forEach var="i" begin="1" end="10">
+            <c:set var="i" value="1"/>       
+            <c:forEach items="${attendees}" var="attendee">             
             $("#btn${i}").click(function () {
                 $("#extra${i}").toggle("slow");
             });
+            <c:set var="i" value="${i+1}"/>
             </c:forEach>
         </script>
 

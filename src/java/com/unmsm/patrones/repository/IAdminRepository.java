@@ -5,10 +5,12 @@
  */
 package com.unmsm.patrones.repository;
 
+import com.unmsm.patrones.dto.Admin;
+
 /**
  *
  * @author diego
  */
 public interface IAdminRepository extends IAdminReadeable {
-    
+    long update(Admin admin);
 }

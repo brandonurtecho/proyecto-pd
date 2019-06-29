@@ -13,8 +13,8 @@
         <!-- Bootstrap CSS CDN -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
         <!-- Our Custom CSS -->
-        <link rel="stylesheet" href="../assets/css/main-content.css">
-        <link href="../assets/bootstrap/css/util.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="/proyecto/assets/css/main-content.css">
+        <link href="/proyecto/assets/bootstrap/css/util.css" rel="stylesheet"/>
 
         <!-- Font Awesome JS -->
         <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
@@ -28,7 +28,7 @@
                     <h3>ADMIN</h3>
 
                     <div align="center">
-                        <a class="nav-link" href="/proyecto/admin/admin/view-profile"><img src="../assets/img/logo-admin.png" height="100" width="100"></a><br>
+                        <a class="nav-link" href="/proyecto/admin/admin/view-profile"><img src="/proyecto/assets/img/logo-admin.png" height="100" width="100"></a><br>
                     </div><br>
 
                     <p style="color: #FAFAFA" >Administrador</p>
@@ -89,44 +89,45 @@
                     <div class="flex-c">
                         <h2>DATOS PERSONALES</h2>
                     </div>
+                    <c:set var="admin" value="${admin}"></c:set>
                     <div class="form-group flex-sa">
                         <div class="w-40">
                             <label>Nombre:</label>
-                            <input type="text" class="form-control" id="nombre" placeholder="Nombre" readonly><br>
+                            <input type="text" class="form-control" id="nombre" value="${admin.name}" readonly><br>
                         </div>
                         <div class="w-40">
                             <label>Apellido:</label>
-                            <input type="text" class="form-control" id="apellido" placeholder="Apellido" readonly><br>
+                            <input type="text" class="form-control" id="apellido" value="${admin.lastname}" readonly><br>
                         </div>
                     </div>
                     <div class="form-group flex-sa">
                         <div class="w-40">
                             <label>DNI:</label>
-                            <input type="text" class="form-control" id="dni" placeholder="DNI" readonly><br> 
+                            <input type="text" class="form-control" id="dni" value="${admin.dni}" readonly><br> 
                         </div>
                         <div class="w-40">
                             <label>Telefono:</label>
-                            <input type="text" class="form-control" id="telefono" placeholder="Telefono" readonly><br>
+                            <input type="text" class="form-control" id="telefono" value="${admin.phone}" readonly><br>
                         </div>
                     </div>              
                     <div class="form-group flex-sa">
                         <div class="w-90">
                             <label>Correo Electronico:</label>
-                            <input type="text" class="form-control" id="correo" placeholder="Correo Electronico" readonly>
+                            <input type="text" class="form-control" id="correo" value="${admin.email}" readonly>
                         </div>
                     </div>
                     <div class="form-group flex-sa">
                         <div class="w-40">
                             <label>Edad:</label>
-                            <input type="text" class="form-control" id="edad" placeholder="Edad" readonly><br> 
+                            <input type="text" class="form-control" id="edad" value="${admin.age}" readonly><br> 
                         </div>
                         <div class="w-40">  
                             <label>Sexo:</label>
-                            <input type="text" class="form-control" id="sexo" placeholder="Sexo" readonly><br>
+                            <input type="text" class="form-control" id="sexo" value="${admin.genre}" readonly><br>
                         </div>
                     </div>
                     <div class="flex-c">
-                        <a href="/proyecto/admin/admin/edit-profile"><button class="btn btn-primary">Modificar Datos</button></a>
+                        <a href="/proyecto/admin/edit-profile.jsp"><button class="btn btn-primary">Modificar Datos</button></a>
                     </div>
                 </div>
             </section>

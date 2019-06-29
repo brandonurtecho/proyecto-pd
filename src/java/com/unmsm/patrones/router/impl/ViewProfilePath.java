@@ -5,6 +5,7 @@
  */
 package com.unmsm.patrones.router.impl;
 
+import com.unmsm.patrones.dto.Admin;
 import com.unmsm.patrones.router.PathStrategy;
 import com.unmsm.patrones.service.facade.impl.AdminFacadeService;
 import com.unmsm.patrones.util.Jsp;
@@ -33,6 +34,10 @@ public class ViewProfilePath extends PathStrategy{
     @Override
     public void operation(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
         AdminFacadeService service = new AdminFacadeService();
+        
+        Admin admin = service.showProfileAdminByEmail((String) request.getSession().getAttribute("adminEmail"));
+        request.getSession().setAttribute("admin", admin);
+        
         RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/" + Jsp.VIEW_PROFILE);
         dispatcher.forward(request, response);
     }
