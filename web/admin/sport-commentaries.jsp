@@ -3,6 +3,8 @@
     Created on : 09/06/2019, 11:00:38 AM
     Author     : RDR
 --%>
+<%@page import="com.unmsm.patrones.dto.Commentary"%>
+<%@page import="com.unmsm.patrones.util.iterator.CustomIterator"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -51,7 +53,7 @@
                             </ul>
                         </li>
                         <li>
-                            <c:set var="sports">Atletismo,Badminton,Baloncesto,Balonmano,Béisbol,Bowling,Canotaje Slalom,Canotaje Slalom Extremo,
+                            <c:set var="sports">Atletismo,BADMINTON,Baloncesto,Balonmano,Béisbol,Bowling,Canotaje Slalom,Canotaje Slalom Extremo,
                                 Canotaje Velocidad,Ciclismo BMX,Ciclismo de Montaña,Ciclismo de Pista,Ciclismo de Ruta,Clavados,Deportes Ecuestres,
                                 Esgrima,Esquí Acuático y Wakeboard,Fisicoculturismo,Fútbol,Gimnasia Artística,Gimnasia Rítmica,Gimnasia Trampolín,
                                 Golf,Hockey,Judo,Karate,Levantamiento de Pesas,Lucha, Natación,Natación Aguas Abiertas,Natación Artística,Patinaje Artístico,
@@ -88,20 +90,21 @@
 
                     </div>
                 </nav>
-
-                <section>
-                    <c:forEach items="${comments}" var="comentario">
+             
+                    <%CustomIterator it = (CustomIterator)request.getAttribute("comments");%>
+                    <%while(!it.isDone()){%>
+                    <%Commentary c = (Commentary) it.next();%>
                         <div class="card my-4">
                             <h5 class="card-header">Comentario deporte</h5>
                             <div class="card-body">
-                                <h5 class="card-title">Nombre: ${comentario.nameUser}</h5>
-                                <p class="card-text">Comentario: ${comentario.body}</p>
-                                <p class="card-text">Likes: ${comentario.like}</p>
-                                <p class="card-text">Fecha: ${comentario.date}</p>
+                                <h5 class="card-title">Nombre: <%=c.getNameUser()%></h5>
+                                <p class="card-text">Comentario: <%=c.getBody()%></p>
+                                <p class="card-text">Likes: <%=c.getLike()%></p>
+                                <p class="card-text">Fecha: <%=c.getDate()%></p>
                             </div>
                         </div>
-                    </c:forEach>
-                </section>
+                    <%}%>
+                
             </div>
 
             <!-- jQuery CDN - Slim version (=without AJAX) -->

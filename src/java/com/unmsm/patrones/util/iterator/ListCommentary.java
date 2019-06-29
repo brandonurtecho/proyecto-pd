@@ -55,4 +55,8 @@ public class ListCommentary implements CustomList<Commentary> {
     public void setItem(int index, Commentary value) {
         items.add(index, value);
     }
+    
+    public void setItem(Commentary value){
+        items.add(value);
+    }
 }

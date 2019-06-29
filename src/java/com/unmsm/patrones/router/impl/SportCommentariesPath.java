@@ -38,8 +38,8 @@ public class SportCommentariesPath extends PathStrategy{
         AdminFacadeService service = new AdminFacadeService();
         
         String sport = request.getParameter("sport");
-        CustomIterator it = service.showCommentarySport(sport,"LIKE");
-        request.setAttribute("it", it);
+        CustomIterator comments = service.showCommentarySport(sport, "LIKE");
+        request.setAttribute("comments", comments);
         
         RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/" + Jsp.SPORT_COMMENTARIES);
         dispatcher.forward(request, response);
