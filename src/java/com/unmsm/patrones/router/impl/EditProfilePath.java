@@ -5,6 +5,7 @@
  */
 package com.unmsm.patrones.router.impl;
 
+import com.unmsm.patrones.dto.Admin;
 import com.unmsm.patrones.router.PathStrategy;
 import com.unmsm.patrones.service.facade.impl.AdminFacadeService;
 import com.unmsm.patrones.util.Jsp;
@@ -33,7 +34,30 @@ public class EditProfilePath extends PathStrategy{
     @Override
     public void operation(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
         AdminFacadeService service = new AdminFacadeService();
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/" + Jsp.EDIT_PROFILE);
-        dispatcher.forward(request, response);
+        
+        String email = request.getParameter("email");
+        String password = (String) request.getSession().getAttribute("adminPass");
+        String name = request.getParameter("name");
+        String lastname = request.getParameter("lastname");
+        String dni = request.getParameter("dni");
+        String phone = request.getParameter("phone");
+        String age = request.getParameter("age");
+        String genre = request.getParameter("genre");
+        
+        Admin admin = new Admin.AdminBuilder().setEmail(email).setPassword(password)
+                                              .setName(name).setLastname(lastname)
+                                              .setDni(dni).setPhone(phone)
+                                              .setAge(age).setGenre(genre).build();     
+        
+        if(service.editAccount(admin)){
+            request.getSession().setAttribute("admin", admin);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/" + Jsp.VIEW_PROFILE);
+            dispatcher.forward(request, response);
+        } else {
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/" + Jsp.EDIT_PROFILE);
+            dispatcher.forward(request, response);
+        }
+        
+        
     }
 }

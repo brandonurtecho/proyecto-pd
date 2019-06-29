@@ -37,12 +37,16 @@ public class LoginAdminPath extends PathStrategy{
         
         String user = request.getParameter("username");
         String pass = request.getParameter("password");
+        request.getSession().setAttribute("adminEmail", user);
+        request.getSession().setAttribute("adminPass", pass);
         if(service.login(user, pass)){
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/" +Jsp.MAIN_CONTENT);
-            dispatcher.forward(request, response);
+            response.sendRedirect("/proyecto/admin/main-content.jsp");
+//            RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/" +Jsp.MAIN_CONTENT);
+//            dispatcher.forward(request, response);
         } else {
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/" +Jsp.LOGIN_ADMIN);
-            dispatcher.forward(request, response);
+            response.sendRedirect("/proyecto/admin/login-admin.jsp");
+//            RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/" + Jsp.LOGIN_ADMIN);
+//            dispatcher.forward(request, response);
         }
            
     }

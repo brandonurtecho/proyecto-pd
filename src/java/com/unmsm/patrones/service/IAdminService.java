@@ -14,5 +14,7 @@ import com.unmsm.patrones.dto.Person;
  */
 public interface IAdminService {
     Boolean login(String email, String password);
+    Admin getProfileByEmail(String email);
+    Boolean editAccount(Admin admin);
     Boolean logout();
 }

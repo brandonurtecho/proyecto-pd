@@ -15,4 +15,5 @@ import java.util.List;
 public interface IAdminReadeable {
     List<Admin> getAll();
     Admin getAdminByEmail(String email);
+    
 }

@@ -5,12 +5,14 @@
  */
 package com.unmsm.patrones.router.impl;
 
+import com.unmsm.patrones.dto.User;
 import com.unmsm.patrones.router.PathStrategy;
 import com.unmsm.patrones.service.facade.impl.AdminFacadeService;
 import com.unmsm.patrones.util.Jsp;
 import com.unmsm.patrones.util.PathName;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -33,6 +35,10 @@ public class VenueAttendeesPath extends PathStrategy{
     @Override
     public void operation(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
         AdminFacadeService service = new AdminFacadeService();
+        
+        List<User> attendees = service.showAttendees();
+        request.setAttribute("attendees", attendees);
+        
         RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/" + Jsp.VENUE_ATTENDEES);
         dispatcher.forward(request, response);
     }

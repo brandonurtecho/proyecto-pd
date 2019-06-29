@@ -12,8 +12,10 @@
         <!-- Bootstrap CSS CDN -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
         <!-- Our Custom CSS -->
-        <link rel="stylesheet" href="../assets/css/main-content.css">
-        <link href="../assets/bootstrap/css/util.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="/proyecto/assets/css/main-content.css">
+
+        <link href="/proyecto/assets/bootstrap/css/util.css" rel="stylesheet"/>
+
 
         <!-- Font Awesome JS -->
         <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
@@ -21,6 +23,7 @@
         <title>Editar Perfil</title>
     </head>
     <body>
+
         <div class="wrapper">
             <!-- Sidebar  -->
             <nav id="sidebar">
@@ -28,7 +31,10 @@
                     <h3>ADMIN</h3>
 
                     <div align="center">
-                        <a class="nav-link" href="/proyecto/admin/admin/view-profile"><img src="../assets/img/logo-admin.png" height="100" width="100"></a><br>
+
+                        <a class="nav-link" href="/proyecto/admin/admin/view-profile"><img src="/proyecto/assets/img/logo-admin.png" height="100" width="100"></a><br>
+
+
                     </div><br>
 
                     <p style="color: #FAFAFA" >Administrador</p>
@@ -41,11 +47,11 @@
                                 Complejo Deportivo Villa María del Triunfo,Base Aérea Las Palmas,Escuela Militar de Chorrillos,Playa Chorrillos,
                                 Morro Solar Chorrillos,Polideportivo Villa el Salvador,Country Club de Villa,Villa Panamericana y Parapanamericana,
                                 Punta Rocas,Puerto Viejo,Laguna Bujama,Río Cañete - Lunahuaná,Yatch Club Peruano Sede Paracas</c:set>
-                            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Comentarios de sedes</a>
-                            <ul class="collapse list-unstyled" id="homeSubmenu">
+                                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Comentarios de sedes</a>
+                                <ul class="collapse list-unstyled" id="homeSubmenu">
                                 <c:forTokens items="${venues}" delims="," var="venue">
                                     <li><a href="venue-commentaries.jsp">${venue}</a></li>
-                                </c:forTokens>
+                                    </c:forTokens>
                             </ul>
                         </li>
                         <li>
@@ -55,11 +61,11 @@
                                 Golf,Hockey,Judo,Karate,Levantamiento de Pesas,Lucha, Natación,Natación Aguas Abiertas,Natación Artística,Patinaje Artístico,
                                 Patinaje de Velocidad,Pelota Vasca,Pentatlón Moderno,Ráquetbol,Remo,Rugby 7,Softbol,Squash,Surf,Taekwondo,Tenis,Tenis de Mesa,
                                 Tiro,Tiro con Arco,Triatlón,Vela,Voleibol,Voleibol de Playa,Water Polo</c:set>
-                            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Comentarios deportes</a>
-                            <ul class="collapse list-unstyled" id="pageSubmenu">
+                                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Comentarios deportes</a>
+                                <ul class="collapse list-unstyled" id="pageSubmenu">
                                 <c:forTokens items="${sports}" delims="," var="sport">
                                     <li><a href="/proyecto/admin/admin/sport-commentaries?sport=${sport}">${sport}</a></li>
-                                </c:forTokens>
+                                    </c:forTokens>
                             </ul>
                         </li>
                         <li>
@@ -86,44 +92,45 @@
                     </div>
                 </nav>
 
-                <form action="view-profile.jsp">
+                <form action="/proyecto/admin/admin/edit-profile">
+                    <c:set var="admin" value="${admin}"></c:set>
                     <div class="flex-c">
                         <h2>EDITAR DATOS PERSONALES</h2>
                     </div>
                     <div class="form-group flex-sa">
                         <div class="w-40">
                             <label>Nombre:</label>
-                            <input type="text" class="form-control" id="name" placeholder="Ingrese el nombre" ><br>
+                            <input type="text" class="form-control" name="name" value="${admin.name}" placeholder="Ingrese el nombre" ><br>
                         </div>
                         <div class="w-40">
                             <label>Apellido:</label>
-                            <input type="text" class="form-control" id="ape" placeholder="Ingrese el apellido" ><br>
+                            <input type="text" class="form-control" name="lastname" value="${admin.lastname}" placeholder="Ingrese el apellido" ><br>
                         </div>
                     </div>
                     <div class="form-group flex-sa">
                         <div class="w-40">
                             <label>DNI:</label>
-                            <input type="text" class="form-control" id="d" placeholder="Ingrese el DNI" ><br> 
+                            <input type="text" class="form-control" name="dni" value="${admin.dni}" placeholder="Ingrese el DNI" ><br> 
                         </div>
                         <div class="w-40">
                             <label>Telefono:</label>
-                            <input type="text" class="form-control" id="telef" placeholder="Ingrese el telefono" ><br>
+                            <input type="text" class="form-control" name="phone" value="${admin.phone}" placeholder="Ingrese el telefono" ><br>
                         </div>
                     </div>
                     <div class="form-group flex-sa">
                         <div class="w-90">
                             <label>Correo Electronico:</label>
-                            <input type="text" class="form-control" id="correoelectronico" placeholder="Ingrese el correo electronico" >
+                            <input type="text" class="form-control" name="email" value="${admin.email}" placeholder="Ingrese el correo electronico" readonly>
                         </div>
                     </div>
                     <div class="form-group flex-sa">
                         <div class="w-40">
                             <label>Edad:</label>
-                            <input type="text" class="form-control" id="e" placeholder="Ingrese la edad" ><br> 
+                            <input type="text" class="form-control" name="age" value="${admin.age}" placeholder="Ingrese la edad" ><br> 
                         </div>
                         <div class="w-40">
                             <label>Sexo:</label>
-                            <input type="text" class="form-control" id="se" placeholder="Sexo" readonly><br>
+                            <input type="text" class="form-control" name="genre" value="${admin.genre}" placeholder="Sexo" readonly><br>
                         </div>
                     </div>
                     <div class="form-group flex-c">                     
@@ -131,7 +138,7 @@
                             <button type="submit" class="btn btn-primary">Guardar</button>
                         </div>     
                         <div class="m-10">
-                            <button class="btn btn-danger"><a href="/proyecto/admin/admin/view-profile">Cancelar</a></button>
+                            <button class="btn btn-danger"><a href="/proyecto/admin/view-profile.jsp">Cancelar</a></button>
                         </div>
                     </div>
                 </form>

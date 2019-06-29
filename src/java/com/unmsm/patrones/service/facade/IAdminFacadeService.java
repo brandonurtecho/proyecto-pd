@@ -10,6 +10,7 @@ import com.unmsm.patrones.dto.Commentary;
 import com.unmsm.patrones.dto.Payment;
 import com.unmsm.patrones.dto.Person;
 import com.unmsm.patrones.dto.Sport;
+import com.unmsm.patrones.dto.User;
 import com.unmsm.patrones.dto.Volunteer;
 import com.unmsm.patrones.util.iterator.CustomIterator;
 import java.util.List;
@@ -20,9 +21,11 @@ import java.util.List;
  */
 public interface IAdminFacadeService {
     Boolean login(String email, String password);
-    Person showProfileAdmin(Admin admin);
+    Admin showProfileAdminByEmail(String email);
+    Boolean editAccount(Admin admin);
     //falta lo de las sedes
     CustomIterator showCommentarySport(String sport, String sort);
+    List<User> showAttendees();
     List<Volunteer> showVolunteers();
     List<Payment> getAllPayments();
     List<? extends Sport> showSportList(String type);

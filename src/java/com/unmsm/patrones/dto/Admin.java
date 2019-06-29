@@ -14,6 +14,10 @@ import com.unmsm.patrones.util.TypePerson;
 public class Admin extends Person {
     private String email;
     private String password;
+    private String dni;
+    private String phone;
+    private String age;
+    private String genre;
 
     public Admin() {}
     
@@ -22,10 +26,14 @@ public class Admin extends Person {
         this.password = password;
     }
 
-    public Admin(String email, String password, String id, String name, String lastname) {
-        super(id, name, lastname);
+    public Admin(String email, String password, String name, String lastname, String dni, String phone, String age, String genre) {
+        super("0", name, lastname);
         this.email = email;
         this.password = password;
+        this.dni = dni;
+        this.phone = phone;
+        this.age = age;
+        this.genre = genre;
     }
     
     public static final Admin NULL_ADMIN = new Admin() {
@@ -71,6 +79,38 @@ public class Admin extends Person {
         this.password = password;
     }
 
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
     @Override
     public String toString() {
         return "Admin{" + "email=" + email + ", password=" + password + '}';
@@ -88,6 +128,10 @@ public class Admin extends Person {
         private String lastname;
         private String email;
         private String password;
+        private String dni;
+        private String phone;
+        private String age;
+        private String genre;
 
         public AdminBuilder() {
         }
@@ -117,9 +161,29 @@ public class Admin extends Person {
             return this;
         }
         
+        public AdminBuilder setDni(String dni) {
+            this.dni = dni;
+            return this;
+        }
+
+        public AdminBuilder setPhone(String phone) {
+            this.phone = phone;
+            return this;
+        }
+
+        public AdminBuilder setAge(String age) {
+            this.age = age;
+            return this;
+        }
+
+        public AdminBuilder setGenre(String genre) {
+            this.genre = genre;
+            return this;
+        }
+        
         @Override
         public Admin build() {
-            return new Admin(email, password, id, name, lastname);
+            return new Admin(email, password, name, lastname, dni, phone, age, genre);
         }
         
     }
