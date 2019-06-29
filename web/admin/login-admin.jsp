@@ -11,9 +11,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width">
         <title>Login Admin</title>       
-        <link href="../assets/bootstrap/css/main.css" rel="stylesheet"/>
-        <link href="../assets/bootstrap/css/util.css" rel="stylesheet"/>
-        <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="/proyecto/assets/bootstrap/css/main.css" rel="stylesheet"/>
+        <link href="/proyecto/assets/bootstrap/css/util.css" rel="stylesheet"/>
+        <link href="/proyecto/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
     </head>
     <body>
         <div class="limiter">
