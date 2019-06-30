@@ -3,7 +3,7 @@
     Created on : 13-jun-2019, 17:19:56
     Author     : LaboratorioFISI
 --%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

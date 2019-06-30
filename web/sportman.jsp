@@ -4,6 +4,9 @@
     Author     : LaboratorioFISI
 --%>
 
+<%@page import="com.unmsm.patrones.util.Cast"%>
+<%@page import="com.unmsm.patrones.util.iterator.CustomIterator"%>
+<%@page import="com.unmsm.patrones.dto.Commentary"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -94,60 +97,63 @@
             <div class="">
 
                 <div id="comments " class="comments">
+                   
 
-                    <c:forEach begin="1" end="${it.size()}">
-                        <c:if test="${!it.isDone()}">
-                            <c:out value="${it.next()}"/>
-                        </c:if>
-                    </c:forEach>
-                    
-
-
-                    <div id="comment-1">
-                        <div class="comment my-2">
-                            <div class="media-left">
-                                <img src="https://www.zona-leros.net/storage/image/default.png" alt="" class="img ">
-                            </div>
-                            <div class="media-body">
-                                <div class="media-content" style=" ">
-                                    <span class="media-heading"> titulo </span>
-                                    <span class="date" style="display: inline;"> • date.</span>
-                                    <span class="text"> Body <br>
-                                    </span>
-                                    <div class="date">
-                                        <span class="up">
-                                            <span id="upvotes-9393">likes</span> <i class="fa fa-fw fa-chevron-up " onclick="  " id="up-9393"></i>
-                                        </span> 
+                    <c:forEach var="i" begin="1" end="${it.size()}">
+                        <div id="comment-${i}">
+                            <c:set var="c" value="${it.next()}" />
+                            <div class="comment my-2">
+                                <div class="media-left">
+                                    <img src="https://www.zona-leros.net/storage/image/default.png" alt="" class="img ">
+                                </div>
+                                <div class="media-body">
+                                    <div class="media-content" style=" ">
+                                        <span class="media-heading"> <c:out value="${c.getEmailUser()}" /> </span>
+                                        <span class="date" style="display: inline;"> •  <c:out value="${cast.dateToString(c.getDate())}" /> </span>
+                                        <span class="text">  <c:out value="${c.getBody()}" /> <br>
+                                        </span>
+                                        <div class="date">
+                                            <span class="up">
+                                                <span id="upvotes-9393">  <c:out value="${c.getLike()}" /> </span> 
+                                                <a href="/proyecto/principal/deportistas?Sport=<c:out value="${sport}"/>&commentary=1">
+                                                    <i class="fa fa-fw fa-chevron-up " id="up-9393">algunawea</i>
+                                                </a>
+                                            </span> 
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </c:forEach>
 
 
-                        // comentar
+                    // comentar
 
-                        <div class="comment my-2">
-                            <div class="media-left">
-                                <img src="https://www.zona-leros.net/storage/image/default.png" alt="" class="img ">
-                            </div>
-                            <div class="media-body">
-                                <div class="media-content" style=" ">
-                                    <span class="text">  
-                                        <br><br><br>
+
+                    <div class="comment">
+                        <div class="media-left">
+                            <img src="https://www.zona-leros.net/storage/image/default.png" alt="" class="img">
+                        </div>
+                        <div class="media-body">
+                            <div class="media-content">
+                                <form action="/proyecto/principal/deportistas?Sport=<c:out value="${sport}"/>&commentary=0" method="post">
+                                    <span class="text">
+                                        <textarea id="comment" class="form-control" placeholder="Escribe tu comentario..." data-value="game-1708"></textarea>
                                     </span>
-                                </div>
+                                    <span class="date"> 
+                                        <div id="spiner-comment" style="display: none;">
+                                            <div class="comments__spinner"></div>
+                                        </div>
+                                        <div class="text-right px-3">
+                                            <input type="submit" class="btn btn-danger" value="Comentar">
+
+                                        </div>
+                                    </span>
+                                </form>
                             </div>
                         </div>
-
-                        <div class="text-right px-3">
-                            <form action="/proyecto/principal/deportistas?commentary=0" method="post">
-                                <input type="submit" class="btn btn-danger" value="Comentar">
-                            </form>
-                        </div>
-
-
                     </div>
-
+                                    
                 </div>
             </div>
         </div>

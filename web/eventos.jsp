@@ -3,7 +3,7 @@
     Created on : 15/06/2019, 05:47:18 PM
     Author     : jeanpieralex
 --%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="com.unmsm.patrones.util.Cast"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

@@ -79,8 +79,8 @@
                                         <p class="card-text">${sport.overView}</p>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div class="btn-group">
-                                                <form action="/proyecto/principal/deportistas">
-                                                    <input type="submit" class="btn btn-sm btn-outline-secondary" name="Sport" value="${sport.title}">Ver mas</button>
+                                                <form method="post" action="/proyecto/principal/deportistas?Sport=<c:out value="${sport.title}"/>">
+                                                    <input type="submit" class="btn btn-sm btn-outline-secondary" value="Ver mas">
                                                 </form>
                                             </div>
                                             <small class="text-muted">9 mins</small>
