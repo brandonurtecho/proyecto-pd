@@ -55,6 +55,7 @@ public class SportmanPath extends PathStrategy{
         
         if (commentary != null){
             if(Integer.parseInt(commentary) == 0){
+                
                 /*
             Commentary commentary = new Commentary.CommentaryBuilder()
                     
