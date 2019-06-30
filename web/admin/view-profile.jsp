@@ -32,10 +32,10 @@
                     <h3>ADMIN</h3>
 
                     <div align="center">
-                        <a class="nav-link" href="/proyecto/admin/admin/view-profile"><img src="/proyecto/assets/img/logo-admin.png" height="100" width="100"></a><br>
-                    </div><br>
+                        <a class="nav-link" href="/proyecto/admin/admin/view-profile"><img src="/proyecto/assets/img/Users-Administrator-icon.png" height="150" width="150"></a><br>
+                    </div>
 
-                    <p style="color: #FAFAFA" >Administrador</p>
+                    <p>Administrador</p>
                 </div>
                 <div class="sidebar-b">
                     <ul class="list-unstyled components">                
