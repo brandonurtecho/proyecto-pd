@@ -8,6 +8,7 @@ package com.unmsm.patrones.router.impl;
 import com.unmsm.patrones.dto.Commentary;
 import com.unmsm.patrones.router.PathStrategy;
 import com.unmsm.patrones.service.facade.impl.AdminFacadeService;
+import com.unmsm.patrones.util.Cast;
 import com.unmsm.patrones.util.Jsp;
 import com.unmsm.patrones.util.PathName;
 import com.unmsm.patrones.util.iterator.CustomIterator;
@@ -40,6 +41,7 @@ public class SportCommentariesPath extends PathStrategy{
         String sport = request.getParameter("sport");
         CustomIterator comments = service.showCommentarySport(sport, "LIKE");
         request.setAttribute("comments", comments);
+        request.setAttribute("cast", new Cast());
         
         RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/" + Jsp.SPORT_COMMENTARIES);
         dispatcher.forward(request, response);

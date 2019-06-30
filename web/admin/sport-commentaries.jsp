@@ -6,6 +6,7 @@
 --%>
 <%@page import="com.unmsm.patrones.dto.Commentary"%>
 <%@page import="com.unmsm.patrones.util.iterator.CustomIterator"%>
+<%@page import="com.unmsm.patrones.util.Cast"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -25,7 +26,7 @@
     </head>
     <body>
 
-         
+
         <div class="wrapper">
             <!-- Sidebar  -->
             <nav id="sidebar">
@@ -46,11 +47,11 @@
                                 Complejo Deportivo Villa María del Triunfo,Base Aérea Las Palmas,Escuela Militar de Chorrillos,Playa Chorrillos,
                                 Morro Solar Chorrillos,Polideportivo Villa el Salvador,Country Club de Villa,Villa Panamericana y Parapanamericana,
                                 Punta Rocas,Puerto Viejo,Laguna Bujama,Río Cañete - Lunahuaná,Yatch Club Peruano Sede Paracas</c:set>
-                            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Comentarios de sedes</a>
-                            <ul class="collapse list-unstyled" id="homeSubmenu">
+                                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Comentarios de sedes</a>
+                                <ul class="collapse list-unstyled" id="homeSubmenu">
                                 <c:forTokens items="${venues}" delims="," var="venue">
                                     <li><a href="venue-commentaries.jsp">${venue}</a></li>
-                                </c:forTokens>
+                                    </c:forTokens>
                             </ul>
                         </li>
                         <li>
@@ -60,11 +61,11 @@
                                 Golf,Hockey,Judo,Karate,Levantamiento de Pesas,Lucha, Natación,Natación Aguas Abiertas,Natación Artística,Patinaje Artístico,
                                 Patinaje de Velocidad,Pelota Vasca,Pentatlón Moderno,Ráquetbol,Remo,Rugby 7,Softbol,Squash,Surf,Taekwondo,Tenis,Tenis de Mesa,
                                 Tiro,Tiro con Arco,Triatlón,Vela,Voleibol,Voleibol de Playa,Water Polo</c:set>
-                            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Comentarios deportes</a>
-                            <ul class="collapse list-unstyled" id="pageSubmenu">
+                                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Comentarios deportes</a>
+                                <ul class="collapse list-unstyled" id="pageSubmenu">
                                 <c:forTokens items="${sports}" delims="," var="sport">
                                     <li><a href="/proyecto/admin/admin/sport-commentaries?sport=${sport}">${sport}</a></li>
-                                </c:forTokens>
+                                    </c:forTokens>
                             </ul>
                         </li>
                         <li>
@@ -91,21 +92,22 @@
 
                     </div>
                 </nav>
-             
-                    <%CustomIterator it = (CustomIterator)request.getAttribute("comments");%>
-                    <%while(!it.isDone()){%>
-                    <%Commentary c = (Commentary) it.next();%>
+              
+                <c:forEach begin="1" end="${comments.size()}">
+                    <c:if test="${!comments.isDone()}">
+                        <c:set var="c" value="${comments.next()}"/>
                         <div class="card my-4">
                             <h5 class="card-header">Comentario deporte</h5>
                             <div class="card-body">
-                                <h5 class="card-title">Nombre: <%=c.getNameUser()%></h5>
-                                <p class="card-text">Comentario: <%=c.getBody()%></p>
-                                <p class="card-text">Likes: <%=c.getLike()%></p>
-                                <p class="card-text">Fecha: <%=c.getDate()%></p>
+                                <h5 class="card-title">Nombre: ${c.nameUser}</h5>
+                                <p class="card-text">Comentario: ${c.body}</p>
+                                <p class="card-text">Likes: ${c.like}</p>
+                                <p class="card-text">Fecha: ${cast.dateToString(c.date)}</p>
                             </div>
                         </div>
-                    <%}%>
-                
+                    </c:if>
+                </c:forEach>
+
             </div>
 
             <!-- jQuery CDN - Slim version (=without AJAX) -->

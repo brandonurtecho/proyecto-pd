@@ -43,7 +43,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="p-2 text-white" href="#">Inicio</a>
+                        <a class="p-2 text-white" href="/proyecto/principal/disciplinas">Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a class="p-2 text-white" href="#">Perfil</a>
@@ -97,7 +97,7 @@
             <div class="">
 
                 <div id="comments " class="comments">
-                   
+
 
                     <c:forEach var="i" begin="1" end="${it.size()}">
                         <div id="comment-${i}">
@@ -114,10 +114,11 @@
                                         </span>
                                         <div class="date">
                                             <span class="up">
-                                                <span id="upvotes-9393">  <c:out value="${c.getLike()}" /> </span> 
-                                                <a href="/proyecto/principal/deportistas?Sport=<c:out value="${sport}"/>&commentary=1">
-                                                    <i class="fa fa-fw fa-chevron-up " id="up-9393">algunawea</i>
-                                                </a>
+                                                <span id="upvotes-9393">  <c:out value="${c.getLike()}" /> </span>
+                                                <form action="/proyecto/principal/deportistas?Sport=<c:out value="${sport}"/>" method="post">
+                                                    <input type="hidden" name="likecomment" value="${c}"/>
+                                                    <input class="fa fa-fw fa-chevron-up " type="submit" name="like" value="Like"/>
+                                                </form>
                                             </span> 
                                         </div>
                                     </div>
@@ -136,24 +137,23 @@
                         </div>
                         <div class="media-body">
                             <div class="media-content">
-                                <form action="/proyecto/principal/deportistas?Sport=<c:out value="${sport}"/>&commentary=0" method="post">
+                                <form action="/proyecto/principal/deportistas?Sport=<c:out value="${sport}"/>" method="post">
                                     <span class="text">
-                                        <textarea id="comment" class="form-control" placeholder="Escribe tu comentario..." data-value="game-1708"></textarea>
+                                        <textarea id="comment" name="comment" class="form-control" placeholder="Escribe tu comentario..." data-value="game-1708"></textarea>
                                     </span>
                                     <span class="date"> 
                                         <div id="spiner-comment" style="display: none;">
                                             <div class="comments__spinner"></div>
                                         </div>
                                         <div class="text-right px-3">
-                                            <input type="submit" class="btn btn-danger" value="Comentar">
-
+                                            <input type="submit" class="btn btn-danger" value="Comentar" name="commentary">
                                         </div>
                                     </span>
                                 </form>
                             </div>
                         </div>
                     </div>
-                                    
+
                 </div>
             </div>
         </div>

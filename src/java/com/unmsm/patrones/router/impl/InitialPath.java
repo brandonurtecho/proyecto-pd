@@ -50,9 +50,10 @@ public class InitialPath extends PathStrategy{
         UserFacadeService service = new UserFacadeService();
         // WARDA ESTE USER QUE TIENE TODOS LOS DATOS QUE NECESITARÁS
         User user = service.login(idUser, password);
-        System.out.println(user.getId());
+        System.out.println("Apellido: " + user.getLastname());
         
         if (!user.getId().equals("0")) {
+            request.getSession().setAttribute("userOn", user);
             RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.INITIAL);
             dispatcher.forward(request, response);
         } else {

@@ -5,6 +5,7 @@
  */
 package com.unmsm.patrones.dto;
 
+import com.unmsm.patrones.util.Cast;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -135,7 +136,8 @@ public class Commentary {
 
     @Override
     public String toString() {
-        return "Commentary{" + "id=" + id + ", emailUser=" + emailUser + ", nameUser=" + nameUser + ", lastNameUser=" + lastNameUser + ", date=" + date + ", body=" + body + ", like=" + like + ", sport=" + sport + '}';
+        //return "Commentary{" + "id=" + id + ", emailUser=" + emailUser + ", nameUser=" + nameUser + ", lastNameUser=" + lastNameUser + ", date=" + date + ", body=" + body + ", like=" + like + ", sport=" + sport + '}';
+        return id + "::" + emailUser + "::" + nameUser + "::" + lastNameUser + "::" + Cast.dateToString(date) + "::" + body + "::"+ like + "::" + sport;
     }
     
     public static class CommentaryBuilder implements IBuilder<Commentary> {

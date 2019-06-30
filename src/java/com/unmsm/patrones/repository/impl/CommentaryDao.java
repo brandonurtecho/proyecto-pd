@@ -81,7 +81,6 @@ public class CommentaryDao implements ICommentaryRepository {
                         .setNameUser(doc.getString("nameUser"))
                         .setLastNameUser(doc.getString("lastNameUser"))
                         .build();
-
                 list.add(commentary);
             }
             
@@ -109,13 +108,14 @@ public class CommentaryDao implements ICommentaryRepository {
     @Override
     public long update(Commentary commentary) {
         long cont = collection.updateOne(eq("_id", new ObjectId(commentary.getId())),
+            new Document("$set",    
                 new Document("body", commentary.getBody())
                         .append("date", Cast.dateToString(commentary.getDate()))
                         .append("like", commentary.getLike())
                         .append("sport", commentary.getSport())
                         .append("emailUser", commentary.getEmailUser())
                         .append("nameUser", commentary.getNameUser())
-                        .append("lastNameUser", commentary.getLastNameUser()))
+                        .append("lastNameUser", commentary.getLastNameUser())))
                 .getModifiedCount();
 
         return cont;
