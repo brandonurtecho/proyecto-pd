@@ -43,12 +43,12 @@ public class SportmanPath extends PathStrategy{
         UserFacadeService service = new UserFacadeService();
         
         String sport = request.getParameter("Sport");
-        
+        System.out.println(sport);
         if (sport != null){
             List <Sportsman> sportmanlist = service.showSportsmanBySportInSport(sport);
-            CustomIterator commentarylist = service.showCommentaryBySportInSport(sport,"LIKE");
+            CustomIterator it = service.showCommentaryBySportInSport(sport,"LIKE");
             request.setAttribute("sportmanlist", sportmanlist);
-            request.setAttribute("commentarys", commentarylist);
+            request.setAttribute("it", it);
         }
         
         String commentary = request.getParameter("commentary");

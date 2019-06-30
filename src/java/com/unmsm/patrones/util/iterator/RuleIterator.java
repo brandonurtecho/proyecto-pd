@@ -48,4 +48,9 @@ public class RuleIterator implements CustomIterator<Commentary> {
         }
 
     }
+
+    @Override
+    public int size() {
+        return aggregate.count();
+    }
 }
