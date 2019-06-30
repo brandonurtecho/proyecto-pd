@@ -13,8 +13,7 @@ p {
     font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
-    color: #000000;
-    
+    color: #242831;
 }
 
 a,
@@ -44,7 +43,7 @@ a:focus {
     height: 1px;
     border-bottom: 1px dashed #ddd;
     margin: 40px 0;
-    background: #335069;
+    background: #242831;
 }
 
 /* ---------------------------------------------------
@@ -60,7 +59,7 @@ a:focus {
 #sidebar {
     min-width: 250px;
     max-width: 250px;
-    background: #335069; /* color para todo el sidebar*/
+    background: #242831; /* color para todo el sidebar*/
     color: #FAFAFA;
     transition: all 0.3s;
 }
@@ -72,21 +71,21 @@ a:focus {
 
 #sidebar .sidebar-header {
     padding: 20px;
-    color: #FAFAFA;
-    background: #334569; /* para el header del sidebar */
+    color: #242831;
+    background: #8396A2; /* para el header del sidebar */
 }
 
 #sidebar .sidebar-b {
     padding: 20px;
     color: #FAFAFA;
-    background: #335069; /* para el header del sidebar */
+    background: #242831; /* para el header del sidebar */
 }
 
 #sidebar ul.components {
     padding: 20px 0;
-    border-bottom: 1px solid #335069; /* para borde del boton del sidebar */
+    border-bottom: 1px solid #242831; /* para borde del boton del sidebar */
     color: #FAFAFA;
-    background: #335069; /* para las opciones del sidebar */
+    background: #242831; /* para las opciones del sidebar */
 }
 
 #sidebar ul p {
@@ -97,20 +96,20 @@ a:focus {
 #sidebar ul li a {
     padding: 10px;
     color: #FAFAFA;
-    background: #335069; /* para las opciones del sidebar */
+    background: #242831; /* para las opciones del sidebar */
     font-size: 1.1em;
     display: block;
 }
 
 #sidebar ul li a:hover { /*cuando se pasa el mouse*/
     color: #000000; /* color para cuando se pase el mouse*/
-    background: #335069;
+    background: #242831;
 }
 
 #sidebar ul li.active>a,
 a[aria-expanded="true"] { 
     color: #FAFAFA;
-    background: #335069; /*esto es para cuando esta activado la opcion del sidebar*/
+    background: #242831; /*esto es para cuando esta activado la opcion del sidebar*/
 }
 
 a[data-toggle="collapse"] {
