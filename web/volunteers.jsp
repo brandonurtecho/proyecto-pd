@@ -1,18 +1,18 @@
 <%-- 
-    Document   : disciplinas
-    Created on : 13-jun-2019, 17:34:54
+    Document   : voluntary
+    Created on : 18-jun-2019, 15:08:11
     Author     : LaboratorioFISI
 --%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-        <link rel="stylesheet" href="/proyecto/assets/css/vistaSportsman.css">
-
-        <!-- BOOTSTRAP -->
+        <title>Voluntarios</title>
+        
+         <!-- BOOTSTRAP -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -24,9 +24,7 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
                 integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-
         
-        <title>Juegos Panamericanos 2019</title>
     </head>
     <body>
 
@@ -38,29 +36,29 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="p-2 text-white" href="/proyecto/principal/">Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a class="p-2 text-white" href="/proyecto/principal/eventos">Eventos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="p-2 text-white" href="/proyecto/principal/voluntarios">Voluntarios</a>
+                        <a class="p-2 text-white" href="/proyecto/principal/disciplinas?num=0">Disciplinas Panamericanas</a>
                     </li>
-                    
+                    <li class="nav-item">
+                        <a class="p-2 text-white" href="/proyecto/principal/disciplinas?num=1">Disciplinas Parapanamericanas</a>
+                    </li>
                 </ul>
             </div>
         </nav>
 
         <div class="container py-5">
 
-            <div class="jumbotron p-2 p-md-5 text-black rounded bg-dark" style="background-image: url(https://pbs.twimg.com/media/DHR001HXYAASqCW.jpg); background-size: 100%;">
-                  <div class="col-md-6 px-0 py-5">
-                    <h1 class="display-4 font-italic">Somos el corazon del movimiento olimplico en America</h1>
-                    <p class="lead my-3">Se parte de las ceremonias de Lima 2019 y vive una experienicia increible. A partir de
-                    este 26 de Julio hasta el 11 de Agosto, donde participaran deportistas de los 41 paises de America en 39
-                    deportes.</p>
-                    <p class="lead mb-0"><span class="text-black font-weight-bold">Te esperamos...</span></p>
+            <div class="jumbotron p-2 p-md-5 text-white rounded bg-dark" style="background-image: url(https://cdn.futbolperuano.com/sdi/2018/09/11/lanzan-programa-de-voluntariado-para-los-juegos-panamericanos-2019-670374.jpg); background-size: 100%;">
+                <div class="col-md-6 px-0 py-5">
+                    <h1 class="display-4 font-italic">Se Voluntario Lima 2019 </h1>
+                    <p class="lead my-3">Seran mas de 19 000 voluntarios para los juegos panamericanos y parapanamericanos</p>
+                    <p class="lead mb-0"><span class="text-white font-weight-bold">Te esperamos...</span></p>
                 </div>
             </div>
 
@@ -69,23 +67,15 @@
 
                     <div class="row">
 
-                        <c:forEach items="${list}" var="sport">
+                        <c:forEach items="${list}" var="volunteer">
 
                             <div class="col-md-4">
                                 <div class="card mb-4 shadow-sm">
-                                    <img src="${sport.image}" alt="" class="img-fluid">
+                                    <img src="${volunteer.photo}" alt="" class="img-fluid">
                                     </svg>
                                     <div class="card-body">
-                                        <h1>${sport.title}</h1>
-                                        <p class="card-text">${sport.overView}</p>
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div class="btn-group">
-                                                <form method="post" action="/proyecto/principal/deportistas?Sport=<c:out value="${sport.title}"/>">
-                                                    <input type="submit" class="btn btn-sm btn-outline-secondary" value="Ver mas">
-                                                </form>
-                                            </div>
-                                            <small class="text-muted">9 mins</small>
-                                        </div>
+                                        <p class="card-text">El voluntario <c:out value="${volunteer.name}"/> <c:out value="${volunteer.lastname}"/> es <c:out value="${volunteer.job}"/> 
+                                        y se encuentra laborando en <c:out value="${volunteer.place}"/> </p>
                                     </div>
                                 </div>
                             </div>
