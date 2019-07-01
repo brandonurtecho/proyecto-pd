@@ -20,7 +20,7 @@ public class Jsp {
     public final static String EVENTS = "/eventos.jsp";
     public final static String PAYMENTS = "/pagos.jsp";
     public final static String SPORTMAN = "/sportman.jsp";
-    public final static String VOLUNTARY = "/voluntary.jsp";
+    public final static String VOLUNTARY = "/volunteers.jsp";
     
     //admin
     
