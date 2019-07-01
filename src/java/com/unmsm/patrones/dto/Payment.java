@@ -225,7 +225,7 @@ public class Payment {
         private String paypal;
         
         public PaymentBuilder() {
-           
+           this.optionalAddress = "-";
         }
 
         public PaymentBuilder setId(String id) {
