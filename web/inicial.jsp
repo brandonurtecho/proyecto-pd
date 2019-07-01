@@ -16,7 +16,7 @@
     </head>
     <body>
         
-        <link rel="stylesheet" href="assets/css/vistaprincipal.css">
+        <link rel="stylesheet" href="/proyecto/assets/css/vistaprincipal.css">
         
         <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
         <h5 class="my-0 mr-md-auto font-weight-normal">Juegos Panamericanos 2019</h5>
@@ -42,7 +42,7 @@
                 <div class="section-bg-image"></div>
                 <!--<div class="points points-white"></div>-->
                 <div class="section-content text-center">
-                  <img src="assets/img/logo-panamericanos.png" class="img-responsive">
+                  <img src="/proyecto/assets/img/logo-panamericanos.png" class="img-responsive">
                   <div class="title title-white">
                     <a href="/proyecto/principal/disciplinas?num=0" class="title-text">Panamericanos</a>
                   </div>

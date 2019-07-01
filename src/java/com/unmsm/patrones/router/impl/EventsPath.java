@@ -8,6 +8,7 @@ package com.unmsm.patrones.router.impl;
 import com.unmsm.patrones.dto.Event;
 import com.unmsm.patrones.router.PathStrategy;
 import com.unmsm.patrones.service.facade.impl.UserFacadeService;
+import com.unmsm.patrones.util.Cast;
 import com.unmsm.patrones.util.Jsp;
 import com.unmsm.patrones.util.PathName;
 import java.io.IOException;
@@ -35,7 +36,9 @@ public class EventsPath extends PathStrategy {
         
         UserFacadeService service = new UserFacadeService();
         List<Event> list = service.getEvents();
+        Cast cast = new Cast();
         request.setAttribute("list", list);
+        request.setAttribute("cast", cast);
         
         RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.EVENTS);
         dispatcher.forward(request, response);

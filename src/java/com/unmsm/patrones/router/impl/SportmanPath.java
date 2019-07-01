@@ -6,6 +6,7 @@
 package com.unmsm.patrones.router.impl;
 
 import com.unmsm.patrones.dto.Commentary;
+import com.unmsm.patrones.dto.Payment;
 import com.unmsm.patrones.dto.Sportsman;
 import com.unmsm.patrones.dto.User;
 import com.unmsm.patrones.router.PathStrategy;

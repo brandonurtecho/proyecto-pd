@@ -12,7 +12,7 @@
         <!-- Bootstrap core CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+        
         <title>Panamericanos 2019</title>
         
     </head>
@@ -39,7 +39,7 @@
         <div class="container py-5">
             <div class="row py-2">
                 <div class="col-md-4 text-center">
-                    <img src="assets/img/Logo_oficial_Juegos_Panamericanos_Lima_2019.png" class="img-responsive" alt="">
+                    <img src="/proyecto/assets/img/Logo_oficial_Juegos_Panamericanos_Lima_2019.png" class="img-responsive" alt="">
                 </div>
                 <div class="col-md-6 order-md-1">
                     <h4 class="mb-3 text-center">REGISTRARSE</h4>

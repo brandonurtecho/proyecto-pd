@@ -3,6 +3,7 @@
     Created on : 15/06/2019, 05:47:18 PM
     Author     : jeanpieralex
 --%>
+<%@page import="com.unmsm.patrones.util.Cast"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="com.unmsm.patrones.util.Cast"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -16,7 +17,7 @@
         <title>Eventos</title>
     </head>
     <body>
-        <% Cast caster = new Cast(); %>
+        
         <div class="container p-3">
             <div class="pricing-header px-5 py-5 pt-md-5 pb-md-4 mx-auto text-center">
                 <h1 class="display-4">
@@ -35,7 +36,6 @@
 
 
             <div class="row p-5 mb-3 text-center">
-                
                 <c:forEach items="${list}" var="event">
                     
                     <div class="col-md-4">
@@ -57,28 +57,31 @@
                                 <ul class="list-unstyled mt-3 mb-4">
                                     <li>
                                         <font style="vertical-align: inherit;">
-                                        <font style="vertical-align: inherit;">Fecha : <c:out value="${caster.dateToString(event.date)}"/></font>
+                                        <font style="vertical-align: inherit;"><c:out value="${cast.dateToString(event.getDate())}" /></font>
                                         </font>
                                     </li>
                                     <li>
                                         <font style="vertical-align: inherit;">
-                                        <font style="vertical-align: inherit;">Deporte : <c:out value="${event.sport}"/></font>
+                                        <font style="vertical-align: inherit;"> <c:out value="${event.sport}"/></font>
                                         </font>
                                     </li>
                                     <li>
                                         <font style="vertical-align: inherit;">
-                                        <font style="vertical-align: inherit;">Lugar : <c:out value="${event.place}"/></font>
+                                        <font style="vertical-align: inherit;"> <c:out value="${event.place}"/></font>
                                         </font>
                                     </li>
                                 </ul>
                                 <form action="/proyecto/principal/pagos">
-
+                                    <input type="hidden" name="id" value="${event.id}"/>
+                                    <input type="hidden" name="date" value="${cast.dateToString(event.getDate())}"/>
+                                    <input type="hidden" name="place" value="${event.place}"/>
+                                    <input type="hidden" name="sport" value="${event.sport}"/>
                                     <button type="submit" class="btn btn-lg btn-block btn-outline-primary">
                                         <font style="vertical-align: inherit;">
                                         <font style="vertical-align: inherit;">Comprar</font>
                                         </font>
                                     </button>
-                                    
+
                                 </form>
                             </div>
                         </div>

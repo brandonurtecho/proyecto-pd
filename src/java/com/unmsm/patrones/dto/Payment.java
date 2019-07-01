@@ -27,7 +27,7 @@ public class Payment {
     private String numberCard;
     private String paypalEmail;
 
-    public Payment() {
+    public Payment() {        
     }
 
     public Payment(String id, String firstName, String lastName, String email, String address, String optionalAddress, String country, String state, String zipCode, List<Event> eventList, String numberCard, String paypalEmail) {
@@ -208,7 +208,7 @@ public class Payment {
         }
 
     };
-
+   
     public static class PaymentBuilder implements IBuilder<Payment> {
 
         private String id;
@@ -225,7 +225,7 @@ public class Payment {
         private String paypal;
         
         public PaymentBuilder() {
-            this.optionalAddress = "-";
+           
         }
 
         public PaymentBuilder setId(String id) {

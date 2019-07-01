@@ -14,7 +14,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-        <link rel="stylesheet" href="assets/css/vistaSportsman.css">
+        <link rel="stylesheet" href="/proyecto/assets/css/vistaSportsman.css">
 
         <!-- BOOTSTRAP -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -102,7 +102,7 @@
                     <c:forEach var="i" begin="1" end="${it.size()}">
                         <div id="comment-${i}">
                             <c:set var="c" value="${it.next()}" />
-                            <div class="comment my-2">
+                            <div class="comment px-2 my-2">
                                 <div class="media-left">
                                     <img src="https://www.zona-leros.net/storage/image/default.png" alt="" class="img ">
                                 </div>
@@ -115,10 +115,9 @@
                                         <div class="date">
                                             <span class="up">
                                                 <span id="upvotes-9393">  <c:out value="${c.getLike()}" /> </span>
-                                                <form action="/proyecto/principal/deportistas?Sport=<c:out value="${sport}"/>" method="post">
-                                                    <input type="hidden" name="likecomment" value="${c}"/>
-                                                    <input class="fa fa-fw fa-chevron-up " type="submit" name="like" value="Like"/>
-                                                </form>
+                                                <a href="/proyecto/principal/deportistas?like=Like&likecomment=<c:out value="${c}"/>&Sport=<c:out value="${sport}"/>">
+                                                    <i class="fa fa-fw fa-chevron-up " id="up-9393"></i>
+                                                </a>
                                             </span> 
                                         </div>
                                     </div>
@@ -145,9 +144,10 @@
                                         <div id="spiner-comment" style="display: none;">
                                             <div class="comments__spinner"></div>
                                         </div>
-                                        <div class="text-right px-3">
+                                        <div class="text-right px-3 py-1">
                                             <input type="submit" class="btn btn-danger" value="Comentar" name="commentary">
-                                        </div>
+                                        </div>        
+                                                
                                     </span>
                                 </form>
                             </div>

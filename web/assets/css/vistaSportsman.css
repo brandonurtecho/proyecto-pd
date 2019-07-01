@@ -5,6 +5,10 @@
     padding: 0;
 }
 
+body {
+     background-color: #6d6d6d;
+}
+
 ul, ol, dl {
     list-style-position: outside;
 }
@@ -111,9 +115,9 @@ a:-webkit-any-link {
 
 .comments .media-content {
     padding: 10px 10px 5px 15px;
-    border: 1px solid #000;
+    border: 1px;
     border-radius: 8px;
-    background-color: #353333;
+    background-color: #181818;
 }
 
 .comments .media-heading {
