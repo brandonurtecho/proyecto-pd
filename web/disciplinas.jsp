@@ -30,7 +30,7 @@
     </head>
     <body>
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -39,13 +39,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="p-2 text-white" href="/proyecto/principal/">Inicio</a>
+                        <a class="p-2 text-white" href="/proyecto/principal/" style="font-size: 24px;">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="p-2 text-white" href="/proyecto/principal/eventos">Eventos</a>
+                        <a class="p-2 text-white" href="/proyecto/principal/eventos" style="font-size: 24px;">Eventos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="p-2 text-white" href="/proyecto/principal/voluntarios">Voluntarios</a>
+                        <a class="p-2 text-white" href="/proyecto/principal/voluntarios" style="font-size: 24px;">Voluntarios</a>
                     </li>
                     
                 </ul>
@@ -54,12 +54,12 @@
 
         <div class="container py-5">
 
-            <div class="jumbotron p-2 p-md-5 text-black rounded bg-dark" style="background-image: url(https://pbs.twimg.com/media/DHR001HXYAASqCW.jpg); background-size: 100%;">
+            <div class="jumbotron p-2 p-md-5 text-black rounded bg-dark" style="background-image: url(/proyecto/assets/img/lima-2019-shared.jpg); background-size: 100%;">
                   <div class="col-md-6 px-0 py-5">
-                    <h1 class="display-4 font-italic">Somos el corazon del movimiento olimplico en America</h1>
-                    <p class="lead my-3">Se parte de las ceremonias de Lima 2019 y vive una experienicia increible. A partir de
+                      <h1 class="display-4 font-italic" style="font-weight: 500; font-size: 50px;"><span>Somos el corazon del movimiento olimplico en América</span></h1>
+                    <p style="font-weight: 500;" class="lead my-3">Se parte de las ceremonias de Lima 2019 y vive una experienicia increible. A partir de
                     este 26 de Julio hasta el 11 de Agosto, donde participaran deportistas de los 41 paises de America en 39
-                    deportes.</p>
+                    deportes.</p><br>
                     <p class="lead mb-0"><span class="text-black font-weight-bold">Te esperamos...</span></p>
                 </div>
             </div>
@@ -76,8 +76,10 @@
                                     <img src="${sport.image}" alt="" class="img-fluid">
                                     </svg>
                                     <div class="card-body">
-                                        <h1>${sport.title}</h1>
-                                        <p class="card-text">${sport.overView}</p>
+                                        <div align="center" ><h1 style="font-size: 25px;">${sport.title}</h1></div>
+                                        <div style="overflow: hidden; height: 150px;" class="content-sport">
+                                            <p class="card-text">${sport.overView}</p>
+                                        </div>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div class="btn-group">
                                                 <form method="post" action="/proyecto/principal/deportistas?Sport=<c:out value="${sport.title}"/>">

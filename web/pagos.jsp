@@ -16,10 +16,12 @@
     </head>
     <body>
         
+        <div style="background-size: cover; background-image: url(https://tubikstudio.com/wp-content/uploads/2018/02/illustration-olympic-games-2-1.png);">
+        
         <div class="container p-4">
             <div class="py-5 text-center">
-                <img class="d-block mx-auto mb-4" src="/images/Logo_oficial_Juegos_Panamericanos_Lima_2019.png" alt="" width="72" height="72">
-                <h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Formulario de pago</font></font></h2>
+                <h2><font style="vertical-align: inherit; font-size: 45px;"><font style="vertical-align: inherit;">Formulario de pago</font></font></h2>
+                <img class="d-block mx-auto mb-4" src="/proyecto/assets/img/milco-6.png" alt="" width="120" height="150">
             </div>
 
             <div class="col-md-8 order-md-1 mx-auto">
@@ -27,14 +29,14 @@
                 <form action="/proyecto/principal/pagos" class="needs-validation" method="post">
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <label for="firstName"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nombre</font></font></label>
+                            <label for="firstName"><font style="vertical-align: inherit; font-size: 20px; font-weight: 600;"><font style="vertical-align: inherit; ">Nombre</font></font></label>
                             <input type="text" class="form-control" id="firstName" name="firstname">
                             <div class="invalid-feedback">
                                 Campo invalido
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="lastName"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Apellido</font></font></label>
+                            <label for="lastName"><font style="vertical-align: inherit; font-size: 20px; font-weight: 600;"><font style="vertical-align: inherit;">Apellido</font></font></label>
                             <input type="text" class="form-control" id="lastName" name="lastname">
                             <div class="invalid-feedback">
                                 Campo invalido
@@ -43,7 +45,7 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="email"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Correo electrónico </font></font><span class="text-muted"></span></label>
+                        <label for="email"><font style="vertical-align: inherit; font-size: 20px; font-weight: 600;"><font style="vertical-align: inherit;">Correo electrónico </font></font><span class="text-muted"></span></label>
                         <input type="email" class="form-control" id="email" name="email">
                         <div class="invalid-feedback">
                             Campo invalido
@@ -51,7 +53,7 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="address"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dirección</font></font></label>
+                        <label for="address"><font style="vertical-align: inherit; font-size: 20px; font-weight: 600;"><font style="vertical-align: inherit;">Dirección</font></font></label>
                         <input type="text" class="form-control" id="address" name="address" >
                         <div class="invalid-feedback">
                             Campo invalido
@@ -59,27 +61,27 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="address2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dirección opcional</font></font><span class="text-muted"></span></label>
+                        <label for="address2"><font style="vertical-align: inherit; font-size: 20px; font-weight: 600;"><font style="vertical-align: inherit;">Dirección opcional</font></font><span class="text-muted"></span></label>
                         <input type="text" class="form-control" id="address2" name="address2">
                     </div>
 
                     <div class="row">
                         <div class="col-md-5 mb-3">
-                            <label for="country"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">País</font></font></label>
+                            <label for="country"><font style="vertical-align: inherit; font-size: 20px; font-weight: 600;"><font style="vertical-align: inherit;">País</font></font></label>
                             <input type="text" class="form-control" id="address2" name="country">
                             <div class="invalid-feedback">
                                 Please select a valid country.
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
-                            <label for="state"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Estado</font></font></label>
+                            <label for="state"><font style="vertical-align: inherit; font-size: 20px; font-weight: 600;"><font style="vertical-align: inherit;">Estado</font></font></label>
                             <input type="text" class="form-control" id="address2" name="state">
                             <div class="invalid-feedback">
                                 Please provide a valid state.
                             </div>
                         </div>
                         <div class="col-md-3 mb-3">
-                            <label for="zip"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Codigo Postal</font></font></label>
+                            <label for="zip"><font style="vertical-align: inherit; font-size: 20px; font-weight: 600;"><font style="vertical-align: inherit;">Codigo Postal</font></font></label>
                             <input type="text" class="form-control" id="zip" name="zip">
                             <div class="invalid-feedback">
                                 Zip code required.
@@ -88,18 +90,18 @@
                     </div>
                     <hr class="mb-4">
 
-                    <h4 class="mb-3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Pago</font></font></h4>
+                    <h4 class="mb-3"><font style="vertical-align: inherit; font-size: 20px; font-weight: 600;"><font style="vertical-align: inherit;">Pago</font></font></h4>
                     
                     <div class="row">
                         <div class="col-md-5 mb-3">
-                            <label for="pay"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tarjeta de credito</font></font></label>
+                            <label for="pay"><font style="vertical-align: inherit; font-size: 20px; font-weight: 600;"><font style="vertical-align: inherit;">Tarjeta de credito</font></font></label>
                             <input type="text" class="form-control" id="pay" name="creditcard">
                             <div class="invalid-feedback">
                                 Please select a valid country.
                             </div>
                         </div>
                         <div class="col-md-7 mb-3">
-                            <label for="pay"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Paypal</font></font></label>
+                            <label for="pay"><font style="vertical-align: inherit; font-size: 20px; font-weight: 600;"><font style="vertical-align: inherit;">Paypal</font></font></label>
                             <input type="email" class="form-control" id="pay" name="paypal">
                             <div class="invalid-feedback">
                                 Please select a valid country.
@@ -110,6 +112,8 @@
                     <button class="btn btn-primary btn-lg btn-block" type="submit"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Realizar compra</font></font></button>
                 </form>
             </div>
+        </div>
+            
         </div>
     </body>
 </html>

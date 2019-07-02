@@ -63,7 +63,7 @@
 
         <div class="container py-5">
 
-            <div class="jumbotron p-2 p-md-5 text-white rounded bg-dark" style="background-image: url(https://semanariouniversidad.com/wp-content/uploads/2018/08/D-42-Mujeres.jpg); background-size: 100%;">
+            <div class="jumbotron p-2 p-md-5 text-white rounded bg-dark" style="background-image: url(https://img.bekia.es/galeria/96000/96823_estadounidenses-oro.jpg); background-size: 100%;">
                 <div class="col-md-6 px-0 py-5">
                     <h1 class="display-4 font-italic">Somos el corazon del movimiento olimplico en America</h1>
                     <p class="lead my-3"></p>Se parte de las ceremonias de Lima 2019 y vive una experienicia increible. A partir de

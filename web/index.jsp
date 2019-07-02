@@ -19,18 +19,18 @@
     <body>
 
         <div class="d-flex flex-column flex-md-row align-items-center p-2 px-md-3 mb-2 bg-white border-bottom shadow-sm">
-            <h5 class="my-0 mr-md-auto font-weight-normal">Panamericanos 2019</h5>
+            <h5 style="font-size:35px ;" class="my-0 mr-md-auto font-weight-normal">Panamericanos 2019</h5>
             <nav class="my-1 my-md-0 mr-md-3">
                 <form class="form-row" action="/proyecto/principal/inicial" method="post">
-                    <div class="col-md-4">
+                    <div style="padding: 5px;" class="col-md-4">
                         <label for="inputUser">Usuario :</label>
-                        <input type="text" id="inputUser" class="form-control" name="iduser">
+                        <input style="height:30px;"type="text" id="inputUser" class="form-control" name="iduser">
                     </div>
-                    <div class="col-md-4">
+                    <div style="padding: 5px;" class="col-md-4">
                         <label for="inputPassword">Contraseña :</label>
-                        <input type="text" id="inputPassword" class="form-control" name="password">
+                        <input style="height:30px;" type="text" id="inputPassword" class="form-control" name="password">
                     </div>
-                    <button type="submit" class="btn btn-primary mt-md-auto ml-5" value="Send">Iniciar Session</button>
+                    <button type="submit" class="btn btn-primary mt-md-auto ml-5" value="Send">Iniciar Sesión</button>
                 </form>
             </nav>
         </div>
@@ -42,7 +42,7 @@
                     <img src="/proyecto/assets/img/Logo_oficial_Juegos_Panamericanos_Lima_2019.png" class="img-responsive" alt="">
                 </div>
                 <div class="col-md-6 order-md-1">
-                    <h4 class="mb-3 text-center">REGISTRARSE</h4>
+                    <h4 style="font-size: 35px;" class="mb-3 text-center">REGISTRARSE</h4>
                     <form class="form" action="/proyecto/principal/index" method="post">
                         <div class="row">
                             <div class="col-md-6 mb-3">
@@ -82,7 +82,7 @@
 
                             </div>
                         </div>
-                        <button class="btn btn-primary btn-lg btn-block" type="submit" ><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Realizar compra</font></font></button>
+                        <button class="btn btn-primary btn-lg btn-block" type="submit" ><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">REGISTRAR</font></font></button>
                     </form>
                 </div>
             </div>

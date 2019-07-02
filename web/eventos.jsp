@@ -19,7 +19,7 @@
     <body>
         
         <div class="container p-3">
-            <div class="pricing-header px-5 py-5 pt-md-5 pb-md-4 mx-auto text-center">
+            <div style="background: #86c6f8; border-radius: 30px;" class="pricing-header px-5 py-5 pt-md-5 pb-md-4 mx-auto text-center">
                 <h1 class="display-4">
                     <font style="vertical-align: inherit;">
                     <h1 class="text">Entradas Juegos Panamericanos 2019</h1>
@@ -40,17 +40,17 @@
                     
                     <div class="col-md-4">
                         <div class="card mb-4 shadow-sm">
-                            <div class="card-header">
+                            <div style="background: #10707f;"  class="card-header">
                                 <h4 class="my-0 font-weight-normal">
                                     <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">Evento</font>
+                                    <font style="vertical-align: inherit; font-size: 35px; color: #ffffff;">Evento</font>
                                     </font>
                                 </h4>
                             </div>
-                            <div class="card-body">
+                            <div style="border-color: #10707f;" class="card-body">
                                 <h1 class="card-title pricing-card-title">
                                     <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">20 S/</font>
+                                    <font style="vertical-align: inherit;">S/. 20</font>
                                     </font><small class="text-muted">
                                     </small>
                                 </h1>
