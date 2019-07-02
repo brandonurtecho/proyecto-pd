@@ -64,7 +64,7 @@ public class PaymentsPath extends PathStrategy {
                 Logger.getLogger(PaymentsPath.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        
+         
         if(firstname != null) {
             List<Event> list = new ArrayList<>();
             Event event = (Event) request.getSession().getAttribute("Event");
@@ -83,6 +83,8 @@ public class PaymentsPath extends PathStrategy {
                     .setNumberCard(request.getParameter("creditcard"))
                     .setPaypal(request.getParameter("paypal"))
                     .build();
+            
+            System.out.println(pay);
 
             service.buyTicketForEvent(pay);
             RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.EVENTS);
