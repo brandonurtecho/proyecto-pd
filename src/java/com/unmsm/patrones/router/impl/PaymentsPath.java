@@ -43,7 +43,6 @@ public class PaymentsPath extends PathStrategy {
             throws ServletException, IOException, SQLException {
         
         UserFacadeService service = new UserFacadeService();
-        String firstname = request.getParameter("firstname");
         
         if(request.getParameter("payEvent")==null){
             request.getSession().setAttribute("id", request.getParameter("id"));     
@@ -63,12 +62,6 @@ public class PaymentsPath extends PathStrategy {
             } catch (ParseException ex) {
                 Logger.getLogger(PaymentsPath.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }
-        
-        if(firstname != null) {
-            List<Event> list = new ArrayList<>();
-            Event event = (Event) request.getSession().getAttribute("Event");
-            list.add(event);
             Payment pay = new Payment.PaymentBuilder()
                     .setFirstName(request.getParameter("firstname"))
                     .setLastName(request.getParameter("lastname"))
@@ -82,6 +75,7 @@ public class PaymentsPath extends PathStrategy {
                     .setNumberCard(request.getParameter("creditcard"))
                     .setPaypal(request.getParameter("paypal"))
                     .build();
+            service.buyTicketForEvent(pay);
             RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.EVENTS);
             dispatcher.forward(request, response);
         }
