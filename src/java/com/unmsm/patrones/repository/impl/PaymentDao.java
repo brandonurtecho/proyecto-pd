@@ -12,6 +12,7 @@ import com.unmsm.patrones.connection.Connection;
 import com.unmsm.patrones.dto.Event;
 import com.unmsm.patrones.dto.Payment;
 import com.unmsm.patrones.repository.IPaymentRepository;
+import com.unmsm.patrones.util.Cast;
 import com.unmsm.patrones.util.TypeCollections;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -33,7 +34,7 @@ public class PaymentDao implements IPaymentRepository {
                 .append("card", payment.getNumberCard())
                 .append("country", payment.getCountry())
                 .append("email", payment.getEmail())
-                .append("eventList", payment.getEventList())
+                .append("eventList", castList(payment.getEventList()))
                 .append("firstName", payment.getFirstName())
                 .append("lastName", payment.getLastName())
                 .append("optionalAddress", payment.getOptionalAddress())
@@ -54,7 +55,7 @@ public class PaymentDao implements IPaymentRepository {
                 Document doc = cursor.next();
                 Payment payment = new Payment.PaymentBuilder()
                         .setAddress(doc.getString("address"))
-                        .setNumberCard(doc.getString("numberCard"))
+                        .setNumberCard(doc.getString("card"))
                         .setCountry(doc.getString("country"))
                         .setEmail(doc.getString("email"))
                         .setEventList((List<Event>) doc.get("eventList"))
@@ -86,7 +87,7 @@ public class PaymentDao implements IPaymentRepository {
                 Document doc = cursor.next();
                 Payment payment = new Payment.PaymentBuilder()
                         .setAddress(doc.getString("address"))
-                        .setNumberCard(doc.getString("numberCard"))
+                        .setNumberCard(doc.getString("card"))
                         .setCountry(doc.getString("country"))
                         .setEmail(doc.getString("email"))
                         .setEventList((List<Event>) doc.get("eventList"))
@@ -108,4 +109,14 @@ public class PaymentDao implements IPaymentRepository {
         return list.size() > 0 ? list : Arrays.asList(Payment.NULL_PAYMENT);
     }
 
+    private List<Document> castList(List<Event> list) {
+        List<Document> listDoc = new ArrayList<>();
+        for (Event e : list) {
+            listDoc.add(new Document("date", Cast.dateToString(e.getDate()))
+                    .append("_id", e.getId())
+                    .append("place", e.getPlace())
+                    .append("sport", e.getSport()));
+        }
+        return listDoc;
+    }
 }

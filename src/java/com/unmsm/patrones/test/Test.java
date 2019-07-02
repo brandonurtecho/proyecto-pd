@@ -14,8 +14,10 @@ import static com.mongodb.client.model.Filters.eq;
 import com.unmsm.patrones.connection.Connection;
 import com.unmsm.patrones.dto.Card;
 import com.unmsm.patrones.dto.Commentary;
+import com.unmsm.patrones.dto.Event;
 import com.unmsm.patrones.dto.PanamericanoSport;
 import com.unmsm.patrones.dto.ParapanamericanoSport;
+import com.unmsm.patrones.dto.Payment;
 import com.unmsm.patrones.dto.Place;
 import com.unmsm.patrones.dto.User;
 import com.unmsm.patrones.repository.IUserReadeable;
@@ -23,7 +25,9 @@ import com.unmsm.patrones.repository.IUserRepository;
 import com.unmsm.patrones.repository.impl.UserDao;
 import com.unmsm.patrones.service.ICommentaryService;
 import com.unmsm.patrones.service.IUserService;
+import com.unmsm.patrones.service.facade.IAdminFacadeService;
 import com.unmsm.patrones.service.facade.IUserFacadeService;
+import com.unmsm.patrones.service.facade.impl.AdminFacadeService;
 import com.unmsm.patrones.service.facade.impl.UserFacadeService;
 import com.unmsm.patrones.service.impl.CommentaryService;
 import com.unmsm.patrones.service.impl.UserService;
@@ -67,21 +71,8 @@ public class Test {
 
         IUserFacadeService facade = new UserFacadeService();
 
-        System.out.println("NORMAL");
-        CustomIterator it = facade.showCommentaryBySportInSport(TypeSport.BADMINTON, "");
-        while (!it.isDone()) {
-            System.out.println(it.next());
-        }
-        System.out.println("SORT EN LIKES");
-        CustomIterator it2 = facade.showCommentaryBySportInSport(TypeSport.BADMINTON, "LIKE");
-        while (!it2.isDone()) {
-            System.out.println(it2.next());
-        }
-        System.out.println("SORT EN FECHA");
-        CustomIterator it3 = facade.showCommentaryBySportInSport(TypeSport.BADMINTON, "DATE");
-        while (!it3.isDone()) {
-            System.out.println(it3.next());
-        }
+        System.out.println(facade.getPaymentsByEmail("diego.vera@unmsm.edu.pe"));
+        
 //        Document doc = new Document("name", "MongoDB")
 //                .append("type", "database")
 //                .append("count", 1)

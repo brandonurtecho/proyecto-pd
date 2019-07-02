@@ -63,7 +63,7 @@ public class PaymentService implements IPaymentService {
             message.setFrom(new InternetAddress(FROM_EMAIL)); //remitente
 
             message.setRecipients(Message.RecipientType.TO,
-                    InternetAddress.parse("bluq1112@hotmail.com")); //destinatario
+                    InternetAddress.parse(payment.getEmail())); //destinatario
             message.setSubject(SUBJECT);//asunto
             message.setText(createMessage(payment)); //cuerpo del mensaje
             /**
@@ -97,8 +97,8 @@ public class PaymentService implements IPaymentService {
 
     @Override
     public void pay(Payment payment) {
-        sendPaymentEmail(payment);
         paymentRepository.insert(payment);
+        sendPaymentEmail(payment);
     }
 
 }
