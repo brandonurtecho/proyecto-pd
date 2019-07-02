@@ -63,6 +63,12 @@ public class PaymentsPath extends PathStrategy {
             } catch (ParseException ex) {
                 Logger.getLogger(PaymentsPath.class.getName()).log(Level.SEVERE, null, ex);
             }
+        }
+        
+        if(firstname != null) {
+            List<Event> list = new ArrayList<>();
+            Event event = (Event) request.getSession().getAttribute("Event");
+            list.add(event);
             Payment pay = new Payment.PaymentBuilder()
                     .setFirstName(request.getParameter("firstname"))
                     .setLastName(request.getParameter("lastname"))
