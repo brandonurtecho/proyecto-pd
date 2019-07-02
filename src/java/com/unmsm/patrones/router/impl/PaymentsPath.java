@@ -67,7 +67,8 @@ public class PaymentsPath extends PathStrategy {
         
         if(firstname != null) {
             List<Event> list = new ArrayList<>();
-            list.add((Event) request.getAttribute("Event"));
+            Event event = (Event) request.getSession().getAttribute("Event");
+            list.add(event);
 
             Payment pay = new Payment.PaymentBuilder()
                     .setFirstName(request.getParameter("firstname"))
