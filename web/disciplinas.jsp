@@ -30,7 +30,7 @@
     </head>
     <body>
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -38,23 +38,22 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="p-2 text-white" href="/proyecto/principal/">Inicio</a>
+                    <li class="nav-item active">
+                        <a class="p-2 text-white" href="/proyecto/principal/voluntarios">Voluntarios</a>
                     </li>
                     <li class="nav-item">
                         <a class="p-2 text-white" href="/proyecto/principal/eventos">Eventos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="p-2 text-white" href="/proyecto/principal/voluntarios">Voluntarios</a>
+                        <a class="p-2 text-white" href="/proyecto/principal/">Cerrar sesion</a>
                     </li>
-                    
                 </ul>
             </div>
         </nav>
 
         <div class="container py-5">
 
-            <div class="jumbotron p-2 p-md-5 text-black rounded bg-dark" style="background-image: url(https://pbs.twimg.com/media/DHR001HXYAASqCW.jpg); background-size: 100%;">
+            <div class="jumbotron p-2 p-md-5 text-white font-weight-bold rounded bg-dark" style="background-image: url(http://depor.com/files/article_main/uploads/2019/05/23/5ce7121847fd1.jpeg); background-size: 100%;">
                   <div class="col-md-6 px-0 py-5">
                     <h1 class="display-4 font-italic">Somos el corazon del movimiento olimplico en America</h1>
                     <p class="lead my-3">Se parte de las ceremonias de Lima 2019 y vive una experienicia increible. A partir de

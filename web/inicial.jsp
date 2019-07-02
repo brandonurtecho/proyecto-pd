@@ -18,15 +18,28 @@
         
         <link rel="stylesheet" href="/proyecto/assets/css/vistaprincipal.css">
         
-        <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-        <h5 class="my-0 mr-md-auto font-weight-normal">Juegos Panamericanos 2019</h5>
-        <nav class="my-2 my-md-0 mr-md-3">
-          <a class="p-2 text-dark" href="#">enlace 1</a>
-          <a class="p-2 text-dark" href="#">enlace 2</a>
-          <a class="p-2 text-dark" href="#">enlace 3</a>
+        
+        
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="p-2 text-white" href="/proyecto/principal/voluntarios">Voluntarios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="p-2 text-white" href="/proyecto/principal/eventos">Eventos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="p-2 text-white" href="/proyecto/principal/">Cerrar sesion</a>
+                    </li>
+                </ul>
+            </div>
         </nav>
-        <a class="btn btn-outline-primary" href="#">Sign up</a>
-      </div>
 
 
       <section class="deportes" id="deportes">
@@ -53,7 +66,7 @@
                 <div class="section-bg-image"></div>
                 <!--<div class="points points-white"></div>-->
                 <div class="section-content text-center">
-                  <img src="assets/img/logo-parapanamericanos.png" class="img-responsive">
+                  <img src="/proyecto/assets/img/logo-parapanamericanos.png" class="img-responsive">
                   <div class="title title-white">
                     <a href="/proyecto/principal/disciplinas?num=1" class="title-text">Parapanamericanos</a>
                   </div>

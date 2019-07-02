@@ -36,9 +36,6 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="p-2 text-white" href="/proyecto/principal/">Inicio</a>
-                    </li>
                     <li class="nav-item">
                         <a class="p-2 text-white" href="/proyecto/principal/eventos">Eventos</a>
                     </li>
@@ -47,6 +44,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="p-2 text-white" href="/proyecto/principal/disciplinas?num=1">Disciplinas Parapanamericanas</a>
+                    </li>
+                     <li class="nav-item active">
+                        <a class="p-2 text-white" href="/proyecto/principal/">Cerrar Sesion</a>
                     </li>
                 </ul>
             </div>

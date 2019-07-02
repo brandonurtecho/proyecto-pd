@@ -65,8 +65,9 @@ public class IndexPath extends PathStrategy {
         }
 
         service.registerNewAccount(user);
-
-        RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.INDEX);
+        request.getSession().setAttribute("userOn", user);
+        
+        RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.INITIAL);
         dispatcher.forward(request, response);
 
     }

@@ -12,28 +12,55 @@
         <!-- Bootstrap core CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+                integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
         
         <title>Panamericanos 2019</title>
         
     </head>
     <body>
+        
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="d-flex flex-column flex-md-row align-items-center p-2 px-md-3 mb-2 bg-white border-bottom shadow-sm">
-            <h5 class="my-0 mr-md-auto font-weight-normal">Panamericanos 2019</h5>
-            <nav class="my-1 my-md-0 mr-md-3">
-                <form class="form-row" action="/proyecto/principal/inicial" method="post">
-                    <div class="col-md-4">
-                        <label for="inputUser">Usuario :</label>
-                        <input type="text" id="inputUser" class="form-control" name="iduser">
-                    </div>
-                    <div class="col-md-4">
-                        <label for="inputPassword">Contraseña :</label>
-                        <input type="text" id="inputPassword" class="form-control" name="password">
-                    </div>
-                    <button type="submit" class="btn btn-primary mt-md-auto ml-5" value="Send">Iniciar Session</button>
-                </form>
-            </nav>
-        </div>
+            <h5 class="my-0 text-white mr-md-auto font-weight-normal">Panamericanos 2019</h5>
+            
+            <form class="form-row" action="/proyecto/principal/inicial" method="post">
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    
+                    <ul class="navbar-nav text-right">
+                        <li class="nav-item">
+                            <label class=" px-md-3 py-1 text-white" for="inputUser">Usuario </label>
+                        </li>
+                        <li>
+                            <input type="text" id="inputUser" class="form-control" name="iduser">
+                        </li>
+                        <li>
+                            <label class=" px-md-3 py-1 text-white" for="inputPassword">Contraseña </label>
+                        </li>
+                        <li>
+                            <input type="password" id="inputPassword" class="form-control" name="password">
+                        </li>
+                        <li>
+                            <button type="submit" class="btn btn-primary mt-md-auto ml-5" value="Send">Iniciar Session</button>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </form>
+        </nav>
 
 
         <div class="container py-5">
@@ -42,7 +69,7 @@
                     <img src="/proyecto/assets/img/Logo_oficial_Juegos_Panamericanos_Lima_2019.png" class="img-responsive" alt="">
                 </div>
                 <div class="col-md-6 order-md-1">
-                    <h4 class="mb-3 text-center">REGISTRARSE</h4>
+                    <h4 class="mb-3 py-3 text-center">REGISTRO</h4>
                     <form class="form" action="/proyecto/principal/index" method="post">
                         <div class="row">
                             <div class="col-md-6 mb-3">
@@ -82,7 +109,7 @@
 
                             </div>
                         </div>
-                        <button class="btn btn-primary btn-lg btn-block" type="submit" ><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Realizar compra</font></font></button>
+                        <button class="btn btn-primary btn-lg btn-block" type="submit" ><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Registrarse</font></font></button>
                     </form>
                 </div>
             </div>

@@ -16,9 +16,34 @@
     </head>
     <body>
         
+        
+         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="p-2 text-white" href="/proyecto/principal/voluntarios">Voluntarios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="p-2 text-white" href="/proyecto/principal/disciplinas?num=0">Disciplinas Panamericanas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="p-2 text-white" href="/proyecto/principal/disciplinas?num=1">Disciplinas Parapanamericanas</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="p-2 text-white" href="/proyecto/principal/">Cerrar Sesion</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        
         <div class="container p-4">
             <div class="py-5 text-center">
-                <img class="d-block mx-auto mb-4" src="/images/Logo_oficial_Juegos_Panamericanos_Lima_2019.png" alt="" width="72" height="72">
+                <img class="d-block mx-auto mb-4" src="/proyecto/assets/img/Logo_oficial_Juegos_Panamericanos_Lima_2019.png" alt="" width="72" height="72">
                 <h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Formulario de pago</font></font></h2>
             </div>
 
@@ -107,7 +132,7 @@
                         </div>
                     </div>
                     
-                    <button class="btn btn-primary btn-lg btn-block" type="submit"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Realizar compra</font></font></button>
+                    <input class="btn btn-primary btn-lg btn-block" type="submit" name="payEvent" value="Realizar pago"/>
                 </form>
             </div>
         </div>

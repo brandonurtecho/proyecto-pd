@@ -43,6 +43,7 @@ public class ParapanamericanoSportDao implements IParapanamericanoSportRepositor
                 sport.setHistory(doc.getString("history"));
                 sport.setOverView(doc.getString("overView"));
                 sport.setTitle(doc.getString("title"));
+                sport.setImage(doc.getString("image"));
                 
                 list.add(sport);
             }

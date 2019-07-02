@@ -18,6 +18,32 @@
     </head>
     <body>
         
+        
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="p-2 text-white" href="/proyecto/principal/voluntarios">Voluntarios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="p-2 text-white" href="/proyecto/principal/disciplinas?num=0">Disciplinas Panamericanas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="p-2 text-white" href="/proyecto/principal/disciplinas?num=1">Disciplinas Parapanamericanas</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="p-2 text-white" href="/proyecto/principal/">Cerrar Sesion</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        
+        
         <div class="container p-3">
             <div class="pricing-header px-5 py-5 pt-md-5 pb-md-4 mx-auto text-center">
                 <h1 class="display-4">
