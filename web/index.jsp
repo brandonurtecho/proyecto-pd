@@ -69,7 +69,7 @@
                     <img src="/proyecto/assets/img/Logo_oficial_Juegos_Panamericanos_Lima_2019.png" class="img-responsive" alt="">
                 </div>
                 <div class="col-md-6 order-md-1">
-                    <h4 class="mb-3 py-3 text-center">REGISTRO</h4>
+                    <h4 style="font-size: 35px;" class="mb-3 py-3 text-center">REGISTRO</h4>
                     <form class="form" action="/proyecto/principal/index" method="post">
                         <div class="row">
                             <div class="col-md-6 mb-3">
@@ -109,7 +109,8 @@
 
                             </div>
                         </div>
-                        <button class="btn btn-primary btn-lg btn-block" type="submit" ><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Registrarse</font></font></button>
+                        <button class="btn btn-primary btn-lg btn-block" type="submit" ><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">REGISTRARSE</font></font></button>
+
                     </form>
                 </div>
             </div>

@@ -1001,7 +1001,7 @@ exists or setup the property manually. For example like this:
         <copyfiles files="${file.reference.mongo-java-driver-3.6.3.jar-2}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
 =======
         <copyfiles files="${file.reference.mongo-java-driver-3.6.3.jar}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
->>>>>>> 97cd1f3bf2f4f2b1ea837ccd70af2e30e38574f9
+>>>>>>> a0632d4ae2cf1468c9f2b3b3923786724538fa1f
         <mkdir dir="${build.web.dir}/META-INF"/>
         <manifest file="${build.web.dir}/META-INF/MANIFEST.MF" mode="update"/>
     </target>
@@ -1010,7 +1010,7 @@ exists or setup the property manually. For example like this:
         <copyfiles files="${file.reference.mongo-java-driver-3.6.3.jar-2}" todir="${build.web.dir}/WEB-INF/lib"/>
 =======
         <copyfiles files="${file.reference.mongo-java-driver-3.6.3.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
->>>>>>> 97cd1f3bf2f4f2b1ea837ccd70af2e30e38574f9
+>>>>>>> a0632d4ae2cf1468c9f2b3b3923786724538fa1f
     </target>
     <target depends="init" if="dist.ear.dir" name="-clean-webinf-lib">
         <delete dir="${build.web.dir}/WEB-INF/lib"/>

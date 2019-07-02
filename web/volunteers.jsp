@@ -37,16 +37,16 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="p-2 text-white" href="/proyecto/principal/eventos">Eventos</a>
+                        <a class="p-2 text-white" style="font-size: 20px;" href="/proyecto/principal/eventos" style="font-size: 20px;">Eventos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="p-2 text-white" href="/proyecto/principal/disciplinas?num=0">Disciplinas Panamericanas</a>
+                        <a class="p-2 text-white" style="font-size: 20px;" href="/proyecto/principal/disciplinas?num=0" style="font-size: 20px;">Disciplinas Panamericanas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="p-2 text-white" href="/proyecto/principal/disciplinas?num=1">Disciplinas Parapanamericanas</a>
+                        <a class="p-2 text-white" style="font-size: 20px;" href="/proyecto/principal/disciplinas?num=1" style="font-size: 20px;">Disciplinas Parapanamericanas</a>
                     </li>
                      <li class="nav-item active">
-                        <a class="p-2 text-white" href="/proyecto/principal/">Cerrar Sesion</a>
+                        <a class="p-2 text-white" href="/proyecto/principal/" style="font-size: 20px;">Cerrar Sesion</a>
                     </li>
                 </ul>
             </div>
@@ -54,10 +54,10 @@
 
         <div class="container py-5">
 
-            <div class="jumbotron p-2 p-md-5 text-white rounded bg-dark" style="background-image: url(https://cdn.futbolperuano.com/sdi/2018/09/11/lanzan-programa-de-voluntariado-para-los-juegos-panamericanos-2019-670374.jpg); background-size: 100%;">
+            <div class="jumbotron p-2 p-md-5 text-white rounded bg-dark" style="background-image: url(http://www.ipd.gob.pe/media/k2/items/cache/28b32a6d1a10f7b79a19f11bec606ba7_XL.jpg); background-size: 100%;">
                 <div class="col-md-6 px-0 py-5">
-                    <h1 class="display-4 font-italic">Se Voluntario Lima 2019 </h1>
-                    <p class="lead my-3">Seran mas de 19 000 voluntarios para los juegos panamericanos y parapanamericanos</p>
+                    <h1 class="display-4 font-italic" style="font-weight: 700; font-size: 50px;">Se Voluntario Lima 2019 </h1>
+                    <p class="lead my-3" style="font-weight: 500;">Seran mas de 19 000 voluntarios para los juegos panamericanos y parapanamericanos</p>
                     <p class="lead mb-0"><span class="text-white font-weight-bold">Te esperamos...</span></p>
                 </div>
             </div>

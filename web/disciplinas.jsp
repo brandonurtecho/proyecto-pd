@@ -39,13 +39,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="p-2 text-white" href="/proyecto/principal/voluntarios">Voluntarios</a>
+                        <a class="p-2 text-white" href="/proyecto/principal/voluntarios" style="font-size: 20px;">Voluntarios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="p-2 text-white" href="/proyecto/principal/eventos">Eventos</a>
+                        <a class="p-2 text-white" href="/proyecto/principal/eventos" style="font-size: 20px;">Eventos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="p-2 text-white" href="/proyecto/principal/">Cerrar sesion</a>
+                        <a class="p-2 text-white" href="/proyecto/principal/" style="font-size: 20px;">Cerrar sesion</a>
                     </li>
                 </ul>
             </div>
@@ -55,10 +55,10 @@
 
             <div class="jumbotron p-2 p-md-5 text-white font-weight-bold rounded bg-dark" style="background-image: url(http://depor.com/files/article_main/uploads/2019/05/23/5ce7121847fd1.jpeg); background-size: 100%;">
                   <div class="col-md-6 px-0 py-5">
-                    <h1 class="display-4 font-italic">Somos el corazon del movimiento olimplico en America</h1>
-                    <p class="lead my-3">Se parte de las ceremonias de Lima 2019 y vive una experienicia increible. A partir de
+                      <h1 class="display-4 font-italic" style="font-weight: 500; font-size: 50px;"><span>Somos el corazon del movimiento olimplico en América</span></h1>
+                    <p style="font-weight: 500;" class="lead my-3">Se parte de las ceremonias de Lima 2019 y vive una experienicia increible. A partir de
                     este 26 de Julio hasta el 11 de Agosto, donde participaran deportistas de los 41 paises de America en 39
-                    deportes.</p>
+                    deportes.</p><br>
                     <p class="lead mb-0"><span class="text-black font-weight-bold">Te esperamos...</span></p>
                 </div>
             </div>
@@ -75,20 +75,20 @@
                                     <img src="${sport.image}" alt="" class="img-fluid">
                                     </svg>
                                     <div class="card-body">
-                                        <h1>${sport.title}</h1>
-                                        <p class="card-text">${sport.overView}</p>
+                                        <div align="center" ><h1 style="font-size: 25px;">${sport.title}</h1></div>
+                                        <div style="overflow: hidden; height: 150px;" class="content-sport">
+                                            <p class="card-text">${sport.overView}</p>
+                                        </div>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div class="btn-group">
                                                 <form method="post" action="/proyecto/principal/deportistas?Sport=<c:out value="${sport.title}"/>">
                                                     <input type="submit" class="btn btn-sm btn-outline-secondary" value="Ver mas">
                                                 </form>
                                             </div>
-                                            <small class="text-muted">9 mins</small>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
                         </c:forEach>
                     </div>
                 </div>
