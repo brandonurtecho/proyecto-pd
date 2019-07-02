@@ -71,7 +71,7 @@ public class UserFacadeService implements IUserFacadeService {
     }
 
     @Override
-    public Boolean registerNewAccount(User user) {
+    public User registerNewAccount(User user) {
         return userService.registerAccount(user);
     }
 
