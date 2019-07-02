@@ -37,7 +37,7 @@ public class EventsPath extends PathStrategy {
         UserFacadeService service = new UserFacadeService();
         List<Event> list = service.getEvents();
         Cast cast = new Cast();
-        request.setAttribute("list", list);
+        request.getSession().setAttribute("list", list);
         request.setAttribute("cast", cast);
         
         RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.EVENTS);

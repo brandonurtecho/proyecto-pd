@@ -69,9 +69,11 @@ public class Test {
 //            System.out.println(com);
 //        }
 
-        IUserFacadeService facade = new UserFacadeService();
+       // IUserFacadeService facade = new UserFacadeService();
 
-        System.out.println(facade.getPaymentsByEmail("diego.vera@unmsm.edu.pe"));
+        //System.out.println(facade.getPaymentsByEmail("diego.vera@unmsm.edu.pe"));
+        System.out.println(Cast.stringToDate("2019-08-07"));
+        
         
 //        Document doc = new Document("name", "MongoDB")
 //                .append("type", "database")

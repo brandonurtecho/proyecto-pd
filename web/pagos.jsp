@@ -109,7 +109,7 @@
                         </div>
                     </div>
                     
-                    <button class="btn btn-primary btn-lg btn-block" type="submit"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Realizar compra</font></font></button>
+                    <input class="btn btn-primary btn-lg btn-block" type="submit" name="payEvent" value="Realizar pago"/>
                 </form>
             </div>
         </div>

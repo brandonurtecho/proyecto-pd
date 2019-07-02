@@ -43,32 +43,25 @@ public class PaymentsPath extends PathStrategy {
             throws ServletException, IOException, SQLException {
         
         UserFacadeService service = new UserFacadeService();
-        String id = request.getParameter("id");
-        String firstname = request.getParameter("firstname");
         
-        if (id != null){
-            Cast cast = new Cast();
-            String date = request.getParameter("date");
-            String sport = request.getParameter("sport");
-            String place = request.getParameter("place");
-            
-            
+        if(request.getParameter("payEvent")==null){
+            request.getSession().setAttribute("id", request.getParameter("id"));     
+            request.getSession().setAttribute("date", request.getParameter("date"));
+            request.getSession().setAttribute("sport", request.getParameter("sport"));
+            request.getSession().setAttribute("place", request.getParameter("place"));
+            RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.PAYMENTS);
+            dispatcher.forward(request, response);
+        } else{
+            List<Event> list = new ArrayList<>();
+            String id = (String) request.getSession().getAttribute("id");     
+            String date = (String) request.getSession().getAttribute("date");
+            String sport = (String) request.getSession().getAttribute("sport");
+            String place = (String) request.getSession().getAttribute("place");
             try {
-                Event event = new Event(id,cast.stringToDate(date),sport,place);
-                System.out.println(event);
-                request.getSession().setAttribute("Event", event);
-                RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.PAYMENTS);
-                dispatcher.forward(request, response);
-                
+                list.add(new Event(id, Cast.stringToDate(date),sport,place));
             } catch (ParseException ex) {
                 Logger.getLogger(PaymentsPath.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }
-        
-        if(firstname != null) {
-            List<Event> list = new ArrayList<>();
-            list.add((Event) request.getAttribute("Event"));
-
             Payment pay = new Payment.PaymentBuilder()
                     .setFirstName(request.getParameter("firstname"))
                     .setLastName(request.getParameter("lastname"))
@@ -82,11 +75,11 @@ public class PaymentsPath extends PathStrategy {
                     .setNumberCard(request.getParameter("creditcard"))
                     .setPaypal(request.getParameter("paypal"))
                     .build();
-
             service.buyTicketForEvent(pay);
             RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.EVENTS);
             dispatcher.forward(request, response);
         }
+        
     }
     
     
