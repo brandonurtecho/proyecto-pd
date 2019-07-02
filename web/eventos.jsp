@@ -18,6 +18,26 @@
     </head>
     <body>
         
+        
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="p-2 text-white" href="/proyecto/principal/" style="font-size: 24px;">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="p-2 text-white" href="/proyecto/principal/voluntarios" style="font-size: 24px;">Voluntarios</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </nav>
+        
         <div class="container p-3">
             <div style="background: #86c6f8; border-radius: 30px;" class="pricing-header px-5 py-5 pt-md-5 pb-md-4 mx-auto text-center">
                 <h1 class="display-4">
