@@ -98,7 +98,7 @@ public class PaymentService implements IPaymentService {
     @Override
     public void pay(Payment payment) {
         paymentRepository.insert(payment);
-        sendPaymentEmail(payment);
+        //sendPaymentEmail(payment);
     }
 
 }
