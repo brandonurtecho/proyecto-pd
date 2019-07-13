@@ -51,12 +51,14 @@
                 </ul>
             </div>
         </nav>
+        
+        <div style="background-size: cover; background-image: url(http://www.cherishpr.com/wp-content/uploads/2013/03/Colorful-Wallpaper-High-Definition-Images-4098-Awesome.jpg);">
 
         <div class="container py-5">
 
             <div class="jumbotron p-2 p-md-5 text-white rounded bg-dark" style="background-image: url(http://www.ipd.gob.pe/media/k2/items/cache/28b32a6d1a10f7b79a19f11bec606ba7_XL.jpg); background-size: 100%;">
                 <div class="col-md-6 px-0 py-5">
-                    <h1 class="display-4 font-italic" style="font-weight: 700; font-size: 50px;">Se Voluntario Lima 2019 </h1>
+                    <h1 class="display-4 font-italic" style="font-weight: 600; font-size: 50px;">Se Voluntario Lima 2019 </h1>
                     <p class="lead my-3" style="font-weight: 500;">Seran mas de 19 000 voluntarios para los juegos panamericanos y parapanamericanos</p>
                     <p class="lead mb-0"><span class="text-white font-weight-bold">Te esperamos...</span></p>
                 </div>
@@ -88,6 +90,6 @@
             
         </div>
 
-
+        </div>
     </body>
 </html>

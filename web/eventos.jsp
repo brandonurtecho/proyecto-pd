@@ -43,15 +43,16 @@
             </div>
         </nav>
         
+        <div style="background-size: cover; background-image: url(http://www.cherishpr.com/wp-content/uploads/2013/03/Colorful-Wallpaper-High-Definition-Images-4098-Awesome.jpg);">
 
         <div class="container p-3">
-            <div style="background: #86c6f8; border-radius: 30px;" class="pricing-header px-5 py-5 pt-md-5 pb-md-4 mx-auto text-center">
-                <h1 class="display-4">
+            <div style="background: #10707f; border-radius: 30px;" class="pricing-header px-5 py-5 pt-md-5 pb-md-4 mx-auto text-center">
+                <h1 style="color: #ffffff;" class="display-4">
                     <font style="vertical-align: inherit;">
                     <h1 class="text">Entradas Juegos Panamericanos 2019</h1>
                     </font>
                 </h1>
-                <p class="lead">
+                <p style="color: #ffffff;" class="lead">
                     <font style="vertical-align: inherit;">
                     <font style="vertical-align: inherit;">LIMA 2019: VENTA DE ENTRADAS DE LOS JUEGOS PANAMERICANOS INICIA EL 27
                     DE MAYO . Las entradas están disponibles en diez módulos de venta ubicados en distintos puntos de la capital
@@ -118,6 +119,6 @@
             </div>
         </div>
 
-
+        </div>
     </body>
 </html>

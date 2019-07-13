@@ -47,24 +47,26 @@
         
         <div class="container p-4">
             <div class="py-5 text-center">
-                <h2><font style="vertical-align: inherit; font-size: 45px;"><font style="vertical-align: inherit;">Formulario de pago</font></font></h2>
-                <img class="d-block mx-auto mb-4" src="/proyecto/assets/img/milco-6.png" alt="" width="120" height="150">
+                <h2><font style="font-size: 45px; font-weight: 600;"><font style="vertical-align: inherit;">Formulario de pago</font></font></h2>
+                
             </div>
 
             <div class="col-md-8 order-md-1 mx-auto">
 
+                <img class="d-block mx-auto mb-4" src="/proyecto/assets/img/milco-6.png" alt="" width="120" height="150">
                 <form action="/proyecto/principal/pagos" class="needs-validation" method="post">
+                    
+                    <h4 class="mb-3"><font style="vertical-align: inherit; font-size: 20px; font-weight: 600;"><font style="vertical-align: inherit;">Datos Personales</font></font></h4>
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <label for="firstName"><font style="vertical-align: inherit; font-size: 20px; font-weight: 600;"><font style="vertical-align: inherit; ">Nombre</font></font></label>
-                            <input type="text" class="form-control" id="firstName" name="firstname">
+                            <input type="text" class="form-control" id="firstName" name="firstname" placeholder="Nombre">
                             <div class="invalid-feedback">
                                 Campo invalido
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="lastName"><font style="vertical-align: inherit; font-size: 20px; font-weight: 600;"><font style="vertical-align: inherit;">Apellido</font></font></label>
-                            <input type="text" class="form-control" id="lastName" name="lastname">
+                            
+                            <input type="text" class="form-control" id="lastName" name="lastname" placeholder="Apellido">
                             <div class="invalid-feedback">
                                 Campo invalido
                             </div>
@@ -72,64 +74,56 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="email"><font style="vertical-align: inherit; font-size: 20px; font-weight: 600;"><font style="vertical-align: inherit;">Correo electrónico </font></font><span class="text-muted"></span></label>
-                        <input type="email" class="form-control" id="email" name="email">
+                        
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email">
                         <div class="invalid-feedback">
                             Campo invalido
                         </div>
                     </div>
 
                     <div class="mb-3">
-                        <label for="address"><font style="vertical-align: inherit; font-size: 20px; font-weight: 600;"><font style="vertical-align: inherit;">Dirección</font></font></label>
-                        <input type="text" class="form-control" id="address" name="address" >
+                        <input type="text" class="form-control" id="address" name="address" placeholder="Dirección">
                         <div class="invalid-feedback">
                             Campo invalido
                         </div>
                     </div>
 
                     <div class="mb-3">
-                        <label for="address2"><font style="vertical-align: inherit; font-size: 20px; font-weight: 600;"><font style="vertical-align: inherit;">Dirección opcional</font></font><span class="text-muted"></span></label>
-                        <input type="text" class="form-control" id="address2" name="address2">
+                        <input type="text" class="form-control" id="address2" name="address2" placeholder="Dirección opcional">
                     </div>
 
                     <div class="row">
                         <div class="col-md-5 mb-3">
-                            <label for="country"><font style="vertical-align: inherit; font-size: 20px; font-weight: 600;"><font style="vertical-align: inherit;">País</font></font></label>
-                            <input type="text" class="form-control" id="address2" name="country">
+                            <input type="text" class="form-control" id="address2" name="country" placeholder="País">
                             <div class="invalid-feedback">
                                 Please select a valid country.
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
-                            <label for="state"><font style="vertical-align: inherit; font-size: 20px; font-weight: 600;"><font style="vertical-align: inherit;">Estado</font></font></label>
-                            <input type="text" class="form-control" id="address2" name="state">
+                            <input type="text" class="form-control" id="address2" name="state" placeholder="Estado">
                             <div class="invalid-feedback">
                                 Please provide a valid state.
                             </div>
                         </div>
                         <div class="col-md-3 mb-3">
-                            <label for="zip"><font style="vertical-align: inherit; font-size: 20px; font-weight: 600;"><font style="vertical-align: inherit;">Codigo Postal</font></font></label>
-                            <input type="text" class="form-control" id="zip" name="zip">
+                            <input type="text" class="form-control" id="zip" name="zip" placeholder="Código Postal">
                             <div class="invalid-feedback">
                                 Zip code required.
                             </div>
                         </div>
                     </div>
-                    <hr class="mb-4">
 
                     <h4 class="mb-3"><font style="vertical-align: inherit; font-size: 20px; font-weight: 600;"><font style="vertical-align: inherit;">Pago</font></font></h4>
                     
                     <div class="row">
                         <div class="col-md-5 mb-3">
-                            <label for="pay"><font style="vertical-align: inherit; font-size: 20px; font-weight: 600;"><font style="vertical-align: inherit;">Tarjeta de credito</font></font></label>
-                            <input type="text" class="form-control" id="pay" name="creditcard">
+                            <input type="text" class="form-control" id="pay" name="creditcard" placeholder="Tarjeta de Crédito">
                             <div class="invalid-feedback">
                                 Please select a valid country.
                             </div>
                         </div>
                         <div class="col-md-7 mb-3">
-                            <label for="pay"><font style="vertical-align: inherit; font-size: 20px; font-weight: 600;"><font style="vertical-align: inherit;">Paypal</font></font></label>
-                            <input type="email" class="form-control" id="pay" name="paypal">
+                            <input type="email" class="form-control" id="pay" name="paypal" placeholder="Paypal">
                             <div class="invalid-feedback">
                                 Please select a valid country.
                             </div>

@@ -61,11 +61,12 @@
             </div>
         </nav>
 
+        <div style="background-size: cover; background-image: url(http://www.cherishpr.com/wp-content/uploads/2013/03/Colorful-Wallpaper-High-Definition-Images-4098-Awesome.jpg);">
         <div class="container py-5">
 
             <div class="jumbotron p-2 p-md-5 text-white rounded bg-dark" style="background-image: url(https://img.bekia.es/galeria/96000/96823_estadounidenses-oro.jpg); background-size: 100%;">
                 <div class="col-md-6 px-0 py-5">
-                    <h1 class="display-4 font-italic">Somos el corazon del movimiento olimplico en America</h1>
+                    <h1 class="display-4 font-italic" style="font-weight: 600; font-size: 40px;">Somos el corazón del movimiento olímpico en América</h1>
                     <p class="lead my-3"></p>Se parte de las ceremonias de Lima 2019 y vive una experienicia increible. A partir de
                     este 26 de Julio hasta el 11 de Agosto, donde participaran deportistas de los 41 paises de America en 39
                     deportes.</p>
@@ -158,6 +159,8 @@
 
                 </div>
             </div>
+        </div>
+                                    
         </div>
 
 

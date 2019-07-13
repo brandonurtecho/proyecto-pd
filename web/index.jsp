@@ -53,7 +53,7 @@
                             <input type="password" id="inputPassword" class="form-control" name="password">
                         </li>
                         <li>
-                            <button type="submit" class="btn btn-primary mt-md-auto ml-5" value="Send">Iniciar Session</button>
+                            <button type="submit" class="btn btn-primary mt-md-auto ml-5" value="Send">Iniciar Sesión</button>
                         </li>
 
                     </ul>
@@ -62,9 +62,10 @@
             </form>
         </nav>
 
+        <div style="background-size: cover; background-image: url(https://www.chainimage.com/images/si-te-gust%C3%B3-este-fondo-y-te-gustar%C3%ADa-recibir-m%C3%A1s-como-este-en-tu.jpg);">
 
         <div class="container py-5">
-            <div class="row py-2">
+            <div class="row py-2" >
                 <div class="col-md-4 text-center">
                     <img src="/proyecto/assets/img/Logo_oficial_Juegos_Panamericanos_Lima_2019.png" class="img-responsive" alt="">
                 </div>
@@ -115,7 +116,11 @@
                 </div>
             </div>
         </div>
+            
+            </div>
     </div>
+        
+        
 
 </body>
 </html>

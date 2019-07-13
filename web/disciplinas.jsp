@@ -51,15 +51,16 @@
             </div>
         </nav>
 
+        <div style="background-size: cover; background-image: url(http://www.cherishpr.com/wp-content/uploads/2013/03/Colorful-Wallpaper-High-Definition-Images-4098-Awesome.jpg);">
         <div class="container py-5">
 
-            <div class="jumbotron p-2 p-md-5 text-white font-weight-bold rounded bg-dark" style="background-image: url(http://depor.com/files/article_main/uploads/2019/05/23/5ce7121847fd1.jpeg); background-size: 100%;">
-                  <div class="col-md-6 px-0 py-5">
-                      <h1 class="display-4 font-italic" style="font-weight: 500; font-size: 50px;"><span>Somos el corazon del movimiento olimplico en América</span></h1>
-                    <p style="font-weight: 500;" class="lead my-3">Se parte de las ceremonias de Lima 2019 y vive una experienicia increible. A partir de
-                    este 26 de Julio hasta el 11 de Agosto, donde participaran deportistas de los 41 paises de America en 39
+            <div class="jumbotron p-2 p-md-5 text-white font-weight-bold rounded bg-dark" style="background-size: cover; background-image: url(https://www.comune.cimadolmo.tv.it/wp-content/uploads/2018/04/giornata-dello-sport-19-aprile-2018.png); background-size: 100%;">
+                  <div style="color: #000;" class="col-md-6 px-0 py-5">
+                      <h1 class="display-4 font-italic" style="font-weight: 500; font-size: 50px;"><span>Somos el corazón del movimiento olímpico en América</span></h1>
+                    <p style="font-weight: 500;" class="lead my-3">Se parte de las ceremonias de Lima 2019 y vive una experiencia increíble. A partir de
+                    este 26 de Julio hasta el 11 de Agosto, donde participarán deportistas de los 41 paises de América en 39
                     deportes.</p><br>
-                    <p class="lead mb-0"><span class="text-black font-weight-bold">Te esperamos...</span></p>
+                    <p  class="lead mb-0"><span style="color: #000;" class="text-black font-weight-bold">Te esperamos...</span></p>
                 </div>
             </div>
 
@@ -94,6 +95,8 @@
                 </div>
             </div>
 
+            
+        </div>
             
         </div>
 
