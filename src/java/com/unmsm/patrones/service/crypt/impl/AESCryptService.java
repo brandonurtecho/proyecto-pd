@@ -24,6 +24,7 @@ public class AESCryptService implements ICryptService {
 
     @Override
     public String encrypt(String message) throws Exception {
+        System.out.println("USING AESCRYPT");
         try {
             IvParameterSpec iv = new IvParameterSpec(KEY.getBytes("UTF-8"));
             SecretKeySpec skeySpec = new SecretKeySpec(INIT_VECTOR.getBytes("UTF-8"), "AES");

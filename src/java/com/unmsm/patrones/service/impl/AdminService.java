@@ -9,6 +9,11 @@ import com.unmsm.patrones.dto.Admin;
 import com.unmsm.patrones.repository.IAdminRepository;
 import com.unmsm.patrones.repository.impl.AdminDao;
 import com.unmsm.patrones.service.IAdminService;
+import com.unmsm.patrones.service.crypt.ICryptBridgeService;
+import com.unmsm.patrones.service.crypt.impl.DefaultCryptBrigdeService;
+import com.unmsm.patrones.util.TypeCrypt;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -16,15 +21,25 @@ import com.unmsm.patrones.service.IAdminService;
  */
 public class AdminService implements IAdminService {
     private IAdminRepository adminRepository;
+    private ICryptBridgeService cryptService;
     
     public AdminService() {
         this.adminRepository = new AdminDao();
+        this.cryptService = new DefaultCryptBrigdeService();
     }
     
     @Override
     public Boolean login(String email, String password) {
         Admin admin = adminRepository.getAdminByEmail(email);
-        if (!admin.getId().equals("0") && admin.getPassword().equals(password)) {
+        String passwordCrypt = "";
+        
+        try {
+            passwordCrypt = cryptService.encryptMessage(password, TypeCrypt.ADMIN);
+        } catch (Exception ex) {
+            Logger.getLogger(AdminService.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        if (!admin.getId().equals("0") && admin.getPassword().equals(passwordCrypt)) {
             return Boolean.TRUE;
         } else {
             return Boolean.FALSE;

@@ -25,6 +25,8 @@ import com.unmsm.patrones.repository.IUserRepository;
 import com.unmsm.patrones.repository.impl.UserDao;
 import com.unmsm.patrones.service.ICommentaryService;
 import com.unmsm.patrones.service.IUserService;
+import com.unmsm.patrones.service.crypt.ICryptBridgeService;
+import com.unmsm.patrones.service.crypt.impl.DefaultCryptBrigdeService;
 import com.unmsm.patrones.service.facade.IAdminFacadeService;
 import com.unmsm.patrones.service.facade.IUserFacadeService;
 import com.unmsm.patrones.service.facade.impl.AdminFacadeService;
@@ -33,6 +35,7 @@ import com.unmsm.patrones.service.impl.CommentaryService;
 import com.unmsm.patrones.service.impl.UserService;
 import com.unmsm.patrones.util.Cast;
 import com.unmsm.patrones.util.TypeCollections;
+import com.unmsm.patrones.util.TypeCrypt;
 import com.unmsm.patrones.util.TypeSport;
 import com.unmsm.patrones.util.iterator.CustomIterator;
 import com.unmsm.patrones.util.iterator.ListCommentary;
@@ -53,7 +56,7 @@ public class Test {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws ParseException {
+    public static void main(String[] args) throws ParseException, Exception {
         
 //        MongoCollection collection = Connection.getConnection().getCollection(TypeCollections.USERS);
 //        
@@ -69,11 +72,15 @@ public class Test {
 //            System.out.println(com);
 //        }
 
-       // IUserFacadeService facade = new UserFacadeService();
-
-        //System.out.println(facade.getPaymentsByEmail("diego.vera@unmsm.edu.pe"));
-        System.out.println(Cast.stringToDate("2019-08-07"));
+       IUserFacadeService facade = new UserFacadeService();
+       User user = new User("diego.vera@unmsm.edu.pe", "72923854", 
+               Cast.stringToDate("1996-11-09"), "Masculino", "", "Diego", "Vera");
+               
+        System.out.println("registrando");
+        System.out.println(facade.registerNewAccount(user));
         
+        System.out.println("logeando");
+        System.out.println(facade.login("diego.vera@unmsm.edu.pe", "72923854"));
         
 //        Document doc = new Document("name", "MongoDB")
 //                .append("type", "database")
