@@ -51,10 +51,10 @@ public class EditProfilePath extends PathStrategy{
         
         if(service.editAccount(admin)){
             request.getSession().setAttribute("admin", admin);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/" + Jsp.VIEW_PROFILE);
+            RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.VIEW_PROFILE);
             dispatcher.forward(request, response);
         } else {
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/" + Jsp.EDIT_PROFILE);
+            RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.EDIT_PROFILE);
             dispatcher.forward(request, response);
         }
         

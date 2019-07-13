@@ -12,7 +12,7 @@ import javax.servlet.annotation.WebServlet;
  * @author TASSO-PC
  */
 
-@WebServlet({"/admin/admin/*"})
+@WebServlet({"/admin/*"})
 public class AdminServlet extends GenericServlet{
     
     @Override

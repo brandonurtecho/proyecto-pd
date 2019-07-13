@@ -38,7 +38,7 @@ public class ViewProfilePath extends PathStrategy{
         Admin admin = service.showProfileAdminByEmail((String) request.getSession().getAttribute("adminEmail"));
         request.getSession().setAttribute("admin", admin);
         
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/" + Jsp.VIEW_PROFILE);
+        RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.VIEW_PROFILE);
         dispatcher.forward(request, response);
     }
 }

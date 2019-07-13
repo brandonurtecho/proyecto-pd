@@ -39,7 +39,7 @@ public class VenueAttendeesPath extends PathStrategy{
         List<User> attendees = service.showAttendees();
         request.setAttribute("attendees", attendees);
         
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/" + Jsp.VENUE_ATTENDEES);
+        RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.VENUE_ATTENDEES);
         dispatcher.forward(request, response);
     }
 }

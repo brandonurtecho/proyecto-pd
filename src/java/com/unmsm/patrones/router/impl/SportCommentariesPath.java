@@ -43,7 +43,7 @@ public class SportCommentariesPath extends PathStrategy{
         request.setAttribute("comments", comments);
         request.setAttribute("cast", new Cast());
         
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/" + Jsp.SPORT_COMMENTARIES);
+        RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.SPORT_COMMENTARIES);
         dispatcher.forward(request, response);
     }
 }
