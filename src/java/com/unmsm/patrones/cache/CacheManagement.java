@@ -6,6 +6,10 @@
 package com.unmsm.patrones.cache;
 
 //import com.unmsm.patrones.service.impl.CountryService;
+import com.unmsm.patrones.dto.Sport;
+import com.unmsm.patrones.service.facade.IUserFacadeService;
+import com.unmsm.patrones.service.facade.impl.UserFacadeService;
+import com.unmsm.patrones.util.TypeSport;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -17,12 +21,15 @@ import java.util.Map;
 public class CacheManagement {
     
     private static CacheManagement cache;
-    private Map<String, List<?>> cacheMap;
+    private Map<String, List<? extends Sport>> cacheMap;
         
     private CacheManagement() {
-        //CountryService countryService = new CountryService();
+        IUserFacadeService userService = new UserFacadeService();
         cacheMap = new HashMap<>();
-        //cacheMap.put(CacheName.COUNTRY, countryService.findAllCountries());
+        cacheMap.put(TypeSport.PANAMERICANO_SPORT, 
+                userService.showSportList(TypeSport.PANAMERICANO_SPORT));
+        cacheMap.put(TypeSport.PARAPANAMERICANO_SPORT, 
+                userService.showSportList(TypeSport.PARAPANAMERICANO_SPORT));
     }
     
     public static CacheManagement getInstance(){
