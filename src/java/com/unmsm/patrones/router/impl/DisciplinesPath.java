@@ -6,6 +6,7 @@
 package com.unmsm.patrones.router.impl;
 
 
+import com.unmsm.patrones.cache.CacheManagement;
 import com.unmsm.patrones.dto.PanamericanoSport;
 import com.unmsm.patrones.dto.ParapanamericanoSport;
 import com.unmsm.patrones.dto.Sport;
@@ -42,16 +43,16 @@ public class DisciplinesPath extends PathStrategy{
     public void operation(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException, SQLException {
         
-        UserFacadeService service = new UserFacadeService();
+       
         
         int num = Integer.parseInt(request.getParameter("num"));
+        
         if (num == 0){
-           List<PanamericanoSport> list = (List<PanamericanoSport>) service.showSportList(TypeSport.PANAMERICANO_SPORT);
+           List<PanamericanoSport> list =  CacheManagement.getInstance().getCache(TypeSport.PANAMERICANO_SPORT);
            request.setAttribute("list", list);
         }else {
-           List<ParapanamericanoSport> list = (List<ParapanamericanoSport>) service.showSportList(TypeSport.PARAPANAMERICANO_SPORT);
+           List<ParapanamericanoSport> list =  CacheManagement.getInstance().getCache(TypeSport.PARAPANAMERICANO_SPORT);
            request.setAttribute("list", list);
-        
         }
         
         RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.DISCIPLINES);
