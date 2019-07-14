@@ -113,7 +113,7 @@ public class UserFacadeService implements IUserFacadeService {
     }
 
     @Override
-    public CustomIterator showCommentaryBySportInSport(String sport, String sort) {
+    public CustomIterator<Commentary> showCommentaryBySportInSport(String sport, String sort) {
         return commentaryService.showCommentaryBySport(sport, sort);
     }
 

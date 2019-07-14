@@ -10,6 +10,6 @@ package com.unmsm.patrones.util.iterator;
  * @author diego
  */
 public interface CustomList<T> {
-    CustomIterator iterator();
-    CustomIterator iterator(String sort);
+    CustomIterator<T> iterator();
+    CustomIterator<T> iterator(String sort);
 }

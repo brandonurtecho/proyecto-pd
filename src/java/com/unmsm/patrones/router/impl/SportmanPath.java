@@ -99,10 +99,11 @@ public class SportmanPath extends PathStrategy {
     private void updateCommentaryOrLike(HttpServletRequest request, HttpServletResponse response, UserFacadeService service, String sport) 
                                     throws ServletException, IOException, SQLException {
         List<Sportsman> sportmanlist = service.showSportsmanBySportInSport(sport);
-        CustomIterator it = service.showCommentaryBySportInSport(sport, "LIKE");
+        CustomIterator<Commentary> it = service.showCommentaryBySportInSport(sport, "LIKE");
         Cast cast = new Cast();
         request.setAttribute("sportmanlist", sportmanlist);
-        request.setAttribute("it", it);
+        if(it.first().getBody().equals("NULL BODY")) request.setAttribute("it", null);
+        else request.setAttribute("it", it);
         request.setAttribute("cast", cast);
     }
 

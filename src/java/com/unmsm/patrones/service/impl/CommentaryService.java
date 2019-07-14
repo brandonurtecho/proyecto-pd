@@ -52,7 +52,7 @@ public class CommentaryService implements ICommentaryService{
     }
 
     @Override
-    public CustomIterator showCommentaryBySport(String sport, String sort) {
+    public CustomIterator<Commentary> showCommentaryBySport(String sport, String sort) {
         ListCommentary list = new ListCommentary(this.commentaryRepository.getBySport(sport));
         return list.iterator(sort);
     }

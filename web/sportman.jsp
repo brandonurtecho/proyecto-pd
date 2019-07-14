@@ -62,105 +62,104 @@
         </nav>
 
         <div style="background-size: cover; background-image: url(http://www.cherishpr.com/wp-content/uploads/2013/03/Colorful-Wallpaper-High-Definition-Images-4098-Awesome.jpg);">
-        <div class="container py-5">
+            <div class="container py-5">
 
-            <div class="jumbotron p-2 p-md-5 text-white rounded bg-dark" style="background-image: url(https://img.bekia.es/galeria/96000/96823_estadounidenses-oro.jpg); background-size: 100%;">
-                <div class="col-md-6 px-0 py-5">
-                    <h1 class="display-4 font-italic" style="font-weight: 600; font-size: 40px;">Somos el corazón del movimiento olímpico en América</h1>
-                    <p class="lead my-3"></p>Se parte de las ceremonias de Lima 2019 y vive una experienicia increible. A partir de
-                    este 26 de Julio hasta el 11 de Agosto, donde participaran deportistas de los 41 paises de America en 39
-                    deportes.</p>
-                    <p class="lead mb-0"><span class="text-white font-weight-bold">Te esperamos...</span></p>
+                <div class="jumbotron p-2 p-md-5 text-white rounded bg-dark" style="background-image: url(https://img.bekia.es/galeria/96000/96823_estadounidenses-oro.jpg); background-size: 100%;">
+                    <div class="col-md-6 px-0 py-5">
+                        <h1 class="display-4 font-italic" style="font-weight: 600; font-size: 40px;">Somos el corazón del movimiento olímpico en América</h1>
+                        <p class="lead my-3"></p>Se parte de las ceremonias de Lima 2019 y vive una experienicia increible. A partir de
+                        este 26 de Julio hasta el 11 de Agosto, donde participaran deportistas de los 41 paises de America en 39
+                        deportes.</p>
+                        <p class="lead mb-0"><span class="text-white font-weight-bold">Te esperamos...</span></p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="album py-5 bg-light">
-                <div class="container">
+                <div class="album py-5 bg-light">
+                    <div class="container">
 
-                    <div class="row">
+                        <div class="row">
 
-                        <c:forEach items="${sportmanlist}" var="sportman">
+                            <c:forEach items="${sportmanlist}" var="sportman">
 
-                            <div class="col-md-4">
-                                <div class="card mb-4 shadow-sm">
-                                    <img src="${sportman.photo}" alt="" class="img-fluid">
+                                <div class="col-md-4">
+                                    <div class="card mb-4 shadow-sm">
+                                        <img src="${sportman.photo}" alt="" class="img-fluid">
 
-                                    <div class="card-body">
-                                        <p class="card-text">El deportista <c:out value="${sportman.name}"/> <c:out value="${sportman.lastname}"/> es proveniente de 
-                                            <c:out value="${sportman.country}"/>, actualmente cuenta con <c:out value="${sportman.age}"/> años de edad</p>
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <small class="text-muted">15 min</small>
+                                        <div class="card-body">
+                                            <p class="card-text">El deportista <c:out value="${sportman.name}"/> <c:out value="${sportman.lastname}"/> es proveniente de 
+                                                <c:out value="${sportman.country}"/>, actualmente cuenta con <c:out value="${sportman.age}"/> años de edad</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <small class="text-muted">15 min</small>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </c:forEach>
+                            </c:forEach>
 
 
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="">
+                <div class="">
 
-                <div id="comments " class="comments">
+                    <div id="comments " class="comments">
 
-
-                    <c:forEach var="i" begin="1" end="${it.size()}">
-                        <div id="comment-${i}">
-                            <c:set var="c" value="${it.next()}" />
-                            <div class="comment px-2 my-2">
-                                <div class="media-left">
-                                    <img src="https://www.zona-leros.net/storage/image/default.png" alt="" class="img ">
+                        <c:if test="${it!=null}">    
+                            <c:forEach var="i" begin="1" end="${it.size()}">
+                                <div id="comment-${i}">
+                                    <c:set var="c" value="${it.next()}" />
+                                    <div class="comment px-2 my-2">
+                                        <div class="media-left">
+                                            <img src="https://www.zona-leros.net/storage/image/default.png" alt="" class="img ">
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="media-content" style=" ">
+                                                <span class="media-heading"> <c:out value="${c.getEmailUser()}" /> </span>
+                                                <span class="date" style="display: inline;"> •  <c:out value="${cast.dateToString(c.getDate())}" /> </span>
+                                                <span class="text">  <c:out value="${c.getBody()}" /> <br>
+                                                </span>
+                                                <div class="date">
+                                                    <span class="up">
+                                                        <span id="upvotes-9393">  <c:out value="${c.getLike()}" /> </span>
+                                                        <a href="/proyecto/principal/deportistas?like=Like&likecomment=<c:out value="${c}"/>&Sport=<c:out value="${sport}"/>">
+                                                            <i class="fa fa-fw fa-chevron-up " id="up-9393"></i>
+                                                        </a>
+                                                    </span> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="media-body">
-                                    <div class="media-content" style=" ">
-                                        <span class="media-heading"> <c:out value="${c.getEmailUser()}" /> </span>
-                                        <span class="date" style="display: inline;"> •  <c:out value="${cast.dateToString(c.getDate())}" /> </span>
-                                        <span class="text">  <c:out value="${c.getBody()}" /> <br>
+                            </c:forEach>
+                        </c:if>
+                        <div class="comment">
+                            <div class="media-left">
+                                <img src="https://www.zona-leros.net/storage/image/default.png" alt="" class="img">
+                            </div>
+                            <div class="media-body">
+                                <div class="media-content">
+                                    <form action="/proyecto/principal/deportistas?Sport=<c:out value="${sport}"/>" method="post">
+                                        <span class="text">
+                                            <textarea id="comment" name="comment" class="form-control" placeholder="Escribe tu comentario..." data-value="game-1708"></textarea>
                                         </span>
-                                        <div class="date">
-                                            <span class="up">
-                                                <span id="upvotes-9393">  <c:out value="${c.getLike()}" /> </span>
-                                                <a href="/proyecto/principal/deportistas?like=Like&likecomment=<c:out value="${c}"/>&Sport=<c:out value="${sport}"/>">
-                                                    <i class="fa fa-fw fa-chevron-up " id="up-9393"></i>
-                                                </a>
-                                            </span> 
-                                        </div>
-                                    </div>
+                                        <span class="date"> 
+                                            <div id="spiner-comment" style="display: none;">
+                                                <div class="comments__spinner"></div>
+                                            </div>
+                                            <div class="text-right px-3 py-1">
+                                                <input type="submit" class="btn btn-danger" value="Comentar" name="commentary">
+                                            </div>
+                                        </span>
+                                    </form>
                                 </div>
                             </div>
                         </div>
-                    </c:forEach>
 
-                    <div class="comment">
-                        <div class="media-left">
-                            <img src="https://www.zona-leros.net/storage/image/default.png" alt="" class="img">
-                        </div>
-                        <div class="media-body">
-                            <div class="media-content">
-                                <form action="/proyecto/principal/deportistas?Sport=<c:out value="${sport}"/>" method="post">
-                                    <span class="text">
-                                        <textarea id="comment" name="comment" class="form-control" placeholder="Escribe tu comentario..." data-value="game-1708"></textarea>
-                                    </span>
-                                    <span class="date"> 
-                                        <div id="spiner-comment" style="display: none;">
-                                            <div class="comments__spinner"></div>
-                                        </div>
-                                        <div class="text-right px-3 py-1">
-                                            <input type="submit" class="btn btn-danger" value="Comentar" name="commentary">
-                                        </div>        
-                                                
-                                    </span>
-                                </form>
-                            </div>
-                        </div>
                     </div>
-
                 </div>
             </div>
-        </div>
-                                    
+
         </div>
 
 

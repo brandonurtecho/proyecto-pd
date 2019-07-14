@@ -26,12 +26,12 @@ public class ListCommentary implements CustomList<Commentary> {
     }
 
     @Override
-    public CustomIterator iterator() {
+    public CustomIterator<Commentary> iterator() {
         return new RuleIterator(this);
     }
 
     @Override
-    public CustomIterator iterator(String sort) {
+    public CustomIterator<Commentary> iterator(String sort) {
         switch (sort) {
             case "LIKE":
                 Collections.sort(items, (o1, o2) -> o2.getLike().compareTo(o1.getLike()));
