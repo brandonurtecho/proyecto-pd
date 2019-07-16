@@ -22,6 +22,7 @@ public class Payment {
     private String optionalAddress;
     private String country;
     private String state;
+    private String price;
     private String zipCode;
     private List<Event> eventList;
     private String numberCard;
@@ -44,6 +45,24 @@ public class Payment {
         this.numberCard = numberCard;
         this.paypalEmail = paypalEmail;
     }
+
+    public Payment(String id, String firstName, String lastName, String email, String address, String optionalAddress, String country, String state, String price, String zipCode, List<Event> eventList, String numberCard, String paypalEmail) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.address = address;
+        this.optionalAddress = optionalAddress;
+        this.country = country;
+        this.state = state;
+        this.price = price;
+        this.zipCode = zipCode;
+        this.eventList = eventList;
+        this.numberCard = numberCard;
+        this.paypalEmail = paypalEmail;
+    }
+    
+    
 
     public String getId() {
         return id;
@@ -141,6 +160,14 @@ public class Payment {
         this.paypalEmail = paypalEmail;
     }
 
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
+    
     @Override
     public String toString() {
         return "Payment{" + "id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", address=" + address + ", optionalAddress=" + optionalAddress + ", country=" + country + ", state=" + state + ", zipCode=" + zipCode + ", eventList=" + eventList + ", card=" + numberCard + ", paypal=" + paypalEmail + '}';
@@ -223,6 +250,7 @@ public class Payment {
         private List<Event> eventList;
         private String numberCard;
         private String paypal;
+        private String price;
         
         public PaymentBuilder() {
            this.optionalAddress = "-";
@@ -287,10 +315,15 @@ public class Payment {
             this.paypal = paypalEmail;
             return this;
         }
+        
+        public PaymentBuilder setPrice(String price) {
+            this.price = price;
+            return this;
+        }
 
         @Override
         public Payment build() {
-            return new Payment(id, firstName, lastName, email, address, optionalAddress, country, state, zipCode, eventList, numberCard, paypal);
+            return new Payment(id, firstName, lastName, email, address, optionalAddress, country, state, price, zipCode, eventList, numberCard, paypal);
         }
 
     }

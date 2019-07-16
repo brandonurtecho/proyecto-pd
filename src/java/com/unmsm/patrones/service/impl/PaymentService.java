@@ -33,7 +33,8 @@ public class PaymentService implements IPaymentService {
         this.paymentRepository = new PaymentDao();
     }
     
-    private void sendPaymentEmail(Payment payment) {
+    @Override
+    public void sendPaymentEmail(Payment payment) {
 
         Properties props = new Properties();
         /**
@@ -79,9 +80,18 @@ public class PaymentService implements IPaymentService {
     private String createMessage(Payment payment){
         StringBuilder messageBody = new StringBuilder();
         messageBody
-                .append("ACA SE DEBE FORMAR EL CUERPO CON LA CLASE PAYMENT")
-                .append(" DE ESTA FORMA")
-                .append(" ESTE ES UN MENSAJE DE EJEMPLO");
+                .append("----------------------------------------------------------------").append("\n")
+                .append("Email: ").append(payment.getEmail()).append("\n")
+                .append("Nombre: ").append(payment.getFirstName()).append("\n")
+                .append("Apellido: ").append(payment.getLastName()).append("\n")
+                .append("Pais: ").append(payment.getCountry()).append("\n")
+                .append("Numero de tarjeta: ").append(payment.getNumberCard()).append("\n")
+                .append("Direccion: ").append(payment.getOptionalAddress()).append("\n")
+                .append("Estado: ").append(payment.getState()).append("\n")
+                .append("Codigo ZIP: ").append(payment.getZipCode()).append("\n")
+                .append("Precio: ").append(payment.getPrice()).append("\n")
+                .append("----------------------------------------------------------------").append("\n")
+                ;
         return messageBody.toString();
     }
 

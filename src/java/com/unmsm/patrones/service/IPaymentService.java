@@ -16,4 +16,5 @@ public interface IPaymentService {
     void pay(Payment payment);
     List<Payment> getAll();
     List<Payment> getPaymentsByEmailUser(String email);
+    void sendPaymentEmail(Payment payment);
 }

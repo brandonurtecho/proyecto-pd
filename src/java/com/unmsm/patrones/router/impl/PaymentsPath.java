@@ -9,7 +9,9 @@ import com.unmsm.patrones.dto.Commentary;
 import com.unmsm.patrones.dto.Event;
 import com.unmsm.patrones.dto.Payment;
 import com.unmsm.patrones.router.PathStrategy;
+import com.unmsm.patrones.service.IPaymentService;
 import com.unmsm.patrones.service.facade.impl.UserFacadeService;
+import com.unmsm.patrones.service.impl.PaymentService;
 import com.unmsm.patrones.util.Cast;
 import com.unmsm.patrones.util.Jsp;
 import com.unmsm.patrones.util.PathName;
@@ -43,6 +45,7 @@ public class PaymentsPath extends PathStrategy {
             throws ServletException, IOException, SQLException {
         
         UserFacadeService service = new UserFacadeService();
+        IPaymentService paymentService = new PaymentService();
         
         if(request.getParameter("payEvent")==null){
             request.getSession().setAttribute("id", request.getParameter("id"));     
@@ -75,7 +78,10 @@ public class PaymentsPath extends PathStrategy {
                     .setEventList(list)
                     .setNumberCard(request.getParameter("creditcard"))
                     .setPaypal(request.getParameter("paypal"))
+                    .setPrice("20 SOLES")
                     .build();
+            
+            paymentService.sendPaymentEmail(pay);
 
             service.buyTicketForEvent(pay);
             RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.EVENTS);
