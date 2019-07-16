@@ -12,6 +12,7 @@ import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 import static com.mongodb.client.model.Filters.eq;
 import com.unmsm.patrones.connection.Connection;
+import com.unmsm.patrones.dto.Admin;
 import com.unmsm.patrones.dto.Card;
 import com.unmsm.patrones.dto.Commentary;
 import com.unmsm.patrones.dto.Event;
@@ -72,15 +73,10 @@ public class Test {
 //            System.out.println(com);
 //        }
 
-       IUserFacadeService facade = new UserFacadeService();
-       User user = new User("diego.vera@unmsm.edu.pe", "72923854", 
-               Cast.stringToDate("1996-11-09"), "Masculino", "", "Diego", "Vera");
-               
-        System.out.println("registrando");
-        System.out.println(facade.registerNewAccount(user));
+         ICryptBridgeService cryptService = new DefaultCryptBrigdeService();
         
-        System.out.println("logeando");
-        System.out.println(facade.login("diego.vera@unmsm.edu.pe", "72923854"));
+//        System.out.println("logeando");
+//        System.out.println(facade.login("diego.vera@unmsm.edu.pe", "72923854"));
         
 //        Document doc = new Document("name", "MongoDB")
 //                .append("type", "database")

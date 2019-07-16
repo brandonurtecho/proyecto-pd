@@ -32,7 +32,7 @@
 
                     <div align="center">
 
-                        <a class="nav-link" href="/proyecto/admin/admin/view-profile"><img src="/proyecto/assets/img/Users-Administrator-icon.png" height="150" width="150"></a><br>
+                        <a class="nav-link" href="/proyecto/admin/view-profile"><img src="/proyecto/assets/img/Users-Administrator-icon.png" height="150" width="150"></a><br>
 
 
                     </div>
@@ -47,7 +47,7 @@
                                 Complejo Deportivo Villa María del Triunfo,Base Aérea Las Palmas,Escuela Militar de Chorrillos,Playa Chorrillos,
                                 Morro Solar Chorrillos,Polideportivo Villa el Salvador,Country Club de Villa,Villa Panamericana y Parapanamericana,
                                 Punta Rocas,Puerto Viejo,Laguna Bujama,Río Cañete - Lunahuaná,Yatch Club Peruano Sede Paracas</c:set>
-                                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Comentarios de sedes</a>
+                                <a href="/proyecto/admin/main-content.jsp" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Comentarios de sedes</a>
                                 <ul class="collapse list-unstyled" id="homeSubmenu">
                                 <c:forTokens items="${venues}" delims="," var="venue">
                                     <li><a href="venue-commentaries.jsp">${venue}</a></li>
@@ -64,12 +64,12 @@
                                 <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Comentarios deportes</a>
                                 <ul class="collapse list-unstyled" id="pageSubmenu">
                                 <c:forTokens items="${sports}" delims="," var="sport">
-                                    <li><a href="/proyecto/admin/admin/sport-commentaries?sport=${sport}">${sport}</a></li>
+                                    <li><a href="/proyecto/admin/sport-commentaries?sport=${sport}">${sport}</a></li>
                                     </c:forTokens>
                             </ul>
                         </li>
                         <li>
-                            <a href="/proyecto/admin/admin/venue-attendees">Ver asistentes</a>
+                            <a href="/proyecto/admin/venue-attendees">Ver asistentes</a>
                         </li>
                     </ul>
                 </div>
@@ -84,7 +84,7 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="nav navbar-nav ml-auto">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="/proyecto/admin/admin/login-admin"><strong>Cerrar Sesion</strong></a>
+                                    <a class="nav-link" href="/proyecto/admin/login-admin"><strong>Cerrar Sesión</strong></a>
                                 </li>
                             </ul>
                         </div>
@@ -92,7 +92,7 @@
                     </div>
                 </nav>
 
-                <form action="/proyecto/admin/admin/edit-profile">
+                <form action="/proyecto/admin/edit-profile">
                     <c:set var="admin" value="${admin}"></c:set>
                     <div class="flex-c">
                         <h2>EDITAR DATOS PERSONALES</h2>

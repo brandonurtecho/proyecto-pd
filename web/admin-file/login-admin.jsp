@@ -19,7 +19,7 @@
         <div class="limiter">
             <div class="container-login100">
                 <div class="p-l-85 p-r-85 p-t-55 p-b-55 col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                    <form class="login100-form validate-form flex-sb flex-w" method="POST" action="/proyecto/admin/admin/login-admin">
+                    <form class="login100-form validate-form flex-sb flex-w" method="POST" action="/proyecto/admin/login-admin">
                         <span class="login100-form-title p-b-32">
                             Login Administrador
                         </span>
