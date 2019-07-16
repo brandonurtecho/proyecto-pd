@@ -9,10 +9,20 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Pagos</title>
-        
-         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" /> 
+        <title>Pagos</title>       
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+                integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>   
     </head>
     <body>
         
@@ -27,18 +37,23 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="p-2 text-white" href="/proyecto/principal/voluntarios" style="font-size: 20px;">Voluntarios</a>
+                        <a class="p-2 text-white" href="/proyecto/principal/voluntarios" style="font-size: 20px; text-decoration: none;">Voluntarios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="p-2 text-white" href="/proyecto/principal/disciplinas?num=0" style="font-size: 20px;">Disciplinas Panamericanas</a>
+                        <form action="/proyecto/principal/disciplinas" method="POST">
+                            <input style="font-size: 20px; outline: 0px; background-color: rgba(255,0,0,0.0); color: white; border: 0;" type="submit" name="panamericanos" value="Panamericanos"/>
+                        </form>
                     </li>
                     <li class="nav-item">
-                        <a class="p-2 text-white" href="/proyecto/principal/disciplinas?num=1" style="font-size: 20px;">Disciplinas Parapanamericanas</a>
+                        <form action="/proyecto/principal/disciplinas" method="POST">
+                            <input style="font-size: 20px; outline: 0px; background-color: rgba(255,0,0,0.0); color: white; border: 0;" type="submit" name="parapanamericanos" value="Parapanamericanos"/>
+                        </form>
                     </li>
                     <li class="nav-item active">
-                        <a class="p-2 text-white" href="/proyecto/principal/" style="font-size: 20px;">Cerrar Sesion</a>
+                        <a class="p-2 text-white" href="/proyecto/principal/" style="font-size: 20px; text-decoration: none;">Cerrar Sesión</a>
                     </li>
                 </ul>
+                <li class="text-white font-weight-normal" style="font-size: 20px; list-style: none">Panamericanos Lima 2019</li>
             </div>
         </nav>
         
@@ -52,8 +67,9 @@
             </div>
 
             <div class="col-md-8 order-md-1 mx-auto">
-
-                <img class="d-block mx-auto mb-4" src="/proyecto/assets/img/milco-6.png" alt="" width="120" height="150">
+                <div class="d-none d-sm-block">
+                    <img class="d-block mx-auto mb-4" src="/proyecto/assets/img/milco-6.png" alt="" width="120" height="150">
+                </div>
                 <form action="/proyecto/principal/pagos" class="needs-validation" method="post">
                     
                     <h4 class="mb-3"><font style="vertical-align: inherit; font-size: 20px; font-weight: 600;"><font style="vertical-align: inherit;">Datos Personales</font></font></h4>
@@ -96,13 +112,13 @@
                         <div class="col-md-5 mb-3">
                             <input type="text" class="form-control" id="address2" name="country" placeholder="País">
                             <div class="invalid-feedback">
-                                Please select a valid country.
+                                Por favor ingrese un país válido
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
-                            <input type="text" class="form-control" id="address2" name="state" placeholder="Estado">
+                            <input type="text" class="form-control" id="address2" name="state" placeholder="Departamento">
                             <div class="invalid-feedback">
-                                Please provide a valid state.
+                                Por favor ingrese un departamento válido
                             </div>
                         </div>
                         <div class="col-md-3 mb-3">
@@ -119,13 +135,13 @@
                         <div class="col-md-5 mb-3">
                             <input type="text" class="form-control" id="pay" name="creditcard" placeholder="Tarjeta de Crédito">
                             <div class="invalid-feedback">
-                                Please select a valid country.
+                                Por favor ingrese una tarjeta válida
                             </div>
                         </div>
                         <div class="col-md-7 mb-3">
                             <input type="email" class="form-control" id="pay" name="paypal" placeholder="Paypal">
                             <div class="invalid-feedback">
-                                Please select a valid country.
+                                Por favor ingrese una cuenta válida
                             </div>
                         </div>
                     </div>

@@ -5,13 +5,16 @@
  */
 package com.unmsm.patrones.dto.factory;
 
+
 import com.unmsm.patrones.dto.Person;
 import com.unmsm.patrones.dto.rule.AdminRule;
 import com.unmsm.patrones.dto.rule.IPersonRule;
 import com.unmsm.patrones.dto.rule.SportsmanRule;
 import com.unmsm.patrones.dto.rule.UserRule;
 import com.unmsm.patrones.dto.rule.VolunteerRule;
+
 import java.util.ArrayList;
+
 import java.util.List;
 
 /**
@@ -20,6 +23,7 @@ import java.util.List;
  */
 public class PersonFactory<T extends Person> {
     private List<IPersonRule> listPersonRule;
+
     
     public PersonFactory() {
         listPersonRule = new ArrayList<>();

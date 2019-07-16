@@ -9,6 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
         <!-- Bootstrap core CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -27,19 +28,19 @@
     </head>
     <body style="background: url(https://fondos.io/wp-content/uploads/2019/01/fondo-blanco-42.jpg) no-repeat; background-size: cover;">
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex justify-content-around">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <h5 class="my-0 text-white mr-md-auto font-weight-normal">Panamericanos Lima 2019</h5>
+            <h5 class="mx-2 my-0 text-white mr-md-auto font-weight-normal">Panamericanos Lima 2019</h5>
 
             <form class="form-row" action="/proyecto/principal/inicial" method="post">
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                    <ul class="navbar-nav text-right">
+                    <ul class="navbar-nav">
                         <li class="nav-item">
                             <label class=" px-md-3 py-1 text-white" for="inputUser">Usuario </label>
                         </li>
@@ -52,6 +53,7 @@
                         <li>
                             <input type="password" id="inputPassword" class="form-control" name="password">
                         </li>
+                        <div class="d-xl-none d-lg-none d-xl-block my-2"></div>
                         <li>
                             <button type="submit" class="btn btn-primary mt-md-auto ml-5" value="Send">Iniciar Sesión</button>
                         </li>
@@ -66,43 +68,43 @@
 
             <div class="container py-5">
                 <div class="row py-2" >
-                    <div class="col-md-4 text-center">
-                        <img src="/proyecto/assets/img/Logo_oficial_Juegos_Panamericanos_Lima_2019.png" class="img-responsive" alt="">
+                    <div class="col-md-4 text-center d-none d-sm-block">
+                        <img src="/proyecto/assets/img/Logo_oficial_Juegos_Panamericanos_Lima_2019.png" class="img-responsive" alt="Panamericanos">
                     </div>
                     <div class="col-md-6 order-md-1">
                         <h4 style="font-size: 35px;" class="mb-3 py-3 text-center">REGISTRO</h4>
                         <form class="form" action="/proyecto/principal/index" method="post">
-                            <div class="row">
+                            <div class="row font-italic">
                                 <div class="col-md-6 mb-3">
-                                    <label for="firstName">Nombres</label>
+                                    <label for="firstName"><strong>Nombres</strong></label>
                                     <input type="text" class="form-control" id="firstName" name="nombre">
                                 </div>
 
                                 <div class="col-md-6 mb-3">
-                                    <label for="lastName">Apellidos</label>
+                                    <label for="lastName"><strong>Apellidos</strong></label>
                                     <input type="text" class="form-control" id="lastName" name="apellido">
                                 </div>
                             </div>
-                            <div class="mb-3">
-                                <label for="email">Email</label>
+                            <div class="mb-3 font-italic">
+                                <label for="email"><strong>Email</strong></label>
                                 <div class="input-group">
                                     <input type="text" class="form-control" id="email" name="email">
                                 </div>
                             </div>
-                            <div class="mb-3">
-                                <label for="password">Password</label>
+                            <div class="mb-3 font-italic">
+                                <label for="password"><strong>Contraseña</strong></label>
                                 <div class="input-group">
                                     <input type="password" class="form-control" id="password" name="password">
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row font-italic">
                                 <div class="col-md-6 mb-3">
-                                    <label for="birthdate">Fecha de Nacimiento</label>
+                                    <label for="birthdate"><strong>Fecha de Nacimiento</strong></label>
                                     <input type="date" class="form-control" id="birthdate" name="date">
                                 </div>
 
                                 <div class="col-md-6 mb-3">
-                                    <label for="genero">Genero</label>
+                                    <label for="genero"><strong>Género</strong></label>
                                     <select class="custom-select" id="genero" name="genero">
                                         <option value="M">Masculino</option>
                                         <option value="F">Femenino</option>

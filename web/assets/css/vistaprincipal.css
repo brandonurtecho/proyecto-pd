@@ -51,14 +51,14 @@ p {
 
 .sections.sections-half .section {
     position: relative;
-    overflow: hidden;
+    
 }
 
-.container {
+.contenedor {
     padding-right: 15px;
     padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
+    display: flex;
+    justify-content: center;
 }
 
 .title.title-white {
@@ -81,7 +81,6 @@ p {
     border: 1px solid;
     text-align: center;
     z-index: 2;
-    position: relative;
 }
 
 .sections.sections-half .section {
@@ -154,6 +153,40 @@ p {
     height: auto;
 }
 
+.transparent-input{
+    background-color: rgba(255,0,0,0.0);
+    color: white;
+    border: 0;
+}
+
+.relative {
+    position: relative;
+}
+
+.center-absolute{
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.title-disciplines{
+    width: 400px;
+    font-size: 24px;
+    padding: 4px 30px;
+    border: 1px solid;
+    text-align: center;
+    color: #ffffff;
+}
+
+.deportes {
+    overflow: hidden;
+}
+
+li{
+    list-style: none;
+}
 
 @media (min-width: 768px){
     .sections .section-title {
@@ -219,7 +252,7 @@ p {
 a:-webkit-any-link {
     color: -webkit-link;
     cursor: pointer;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 

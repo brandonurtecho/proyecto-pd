@@ -10,6 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
         <title>Voluntarios</title>
         
          <!-- BOOTSTRAP -->
@@ -37,18 +38,23 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="p-2 text-white" style="font-size: 20px;" href="/proyecto/principal/eventos" style="font-size: 20px;">Eventos</a>
+                        <a class="p-2 text-white" style="font-size: 20px; text-decoration: none;" href="/proyecto/principal/eventos">Eventos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="p-2 text-white" style="font-size: 20px;" href="/proyecto/principal/disciplinas?num=0" style="font-size: 20px;">Disciplinas Panamericanas</a>
+                        <form action="/proyecto/principal/disciplinas" method="POST">
+                            <input style="font-size: 20px; outline: 0px; background-color: rgba(255,0,0,0.0); color: white; border: 0;" type="submit" name="panamericanos" value="Panamericanos"/>
+                        </form>
                     </li>
                     <li class="nav-item">
-                        <a class="p-2 text-white" style="font-size: 20px;" href="/proyecto/principal/disciplinas?num=1" style="font-size: 20px;">Disciplinas Parapanamericanas</a>
+                        <form action="/proyecto/principal/disciplinas" method="POST">
+                            <input style="font-size: 20px; outline: 0px; background-color: rgba(255,0,0,0.0); color: white; border: 0;" type="submit" name="parapanamericanos" value="Parapanamericanos"/>
+                        </form>
                     </li>
-                     <li class="nav-item active">
-                        <a class="p-2 text-white" href="/proyecto/principal/" style="font-size: 20px;">Cerrar Sesion</a>
+                    <li class="nav-item active">
+                        <a class="p-2 text-white" href="/proyecto/principal/" style="font-size: 20px; text-decoration: none;">Cerrar Sesión</a>
                     </li>
                 </ul>
+                <li class="text-white font-weight-normal" style="font-size: 20px; list-style: none">Panamericanos Lima 2019</li>
             </div>
         </nav>
         

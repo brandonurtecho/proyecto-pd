@@ -13,7 +13,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
         <link rel="stylesheet" href="/proyecto/assets/css/vistaSportsman.css">
 
         <!-- BOOTSTRAP -->
@@ -30,7 +30,7 @@
         crossorigin="anonymous"></script>
 
 
-        <title>Juegos Panamericanos 2019</title>
+        <title>Comentarios</title>
     </head>
     <body>
 
@@ -43,21 +43,31 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="p-2 text-white" href="/proyecto/principal/" style="font-size: 20px;">Inicio</a>
+                        <form action="/proyecto/principal/inicial" method="POST">
+                            <input style="font-size: 20px; outline: 0px; background-color: rgba(255,0,0,0.0); color: white; border: 0;" type="submit" name="fromSportman" value="Inicio"/>
+                        </form>
                     </li>
                     <li class="nav-item">
-                        <a class="p-2 text-white" href="/proyecto/principal/eventos" style="font-size: 20px;">Eventos</a>
+                        <a class="p-2 text-white" href="/proyecto/principal/eventos" style="font-size: 20px; text-decoration: none;">Eventos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="p-2 text-white" href="/proyecto/principal/voluntarios" style="font-size: 20px;">Voluntarios</a>
+                        <a class="p-2 text-white" href="/proyecto/principal/voluntarios" style="font-size: 20px; text-decoration: none;">Voluntarios</a>
+                    </li>
+                    <li class="nav-item mr-2">
+                        <form action="/proyecto/principal/disciplinas" method="POST">
+                            <input style="font-size: 20px; outline: 0px; background-color: rgba(255,0,0,0.0); color: white; border: 0;" type="submit" name="panamericanos" value="Panamericanos"/>
+                        </form>
                     </li>
                     <li class="nav-item">
-                        <a class="p-2 text-white" href="/proyecto/principal/disciplinas?num=0" style="font-size: 20px;">Disciplinas Panamericanas</a>
+                        <form action="/proyecto/principal/disciplinas" method="POST">
+                            <input style="font-size: 20px; outline: 0px; background-color: rgba(255,0,0,0.0); color: white; border: 0;" type="submit" name="parapanamericanos" value="Parapanamericanos"/>
+                        </form>
                     </li>
-                    <li class="nav-item">
-                        <a class="p-2 text-white" href="/proyecto/principal/disciplinas?num=1" style="font-size: 20px;">Disciplinas Parapanamericanas</a>
+                    <li class="nav-item active">
+                        <a class="p-2 text-white" href="/proyecto/principal/" style="font-size: 20px; text-decoration: none;">Cerrar Sesión</a>
                     </li>
                 </ul>
+                <li class="text-white font-weight-normal" style="font-size: 20px; list-style: none">Panamericanos Lima 2019</li>
             </div>
         </nav>
 
@@ -101,58 +111,55 @@
                     </div>
                 </div>
 
-                <div class="">
-
-                    <div id="comments " class="comments">
-
+                <div>
+                    <div>
                         <c:if test="${it!=null}">    
                             <c:forEach var="i" begin="1" end="${it.size()}">
-                                <div id="comment-${i}">
-                                    <c:set var="c" value="${it.next()}" />
-                                    <div class="comment px-2 my-2">
-                                        <div class="media-left">
-                                            <img src="https://www.zona-leros.net/storage/image/default.png" alt="" class="img ">
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="media-content" style=" ">
-                                                <span class="media-heading"> <c:out value="${c.getEmailUser()}" /> </span>
-                                                <span class="date" style="display: inline;"> •  <c:out value="${cast.dateToString(c.getDate())}" /> </span>
-                                                <span class="text">  <c:out value="${c.getBody()}" /> <br>
-                                                </span>
-                                                <div class="date">
-                                                    <span class="up">
-                                                        <span id="upvotes-9393">  <c:out value="${c.getLike()}" /> </span>
-                                                        <a href="/proyecto/principal/deportistas?like=Like&likecomment=<c:out value="${c}"/>&Sport=<c:out value="${sport}"/>">
-                                                            <i class="fa fa-fw fa-chevron-up " id="up-9393"></i>
-                                                        </a>
-                                                    </span> 
-                                                </div>
-                                            </div>
+                                <c:set var="c" value="${it.next()}" />
+                                <div id="comment-${i}" class="comentarios wxy">
+                                    <div class="media-left d-none d-sm-block">
+                                        <img src="https://www.zona-leros.net/storage/image/default.png" alt="" class="img ">
+                                    </div>
+                                    <div class="card my-4 col-lg-11">
+                                        <h5 class="card-header">${c.getEmailUser()}     ${cast.dateToString(c.getDate())}</h5>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Nombre: ${c.nameUser}</h5>
+                                            <p class="card-text">Comentario: ${c.getBody()}</p>
+                                            <p class="card-text">Likes: ${c.getLike()}</p>
+                                            <form action="/proyecto/principal/deportistas" method="POST">
+                                                <input style="font-size: 20px; outline: 0px; background-color: rgba(255,0,0,0.0); border: 0;" name="like" type="submit" value="Like"/>
+                                                <input type="hidden" name="likecomment" value="${c}">
+                                                <input type="hidden" name="Sport" value="${sport}">
+                                            </form>
                                         </div>
                                     </div>
-                                </div>
+                                </div>                               
                             </c:forEach>
                         </c:if>
-                        <div class="comment">
-                            <div class="media-left">
-                                <img src="https://www.zona-leros.net/storage/image/default.png" alt="" class="img">
-                            </div>
-                            <div class="media-body">
-                                <div class="media-content">
-                                    <form action="/proyecto/principal/deportistas?Sport=<c:out value="${sport}"/>" method="post">
-                                        <span class="text">
-                                            <textarea id="comment" name="comment" class="form-control" placeholder="Escribe tu comentario..." data-value="game-1708"></textarea>
-                                        </span>
-                                        <span class="date"> 
-                                            <div id="spiner-comment" style="display: none;">
-                                                <div class="comments__spinner"></div>
-                                            </div>
-                                            <div class="text-right px-3 py-1">
-                                                <input type="submit" class="btn btn-danger" value="Comentar" name="commentary">
-                                            </div>
-                                        </span>
-                                    </form>
+                        <div>
+                            <div class="comentarios wxy">
+                                <div class="media-left d-none d-sm-block">
+                                    <img src="https://www.zona-leros.net/storage/image/default.png" alt="" class="img">
                                 </div>
+                                <div class="card my-4 col-lg-11">
+                                    <h5 class="card-header">Comentar</h5>
+                                    <div class="card-body">
+                                        <form action="/proyecto/principal/deportistas" method="POST">
+                                            <input type="hidden" name="Sport" value="${sport}">
+                                            <span class="text">
+                                                <textarea id="comment" name="comment" class="form-control" placeholder="Escribe tu comentario..." data-value="game-1708"></textarea>
+                                            </span>
+                                            <span class="date"> 
+                                                <div id="spiner-comment" style="display: none;">
+                                                    <div class="comments__spinner"></div>
+                                                </div>
+                                                <div class="text-right px-3 py-1">
+                                                    <input type="submit" class="btn btn-primary" value="Comentar" name="commentary">
+                                                </div>
+                                            </span>
+                                        </form>
+                                    </div>
+                                </div>            
                             </div>
                         </div>
 

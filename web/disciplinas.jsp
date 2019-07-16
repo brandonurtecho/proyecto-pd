@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
         <link rel="stylesheet" href="/proyecto/assets/css/vistaSportsman.css">
 
         <!-- BOOTSTRAP -->
@@ -39,15 +39,16 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="p-2 text-white" href="/proyecto/principal/voluntarios" style="font-size: 20px;">Voluntarios</a>
+                        <a class="p-2 text-white" href="/proyecto/principal/voluntarios" style="font-size: 20px; text-decoration: none;">Voluntarios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="p-2 text-white" href="/proyecto/principal/eventos" style="font-size: 20px;">Eventos</a>
+                        <a class="p-2 text-white" href="/proyecto/principal/eventos" style="font-size: 20px; text-decoration: none;">Eventos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="p-2 text-white" href="/proyecto/principal/" style="font-size: 20px;">Cerrar sesion</a>
+                        <a class="p-2 text-white" href="/proyecto/principal/" style="font-size: 20px; text-decoration: none;">Cerrar sesión</a>
                     </li>
                 </ul>
+                <li class="text-white font-weight-normal" style="font-size: 20px; list-style: none">Panamericanos Lima 2019</li>
             </div>
         </nav>
 
@@ -71,7 +72,7 @@
 
                         <c:forEach items="${list}" var="sport">
 
-                            <div class="col-md-4">
+                            <div class="col-lg-4 col-md-6">
                                 <div class="card mb-4 shadow-sm">
                                     <img src="${sport.image}" alt="" class="img-fluid">
                                     </svg>
@@ -82,7 +83,8 @@
                                         </div>
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div class="btn-group">
-                                                <form method="post" action="/proyecto/principal/deportistas?Sport=<c:out value="${sport.title}"/>">
+                                                <form method="POST" action="/proyecto/principal/deportistas">
+                                                    <input type="hidden" name="Sport" value="${sport.title}">
                                                     <input type="submit" class="btn btn-sm btn-outline-secondary" value="Ver mas">
                                                 </form>
                                             </div>

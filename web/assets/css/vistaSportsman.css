@@ -96,6 +96,7 @@ a:-webkit-any-link {
     vertical-align: middle;
     margin: 4px 10px;
     height: 80px;
+    float: left;
 }
 
 .comments .media-body {
@@ -201,6 +202,17 @@ a[class*="fa-"], span[class*="fa-"], strong[class*="fa-"], i[class*="fa-"] {
 .down {
     color: #e03e3e;
     cursor: pointer;
+}
+
+.comentarios{
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+wxy{
+    width: 100%;
 }
 
 @media (min-width: 1200px){

@@ -43,18 +43,15 @@ public class DisciplinesPath extends PathStrategy{
     public void operation(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException, SQLException {
         
-       
-        
-        int num = Integer.parseInt(request.getParameter("num"));
-        
-        if (num == 0){
+        if (request.getParameter("panamericanos")!=null){
            List<PanamericanoSport> list =  CacheManagement.getInstance().getCache(TypeSport.PANAMERICANO_SPORT);
            request.setAttribute("list", list);
-        }else {
+        } else if(request.getParameter("parapanamericanos")!=null){
            List<ParapanamericanoSport> list =  CacheManagement.getInstance().getCache(TypeSport.PARAPANAMERICANO_SPORT);
            request.setAttribute("list", list);
+        } else {
+            
         }
-        
         RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.DISCIPLINES);
         dispatcher.forward(request, response);
     }

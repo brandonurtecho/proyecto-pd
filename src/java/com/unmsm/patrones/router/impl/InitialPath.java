@@ -37,6 +37,11 @@ public class InitialPath extends PathStrategy{
     @Override
     public void operation(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException, SQLException {
+        
+        if(request.getParameter("fromSportman")!=null){
+            RequestDispatcher dispatcher = request.getRequestDispatcher(Jsp.INITIAL);
+            dispatcher.forward(request, response);
+        }
 
         String idUser = request.getParameter("iduser");
         String password = request.getParameter("password");
