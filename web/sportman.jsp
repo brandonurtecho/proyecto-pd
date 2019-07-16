@@ -118,16 +118,18 @@
                                 <c:set var="c" value="${it.next()}" />
                                 <div id="comment-${i}" class="comentarios wxy">
                                     <div class="media-left d-none d-sm-block">
-                                        <img src="https://www.zona-leros.net/storage/image/default.png" alt="" class="img ">
+                                        <img src="https://images.vexels.com/media/users/3/135118/isolated/preview/676bf0e9f3c16649cd7f426c6dcd755a-flat-user-sign-with-round-background-by-vexels.png" alt="" class="img ">
                                     </div>
-                                    <div class="card my-4 col-lg-11">
-                                        <h5 class="card-header">${c.getEmailUser()}     ${cast.dateToString(c.getDate())}</h5>
+                                    <div style="background-color: #1ebdb6; color: #fff; border-radius: 20px;" class="card my-4 col-lg-11">
+                                        <h5 style="background-color: #1ebdb6;" class="card-header"></h5>
+                                        <h5 style="background-color: #1d3d7a; color: #fff; border-radius: 10px; font-weight: 650; font-size: 20px; " class="card-header">${c.getEmailUser()} - ${cast.dateToString(c.getDate())}</h5>
                                         <div class="card-body">
-                                            <h5 class="card-title">Nombre: ${c.nameUser}</h5>
-                                            <p class="card-text">Comentario: ${c.getBody()}</p>
-                                            <p class="card-text">Likes: ${c.getLike()}</p>
-                                            <form action="/proyecto/principal/deportistas" method="POST">
-                                                <input style="font-size: 20px; outline: 0px; background-color: rgba(255,0,0,0.0); border: 0;" name="like" type="submit" value="Like"/>
+                                            
+                                            <p class="card-text" style="font-size: 22px;">${c.getBody()}</p>
+                                            
+                                            <form action="/proyecto/principal/deportistas" method="POST" >
+                                                <input class="like" name="like" type="submit" value="        "/>
+                                                <p style="display : inline-block; font-size: 25px;"  class="card-text" > ${c.getLike()}</p>
                                                 <input type="hidden" name="likecomment" value="${c}">
                                                 <input type="hidden" name="Sport" value="${sport}">
                                             </form>
@@ -139,22 +141,24 @@
                         <div>
                             <div class="comentarios wxy">
                                 <div class="media-left d-none d-sm-block">
-                                    <img src="https://www.zona-leros.net/storage/image/default.png" alt="" class="img">
+                                    <img src="https://images.vexels.com/media/users/3/135118/isolated/preview/676bf0e9f3c16649cd7f426c6dcd755a-flat-user-sign-with-round-background-by-vexels.png" alt="" class="img">
                                 </div>
-                                <div class="card my-4 col-lg-11">
-                                    <h5 class="card-header">Comentar</h5>
+                                <div style="background-color: #1ebdb6; color: #fff; border-radius: 20px;" class="card my-4 col-lg-11">
+                                    <h5 style="background-color: #1ebdb6;" class="card-header"></h5>
+                                    <h5 style="background-color: #1d3d7a; color: #fff; border-radius: 10px; font-weight: 650; font-size: 20px; " class="card-header">Comentar</h5>
                                     <div class="card-body">
                                         <form action="/proyecto/principal/deportistas" method="POST">
                                             <input type="hidden" name="Sport" value="${sport}">
                                             <span class="text">
-                                                <textarea id="comment" name="comment" class="form-control" placeholder="Escribe tu comentario..." data-value="game-1708"></textarea>
+                                                <textarea id="comment" name="comment" class="form-control" placeholder="Escribe tu comentario..." data-value="game-1708"></textarea><br>
                                             </span>
                                             <span class="date"> 
                                                 <div id="spiner-comment" style="display: none;">
                                                     <div class="comments__spinner"></div>
                                                 </div>
-                                                <div class="text-right px-3 py-1">
-                                                    <input type="submit" class="btn btn-primary" value="Comentar" name="commentary">
+                                                <div class="text-right px-3 py-1" >
+                                                    
+                                                    <input type="submit" class="btn btn-primary" value="Realizar comentario" name="commentary">
                                                 </div>
                                             </span>
                                         </form>

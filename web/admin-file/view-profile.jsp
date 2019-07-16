@@ -39,19 +39,7 @@
                 </div>
                 <div class="sidebar-b">
                     <ul class="list-unstyled components">                
-                        <li class="active">
-                            <c:set var="venues">Villa Deportiva Regional del Callao,Costa Verde - San Miguel,Estadio Nacional,
-                                Villa Deportiva Nacional - Videna,Coliseo Eduardo Dibós,Circuito Ciudad,Escuela de Equitación del Ejército,
-                                Complejo Deportivo Villa María del Triunfo,Base Aérea Las Palmas,Escuela Militar de Chorrillos,Playa Chorrillos,
-                                Morro Solar Chorrillos,Polideportivo Villa el Salvador,Country Club de Villa,Villa Panamericana y Parapanamericana,
-                                Punta Rocas,Puerto Viejo,Laguna Bujama,Río Cañete - Lunahuaná,Yatch Club Peruano Sede Paracas</c:set>
-                            <a href="/proyecto/admin/main-content.jsp" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Comentarios de sedes</a>
-                            <ul class="collapse list-unstyled" id="homeSubmenu">
-                                <c:forTokens items="${venues}" delims="," var="venue">
-                                    <li><a href="venue-commentaries.jsp">${venue}</a></li>
-                                </c:forTokens>
-                            </ul>
-                        </li>
+                        
                         <li>
                             <c:set var="sports">ATLETISMO,BADMINTON,BALONCESTO,BALONMANO,BEISBOL,BOWLING,BOXEO,CANOTAJE SLALOM,CANOTAJE SLALOM EXTREMO,
                                 CANOTAJE VELOCIDAD,CICLISMO BMX,CICLISMO DE MONTAÑA,Ciclismo de Pista,Ciclismo de Ruta,Clavados,Deportes Ecuestres,
@@ -91,47 +79,47 @@
                 </nav>
                 <section>
                     <div class="flex-c">
-                        <h2>DATOS PERSONALES</h2>
+                        <h2 style="color: #fff;">DATOS PERSONALES</h2>
                     </div>
                     <c:set var="admin" value="${admin}"></c:set>
                     <div class="form-group flex-sa">
                         <div class="w-40">
-                            <label>Nombre:</label>
+                            <label style="color: #fff;">Nombre:</label>
                             <input type="text" class="form-control" id="nombre" value="${admin.name}" readonly><br>
                         </div>
                         <div class="w-40">
-                            <label>Apellido:</label>
+                            <label style="color: #fff;">Apellido:</label>
                             <input type="text" class="form-control" id="apellido" value="${admin.lastname}" readonly><br>
                         </div>
                     </div>
                     <div class="form-group flex-sa">
                         <div class="w-40">
-                            <label>DNI:</label>
+                            <label style="color: #fff;">DNI:</label>
                             <input type="text" class="form-control" id="dni" value="${admin.dni}" readonly><br> 
                         </div>
                         <div class="w-40">
-                            <label>Telefono:</label>
+                            <label style="color: #fff;">Telefono:</label>
                             <input type="text" class="form-control" id="telefono" value="${admin.phone}" readonly><br>
                         </div>
                     </div>              
                     <div class="form-group flex-sa">
                         <div class="w-90">
-                            <label>Correo Electronico:</label>
+                            <label style="color: #fff;">Correo Electronico:</label>
                             <input type="text" class="form-control" id="correo" value="${admin.email}" readonly>
                         </div>
                     </div>
                     <div class="form-group flex-sa">
                         <div class="w-40">
-                            <label>Edad:</label>
+                            <label style="color: #fff;">Edad:</label>
                             <input type="text" class="form-control" id="edad" value="${admin.age}" readonly><br> 
                         </div>
                         <div class="w-40">  
-                            <label>Sexo:</label>
+                            <label style="color: #fff;">Sexo:</label>
                             <input type="text" class="form-control" id="sexo" value="${admin.genre}" readonly><br>
                         </div>
                     </div>
                     <div class="flex-c">
-                        <a href="/proyecto/admin/edit-profile.jsp"><button class="btn btn-primary">Modificar Datos</button></a>
+                        <a href="/proyecto/admin/edit-profile"><button class="btn btn-primary">Modificar Datos</button></a>
                     </div>
                 </div>
             </section>

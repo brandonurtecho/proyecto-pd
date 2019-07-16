@@ -37,19 +37,7 @@
                 </div>
                 <div class="sidebar-b">
                     <ul class="list-unstyled components">                
-                        <li class="active">
-                            <c:set var="venues">Villa Deportiva Regional del Callao,Costa Verde - San Miguel,Estadio Nacional,
-                                Villa Deportiva Nacional - Videna,Coliseo Eduardo Dibós,Circuito Ciudad,Escuela de Equitación del Ejército,
-                                Complejo Deportivo Villa María del Triunfo,Base Aérea Las Palmas,Escuela Militar de Chorrillos,Playa Chorrillos,
-                                Morro Solar Chorrillos,Polideportivo Villa el Salvador,Country Club de Villa,Villa Panamericana y Parapanamericana,
-                                Punta Rocas,Puerto Viejo,Laguna Bujama,Río Cañete - Lunahuaná,Yatch Club Peruano Sede Paracas</c:set>
-                            <a href="/proyecto/admin/main-content.jsp" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Comentarios de sedes</a>
-                            <ul class="collapse list-unstyled" id="homeSubmenu">
-                                <c:forTokens items="${venues}" delims="," var="venue">
-                                    <li><a href="venue-commentaries.jsp">${venue}</a></li>
-                                </c:forTokens>
-                            </ul>
-                        </li>
+                        
                         <li>
                             <c:set var="sports">ATLETISMO,BADMINTON,BALONCESTO,BALONMANO,BEISBOL,BOWLING,BOXEO,CANOTAJE SLALOM,CANOTAJE SLALOM EXTREMO,
                                 CANOTAJE VELOCIDAD,CICLISMO BMX,CICLISMO DE MONTAÑA,Ciclismo de Pista,Ciclismo de Ruta,Clavados,Deportes Ecuestres,
@@ -96,7 +84,7 @@
                                 <div class="card border-0 shadow">
                                     <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
                                     <div class="card-body text-center">
-                                        <h5 class="card-title mb-0">Team Member</h5>
+                                        <h5 class="card-title mb-0">Diego Vera</h5>
                                         <div class="card-text text-black-50">Web Developer</div>
                                     </div>
                                 </div>
@@ -104,9 +92,9 @@
                             <!-- Team Member 2 -->
                             <div class="col-xl-3 col-md-6 mb-4">
                                 <div class="card border-0 shadow">
-                                    <img src="https://source.unsplash.com/9UVmlIb0wJU/500x350" class="card-img-top" alt="...">
+                                    <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
                                     <div class="card-body text-center">
-                                        <h5 class="card-title mb-0">Team Member</h5>
+                                        <h5 class="card-title mb-0">Renato Martin</h5>
                                         <div class="card-text text-black-50">Web Developer</div>
                                     </div>
                                 </div>
@@ -116,7 +104,7 @@
                                 <div class="card border-0 shadow">
                                     <img src="https://source.unsplash.com/sNut2MqSmds/500x350" class="card-img-top" alt="...">
                                     <div class="card-body text-center">
-                                        <h5 class="card-title mb-0">Team Member</h5>
+                                        <h5 class="card-title mb-0">Brandon Urtecho</h5>
                                         <div class="card-text text-black-50">Web Developer</div>
                                     </div>
                                 </div>
@@ -124,15 +112,28 @@
                             <!-- Team Member 4 -->
                             <div class="col-xl-3 col-md-6 mb-4">
                                 <div class="card border-0 shadow">
-                                    <img src="https://source.unsplash.com/ZI6p3i9SbVU/500x350" class="card-img-top" alt="...">
+                                    <img src="https://source.unsplash.com/sNut2MqSmds/500x350" class="card-img-top" alt="...">
                                     <div class="card-body text-center">
-                                        <h5 class="card-title mb-0">Team Member</h5>
+                                        <h5 class="card-title mb-0">Franco Tasso</h5>
                                         <div class="card-text text-black-50">Web Developer</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <!-- /.row -->
+                        <div class="row">
+                            <!-- Team Member 1 -->
+                            <div class="col-xl-3 col-md-6 mb-4">
+                                <div class="card border-0 shadow">
+                                    <img src="https://source.unsplash.com/TMgQMXoglsM/500x350" class="card-img-top" alt="...">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title mb-0">Jeanpier Ullauri</h5>
+                                        <div class="card-text text-black-50">Web Developer</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
 
                     </div>
                 </section>

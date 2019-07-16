@@ -95,41 +95,41 @@
                 <form action="/proyecto/admin/edit-profile">
                     <c:set var="admin" value="${admin}"></c:set>
                     <div class="flex-c">
-                        <h2>EDITAR DATOS PERSONALES</h2>
+                        <h2 style="color: #fff;">EDITAR DATOS PERSONALES</h2>
                     </div>
                     <div class="form-group flex-sa">
                         <div class="w-40">
-                            <label>Nombre:</label>
+                            <label style="color: #fff;">Nombre:</label>
                             <input type="text" class="form-control" name="name" value="${admin.name}" placeholder="Ingrese el nombre" ><br>
                         </div>
                         <div class="w-40">
-                            <label>Apellido:</label>
+                            <label style="color: #fff;">Apellido:</label>
                             <input type="text" class="form-control" name="lastname" value="${admin.lastname}" placeholder="Ingrese el apellido" ><br>
                         </div>
                     </div>
                     <div class="form-group flex-sa">
                         <div class="w-40">
-                            <label>DNI:</label>
+                            <label style="color: #fff;">DNI:</label>
                             <input type="text" class="form-control" name="dni" value="${admin.dni}" placeholder="Ingrese el DNI" ><br> 
                         </div>
                         <div class="w-40">
-                            <label>Telefono:</label>
+                            <label style="color: #fff;">Telefono:</label>
                             <input type="text" class="form-control" name="phone" value="${admin.phone}" placeholder="Ingrese el telefono" ><br>
                         </div>
                     </div>
                     <div class="form-group flex-sa">
                         <div class="w-90">
-                            <label>Correo Electronico:</label>
+                            <label style="color: #fff;">Correo Electronico:</label>
                             <input type="text" class="form-control" name="email" value="${admin.email}" placeholder="Ingrese el correo electronico" readonly>
                         </div>
                     </div>
                     <div class="form-group flex-sa">
                         <div class="w-40">
-                            <label>Edad:</label>
+                            <label style="color: #fff;">Edad:</label>
                             <input type="text" class="form-control" name="age" value="${admin.age}" placeholder="Ingrese la edad" ><br> 
                         </div>
                         <div class="w-40">
-                            <label>Sexo:</label>
+                            <label style="color: #fff;">Sexo:</label>
                             <input type="text" class="form-control" name="genre" value="${admin.genre}" placeholder="Sexo" readonly><br>
                         </div>
                     </div>

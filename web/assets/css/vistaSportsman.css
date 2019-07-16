@@ -10,6 +10,24 @@ p {
 }
 
 
+  .like {
+      font-size: 20px; 
+      outline: 0px; 
+      color: #000000;
+      background-color: #1ebdb6; 
+      background-size: cover; 
+      background-image: url(https://panachespas.co.uk/wp-content/uploads/2019/05/face.png); 
+      border: 0; 
+      height: 30px; 
+      width: 30px;
+  }
+  
+  .like:hover{
+      height: 40px;
+      width: 40px;
+  }
+
+
 p span {
     color: #fff;
 }

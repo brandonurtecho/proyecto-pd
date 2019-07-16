@@ -27,9 +27,13 @@ a:focus {
 .navbar {
     padding: 15px 10px;
     border: none;
-    border-radius: 0;
+    border-radius: 10px;
     margin-bottom: 40px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    border-radius: 10px;
 }
 
 .navbar-btn {
@@ -80,6 +84,7 @@ a:focus {
     color: #FAFAFA;
     background: #242831; /* para el header del sidebar */
 }
+
 
 #sidebar ul.components {
     padding: 20px 0;
@@ -163,7 +168,8 @@ a.article:hover {
     padding: 20px;
     min-height: 100vh;
     transition: all 0.3s;
-    background: #FBFBFB;
+    background-size: cover;
+    background-image: url(http://akveo.com/blur-admin/assets/img/blur-bg-blurred.jpg);
 }
 
 /* ---------------------------------------------------
