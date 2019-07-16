@@ -102,6 +102,7 @@ public class SportmanPath extends PathStrategy {
         CustomIterator<Commentary> it = service.showCommentaryBySportInSport(sport, "LIKE");
         Cast cast = new Cast();
         request.setAttribute("sportmanlist", sportmanlist);
+        request.setAttribute("imgsport", request.getParameter("imgsport"));
         if(it.first().getBody().equals("NULL BODY")) request.setAttribute("it", null);
         else request.setAttribute("it", it);
         request.setAttribute("cast", cast);

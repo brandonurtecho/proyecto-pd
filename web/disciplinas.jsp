@@ -86,6 +86,7 @@
                                                 <form method="POST" action="/proyecto/principal/deportistas">
                                                     <input type="hidden" name="Sport" value="${sport.title}">
                                                     <input type="submit" class="btn btn-sm btn-outline-secondary" value="Ver mas">
+                                                    <input type="hidden" name="imgsport" value="${sport.image}">
                                                 </form>
                                             </div>
                                         </div>
