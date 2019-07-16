@@ -29,10 +29,11 @@
                 integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
         <title>Comentarios</title>
     </head>
-    <body>
+    <body style="overflow-x: hidden;">
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -113,57 +114,60 @@
 
                 <div>
                     <div>
-                        <c:if test="${it!=null}">    
-                            <c:forEach var="i" begin="1" end="${it.size()}">
-                                <c:set var="c" value="${it.next()}" />
-                                <div id="comment-${i}" class="comentarios wxy">
-                                    <div class="media-left d-none d-sm-block">
-                                        <img src="https://images.vexels.com/media/users/3/135118/isolated/preview/676bf0e9f3c16649cd7f426c6dcd755a-flat-user-sign-with-round-background-by-vexels.png" alt="" class="img ">
-                                    </div>
-                                    <div style="background-color: #1ebdb6; color: #fff; border-radius: 20px;" class="card my-4 col-lg-11">
-                                        <h5 style="background-color: #1ebdb6;" class="card-header"></h5>
-                                        <h5 style="background-color: #1d3d7a; color: #fff; border-radius: 10px; font-weight: 650; font-size: 20px; " class="card-header">${c.getEmailUser()} - ${cast.dateToString(c.getDate())}</h5>
-                                        <div class="card-body">
-                                            
-                                            <p class="card-text" style="font-size: 22px;">${c.getBody()}</p>
-                                            
-                                            <form action="/proyecto/principal/deportistas" method="POST" >
-                                                <input class="like" name="like" type="submit" value="        "/>
-                                                <p style="display : inline-block; font-size: 25px;"  class="card-text" > ${c.getLike()}</p>
-                                                <input type="hidden" name="likecomment" value="${c}">
-                                                <input type="hidden" name="Sport" value="${sport}">
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>                               
-                            </c:forEach>
-                        </c:if>
+                        <c:if test="${it!=null}">  
+                            <div class="comments-container">
+                                <ul id="comments-list" class="comments-list">
+                                    <c:forEach var="i" begin="1" end="${it.size()}">
+                                        <c:set var="c" value="${it.next()}" />                                        
+                                        <li class="d-flex justify-content-between">
+                                            <div class="comment-main-level">
+                                                <!-- Avatar -->
+                                                <div class="comment-avatar d-none d-sm-block mr-3"><img src="https://cdn5.dibujos.net/dibujos/pintar/chico-con-perilla_163.png" alt=""></div>
+                                                <!-- Contenedor del Comentario -->
+                                                <div class="comment-box">
+                                                    <div class="comment-head">
+                                                        <h6 class="comment-name by-author">${c.nameUser} ${c.lastNameUser}</h6>
+                                                        <span>${cast.dateToString(c.getDate())}</span>
+                                                        <i>${c.like} likes</i>
+                                                        <form action="/proyecto/principal/deportistas" method="POST" >
+                                                            <input class="like" name="like" type="submit" value="        "/>    
+                                                            <p style="display : inline-block; font-size: 15px; color: #fff"  class="card-text" > ${c.getLike()}</p>
+                                                            <input type="hidden" name="likecomment" value="${c}">
+                                                            <input type="hidden" name="Sport" value="${sport}">
+                                                        </form>
+
+                                                    </div>
+                                                    <div class="comment-content">
+                                                        ${c.body}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </c:forEach>
+                                </ul>
+                            </div>
+                        </c:if>    
                         <div>
-                            <div class="comentarios wxy">
-                                <div class="media-left d-none d-sm-block">
-                                    <img src="https://images.vexels.com/media/users/3/135118/isolated/preview/676bf0e9f3c16649cd7f426c6dcd755a-flat-user-sign-with-round-background-by-vexels.png" alt="" class="img">
+                            <div class="card border-info mb-3 mx-auto" style="width: 100%;">
+                                <div class="card-header">Deja tu mensaje</div>
+                                <div class="card-body text-info">
+                                    <h5 class="card-title">Porque tu opinión nos importa</h5>
+                                    <form action="/proyecto/principal/deportistas" method="POST">
+                                        <input type="hidden" name="Sport" value="${sport}">
+                                        <span class="text">
+                                            <textarea id="comment" name="comment" class="form-control" placeholder="Escribe tu comentario..." data-value="game-1708"></textarea><br>
+                                        </span>
+                                        <span class="date"> 
+                                            <div id="spiner-comment" style="display: none;">
+                                                <div class="comments__spinner"></div>
+                                            </div>
+                                            <div class="text-right px-3 py-1" >
+
+                                                <input type="submit" class="btn btn-primary" value="Enviar comentario" name="commentary">
+                                            </div>
+                                        </span>
+                                    </form>
                                 </div>
-                                <div style="background-color: #1ebdb6; color: #fff; border-radius: 20px;" class="card my-4 col-lg-11">
-                                    <h5 style="background-color: #1ebdb6;" class="card-header"></h5>
-                                    <h5 style="background-color: #1d3d7a; color: #fff; border-radius: 10px; font-weight: 650; font-size: 20px; " class="card-header">Comentar</h5>
-                                    <div class="card-body">
-                                        <form action="/proyecto/principal/deportistas" method="POST">
-                                            <input type="hidden" name="Sport" value="${sport}">
-                                            <span class="text">
-                                                <textarea id="comment" name="comment" class="form-control" placeholder="Escribe tu comentario..." data-value="game-1708"></textarea><br>
-                                            </span>
-                                            <span class="date"> 
-                                                <div id="spiner-comment" style="display: none;">
-                                                    <div class="comments__spinner"></div>
-                                                </div>
-                                                <div class="text-right px-3 py-1" >
-                                                    
-                                                    <input type="submit" class="btn btn-primary" value="Realizar comentario" name="commentary">
-                                                </div>
-                                            </span>
-                                        </form>
-                                    </div>
-                                </div>            
                             </div>
                         </div>
 
